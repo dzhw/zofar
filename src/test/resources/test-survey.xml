@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zofar:questionnaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:zofar="http://www.his.de/zofar/xml/questionnaire"
+    xsi:schemaLocation="http://www.his.de/zofar/xml/questionnaire
+        ../../../../../../../../main/xsd/de/his/zofar/xml/zofar_questionnaire_0.1.xsd ">
+    <zofar:name>zofar:name</zofar:name>
+    <zofar:description>zofar:description</zofar:description>
+    <zofar:variables>
+        <zofar:variable name="v1" type="string" />
+    </zofar:variables>
+    <zofar:questionnaireContent>
+        <zofar:page uid="index">
+            <zofar:sectionTextHeader uid="index-header">
+                <zofar:textTitle uid="token">
+                    <zofar:value>Die erste Befragung in Zofar</zofar:value>
+                </zofar:textTitle>
+            </zofar:sectionTextHeader>
+            <zofar:sectionContent uid="index-content">
+                <zofar:questionOpen uid="index-content-openquestion" variable="v1">
+                    <zofar:questionTextHeader>
+                        <zofar:textQuestionType
+                            uid="index-content-openquestion-textheader-questiontext">
+                            <zofar:value>Was mögen sie am liebsten?</zofar:value>
+                        </zofar:textQuestionType>
+                    </zofar:questionTextHeader>
+                </zofar:questionOpen>
+            </zofar:sectionContent>
+            <zofar:transitions>
+                <zofar:transition target="end" />
+            </zofar:transitions>
+        </zofar:page>
+        <zofar:page uid="end">
+            <zofar:sectionTextHeader uid="end-header">
+                <zofar:textParagraph uid="end-header-paragraph">
+                    <zofar:value>Sie haben das Ende der Befragung erreicht.</zofar:value>
+                </zofar:textParagraph>
+            </zofar:sectionTextHeader>
+        </zofar:page>
+    </zofar:questionnaireContent>
+</zofar:questionnaire>

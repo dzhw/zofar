@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.dzhw.eu/zofar/xml/navigation"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:nav="http://www.dzhw.eu/zofar/xml/navigation"
+	elementFormDefault="qualified">
+
+	<xs:complexType name="jumperType">
+		<xs:attribute type="xs:normalizedString" name="value"
+			use="required" />
+		<xs:attribute type="xs:normalizedString" name="target"
+			use="required" />
+		<xs:attribute type="xs:token" name="level" default="0" />
+		<xs:attribute name="disabled" type="xs:boolean" default="false" />
+		<xs:attribute type="xs:normalizedString" name="visible"	use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="jumperContainerType">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="jumper" type="nav:jumperType" />
+		</xs:choice>
+		<xs:attribute type="xs:normalizedString" name="visible"	use="optional" />
+	</xs:complexType>
+</xs:schema>

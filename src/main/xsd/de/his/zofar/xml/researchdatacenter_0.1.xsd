@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.dzhw.eu/zofar/xml/researchdatacenter"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:research="http://www.dzhw.eu/zofar/xml/researchdatacenter"
+	xmlns:zofar="http://www.his.de/zofar/xml/questionnaire"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://www.his.de/zofar/xml/questionnaire"
+		schemaLocation="zofar_questionnaire_0.2.xsd" />
+
+	<xs:complexType name="pageContainerType">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element name="container" type="research:containerType"
+				maxOccurs="unbounded" minOccurs="0" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="referenceType" abstract="true">
+		<xs:annotation>
+			<xs:documentation> Defines a type in the questionnaire that has a
+				unique UID.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="reference" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:complexType name="containerType">
+		<xs:annotation>
+			<xs:documentation> The possible elements of a section body are: *
+				section * open questions * single choice questions * multiple
+				choices * all types of matrices * and text paragraphs
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="research:referenceType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element ref="zofar:questionOpen" />
+					<xs:element ref="zofar:questionSingleChoice" />
+					<xs:element ref="zofar:multipleChoice" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,1606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.his.de/zofar/xml/questionnaire"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:zofar="http://www.his.de/zofar/xml/questionnaire"
+	xmlns:nav="http://www.dzhw.eu/zofar/xml/navigation" xmlns:display="http://www.dzhw.eu/zofar/xml/display"
+	xmlns:research="http://www.dzhw.eu/zofar/xml/researchdatacenter"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://www.dzhw.eu/zofar/xml/researchdatacenter"
+		schemaLocation="researchdatacenter_0.1.xsd" />
+
+	<xs:import namespace="http://www.dzhw.eu/zofar/xml/display"
+		schemaLocation="display_0.1.xsd" />
+
+	<xs:import namespace="http://www.dzhw.eu/zofar/xml/navigation"
+		schemaLocation="navigation_0.1.xsd" />
+
+	<xs:element name="questionnaire" type="zofar:questionnaireType">
+		<xs:unique name="unique-page-uid">
+			<xs:selector xpath="zofar:page" />
+			<xs:field xpath="@uid" />
+		</xs:unique>
+	</xs:element>
+
+	<xs:element name="questionOpen" type="zofar:questionOpenType" />
+	<xs:element name="questionSingleChoice" type="zofar:questionSingleChoiceType" />
+	<xs:element name="multipleChoice" type="zofar:multipleChoiceType" />
+
+	<xs:complexType name="questionnaireType">
+		<xs:annotation>
+			<xs:documentation> Represents a ZOFAR web questionnaire with all its
+				elements: * pages * transitions * variables. ZOFAR web questionnaire
+				has a name, a description and a language attribute. All
+				attributes
+				are mandatory.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="name" type="xs:string">
+				<xs:annotation>
+					<xs:documentation> The name of the questionnaire. If questionnaire
+						is used in a survey the survey name is identical with the
+						questionnaire name.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="description" type="xs:string" />
+			<xs:element name="preloads" type="zofar:preloadsType"
+				minOccurs="0">
+				<xs:unique name="unique-participant">
+					<xs:selector xpath="zofar:preload" />
+					<xs:field xpath="@name" />
+				</xs:unique>
+			</xs:element>
+			<xs:element name="variables" type="zofar:variablesType"
+				minOccurs="0">
+				<xs:annotation>
+					<xs:documentation> All variables used in the questionnaire are
+						declared within this block.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:unique name="unique-variablename">
+					<xs:selector xpath="zofar:variable" />
+					<xs:field xpath="@name" />
+				</xs:unique>
+			</xs:element>
+			<xs:element name="page" type="zofar:pageType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation> Defines the pages of the questionnaire. The UID
+						AKA name of pages must be unique within the questionnaire.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="language" use="required">
+			<xs:annotation>
+				<xs:documentation> Defines the language in which the questionnaire
+					has been made. Currently either: * de * en * fr * it * ru
+				</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="de" />
+					<xs:enumeration value="en" />
+					<xs:enumeration value="fr" />
+					<xs:enumeration value="it" />
+					<xs:enumeration value="ru" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="identificationalType">
+		<xs:annotation>
+			<xs:documentation> Defines a type in the questionnaire that has a
+				unique UID.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="uid" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:attributeGroup name="variableReference">
+		<xs:attribute name="variable" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="resolutionVariableReference">
+		<xs:attribute name="xvar">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="yvar">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="visibleAttribute">
+		<xs:attribute name="visible">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="calendarAttributes">
+		<xs:attribute name="visible" use="optional" default="true">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="labelAll" use="optional" default="false">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="showIndicator" use="optional"
+			default="false">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="showLegendIcon" use="optional"
+			default="false">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="rows" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:pattern value="([^,]+,)*([^,]+)" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="columns" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:pattern value="([^,]+,)*([^,]+)" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="legendLayout" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="pageDirection" />
+					<xs:enumeration value="lineDirection" />
+					<xs:enumeration value="flowDirection" />
+					<xs:enumeration value="2Columns" />
+					<xs:enumeration value="3Columns" />
+					<xs:enumeration value="4Columns" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="legendPosition" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="left" />
+					<xs:enumeration value="top" />
+					<xs:enumeration value="bottom" />
+					<xs:enumeration value="right" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="behaviour" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="move" />
+					<xs:enumeration value="drag" />
+					<xs:enumeration value="click" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="missingAttribute">
+		<xs:attribute name="missing" type="xs:boolean" default="false" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="exclusiveAttribute">
+		<xs:attribute name="exclusive" type="xs:boolean" default="false" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="openFieldsAttribute">
+		<xs:attribute name="type" type="xs:normalizedString"
+			default="text" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="isAlignAttachedAttribute">
+		<xs:attribute name="alignAttached" type="xs:boolean"
+			default="false" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="responseDomainCommonAttributes">
+		<xs:attribute name="showValues" type="xs:boolean"
+			default="false" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="itemClassesAttribute">
+		<xs:attribute name="itemClasses" type="xs:boolean" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="isMissingSeparatedAttribute">
+		<xs:attribute name="missingSeparated" type="xs:boolean"
+			default="true" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="preloadAttributes">
+		<xs:attribute name="name" use="required" type="xs:normalizedString" />
+		<xs:attribute name="password" use="required" type="xs:normalizedString" />
+	</xs:attributeGroup>
+	<xs:attributeGroup name="preloadItemAttributes">
+		<xs:attribute name="variable" use="required" type="xs:normalizedString" />
+		<xs:attribute name="value" use="required" type="xs:normalizedString" />
+	</xs:attributeGroup>
+	<xs:complexType name="preloadsType">
+		<xs:sequence>
+			<xs:element name="preload" type="zofar:preloadType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="preloadType">
+		<xs:sequence minOccurs="0">
+			<xs:element name="preloadItem" type="zofar:preloadItemType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attributeGroup ref="zofar:preloadAttributes" />
+	</xs:complexType>
+	<xs:complexType name="preloadItemType">
+		<xs:attributeGroup ref="zofar:preloadItemAttributes" />
+	</xs:complexType>
+	<xs:complexType name="variablesType">
+		<xs:annotation>
+			<xs:documentation> Defines all variables in the questionnaire. The
+				variable names must be unique within the questionnaire. TODO:
+				variable definition (names and possible values)
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="variable" type="zofar:variableType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="variableType">
+		<xs:annotation>
+			<xs:documentation> Defines a variable in the questionnaire. A
+				variable must have a unique variable name.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="type" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="string" />
+					<xs:enumeration value="number" />
+					<xs:enumeration value="boolean" />
+					<xs:enumeration value="singleChoiceAnswerOption" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="alternativeText">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="sortableContainerType">
+		<xs:annotation>
+			<xs:documentation> Defines a container that can sort its children.
+				The sortCondition attribute controls when to sort. The sortMode
+				attribute controls how to sort.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:attribute name="sortMode" default="random">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="random" />
+							<xs:enumeration value="randomonce" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="sortCondition">
+					<xs:simpleType>
+						<xs:restriction base="xs:normalizedString">
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="sectionType">
+		<xs:annotation>
+			<xs:documentation> Defines a section in a zofar questionnaire. A
+				section may have either a header and/or body. The section has a
+				visible attribute which controls the visibility of the whole
+				section.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence minOccurs="0">
+					<xs:element name="header" type="zofar:sectionHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-section-header-text-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="body" type="zofar:sectionBodyType"
+						minOccurs="0">
+						<xs:unique name="unique-section-body-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="sectionHeaderType">
+		<xs:annotation>
+			<xs:documentation> A section header consists of texts and in the
+				future maybe images. A section header may have exactly one title. If
+				it has a title, the title is always the first element. Possible
+				text
+				types are: * introduction * instruction * and generic text
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="title" type="zofar:textTitleType"
+				minOccurs="0" />
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="introduction" type="zofar:textIntroductionType"
+					minOccurs="0" />
+				<xs:element name="instruction" type="zofar:textInstructionType"
+					minOccurs="0" />
+				<xs:element name="text" type="zofar:textParagraphType"
+					minOccurs="0" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="sectionBodyType">
+		<xs:annotation>
+			<xs:documentation> The possible elements of a section body are: *
+				section * open questions * single choice questions * multiple
+				choices * all types of matrices * and text paragraphs
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="zofar:sortableContainerType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element name="section" type="zofar:sectionType" />
+					<xs:element name="questionOpen" type="zofar:questionOpenType" />
+					<xs:element name="questionPretest" type="zofar:questionPretestType" />
+					<xs:element name="questionSingleChoice" type="zofar:questionSingleChoiceType" />
+					<xs:element name="multipleChoice" type="zofar:multipleChoiceType" />
+					<xs:element name="matrixQuestionOpen" type="zofar:matrixQuestionOpenType" />
+					<xs:element name="matrixQuestionSingleChoice" type="zofar:matrixQuestionSingleChoiceType" />
+					<xs:element name="matrixMultipleChoice" type="zofar:matrixMultipleChoiceType" />
+					<xs:element name="matrixDouble" type="zofar:matrixDoubleType" />
+					<xs:element name="comparison" type="zofar:comparisonType" />
+					<xs:element name="matrixQuestionMixed" type="zofar:matrixQuestionMixedType" />
+					<xs:element name="display" type="zofar:displayType" />
+					<xs:element name="calendar" type="zofar:calendarType" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Display Container -->
+	<xs:complexType name="displayType">
+		<xs:annotation>
+			<xs:documentation> Defines a display container in a zofar
+				questionnaire. It contains elements to display given informations.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="zofar:sortableContainerType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element ref="display:table" />
+					<xs:element ref="display:text" />
+					<xs:element ref="display:reload" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="transitionsType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="transition" type="zofar:transitionType"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="transitionType">
+		<xs:attribute name="condition">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="target" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="pageType">
+		<xs:annotation>
+			<xs:documentation> Defines a web page containing questions, text,
+				trigger and so on.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="zofar:sectionType">
+				<xs:choice>
+					<xs:element name="breadcrumb" type="nav:jumperContainerType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="side" type="nav:jumperContainerType"
+						minOccurs="0" maxOccurs="1" />
+
+					<xs:element name="researchdata" type="research:pageContainerType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="triggers" type="zofar:triggersType"
+						minOccurs="0" maxOccurs="1" />
+					<xs:element name="transitions" type="zofar:transitionsType"
+						minOccurs="0" maxOccurs="1" />
+				</xs:choice>
+				<xs:attribute name="customLayout" type="xs:boolean"
+					default="false" />
+				<xs:attribute name="additionalLanguages" type="xs:normalizedString" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="triggersType">
+		<xs:annotation>
+			<xs:documentation>defining trigger for one page.</xs:documentation>
+		</xs:annotation>
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="variable" type="zofar:triggerVariableType"
+				minOccurs="0" />
+			<xs:element name="session" type="zofar:triggerSessionType"
+				minOccurs="0" />
+			<xs:element name="consistency" type="zofar:triggerConsistencyType"
+				minOccurs="0" />
+			<xs:element name="action" type="zofar:triggerActionType"
+				minOccurs="0" />
+			<xs:element name="jsCheck" type="zofar:triggerJSCheckType"
+				minOccurs="0" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="triggerScriptItemType">
+		<xs:attribute name="value" type="xs:string" use="required" />
+	</xs:complexType>
+	<xs:complexType name="triggerType">
+		<xs:annotation>
+			<xs:documentation>defines a trigger in a zofar page.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="scriptItem" type="zofar:triggerScriptItemType"
+				minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+		<xs:attribute name="condition">
+			<xs:simpleType>
+				<xs:restriction base="xs:normalizedString">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="direction" default="unknown">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="unknown" />
+					<xs:enumeration value="same" />
+					<xs:enumeration value="forward" />
+					<xs:enumeration value="backward" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="onExit" type="xs:boolean" default="false" />
+	</xs:complexType>
+	<xs:complexType name="triggerVariableType">
+		<xs:complexContent>
+			<xs:extension base="zofar:triggerType">
+				<xs:attributeGroup ref="zofar:variableReference" />
+				<xs:attribute name="value" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="triggerJSCheckType">
+		<xs:annotation>
+			<xs:documentation>defines a trigger to check if javascript is
+				enabled.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:attributeGroup ref="zofar:variableReference" />
+		<xs:attributeGroup ref="zofar:resolutionVariableReference" />
+	</xs:complexType>
+	<xs:complexType name="triggerSessionType">
+		<xs:complexContent>
+			<xs:extension base="zofar:triggerType">
+				<xs:attribute name="timeout" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="triggerConsistencyType">
+		<xs:complexContent>
+			<xs:extension base="zofar:triggerType">
+				<xs:attribute name="constraints" type="xs:normalizedString"
+					use="required" />
+				<xs:attribute name="message" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="triggerActionType">
+		<xs:complexContent>
+			<xs:extension base="zofar:triggerType">
+				<xs:attribute name="command" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="textType" mixed="true">
+		<xs:annotation>
+			<xs:documentation> Generic text type.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element name="jumper" type="nav:jumperType" />
+				</xs:choice>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+				<xs:attribute name="block" type="xs:boolean" default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="textQuestionType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="zofar:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="textIntroductionType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="zofar:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="textInstructionType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="zofar:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="textResponseOptionType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="zofar:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="textParagraphType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="zofar:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="textTitleType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="zofar:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionHeaderType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="question" type="zofar:textQuestionType" />
+			<xs:element name="instruction" type="zofar:textInstructionType"
+				minOccurs="0" />
+			<xs:element name="introduction" type="zofar:textIntroductionType"
+				minOccurs="0" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="questionOpenPrefixType">
+		<xs:sequence>
+			<xs:element name="label" type="zofar:textResponseOptionType"
+				maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+		<xs:attributeGroup ref="zofar:visibleAttribute" />
+	</xs:complexType>
+	<xs:complexType name="questionOpenPostfixType">
+		<xs:complexContent>
+			<xs:extension base="zofar:questionOpenPrefixType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="abstractQuestionType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="header" type="zofar:questionHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-question-header-text-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="unitHeaderType">
+		<xs:sequence>
+			<xs:element name="title" type="zofar:textType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="abstractUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:sortableContainerType">
+				<xs:sequence>
+					<xs:element name="header" type="zofar:unitHeaderType"
+						minOccurs="0" />
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="abstractLabeledAnswerOptionType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="label" type="zofar:textResponseOptionType"
+						maxOccurs="unbounded" minOccurs="0" />
+					<xs:element name="questionOpen" type="zofar:attachedQuestionOpenType"
+						maxOccurs="unbounded" minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute name="label" type="xs:normalizedString" />
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+				<xs:attributeGroup ref="zofar:missingAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionPretestType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractQuestionType">
+				<xs:sequence>
+					<xs:element name="prefix" type="zofar:questionOpenPrefixType"
+						minOccurs="0">
+						<xs:unique name="unique-pretest-prefix-label-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="postfix" type="zofar:questionOpenPostfixType"
+						minOccurs="0">
+						<xs:unique name="unique-pretest-postfix-label-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:variableReference" />
+				<xs:attributeGroup ref="zofar:openFieldsAttribute" />
+				<xs:attribute name="size" type="xs:positiveInteger" />
+				<xs:attribute name="smallOption" type="xs:boolean"
+					default="true" />
+				<xs:attribute name="maxLength" type="xs:positiveInteger" />
+				<xs:attribute name="columns" type="xs:positiveInteger" />
+				<xs:attribute name="rows" type="xs:positiveInteger" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString" />
+				<xs:attribute type="xs:double" name="minValue" />
+				<xs:attribute type="xs:double" name="maxValue" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionOpenType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractQuestionType">
+				<xs:sequence>
+					<xs:element name="prefix" type="zofar:questionOpenPrefixType"
+						minOccurs="0">
+						<xs:unique name="unique-open-prefix-label-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="postfix" type="zofar:questionOpenPostfixType"
+						minOccurs="0">
+						<xs:unique name="unique-open-postfix-label-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:variableReference" />
+				<xs:attributeGroup ref="zofar:openFieldsAttribute" />
+				<xs:attribute name="size" type="xs:positiveInteger" />
+				<xs:attribute name="smallOption" type="xs:boolean"
+					default="true" />
+				<xs:attribute name="maxLength" type="xs:positiveInteger" />
+				<xs:attribute name="columns" type="xs:positiveInteger" />
+				<xs:attribute name="rows" type="xs:positiveInteger" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString" />
+				<xs:attribute type="xs:double" name="minValue" />
+				<xs:attribute type="xs:double" name="maxValue" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="attachedQuestionOpenType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="prefix" type="zofar:questionOpenPrefixType"
+						minOccurs="0" />
+					<xs:element name="postfix" type="zofar:questionOpenPostfixType"
+						minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute name="maxLength" type="xs:positiveInteger" />
+				<xs:attributeGroup ref="zofar:variableReference" />
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+				<xs:attributeGroup ref="zofar:openFieldsAttribute" />
+				<xs:attribute name="size" type="xs:positiveInteger" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString" />
+				<xs:attribute type="xs:double" name="minValue" />
+				<xs:attribute type="xs:double" name="maxValue" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionSingleChoiceType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractQuestionType">
+				<xs:sequence>
+					<xs:element name="responseDomain"
+						type="zofar:questionSingleChoiceResponseDomainType">
+						<xs:unique name="unique-singlechoice-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionSingleChoiceUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:questionSingleChoiceUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-singlechoice-nestedunit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="answerOption"
+						type="zofar:questionSingleChoiceAnswerOptionType" minOccurs="0">
+						<xs:unique name="singleChoice-unit-itemlabel-attribute-xor-element">
+							<xs:selector xpath="." />
+							<xs:field xpath="@label|zofar:textResponseOptionType" />
+						</xs:unique>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionSingleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:sortableContainerType">
+				<xs:choice maxOccurs="unbounded" minOccurs="2">
+					<xs:element name="answerOption"
+						type="zofar:questionSingleChoiceAnswerOptionType" minOccurs="0">
+						<xs:unique name="singleChoice-label-attribute-xor-element">
+							<xs:selector xpath="." />
+							<xs:field xpath="@label|zofar:textResponseOptionType" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="unit" type="zofar:questionSingleChoiceUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-singlechoice-unit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:choice>
+				<xs:attribute name="type" default="radio">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="radio" />
+							<xs:enumeration value="boolean" />
+							<xs:enumeration value="dropdown" />
+							<xs:enumeration value="likert" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="direction" default="vertical">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="horizontal" />
+							<xs:enumeration value="vertical" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="labelPosition" default="right">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="right" />
+							<xs:enumeration value="left" />
+							<xs:enumeration value="top" />
+							<xs:enumeration value="bottom" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attributeGroup ref="zofar:variableReference" />
+				<xs:attributeGroup ref="zofar:responseDomainCommonAttributes" />
+				<xs:attributeGroup ref="zofar:isMissingSeparatedAttribute" />
+				<xs:attributeGroup ref="zofar:isAlignAttachedAttribute" />
+				<xs:attribute name="showMidScaleHeader" type="xs:boolean" />
+				<xs:attributeGroup ref="zofar:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionSingleChoiceAnswerOptionType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractLabeledAnswerOptionType">
+				<xs:attribute name="value" type="xs:token" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractQuestionType">
+				<xs:sequence>
+					<xs:element name="responseDomain"
+						type="zofar:multipleChoiceResponseDomainType">
+						<xs:unique name="unique-multiplechoice-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceItemType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractLabeledAnswerOptionType">
+				<xs:attributeGroup ref="zofar:exclusiveAttribute" />
+				<xs:attributeGroup ref="zofar:variableReference" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:multipleChoiceUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-multiplechoice-nestedunit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="answerOption" type="zofar:multipleChoiceItemType"
+						minOccurs="0">
+						<xs:unique name="multipleChoice-unit-label-attribute-xor-element">
+							<xs:selector xpath="." />
+							<xs:field xpath="@label|zofar:textResponseOptionType" />
+						</xs:unique>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:sortableContainerType">
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="answerOption" type="zofar:multipleChoiceItemType"
+						minOccurs="0">
+						<xs:unique name="multipleChoice-label-attribute-xor-element">
+							<xs:selector xpath="." />
+							<xs:field xpath="@label|zofar:textResponseOptionType" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="unit" type="zofar:multipleChoiceUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-multiplechoice-unit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:choice>
+				<xs:attributeGroup ref="zofar:isMissingSeparatedAttribute" />
+				<xs:attributeGroup ref="zofar:itemClassesAttribute" />
+				<xs:attribute name="direction" default="vertical">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="horizontal" />
+							<xs:enumeration value="vertical" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixHeaderType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="question" type="zofar:textQuestionType"
+				minOccurs="0" />
+			<xs:element name="instruction" type="zofar:textInstructionType"
+				minOccurs="0" />
+			<xs:element name="introduction" type="zofar:textIntroductionType"
+				minOccurs="0" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="matrixScaleHeaderType">
+		<xs:sequence>
+			<xs:element name="title" type="zofar:textType" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="matrixResponseHeaderType">
+		<xs:sequence>
+			<xs:element name="title" type="zofar:textType" maxOccurs="unbounded">
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="matrixMissingHeaderType">
+		<xs:sequence>
+			<xs:element name="title" type="zofar:textType" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="abstractMatrixType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="header" type="zofar:matrixHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-header-text-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="abstractMatrixResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:sortableContainerType">
+				<xs:sequence>
+					<xs:element name="scaleHeader" type="zofar:matrixScaleHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-tableheader-scaleheader-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="header" type="zofar:matrixResponseHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-tableheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="missingHeader" type="zofar:matrixResponseHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-missingheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="noResponseOptions" type="xs:positiveInteger"
+					use="required" />
+				<xs:attribute name="questionColumnEnabled" type="xs:boolean"
+					default="true" />
+				<xs:attributeGroup ref="zofar:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionOpenType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixType">
+				<xs:sequence>
+					<xs:element name="responseDomain"
+						type="zofar:matrixQuestionOpenResponseDomainType">
+						<xs:unique name="unique-matrix-open-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionOpenResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:matrixQuestionOpenUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-open-unit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="item" type="zofar:matrixQuestionOpenItemType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionOpenUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:matrixQuestionOpenUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-open-nestedunit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="item" type="zofar:matrixQuestionOpenItemType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionOpenItemType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="header" type="zofar:questionHeaderType" />
+					<xs:element name="question" type="zofar:questionOpenType"
+						maxOccurs="unbounded" />
+					<xs:choice>
+						<xs:element name="attachedOpen" type="zofar:attachedQuestionOpenType"
+							minOccurs="0" maxOccurs="1" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+				<xs:attributeGroup ref="zofar:openFieldsAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionSingleChoiceType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixType">
+				<xs:sequence>
+					<xs:element name="responseDomain"
+						type="zofar:matrixQuestionSingleChoiceResponseDomainType">
+						<xs:unique name="unique-matrix-singlechoice-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionSingleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="item"
+						type="zofar:matrixQuestionSingleChoiceItemType" minOccurs="0" />
+					<xs:element name="unit"
+						type="zofar:matrixQuestionSingleChoiceUnitType" minOccurs="0">
+						<xs:unique name="unique-matrix-singlechoice-unit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="isDifferential" type="xs:boolean"
+					default="false" />
+				<xs:attribute name="isShowValues" type="xs:boolean"
+					default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionSingleChoiceUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="item"
+						type="zofar:matrixQuestionSingleChoiceItemType" minOccurs="0" />
+					<xs:element name="unit"
+						type="zofar:matrixQuestionSingleChoiceUnitType" minOccurs="0">
+						<xs:unique name="unique-matrix-singlechoice-nestedunit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionDoubleUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="item" type="zofar:matrixDoubleItemType"
+						minOccurs="0" />
+					<xs:element name="unit" type="zofar:matrixQuestionDoubleUnitType"
+						minOccurs="0">
+						<xs:unique
+							name="unique-matrix-doublesinglechoice-responsedomain-unit-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionSingleChoiceItemType">
+		<xs:complexContent>
+			<xs:extension base="zofar:questionSingleChoiceType">
+				<xs:choice>
+					<xs:element name="attachedOpen" type="zofar:attachedQuestionOpenType"
+						minOccurs="0" maxOccurs="1" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixMultipleChoiceType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixType">
+				<xs:sequence>
+					<xs:element name="responseDomain"
+						type="zofar:matrixMultipleChoiceResponseDomainType">
+						<xs:unique
+							name="unique-matrix-multiplechoice-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixMultipleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:matrixMultipleChoiceUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-multiplechoice-unit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="item" type="zofar:matrixMultipleChoiceItemType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixMultipleChoiceUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:matrixMultipleChoiceUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-multiplechoice-nestedunit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="item" type="zofar:matrixMultipleChoiceItemType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixMultipleChoiceItemType">
+		<xs:complexContent>
+			<xs:extension base="zofar:multipleChoiceType">
+				<xs:choice>
+					<xs:element name="attachedOpen" type="zofar:attachedQuestionOpenType"
+						minOccurs="0" maxOccurs="1" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixType">
+				<xs:sequence>
+					<xs:element name="responseDomain" type="zofar:comparisonResponseDomainType">
+						<xs:unique name="unique-matrix-comparison-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:choice maxOccurs="unbounded">
+					<xs:element name="title" type="zofar:textType"
+						minOccurs="0" />
+					<xs:element name="unit" type="zofar:comparisonUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-comparison-rdc-unit-uid1">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonMatrixResponseHeaderType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="title" type="zofar:textType" minOccurs="0" />
+			<xs:element name="unit" type="zofar:comparisonUnitType"
+				minOccurs="0">
+				<xs:unique name="unique-comparison-rdc-unit-uid2">
+					<xs:selector xpath="./*" />
+					<xs:field xpath="@uid" />
+				</xs:unique>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="abstractComparisonMatrixResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:sortableContainerType">
+				<xs:sequence>
+					<xs:element name="scaleHeader" type="zofar:matrixScaleHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-comparison-matrix-tableheader-scaleheader-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="header"
+						type="zofar:comparisonMatrixResponseHeaderType" minOccurs="0">
+						<xs:unique name="unique-comparison-matrix-tableheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="missingHeader"
+						type="zofar:comparisonMatrixResponseHeaderType" minOccurs="0">
+						<xs:unique name="unique-comparison-matrix-missingheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="noResponseOptions" type="xs:positiveInteger"
+					use="required" />
+				<xs:attribute name="questionColumnEnabled" type="xs:boolean"
+					default="true" />
+				<xs:attributeGroup ref="zofar:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractComparisonMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="item" type="zofar:comparisonItemType"
+						minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute name="isShowValues" type="xs:boolean"
+					default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonItemType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element name="questionSingleChoice" type="zofar:questionSingleChoiceType" />
+					<xs:element name="multipleChoice" type="zofar:multipleChoiceType" />
+				</xs:choice>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixDoubleType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixType">
+				<xs:sequence>
+					<xs:element name="responseDomain" type="zofar:matrixDoubleResponseDomainType">
+						<xs:unique
+							name="unique-matrix-doublesinglechoice-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixDoubleResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="leftScaleHeader" type="zofar:matrixScaleHeaderType" />
+					<xs:element name="rightScaleHeader" type="zofar:matrixScaleHeaderType" />
+					<xs:element name="leftHeader" type="zofar:matrixResponseHeaderType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-doublesinglechoice-leftheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="rightHeader" type="zofar:matrixResponseHeaderType"
+						minOccurs="0">
+						<xs:unique
+							name="unique-matrix-doublesinglechoice-rightheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="leftMissingHeader" type="zofar:matrixResponseHeaderType"
+						minOccurs="0">
+						<xs:unique
+							name="unique-matrix-doublesinglechoice-leftmissingheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="rightMissingHeader" type="zofar:matrixResponseHeaderType"
+						minOccurs="0">
+						<xs:unique
+							name="unique-matrix-doublesinglechoice-rightmissingheader-title-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="item" type="zofar:matrixDoubleItemType"
+							maxOccurs="unbounded" />
+						<xs:element name="unit" type="zofar:matrixQuestionDoubleUnitType"
+							maxOccurs="unbounded" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="noResponseOptions" type="xs:positiveInteger"
+					use="required">
+					<xs:annotation>
+						<xs:documentation>Defines the number of response options per side
+							of the double matrix. Each side has the same amount of response
+							options
+						</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="isDifferential" type="xs:boolean"
+					default="false" />
+				<xs:attribute name="isShowValues" type="xs:boolean"
+					default="false" />
+				<xs:attributeGroup ref="zofar:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixDoubleItemType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="question" type="zofar:questionHeaderType" />
+					<xs:element name="left"
+						type="zofar:questionSingleChoiceResponseDomainType" />
+					<xs:element name="right"
+						type="zofar:questionSingleChoiceResponseDomainType" />
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:visibleAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionMixedType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixType">
+				<xs:sequence>
+					<xs:element name="responseDomain"
+						type="zofar:matrixQuestionMixedResponseDomainType">
+						<xs:unique name="unique-matrix-mixed-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionMixedResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:matrixQuestionMixedUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-mixed-unit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="item" type="zofar:matrixQuestionMixedItemType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionMixedUnitType">
+		<xs:complexContent>
+			<xs:extension base="zofar:abstractUnitType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="unit" type="zofar:matrixQuestionMixedUnitType"
+						minOccurs="0">
+						<xs:unique name="unique-matrix-mixed-nestedunit-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+					<xs:element name="item" type="zofar:matrixQuestionMixedItemType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="matrixQuestionMixedItemType">
+		<xs:complexContent>
+			<xs:extension base="zofar:sectionType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element name="questionOpen" type="zofar:questionOpenType" />
+					<xs:element name="questionSingleChoice" type="zofar:questionSingleChoiceType" />
+					<xs:element name="multipleChoice" type="zofar:multipleChoiceType" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="calendarType">
+		<xs:complexContent>
+			<xs:extension base="zofar:identificationalType">
+				<xs:sequence>
+					<xs:element name="configuration" type="zofar:calendarConfigurationType"
+						maxOccurs="1" minOccurs="1" />
+					<xs:choice maxOccurs="unbounded" minOccurs="1">
+						<xs:element name="item" type="zofar:calendarItemType">
+						</xs:element>
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="zofar:calendarAttributes" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="calendarConfigurationType">
+		<xs:annotation>
+			<xs:documentation>
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SlotConfiguration" type="zofar:calendarConfigurationItemType"
+				maxOccurs="20" minOccurs="1">
+				<xs:unique name="calendar-configuration-slot">
+					<xs:selector xpath="./*" />
+					<xs:field xpath="@Slot" />
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="calendarConfigurationItemType">
+		<xs:attribute name="slot" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="Slot1" />
+					<xs:enumeration value="Slot2" />
+					<xs:enumeration value="Slot3" />
+					<xs:enumeration value="Slot4" />
+					<xs:enumeration value="Slot5" />
+					<xs:enumeration value="Slot6" />
+					<xs:enumeration value="Slot7" />
+					<xs:enumeration value="Slot8" />
+					<xs:enumeration value="Slot9" />
+					<xs:enumeration value="Slot10" />
+					<xs:enumeration value="Slot11" />
+					<xs:enumeration value="Slot12" />
+					<xs:enumeration value="Slot13" />
+					<xs:enumeration value="Slot14" />
+					<xs:enumeration value="Slot15" />
+					<xs:enumeration value="Slot16" />
+					<xs:enumeration value="Slot17" />
+					<xs:enumeration value="Slot18" />
+					<xs:enumeration value="Slot19" />
+					<xs:enumeration value="Slot20" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="label" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="color" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="pattern" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:minLength value="1" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="calendarItemType">
+		<xs:sequence>
+			<xs:element name="SlotItem" type="zofar:calendarSlotType"
+				maxOccurs="20" minOccurs="1">
+				<xs:unique name="calendar-item-slot">
+					<xs:selector xpath="./*" />
+					<xs:field xpath="@Slot" />
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="zofar:visibleAttribute" />
+	</xs:complexType>
+	<xs:complexType name="calendarSlotType">
+		<xs:attribute name="slot" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="Slot1" />
+					<xs:enumeration value="Slot2" />
+					<xs:enumeration value="Slot3" />
+					<xs:enumeration value="Slot4" />
+					<xs:enumeration value="Slot5" />
+					<xs:enumeration value="Slot6" />
+					<xs:enumeration value="Slot7" />
+					<xs:enumeration value="Slot8" />
+					<xs:enumeration value="Slot9" />
+					<xs:enumeration value="Slot10" />
+					<xs:enumeration value="Slot11" />
+					<xs:enumeration value="Slot12" />
+					<xs:enumeration value="Slot13" />
+					<xs:enumeration value="Slot14" />
+					<xs:enumeration value="Slot15" />
+					<xs:enumeration value="Slot16" />
+					<xs:enumeration value="Slot17" />
+					<xs:enumeration value="Slot18" />
+					<xs:enumeration value="Slot19" />
+					<xs:enumeration value="Slot20" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attributeGroup ref="zofar:variableReference" />
+	</xs:complexType>
+</xs:schema>
+<!-- test -->
