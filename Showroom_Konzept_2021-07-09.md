@@ -1,19 +1,46 @@
-**Showroom**
-
 Willkommen 
 ===========
 
 Hintergrundinformationen:
 -------------------------
 
--   Allgemeines zu Zofar (siehe z.B. Website: Lizenz, Serverhosting, Entwicklung
-    am DZHW)
+Zwischen 2009 und 2015 wurde im Servicebereich das auf die spezifischen Bedürfnisse sozialwissenschaftlicher Forschung zugeschnittene Onlinebefragungssystem ZOFAR entwickelt. Es handelt sich um eine Java-Enterprise-Anwendung, die wir unter einer Open Source Lizenz (AGPL V3+) betreiben. Die Funktionsweise des Systems berücksichtigt, dass die Befragten über unterschiedliche Technologien verfügen und stellt (bspw. durch die weitgehende Vermeidung von JavaScript) sicher, dass alle Personen die Onlinebefragung in ähnlicher Weise erleben und valide Daten erhoben werden können. Es unterstützt etliche Standardfragetypen (sowohl offene Fragen als auch Einfach- und Mehrfachauswahlen, Auswahlmatrizen, semantische Differenziale sowie Hybride daraus). Zusätzlich ist das Befragungssystem in der Lage neue Fragetypen abzubilden, wie die benutzer*/innenfreundliche Erfassung langjähriger Biographien auf Monatsebene oder die Erhebung komplexer Daten mittels mehrerer verbundener Fragen auf einer Formularseite. Es bietet zahlreiche Möglichkeiten der inhaltlichen und visuellen Gestaltung von Onlinebefragungen (verschiedene Login-Verfahren, optionale Anzeige der Befragungslänge, Integration von Corporate Designs, Einbindung von Fremdsprachen, Umsetzung von komplexen Filterführungen). 
+									
+Die Serverarchitektur hinter Zofar basiert auf einem  Serververbund, der durch seine Redundanz Ausfall- und Funktionssicherheit bietet. Zum Cluster gehören Apache HTTP-Server, Apache Tomcat-Applikationsserver und PostrgreSQL-Datenbankserver (inkl. Continuous Archiving und Hot-Standby für Point-In-Time-Recovery und zusätzliche Datensicherheit). Die Konfiguration der Apache HTTP-Server ermöglicht die Durchführung paralleler Befragungen und eine Lastverteilung auf mehrere Tomcat-Applikationsserver im Falle von größeren Befragungen.
+					
+					
+					
+					
+
+## Projektmitarbeiter und Erreichbarkeit
+
+					
+befragung@dzhw.eu
+					
+Andrea Schulze
+0511 450670-438
+					
+Viktor Dick
+0511 450670-457
+					
+Christian Meisner
+0511 450670-425
+					
+Christian Friedrich
+0511 450670-410
+
+Silina Schirmer
+0511 450670-145
+					
+
 
 Zugang zur Befragung
 ====================
 
 Einladung zur Befragung
 -----------------------
+
+https://github.com/dzhw/zofar/issues/421
 
 Login-Methoden
 --------------
@@ -26,7 +53,7 @@ Login-Methoden
     bereits ausgefüllte Fragebögen lassen sich später nicht mehr betrachten oder
     ändern)
 
-    -   \-\> [[LINK](#tokenerstellung)] siehe auch: Abläufe:Tokenerstellung
+    -   \-\> [[LINK](#tokenerstellung)] siehe auch: Abläufe: Tokenerstellung
 
 Aufbau des Fragebogens
 ======================
@@ -40,7 +67,7 @@ Informationen zur Befragung
 
 -   Weitere Infos:
 
-    -   Befragung ist oder ist nicht für mobile Geräte optimiert,
+    -   Befragung ist oder ist nicht für mobile Geräte optimiert, (Hinweis zu Offerpage)
 
     -   Unterbrechung möglich oder nicht?
 
@@ -617,8 +644,11 @@ Zofar bietet die Möglichkeit die Anordnung verschiedener Items innerhalb einer
 Item-Matrix zu randomisieren. Jedem Befragten werden somit die einzelnen Items
 in unterschiedlicher Reihenfolge dargestellt.
 
-Die Randomisierung kann itemweise erfolgen, bei dem jedes Item zufällig rotiert
-wird oder blockweise, wobei Gruppen von Items als Block rotiert werden.
+Es wird zwischen zwei Sortiermodi unterschieden: 
+ - einmaliges Randomisieren: Beim **ersten** Betreten einer Seite werden die Items rotiert und behalten danach stets diese Reihenfolge
+ - Randomisieren: Bei **jedem** Betreten einer Seite werden die Items rotiert. Sollte diese Seite erneut aufgerufen werden, sind die Items in einer anderen Reihenfolge dargestellt als vorher
+
+Die Randomisierung kann itemweise erfolgen, bei dem jedes Item zufällig rotiert wird oder blockweise, wobei Gruppen von Items als Block rotiert werden.
 
 Antwortvalidierung
 ------------------
@@ -684,7 +714,9 @@ Fortschrittsbalken zeigen den Befragten an wie viel Prozent der Befragung sie
 bisher abgeschlossen haben und geben Aufschluss über die restliche Dauer der
 Befragung. Die Prozentangaben richten sich an der Gesamtheit der
 Fragebogenseiten. Bei Befragungen mit einer komplexen Filterführung kann es zu
-großen Sprüngen in der Fortschrittsanzeige kommen. …
+großen Sprüngen in der Fortschrittsanzeige kommen.
+
+Für sogenannte "Fortschrittsbalken" in Onlinebefragungen (an denen direkt die noch zu absolvierende Befragungszeit ersichtlich ist) gibt es aus methodischer Sicht verschiedene Pro- und Contra-Argumente. Gerade bei komplexen Befragungen, die viele individuelle Filterungen und somit weniger einen "linearen Befragungsverlauf" beinhalten, lässt sich der tatsächliche Befragungsfortschritt für einzelne Befragte nicht immer ganz genau bestimmen, weil er auch von Angaben abhängt, die noch im weiteren Verlauf getroffen werden (z. B. ob Kinder vorhanden sind oder ein Auslandssemester absolviert wurde).
 
 -   ToDo: Hinweise aus Literatur zur Wirkung von Fortschrittsbalken auf
     Befragungsabbruch (Matzat/ Snijders/van der Horst 2009: Effects of Different
@@ -701,16 +733,43 @@ beantworten.
 Barrierefreiheit
 ================
 
--   ToDo: allgemeiner Text zu Barrierefreiheit (im Sinne von Sehbehinderung) –
-    aktueller Stand (Kontraste, Navigation über Tastatur)
+In § 11 „Barrierefreie Informationstechnik“ des Deutschen Behindertengleichstellungsgesetzes (BGG) ist festgelegt, dass Web-Angebote barrierefrei zu gestalten sind. 
+Eine Website/Befragung gilt dann als barrierefrei, wenn Sie von jedermann ohne Einschränkungen genutzt werden kann. Es sollte allen Personen der gleiche Zugang ermöglicht werden. 
 
--   ToDo: Anforderungen an Projekte (PDF muss barrierefrei sein, Alternativtexte
-    für Bilder mitliefern…)
 
--   ToDo: barrierefreie PDFs per PAC checken
-    (<https://www.access-for-all.ch/ch/pdf-werkstatt/pdf-accessibility-checker-pac.html>),
-    dem Projekt sollte eine Liste von Kriterien mitgegeben werden, die erfüllt
-    sein müssen
+## Generelle Anforderungen an barrierefreie Web-Angebote sind: 
+
+  •	Skalierbarkeit: Die Größe von Schriften, Bereiche und Abstände usw. müssen skalierbar sein. Da manche Nutzer die Funktion der Browser zur Vergrößerung von Schriften etc. nutzen, sollte selbst bei einer prozentualen Vergrößerung der Inhalt noch gut lesbar und erkennbar sein.
+•	Responsivität: Web-Angebot sollte auf allen Endgeräten gut lesbar sein. 
+•	Einhalten einer aussagekräftigen Struktur: Überschriftenlevel h1-h6 korrekt einsetzen. Nur eine Hauptüberschrift (h1), der eine h2 folgt, welcher wiederum entweder eine weitere h2 oder eine h3 folgt.
+•	Navigation: Das Bewegen durch die Website sollte leicht und einfach zu verstehen sein. Für Menschen, die keine Maus bedienen können, sollte die Navigation auch per Tastatur möglich sein.
+•	Kontrastverhältnis: Kontrastreiche Farben einsetzen – v.a. auf ausreichenden Kontrast zwischen Vorder- und Hintergrundfarben (gerade für Texte mit kleiner Schriftgröße wichtig) achten. Der Kontrast von normalgroßem Text sollte mindestens 4,5:1 betragen. Ein Kontrast-Check ist auf folgender Website möglich https://webaim.org/resources/contrastchecker/
+•	Hochdeutsch: Wird eher von Vorleseprogrammen erkannt als Jugendsprache, Anglizismen, Abkürzungen oder ähnliches.
+•	Einfache Sprache: Einfachen Satzbau verwenden und auf Fremdwörter weitgehend verzichten. Es existiert kein allgemeiner Standard zu einacher Sprache. Durch die Beachtung einiger Regeln wird die Sprache jedoch deutlich vereinfacht. https://multisprech.org/einfache-sprache/einfach-schreiben/languagetool-leichte-sprache/
+    Eine Prüfung auf diese Regeln ermöglicht diese Website: https://multisprech.org/einfache-sprache/einfach-schreiben/languagetool-leichte-sprache/
+    Über die Funktion der Mehrsprachigkeit in zofar-Befragungen kann auch eine zusätzliche "einfache Sprache" eingebaut werden. 
+•	Akronyme und Abkürzungen: Diese mit vorgesehenem HTML-Element abbr auszeichnen.
+•	Aussagekräftige Metadaten: Title-Tags und Meta-Description befüllen.
+•   Alternativtexte (Alt-Texte): Alt-Texte beschreiben ein digitales Bild, sodass ein Bildschirmleseprogramm oder andere Hilfstechnologien das Bild interpretieren können und behinderte Menschen es verstehen können. (Bsp.: Ein schwarzer Hund rennt von links über eine große Wiese). Weitere Infos: https://www.techsmith.de/blog/alternativtext/
+
+
+## Stand der Barrierefreiheit bei zofar-Befragungen: 
+Die Seiten der Befragung sind relativ einfache Formularoberflächen mit geringen Java-Script-Anteilen. Diese sollten für Screen-Reader relativ gut wiedergebbar sein. Die Schrift ist größenverstellbar. I.A. ist es möglich sich per Tastatur durch die Befragung zu bewegen. Die Kontraste erfüllen nur teilweise die Norm. Es sind keine bewegten Bilder oder Videos enthalten. Es sind nur wenige Logos und Grafiken enthalten. Ein Ersatztext für Logos und Grafiken besteht nicht in allen Fällen. Auf Instrumente, die sich in einer vorangegangenen Barrierefreiheitsprüfung als besonders problematisch erwiesen haben, wurde verzichtet.
+Diese Einschätzung erfolgt vorbehaltlich eine möglichen umfassenderen externen Prüfung, die zu einem anderen Ergebnis kommen könnte. Insgesamt sehen wir die Barrierefreiheit als wichtige Entwicklungsaufgabe für unsere Online-Befragungen, der wir zukünftig ein noch höheres Augenmerk zukommen lassen wollen.
+
+Die Barrierefreiheit einer Befragung hängt jedoch stark von den jeweiligen Inhalten ab. Konkrete Aussagen zum Grad der Barrierefreiheit einer einzelnen Befragung sind daher nur nach Prüfung durch Externe möglich. 
+
+
+
+### Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: 
+
+
+-   Barrierefreie PDFs erstellen  (z.B.: Datenschutzbatt auf der Indexseite) - ToDo: Link zu Vorlage (von Petra)
+-   Prüfung der Barrierefreiheit per PAC checken (<https://www.access-for-all.ch/ch/pdf-werkstatt/pdf-accessibility-checker-pac.html>)  - ToDo: Liste mit wichtigen Indikatoren
+-   Mitliefern von Alternativ-Texten in der Programmiervorlage, falls Bilder oder Logos eingefügt werden sollen
+-   Angabe von Überschriftenlevel (h1-h6) in der Programmiervorlage - ToDo: Link/Beispiel raussuchen
+-   ggf. Übersetzungsdatei für einfache Sprache anlegen
+
 
 Mehrsprachigkeit
 ================
@@ -777,6 +836,7 @@ Programmiervorlage
 
     -   en (oder anderes Kürzel): hier die entsprechende Übersetzung einfügen
 
+    
 Preloads
 --------
 
