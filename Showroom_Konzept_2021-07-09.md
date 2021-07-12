@@ -4,6 +4,220 @@ Willkommen
 Hintergrundinformationen:
 -------------------------
 
+
+## Projektmitarbeiter und Erreichbarkeit
+
+Zugang zur Befragung
+====================
+
+Einladung zur Befragung
+-----------------------
+
+
+Login-Methoden
+--------------
+
+
+Aufbau des Fragebogens
+======================
+
+Informationen zur Befragung
+---------------------------
+
+
+Anleitung zur Beantwortung
+--------------------------
+
+Themenkomplexe und Fragen
+-------------------------
+
+Danksagung und Informationen
+----------------------------
+
+Textsorten
+==========
+
+
+Überschrift
+-----------
+
+
+Einleitung bzw. Überleitung 
+----------------------------
+
+
+Frage
+-----
+
+
+Instruktion
+-----------
+
+
+Zusätzlicher Text
+-----------------
+
+
+Antwortkategorie
+----------------
+
+
+Item
+----
+
+
+Fragetypen und Formatoptionen
+=============================
+
+
+Offene Frage
+------------
+
+
+Einfachauswahl
+--------------
+
+
+Mehrfachauswahl
+---------------
+
+
+Matrix
+------
+
+
+Doppelmatrix
+------------
+
+
+Semantisches Differential
+-------------------------
+
+
+Kalendarium
+-----------
+
+
+Kommentarfeld
+-------------
+
+
+Weitere funktionale Elemente
+============================
+
+Preloads
+--------
+
+
+Zufallsvariablen
+----------------
+
+
+Abgeleitete Variablen
+---------------------
+
+
+Antwortgruppierung
+------------------
+
+
+Fragebogensteuerung
+===================
+
+
+Filterführung
+-------------
+
+
+Bedingte Anzeige von Fragebogenteilen
+-------------------------------------
+
+
+Antwortreferenzierung
+---------------------
+
+
+Randomisierung
+--------------
+
+
+Antwortvalidierung
+------------------
+
+
+Anzeige der Befragungslänge
+===========================
+
+
+Fortschrittsbalken
+------------------
+
+
+Kapitelüberschrift
+------------------
+
+
+Barrierefreiheit
+================
+
+## Generelle Anforderungen an barrierefreie Web-Angebote sind: 
+
+
+## Stand der Barrierefreiheit bei zofar-Befragungen: 
+
+### Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: 
+
+
+
+Mehrsprachigkeit
+================
+
+Layout
+======
+
+Paradaten
+=========
+
+
+Abläufe
+=======
+
+Programmiervorlage
+------------------
+
+
+Übersetzung
+-----------
+
+
+    
+Preloads
+--------
+
+
+Tokenerstellung
+---------------
+
+
+Versand von Einladungen und Remindern
+-------------------------------------
+
+### Allgemein
+
+### Einladungen
+
+### Reminder
+
+Literaturverzeichnis
+====================
+
+
+Willkommen 
+===========
+
+Hintergrundinformationen:
+-------------------------
+
 Zwischen 2009 und 2015 wurde im Servicebereich das auf die spezifischen Bedürfnisse sozialwissenschaftlicher Forschung zugeschnittene Onlinebefragungssystem ZOFAR entwickelt. Es handelt sich um eine Java-Enterprise-Anwendung, die wir unter einer Open Source Lizenz (AGPL V3+) betreiben. Die Funktionsweise des Systems berücksichtigt, dass die Befragten über unterschiedliche Technologien verfügen und stellt (bspw. durch die weitgehende Vermeidung von JavaScript) sicher, dass alle Personen die Onlinebefragung in ähnlicher Weise erleben und valide Daten erhoben werden können. Es unterstützt etliche Standardfragetypen (sowohl offene Fragen als auch Einfach- und Mehrfachauswahlen, Auswahlmatrizen, semantische Differenziale sowie Hybride daraus). Zusätzlich ist das Befragungssystem in der Lage neue Fragetypen abzubilden, wie die benutzer*/innenfreundliche Erfassung langjähriger Biographien auf Monatsebene oder die Erhebung komplexer Daten mittels mehrerer verbundener Fragen auf einer Formularseite. Es bietet zahlreiche Möglichkeiten der inhaltlichen und visuellen Gestaltung von Onlinebefragungen (verschiedene Login-Verfahren, optionale Anzeige der Befragungslänge, Integration von Corporate Designs, Einbindung von Fremdsprachen, Umsetzung von komplexen Filterführungen). 
 									
 Die Serverarchitektur hinter Zofar basiert auf einem  Serververbund, der durch seine Redundanz Ausfall- und Funktionssicherheit bietet. Zum Cluster gehören Apache HTTP-Server, Apache Tomcat-Applikationsserver und PostrgreSQL-Datenbankserver (inkl. Continuous Archiving und Hot-Standby für Point-In-Time-Recovery und zusätzliche Datensicherheit). Die Konfiguration der Apache HTTP-Server ermöglicht die Durchführung paralleler Befragungen und eine Lastverteilung auf mehrere Tomcat-Applikationsserver im Falle von größeren Befragungen.
