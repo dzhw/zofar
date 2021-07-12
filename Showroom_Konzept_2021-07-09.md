@@ -1,163 +1,143 @@
 Willkommen 
 ===========
 
-Hintergrundinformationen:
--------------------------
+## [Hintergrundinformationen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#hintergrundinformationen-1)
 
 
-## Projektmitarbeiter und Erreichbarkeit
-
-Zugang zur Befragung
-====================
-
-Einladung zur Befragung
------------------------
+## [Projektmitarbeiter und Erreichbarkeit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#projektmitarbeiter-und-erreichbarkeit-1)
 
 
-Login-Methoden
---------------
 
-
-Aufbau des Fragebogens
-======================
-
-Informationen zur Befragung
----------------------------
-
-
-Anleitung zur Beantwortung
---------------------------
-
-Themenkomplexe und Fragen
--------------------------
-
-Danksagung und Informationen
-----------------------------
-
-Textsorten
+[Textsorten](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#textsorten-1)
 ==========
 
 
-Überschrift
+[Überschrift](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#überschrift-1)
 -----------
 
 
-Einleitung bzw. Überleitung 
+[Einleitung bzw. Überleitung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md##einleitung-bzw-überleitung-1) 
 ----------------------------
 
 
-Frage
+[Frage](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#frage-1)
 -----
 
 
-Instruktion
+[Instruktion](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#instruktion-1)
 -----------
 
 
-Zusätzlicher Text
+[Zusätzlicher Text](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zusätzlicher-text-1)
 -----------------
 
 
-Antwortkategorie
+[Antwortkategorie](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#antwortkategoriet-1)
 ----------------
 
 
-Item
+[Item](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#item-1)
 ----
 
 
-Fragetypen und Formatoptionen
+[Fragetypen und Formatoptionen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#fragetypen-und-formatoptionen-1)
 =============================
 
 
-Offene Frage
+[Offene Frage](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#offene-frage-1)
 ------------
 
 
-Einfachauswahl
+[Einfachauswahl](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#einfachauswahl-1)
 --------------
 
 
-Mehrfachauswahl
+[Mehrfachauswahl](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#mehrfachauswahl-1)
 ---------------
 
 
-Matrix
+[Matrix](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#matrix-1)
 ------
 
 
-Doppelmatrix
+[Doppelmatrix](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#doppelmatrix-1)
 ------------
 
 
-Semantisches Differential
+[Semantisches Differential](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#semantisches-differential-1)
 -------------------------
 
 
-Kalendarium
+[Kalendarium](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#kalendarium-1)
 -----------
 
 
-Kommentarfeld
+[Kommentarfeld](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#kommentarfeld-1)
 -------------
 
 
-Weitere funktionale Elemente
-============================
-
-Preloads
---------
+[Zugang zur Befragung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zugang-zur-befragung-1)
+====================
 
 
-Zufallsvariablen
-----------------
-
-
-Abgeleitete Variablen
----------------------
-
-
-Antwortgruppierung
-------------------
-
-
-Fragebogensteuerung
+[Fragebogensteuerung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#fragebogensteuerung-1)
 ===================
 
 
-Filterführung
--------------
-
-
-Bedingte Anzeige von Fragebogenteilen
--------------------------------------
-
-
-Antwortreferenzierung
+[Filterführung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#filterführung-1)
 ---------------------
 
 
-Randomisierung
---------------
+[Bedingte Anzeige von Fragebogenteilen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#bedingte-anzeige-von-fragebogenteilen-1)
+---------------------
 
 
-Antwortvalidierung
-------------------
+[Antwortreferenzierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#antwortreferenzierung-1)
+---------------------
 
 
-Anzeige der Befragungslänge
+[Randomisierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#randomisierung-1)
+---------------------
+
+
+[Antwortvalidierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#-1)
+---------------------
+
+
+
+[Weitere funktionale Elemente](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#weitere-funktionale-elemente-1)
+============================
+
+[Preloads](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#preloads-1)
+---------------------
+
+
+[Zufallsvariablen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zufallsvariablen-1)
+---------------------
+
+
+[Abgeleitete Variablen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#abgeleitete-variablen-1)
+---------------------
+
+
+[Antwortgruppierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#antwortgruppierung-1)
+---------------------
+
+
+
+[Anzeige der Befragungslänge](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#-1)
 ===========================
 
 
-Fortschrittsbalken
-------------------
+[Fortschrittsbalken](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#fortschrittsbalken-1)
+---------------------
 
 
-Kapitelüberschrift
-------------------
+[Kapitelüberschrift](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#kapitelüberschrift-1)
+---------------------
 
 
-Barrierefreiheit
+[Barrierefreiheit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#barrierefreiheit-1)
 ================
 
 ## Generelle Anforderungen an barrierefreie Web-Angebote sind: 
@@ -169,37 +149,37 @@ Barrierefreiheit
 
 
 
-Mehrsprachigkeit
+[Mehrsprachigkeit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#mehrsprachigkeit-1)
 ================
 
-Layout
+[Layout](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#layout-1)
 ======
 
-Paradaten
+[Paradaten](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#paradaten-1)
 =========
 
 
-Abläufe
+[Abläufe](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#abläufe-1)
 =======
 
-Programmiervorlage
+[Programmiervorlage](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#programmiervorlage-1)
 ------------------
 
 
-Übersetzung
+[Übersetzung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#übersetzung-1)
 -----------
 
 
     
-Preloads
+[Preloads](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#preloads-1)
 --------
 
 
-Tokenerstellung
+[Tokenerstellung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#tokenerstellung-1)
 ---------------
 
 
-Versand von Einladungen und Remindern
+[Versand von Einladungen und Remindern](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#versand-von-einladungen-und-remindern-1)
 -------------------------------------
 
 ### Allgemein
@@ -215,20 +195,17 @@ Literaturverzeichnis
 Willkommen 
 ===========
 
-Hintergrundinformationen:
--------------------------
+## Hintergrundinformationen
 
 Zwischen 2009 und 2015 wurde im Servicebereich das auf die spezifischen Bedürfnisse sozialwissenschaftlicher Forschung zugeschnittene Onlinebefragungssystem ZOFAR entwickelt. Es handelt sich um eine Java-Enterprise-Anwendung, die wir unter einer Open Source Lizenz (AGPL V3+) betreiben. Die Funktionsweise des Systems berücksichtigt, dass die Befragten über unterschiedliche Technologien verfügen und stellt (bspw. durch die weitgehende Vermeidung von JavaScript) sicher, dass alle Personen die Onlinebefragung in ähnlicher Weise erleben und valide Daten erhoben werden können. Es unterstützt etliche Standardfragetypen (sowohl offene Fragen als auch Einfach- und Mehrfachauswahlen, Auswahlmatrizen, semantische Differenziale sowie Hybride daraus). Zusätzlich ist das Befragungssystem in der Lage neue Fragetypen abzubilden, wie die benutzer*/innenfreundliche Erfassung langjähriger Biographien auf Monatsebene oder die Erhebung komplexer Daten mittels mehrerer verbundener Fragen auf einer Formularseite. Es bietet zahlreiche Möglichkeiten der inhaltlichen und visuellen Gestaltung von Onlinebefragungen (verschiedene Login-Verfahren, optionale Anzeige der Befragungslänge, Integration von Corporate Designs, Einbindung von Fremdsprachen, Umsetzung von komplexen Filterführungen). 
 									
 Die Serverarchitektur hinter Zofar basiert auf einem  Serververbund, der durch seine Redundanz Ausfall- und Funktionssicherheit bietet. Zum Cluster gehören Apache HTTP-Server, Apache Tomcat-Applikationsserver und PostrgreSQL-Datenbankserver (inkl. Continuous Archiving und Hot-Standby für Point-In-Time-Recovery und zusätzliche Datensicherheit). Die Konfiguration der Apache HTTP-Server ermöglicht die Durchführung paralleler Befragungen und eine Lastverteilung auf mehrere Tomcat-Applikationsserver im Falle von größeren Befragungen.
 					
 					
-					
-					
 
 ## Projektmitarbeiter und Erreichbarkeit
 
-					
+
 befragung@dzhw.eu
 					
 Andrea Schulze
@@ -923,6 +900,8 @@ lange die Befragung noch andauert.
 
 Fortschrittsbalken
 ------------------
+
+### Fortschrittsbalken
 
 Fortschrittsbalken zeigen den Befragten an wie viel Prozent der Befragung sie
 bisher abgeschlossen haben und geben Aufschluss über die restliche Dauer der
