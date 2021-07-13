@@ -1018,6 +1018,24 @@ gezogen werden können.
 
 -   ToDo: Literaturhinweis
 
+
+Datenschutz
+=========
+- Anforderungen an Datenschutz
+- Vorlage für Datenschutzblatt
+- technische Hinweise zum Datenschutz
+
+
+Dokumentation
+=========
+
+- Was wird dokumentiert?
+	- Fragebogen als Screenshot (verschiedene Auflösungen?, Übersetzung? ...)
+	- Codebook
+	- FlowChart
+	- Export für MDM des FDZ.DZHW
+
+
 Abläufe
 =======
 
