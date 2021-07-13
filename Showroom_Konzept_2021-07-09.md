@@ -1,5 +1,5 @@
 Willkommen 
-===========
+===================
 
 ## [Hintergrundinformationen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#hintergrundinformationen-1)
 
@@ -9,7 +9,7 @@ Willkommen
 
 
 [Textsorten](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#textsorten-1)
-==========
+===================
 
 
 [Überschrift](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#überschrift-1)
@@ -76,12 +76,12 @@ Willkommen
 ---------------------
 
 
-[Zugang zur Befragung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zugang-zur-befragung-1)
-====================
-
-
 [Fragebogensteuerung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#fragebogensteuerung-1)
 ===================
+
+
+[Zugang zur Befragung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zugang-zur-befragung-1)
+---------------------
 
 
 [Filterführung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#filterführung-1)
@@ -104,9 +104,8 @@ Willkommen
 ---------------------
 
 
-
 [Weitere funktionale Elemente](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#weitere-funktionale-elemente-1)
-============================
+===================
 
 [Preloads](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#preloads-1)
 ---------------------
@@ -136,37 +135,44 @@ Willkommen
 ### [Kapitelüberschrift](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#kapitelüberschrift-1)
 
 
-
-[Barrierefreiheit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#barrierefreiheit-1)
-================
-
-## Generelle Anforderungen an barrierefreie Web-Angebote sind: 
-
-
-## Stand der Barrierefreiheit bei zofar-Befragungen: 
-
-### Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: 
-
-
-
 [Mehrsprachigkeit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#mehrsprachigkeit-1)
-================
+---------------------
+
 
 [Layout](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#layout-1)
-======
+===================
+
+[Barrierefreiheit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#barrierefreiheit-1)
+===================
+
+## Generelle Anforderungen 
+
+## Barrierefreiheit bei zofar
+
 
 [Paradaten](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#paradaten-1)
-=========
+===================
+
+
+Datenschutz
+===================
+
+
+Dokumentation
+===================
 
 
 [Abläufe](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#abläufe-1)
-=======
+===================
 
 [Programmiervorlage](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#programmiervorlage-1)
 ---------------------
 
 
 [Übersetzung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#übersetzung-1)
+---------------------
+
+Pretest
 ---------------------
 
 
@@ -181,6 +187,7 @@ Willkommen
 [Versand von Einladungen und Remindern](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#versand-von-einladungen-und-remindern-1)
 ---------------------
 
+
 ### Allgemein
 
 ### Einladungen
@@ -188,13 +195,13 @@ Willkommen
 ### Reminder
 
 Literaturverzeichnis
-====================
+================
 
 ------------------------------------
 
 
 Willkommen 
-===========
+================
 
 ## Hintergrundinformationen
 
@@ -932,7 +939,7 @@ In § 11 „Barrierefreie Informationstechnik“ des Deutschen Behindertengleich
 Eine Website/Befragung gilt dann als barrierefrei, wenn Sie von jedermann ohne Einschränkungen genutzt werden kann. Es sollte allen Personen der gleiche Zugang ermöglicht werden. 
 
 
-## Generelle Anforderungen an barrierefreie Web-Angebote sind: 
+## Generelle Anforderungen
 
   •	Skalierbarkeit: Die Größe von Schriften, Bereiche und Abstände usw. müssen skalierbar sein. Da manche Nutzer die Funktion der Browser zur Vergrößerung von Schriften etc. nutzen, sollte selbst bei einer prozentualen Vergrößerung der Inhalt noch gut lesbar und erkennbar sein.
 •	Responsivität: Web-Angebot sollte auf allen Endgeräten gut lesbar sein. 
@@ -948,7 +955,7 @@ Eine Website/Befragung gilt dann als barrierefrei, wenn Sie von jedermann ohne E
 •   Alternativtexte (Alt-Texte): Alt-Texte beschreiben ein digitales Bild, sodass ein Bildschirmleseprogramm oder andere Hilfstechnologien das Bild interpretieren können und behinderte Menschen es verstehen können. (Bsp.: Ein schwarzer Hund rennt von links über eine große Wiese). Weitere Infos: https://www.techsmith.de/blog/alternativtext/
 
 
-## Stand der Barrierefreiheit bei zofar-Befragungen: 
+## Barrierefreiheit bei zofar-Befragungen: 
 Die Seiten der Befragung sind relativ einfache Formularoberflächen mit geringen Java-Script-Anteilen. Diese sollten für Screen-Reader relativ gut wiedergebbar sein. Die Schrift ist größenverstellbar. I.A. ist es möglich sich per Tastatur durch die Befragung zu bewegen. Die Kontraste erfüllen nur teilweise die Norm. Es sind keine bewegten Bilder oder Videos enthalten. Es sind nur wenige Logos und Grafiken enthalten. Ein Ersatztext für Logos und Grafiken besteht nicht in allen Fällen. Auf Instrumente, die sich in einer vorangegangenen Barrierefreiheitsprüfung als besonders problematisch erwiesen haben, wurde verzichtet.
 Diese Einschätzung erfolgt vorbehaltlich eine möglichen umfassenderen externen Prüfung, die zu einem anderen Ergebnis kommen könnte. Insgesamt sehen wir die Barrierefreiheit als wichtige Entwicklungsaufgabe für unsere Online-Befragungen, der wir zukünftig ein noch höheres Augenmerk zukommen lassen wollen.
 
@@ -956,7 +963,7 @@ Die Barrierefreiheit einer Befragung hängt jedoch stark von den jeweiligen Inha
 
 
 
-### Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: 
+**Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: **
 
 
 -   Barrierefreie PDFs erstellen  (z.B.: Datenschutzbatt auf der Indexseite) - ToDo: Link zu Vorlage (von Petra)
@@ -1039,6 +1046,7 @@ Programmiervorlage
 
     -   en (oder anderes Kürzel): hier die entsprechende Übersetzung einfügen
 
+- ToDo: Beispieltabelle hochladen
     
 Preloads
 --------
@@ -1069,19 +1077,24 @@ Versand von Einladungen und Remindern
 -   sichere Übermittlung der Mailadressen und weiteren personenbezogenen Daten
     an Zofar
 
--   personalisierte Anschreiben sind möglich, ebenso weitere
-    Individualisierungen
+-   personalisierte Anschreiben sind möglich, ebenso weitere Individualisierungen, sofern die entsprechende personenbezogene Daten vorliegen
 
 -   Token und Einladungslink werden mitgeschickt
 
 -   reine Text-Mails oder HTML-Mails
 
+-   Bounce-Mail-Report
+
 ### Einladungen
 
 -   wenn Einladungsversand über Zofar:
 
-    -   Projekt liefert Emailadressen und ggf. weitere personenbezogene Daten an
-        Zofar
+    -   Versand-Adresse:
+    	- eine Versandadresse ist notwendig
+    	- wir empfehlen (abhängig von der Befragung) eine eigens dafür erstellte Adresse oder Projektadresse zu verwenden (keine, die in persönlicher Verwendung ist); ist diese noch nicht vorhanden, muss sie rechtzeitig beim Mail-Provider/ Administrator beantragt werden
+    	- Zofar benötigt Zugang zur Versand-E-Mail-Adresse (Adresse inkl. Passwort)
+     
+    -   Projekt liefert eine Liste der Kontaktadressen und ggf. weitere personenbezogene Daten an Zofar
 
     -   Vorherige Terminierung des Einladungsversands
 
