@@ -1,206 +1,192 @@
 Willkommen 
-===========
+===================
 
-Hintergrundinformationen:
--------------------------
-
-
-## Projektmitarbeiter und Erreichbarkeit
-
-Zugang zur Befragung
-====================
-
-Einladung zur Befragung
------------------------
+## [Hintergrundinformationen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#hintergrundinformationen-1)
 
 
-Login-Methoden
---------------
+## [Projektmitarbeiter und Erreichbarkeit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#projektmitarbeiter-und-erreichbarkeit-1)
 
 
-Aufbau des Fragebogens
-======================
 
-Informationen zur Befragung
----------------------------
-
-
-Anleitung zur Beantwortung
---------------------------
-
-Themenkomplexe und Fragen
--------------------------
-
-Danksagung und Informationen
-----------------------------
-
-Textsorten
-==========
-
-
-Überschrift
------------
-
-
-Einleitung bzw. Überleitung 
-----------------------------
-
-
-Frage
------
-
-
-Instruktion
------------
-
-
-Zusätzlicher Text
------------------
-
-
-Antwortkategorie
-----------------
-
-
-Item
-----
-
-
-Fragetypen und Formatoptionen
-=============================
-
-
-Offene Frage
-------------
-
-
-Einfachauswahl
---------------
-
-
-Mehrfachauswahl
----------------
-
-
-Matrix
-------
-
-
-Doppelmatrix
-------------
-
-
-Semantisches Differential
--------------------------
-
-
-Kalendarium
------------
-
-
-Kommentarfeld
--------------
-
-
-Weitere funktionale Elemente
-============================
-
-Preloads
---------
-
-
-Zufallsvariablen
-----------------
-
-
-Abgeleitete Variablen
----------------------
-
-
-Antwortgruppierung
-------------------
-
-
-Fragebogensteuerung
+[Textsorten](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#textsorten-1)
 ===================
 
 
-Filterführung
--------------
-
-
-Bedingte Anzeige von Fragebogenteilen
--------------------------------------
-
-
-Antwortreferenzierung
+[Überschrift](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#überschrift-1)
 ---------------------
 
 
-Randomisierung
---------------
+[Einleitung bzw. Überleitung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md##einleitung-bzw-überleitung-1) 
+---------------------
 
 
-Antwortvalidierung
-------------------
+[Frage](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#frage-1)
+---------------------
 
 
-Anzeige der Befragungslänge
-===========================
+[Instruktion](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#instruktion-1)
+---------------------
 
 
-Fortschrittsbalken
-------------------
+[Zusätzlicher Text](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zusätzlicher-text-1)
+---------------------
 
 
-Kapitelüberschrift
-------------------
+[Antwortkategorie](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#antwortkategoriet-1)
+---------------------
 
 
-Barrierefreiheit
-================
-
-## Generelle Anforderungen an barrierefreie Web-Angebote sind: 
+[Item](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#item-1)
+---------------------
 
 
-## Stand der Barrierefreiheit bei zofar-Befragungen: 
-
-### Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: 
-
+[Fragetypen und Formatoptionen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#fragetypen-und-formatoptionen-1)
+=============================
 
 
-Mehrsprachigkeit
-================
-
-Layout
-======
-
-Paradaten
-=========
+[Offene Frage](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#offene-frage-1)
+---------------------
 
 
-Abläufe
-=======
-
-Programmiervorlage
-------------------
+[Einfachauswahl](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#einfachauswahl-1)
+---------------------
 
 
-Übersetzung
------------
+[Mehrfachauswahl](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#mehrfachauswahl-1)
+---------------------
 
 
-    
-Preloads
---------
+[Matrix](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#matrix-1)
+---------------------
 
 
-Tokenerstellung
----------------
+[Doppelmatrix](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#doppelmatrix-1)
+---------------------
 
 
-Versand von Einladungen und Remindern
--------------------------------------
+[Semantisches Differential](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#semantisches-differential-1)
+---------------------
+
+
+[Kalendarium](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#kalendarium-1)
+---------------------
+
+
+[Kommentarfeld](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#kommentarfeld-1)
+---------------------
+
+
+[Fragebogensteuerung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#fragebogensteuerung-1)
+===================
+
+
+[Zugang zur Befragung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zugang-zur-befragung-1)
+---------------------
+
+
+[Filterführung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#filterführung-1)
+---------------------
+
+
+[Bedingte Anzeige von Fragebogenteilen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#bedingte-anzeige-von-fragebogenteilen-1)
+---------------------
+
+
+[Antwortreferenzierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#antwortreferenzierung-1)
+---------------------
+
+
+[Randomisierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#randomisierung-1)
+---------------------
+
+
+[Antwortvalidierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#-1)
+---------------------
+
+
+[Weitere funktionale Elemente](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#weitere-funktionale-elemente-1)
+===================
+
+[Preloads](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#preloads-1)
+---------------------
+
+
+[Zufallsvariablen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#zufallsvariablen-1)
+---------------------
+
+
+[Abgeleitete Variablen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#abgeleitete-variablen-1)
+---------------------
+
+
+[Antwortgruppierung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#antwortgruppierung-1)
+---------------------
+
+[aufklappbare Elemente](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#aufklappbare-elemente-1)
+---------------------
+
+
+[Anzeige der Befragungslänge](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#-1)
+---------------------
+
+### [Fortschrittsbalken](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#fortschrittsbalken-1)
+
+
+### [Kapitelüberschrift](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#kapitelüberschrift-1)
+
+
+[Mehrsprachigkeit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#mehrsprachigkeit-1)
+---------------------
+
+
+[Layout](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#layout-1)
+===================
+
+[Barrierefreiheit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#barrierefreiheit-1)
+===================
+
+## Generelle Anforderungen 
+
+## Barrierefreiheit bei zofar
+
+
+[Paradaten](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#paradaten-1)
+===================
+
+
+Datenschutz
+===================
+
+
+Dokumentation
+===================
+
+
+[Abläufe](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#abläufe-1)
+===================
+
+[Programmiervorlage](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#programmiervorlage-1)
+---------------------
+
+
+[Übersetzung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#übersetzung-1)
+---------------------
+
+Pretest
+---------------------
+
+
+[Preloads](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#preloads-1)
+---------------------
+
+
+[Tokenerstellung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#tokenerstellung-1)
+---------------------
+
+
+[Versand von Einladungen und Remindern](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#versand-von-einladungen-und-remindern-1)
+---------------------
+
 
 ### Allgemein
 
@@ -209,26 +195,25 @@ Versand von Einladungen und Remindern
 ### Reminder
 
 Literaturverzeichnis
-====================
+================
+
+------------------------------------
 
 
 Willkommen 
-===========
+================
 
-Hintergrundinformationen:
--------------------------
+## Hintergrundinformationen
 
 Zwischen 2009 und 2015 wurde im Servicebereich das auf die spezifischen Bedürfnisse sozialwissenschaftlicher Forschung zugeschnittene Onlinebefragungssystem ZOFAR entwickelt. Es handelt sich um eine Java-Enterprise-Anwendung, die wir unter einer Open Source Lizenz (AGPL V3+) betreiben. Die Funktionsweise des Systems berücksichtigt, dass die Befragten über unterschiedliche Technologien verfügen und stellt (bspw. durch die weitgehende Vermeidung von JavaScript) sicher, dass alle Personen die Onlinebefragung in ähnlicher Weise erleben und valide Daten erhoben werden können. Es unterstützt etliche Standardfragetypen (sowohl offene Fragen als auch Einfach- und Mehrfachauswahlen, Auswahlmatrizen, semantische Differenziale sowie Hybride daraus). Zusätzlich ist das Befragungssystem in der Lage neue Fragetypen abzubilden, wie die benutzer*/innenfreundliche Erfassung langjähriger Biographien auf Monatsebene oder die Erhebung komplexer Daten mittels mehrerer verbundener Fragen auf einer Formularseite. Es bietet zahlreiche Möglichkeiten der inhaltlichen und visuellen Gestaltung von Onlinebefragungen (verschiedene Login-Verfahren, optionale Anzeige der Befragungslänge, Integration von Corporate Designs, Einbindung von Fremdsprachen, Umsetzung von komplexen Filterführungen). 
 									
 Die Serverarchitektur hinter Zofar basiert auf einem  Serververbund, der durch seine Redundanz Ausfall- und Funktionssicherheit bietet. Zum Cluster gehören Apache HTTP-Server, Apache Tomcat-Applikationsserver und PostrgreSQL-Datenbankserver (inkl. Continuous Archiving und Hot-Standby für Point-In-Time-Recovery und zusätzliche Datensicherheit). Die Konfiguration der Apache HTTP-Server ermöglicht die Durchführung paralleler Befragungen und eine Lastverteilung auf mehrere Tomcat-Applikationsserver im Falle von größeren Befragungen.
 					
 					
-					
-					
 
 ## Projektmitarbeiter und Erreichbarkeit
 
-					
+
 befragung@dzhw.eu
 					
 Andrea Schulze
@@ -252,12 +237,12 @@ Zugang zur Befragung
 ====================
 
 Einladung zur Befragung
------------------------
+---------------------
 
 https://github.com/dzhw/zofar/issues/421
 
 Login-Methoden
---------------
+---------------------
 
 -   Mit Token, es gibt eine bestimmte Anzahl zuvor erstellter individualisierter
     Token (ggf. mit Preloads angereichert), nur diese Befragten können
@@ -273,7 +258,7 @@ Aufbau des Fragebogens
 ======================
 
 Informationen zur Befragung
----------------------------
+---------------------
 
 -   Welche Informationen gehören auf eine Index-Seite: Thema und Ziel, Dauer der
     Befragung, Ansprechpartner, grober Überblick über die Frageninhalte und ggf.
@@ -289,13 +274,13 @@ Informationen zur Befragung
         Barrierefreiheit
 
 Anleitung zur Beantwortung
---------------------------
+---------------------
 
 Themenkomplexe und Fragen
--------------------------
+---------------------
 
 Danksagung und Informationen
-----------------------------
+---------------------
 
 Textsorten
 ==========
@@ -322,7 +307,7 @@ Erstellung der Onlinebefragung stehen die folgenden Textsorten zur Verfügung:
 -   [Item](http://vmtest.dzhw.local:8080/showroom/textsorten_start.html)
 
 Überschrift
------------
+---------------------
 
 Möchten Sie die Fragen Ihrer Onlinebefragung nach Themen gliedern und diese
 explizit benennen, stehen Ihnen hierfür Überschriften zur Verfügung. Sie werden
@@ -349,7 +334,7 @@ Die Umsetzung innerhalb einer Frage können Sie sich
 ansehen.
 
 Frage
------
+---------------------
 
 Der Fragetext steht in der oberen Hälfte jeder Befragungsseite. Es ist nach der
 Kopfzeile meist das erste Element, dass die Befragten sehen, wenn sie die
@@ -360,7 +345,7 @@ Die Umsetzung innerhalb einer Frage können Sie sich
 [hier](http://vmtest.dzhw.local:8080/showroom/textsorten_frage.html) ansehen.
 
 Instruktion
------------
+---------------------
 
 Die Instruktion steht direkt unter dem Fragetext. Sie enthält eine Anleitung zur
 Beantwortung der Frage, die dazu dient, die Befragten über das richtige Vorgehen
@@ -373,7 +358,7 @@ Die Umsetzung innerhalb einer Frage können Sie sich
 ansehen.
 
 Zusätzlicher Text
------------------
+---------------------
 
 Nach der Instruktion aber auch an vielen anderen gewünschten Positionen gibt es
 Raum für zusätzlichen Text. Standardeinstellung für diese Textsorte ist:
@@ -383,7 +368,7 @@ Die Umsetzung innerhalb einer Frage können Sie sich
 [hier](http://vmtest.dzhw.local:8080/showroom/textsorten_text.html) ansehen.
 
 Antwortkategorie
-----------------
+---------------------
 
 Antwortkategorien werden je nach Fragetyp horizontal oder vertikal abgetragen.
 Bei der
@@ -411,7 +396,7 @@ und
 ansehen.
 
 Item
-----
+---------------------
 
 Items thematisieren Teilaspekte einer Frage und werden bei den Fragetypen
 [Matrix](http://vmtest.dzhw.local:8080/showroom/textsorten_item.html) ,
@@ -434,8 +419,7 @@ Das Befragungsystem Zofar unterstützt sowohl offene als auch geschlossene
 Fragen. Die Entscheidung für oder gegen einen Fragetyp ist abhängig von Ihrer
 jeweiligen Forschungsintention.  
   
-Bei [offenen
-Fragen](http://vmtest.dzhw.local:8080/showroom/fragetypen_start.html)
+Bei [offenen Fragen](http://vmtest.dzhw.local:8080/showroom/fragetypen_start.html)
 formulieren die Befragten ihre Antworten selbst. Offene Fragen stellen dadurch
 gewisse kognitive Anforderungen an die Befragten und verlangen ein
 entsprechendes Maß an Erinnerungs- und Darstellungsvermögen (Lehmann 2001: 25).
@@ -476,7 +460,7 @@ Darüber hinaus können Sie Ihre Befragung um
 ergänzen.
 
 Offene Frage
-------------
+---------------------
 
 Eingabefelder dienen der Erfassung von Antworten auf offene Fragen. Mittels
 Tastatur können die Befragten ihre selbstformulierten Antworten abgeben. Die im
@@ -502,7 +486,7 @@ TIPP:
     Seitenwechsel.
 
 Einfachauswahl
---------------
+---------------------
 
 Die Einfachauswahl ist ein Fragetyp, bei der die Befragten horizontal oder
 vertikal abgetragene Antwortkategorien präsentiert bekommen. Als Auswahlfelder
@@ -558,7 +542,7 @@ Anschauungsbeispiele:
     Dropdown-Menü](http://vmtest.dzhw.local:8080/showroom/fragetypen_einfachauswahl.html)
 
 Mehrfachauswahl
----------------
+---------------------
 
 Die Mehrfachauswahl (engl. check-all question, check-all-that-apply question,
 multiple-choice question) ist ein Fragetyp, bei der die Befragten aus
@@ -626,7 +610,7 @@ TIPP:
     Datenqualität führen (ebd.).
 
 Matrix
-------
+---------------------
 
 Bei Matrizen beurteilen die Befragten mehrere Aspekte eines Gegenstandes (z.B.
 die Qualität der Leistungen des Studierendenwerkes: Speisen und Getränke in den
@@ -652,7 +636,7 @@ Anschauungsbeispiele:
 -   Offene Matrix
 
 Doppelmatrix
-------------
+---------------------
 
 Die Doppelmatrix ermöglicht es, einen Sachverhalt vergleichend beurteilen zu
 lassen. Die Befragten können den Gegenstand (z.B. die Hochschulbetreuung)
@@ -693,7 +677,7 @@ TIPP:
     2014](http://vmtest.dzhw.local:8080/showroom/link.html?id=abd0d9b5d6064d898bfeda99c5ab6a46)).
 
 Semantisches Differential
--------------------------
+---------------------
 
 Das semantische Differenzial (oder Polaritätsprofil) ist ein Fragetyp, mit dem
 Sie Wesensmerkmale eines Sachverhaltes erheben können. Die Befragten werden
@@ -723,7 +707,7 @@ TIPP:
     111f.)
 
 Kalendarium
------------
+---------------------
 
 Das Kalendarium ist ein zusammengesetzter Fragetyp, der zur Erfassung von
 Tätigkeiten im Zeitverlauf verwendet werden kann. Dabei können Tätigkeiten (z.B.
@@ -739,7 +723,7 @@ Anschauungsbeispiel:
 -   [Kalendarium](http://vmtest.dzhw.local:8080/showroom/fragetypen_kalendarium.html)
 
 Kommentarfeld
--------------
+---------------------
 
 Spätestens am Ende der Onlinebefragung sollten Sie den Befragten die Möglichkeit
 geben, eigene Gedanken zum Thema zu formulieren (Young 1998). Hierfür können Sie
@@ -760,7 +744,7 @@ Weitere funktionale Elemente
 ============================
 
 Preloads
---------
+---------------------
 
 Sogenannte Preloads oder Preload-Variablen sind Daten, die vorab in die
 Datenbank geladen und den Befragten zugewiesen werden. Das können bspw. bei
@@ -776,7 +760,7 @@ verwendet werden, bei der der Zugang durch Token organisiert ist.
 -   [[LINK](#preloads-1)] Siehe auch: Abläufe:Preloads
 
 Zufallsvariablen
-----------------
+---------------------
 
 -   ToDo: Generierung von Zufallsvariablen zur zufälligen Steuerung
 
@@ -787,7 +771,7 @@ Abgeleitete Variablen
     Zusammenfassung, Zählung etc. von vorherigen Antworten)
 
 Antwortgruppierung
-------------------
+---------------------
 
 Antwortoptionen lassen sich innerhalb Zofars in übergeordnete Antwortkategorien
 zufammenfassen. Eine sogenannte Unit ist eine den Antwortkategorien
@@ -806,7 +790,7 @@ Befragten angezeigt werden. Dadurch kann gewährleistet werden, dass den
 Befragten nur ihren Merkmalen entsprechende Fragen gestellt werden.
 
 Filterführung
--------------
+---------------------
 
 Zofar arbeitet ausschließlich mit Seitenausgangsfiltern. Anhand der Ausprägungen
 von Variablen lässt sich steuern auf welche fortführenden Seiten die Befragten
@@ -829,7 +813,7 @@ Filter die Merkmale dieser Befragten nicht erfassen. Unsere Empfehlung ist
 deshalb, immer eine unkonditionale Weiterleitung zum Ende einzubauen.
 
 Bedingte Anzeige von Fragebogenteilen
--------------------------------------
+---------------------
 
 Innerhalb der einzelnen Seiten und den dazugehörigen Fragen ist es möglich
 bestimmte Fragebogenteile ein- bzw. auszublenden. Es können ganze Fragen mit
@@ -852,7 +836,7 @@ Antwort muss zunächst auf einer vorherigen Seite erfasst werden, um in den
 folgenden Seiten eingebaut werden zu können.
 
 Randomisierung
---------------
+---------------------
 
 Zofar bietet die Möglichkeit die Anordnung verschiedener Items innerhalb einer
 Item-Matrix zu randomisieren. Jedem Befragten werden somit die einzelnen Items
@@ -865,11 +849,9 @@ Es wird zwischen zwei Sortiermodi unterschieden:
 Die Randomisierung kann itemweise erfolgen, bei dem jedes Item zufällig rotiert wird oder blockweise, wobei Gruppen von Items als Block rotiert werden.
 
 Antwortvalidierung
-------------------
+---------------------
 
-[Hier evtl. die [Handreichung zum Forcing
-[LINK]](https://github.com/dzhw/zofar/files/6716006/2021-03-02_Forcing_HowTo.docx)
-einbauen]
+[Hier evtl. die [Handreichung zum Forcing [LINK]](https://github.com/dzhw/zofar/files/6716006/2021-03-02_Forcing_HowTo.docx) einbauen]
 
 Es gibt verschiedene Möglichkeiten die Eingaben der Befragten während der
 Befragung auf ihre Gültigkeit zu prüfen. Dadurch können ungewünschte oder
@@ -913,16 +895,22 @@ korrigieren.
 
 -   ToDo:
 
+aufklappbare Elemente
+---------------------
+- ToDo: Erläuterung zum Akkordeon
+- ggf. Punkt anders benennen?
+
+
 Anzeige der Befragungslänge
-===========================
+---------------------
 
 Zofar unterstützt die Anzeige der Befragungslänge in Form von Fortschrittsbalken
 und Kapitelüberschriften. Damit wird den Befragten ein Überblick über ihren
 Fortschritt in der Befragung gegeben, sodass sie besser einschätzen können wie
 lange die Befragung noch andauert.
 
-Fortschrittsbalken
-------------------
+
+### Fortschrittsbalken
 
 Fortschrittsbalken zeigen den Befragten an wie viel Prozent der Befragung sie
 bisher abgeschlossen haben und geben Aufschluss über die restliche Dauer der
@@ -936,13 +924,13 @@ Für sogenannte "Fortschrittsbalken" in Onlinebefragungen (an denen direkt die n
     Befragungsabbruch (Matzat/ Snijders/van der Horst 2009: Effects of Different
     Types of Progress Indicators on Drop-Out Rates in Web Surveys)
 
-Kapitelüberschrift
-------------------
+### Kapitelüberschrift
 
 Kapitelüberschriften dienen dazu die Befragung in Sinneinheiten zu unterteilen.
 Die Überschriften dienen somit als Orientierung und Zielsetzung innerhalb der
 Befragung und ermöglichen den Befragten die Befragung kapitelweise zu
 beantworten.
+
 
 Barrierefreiheit
 ================
@@ -951,7 +939,7 @@ In § 11 „Barrierefreie Informationstechnik“ des Deutschen Behindertengleich
 Eine Website/Befragung gilt dann als barrierefrei, wenn Sie von jedermann ohne Einschränkungen genutzt werden kann. Es sollte allen Personen der gleiche Zugang ermöglicht werden. 
 
 
-## Generelle Anforderungen an barrierefreie Web-Angebote sind: 
+## Generelle Anforderungen
 
   •	Skalierbarkeit: Die Größe von Schriften, Bereiche und Abstände usw. müssen skalierbar sein. Da manche Nutzer die Funktion der Browser zur Vergrößerung von Schriften etc. nutzen, sollte selbst bei einer prozentualen Vergrößerung der Inhalt noch gut lesbar und erkennbar sein.
 •	Responsivität: Web-Angebot sollte auf allen Endgeräten gut lesbar sein. 
@@ -967,7 +955,7 @@ Eine Website/Befragung gilt dann als barrierefrei, wenn Sie von jedermann ohne E
 •   Alternativtexte (Alt-Texte): Alt-Texte beschreiben ein digitales Bild, sodass ein Bildschirmleseprogramm oder andere Hilfstechnologien das Bild interpretieren können und behinderte Menschen es verstehen können. (Bsp.: Ein schwarzer Hund rennt von links über eine große Wiese). Weitere Infos: https://www.techsmith.de/blog/alternativtext/
 
 
-## Stand der Barrierefreiheit bei zofar-Befragungen: 
+## Barrierefreiheit bei zofar-Befragungen: 
 Die Seiten der Befragung sind relativ einfache Formularoberflächen mit geringen Java-Script-Anteilen. Diese sollten für Screen-Reader relativ gut wiedergebbar sein. Die Schrift ist größenverstellbar. I.A. ist es möglich sich per Tastatur durch die Befragung zu bewegen. Die Kontraste erfüllen nur teilweise die Norm. Es sind keine bewegten Bilder oder Videos enthalten. Es sind nur wenige Logos und Grafiken enthalten. Ein Ersatztext für Logos und Grafiken besteht nicht in allen Fällen. Auf Instrumente, die sich in einer vorangegangenen Barrierefreiheitsprüfung als besonders problematisch erwiesen haben, wurde verzichtet.
 Diese Einschätzung erfolgt vorbehaltlich eine möglichen umfassenderen externen Prüfung, die zu einem anderen Ergebnis kommen könnte. Insgesamt sehen wir die Barrierefreiheit als wichtige Entwicklungsaufgabe für unsere Online-Befragungen, der wir zukünftig ein noch höheres Augenmerk zukommen lassen wollen.
 
@@ -975,11 +963,11 @@ Die Barrierefreiheit einer Befragung hängt jedoch stark von den jeweiligen Inha
 
 
 
-### Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: 
+**Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: **
 
 
 -   Barrierefreie PDFs erstellen  (z.B.: Datenschutzbatt auf der Indexseite) - ToDo: Link zu Vorlage (von Petra)
--   Prüfung der Barrierefreiheit per PAC checken (<https://www.access-for-all.ch/ch/pdf-werkstatt/pdf-accessibility-checker-pac.html>)  - ToDo: Liste mit wichtigen Indikatoren
+-   Prüfung der Barrierefreiheit per PAC checken (<https://www.access-for-all.ch/ch/pdf-werkstatt/pdf-accessibility-checker-pac.html>) - ToDo: Liste mit wichtigen Indikatoren
 -   Mitliefern von Alternativ-Texten in der Programmiervorlage, falls Bilder oder Logos eingefügt werden sollen
 -   Angabe von Überschriftenlevel (h1-h6) in der Programmiervorlage - ToDo: Link/Beispiel raussuchen
 -   ggf. Übersetzungsdatei für einfache Sprache anlegen
@@ -990,6 +978,10 @@ Mehrsprachigkeit
 
 Layout
 ======
+- Hinweis zur Responsivität des Layouts (automatische Anpassung an Bildschirmgröße)
+- Haupt-break-point: 768 Pixel Bildschirmbreite --> Matrizen brechen ins Carousel um
+- weiteres Erklärendes
+
 
 Paradaten
 =========
@@ -1026,8 +1018,30 @@ gezogen werden können.
 
 -   ToDo: Literaturhinweis
 
+
+Datenschutz
+=========
+- Anforderungen an Datenschutz
+- Vorlage für Datenschutzblatt
+- technische Hinweise zum Datenschutz
+
+
+Dokumentation
+=========
+
+- Was wird dokumentiert?
+	- Fragebogen als Screenshot (verschiedene Auflösungen?, Übersetzung? ...)
+	- Codebook
+	- FlowChart
+	- Export für MDM des FDZ.DZHW
+
+
 Abläufe
 =======
+
+[Onlinebefragungen-mit-Zofar_Ablauf.pdf](https://github.com/dzhw/zofar/files/6802075/Onlinebefragungen-mit-Zofar_Ablauf.pdf)
+
+
 
 Programmiervorlage
 ------------------
@@ -1050,6 +1064,7 @@ Programmiervorlage
 
     -   en (oder anderes Kürzel): hier die entsprechende Übersetzung einfügen
 
+- ToDo: Beispieltabelle hochladen
     
 Preloads
 --------
@@ -1080,19 +1095,24 @@ Versand von Einladungen und Remindern
 -   sichere Übermittlung der Mailadressen und weiteren personenbezogenen Daten
     an Zofar
 
--   personalisierte Anschreiben sind möglich, ebenso weitere
-    Individualisierungen
+-   personalisierte Anschreiben sind möglich, ebenso weitere Individualisierungen, sofern die entsprechende personenbezogene Daten vorliegen
 
 -   Token und Einladungslink werden mitgeschickt
 
 -   reine Text-Mails oder HTML-Mails
 
+-   Bounce-Mail-Report
+
 ### Einladungen
 
 -   wenn Einladungsversand über Zofar:
 
-    -   Projekt liefert Emailadressen und ggf. weitere personenbezogene Daten an
-        Zofar
+    -   Versand-Adresse:
+    	- eine Versandadresse ist notwendig
+    	- wir empfehlen (abhängig von der Befragung) eine eigens dafür erstellte Adresse oder Projektadresse zu verwenden (keine, die in persönlicher Verwendung ist); ist diese noch nicht vorhanden, muss sie rechtzeitig beim Mail-Provider/ Administrator beantragt werden
+    	- Zofar benötigt Zugang zur Versand-E-Mail-Adresse (Adresse inkl. Passwort)
+     
+    -   Projekt liefert eine Liste der Kontaktadressen und ggf. weitere personenbezogene Daten an Zofar
 
     -   Vorherige Terminierung des Einladungsversands
 
