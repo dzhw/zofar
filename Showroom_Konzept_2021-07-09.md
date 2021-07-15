@@ -232,56 +232,6 @@ Silina Schirmer
 0511 450670-145
 					
 
-
-Zugang zur Befragung
-====================
-
-Einladung zur Befragung
----------------------
-
-https://github.com/dzhw/zofar/issues/421
-
-Login-Methoden
----------------------
-
--   Mit Token, es gibt eine bestimmte Anzahl zuvor erstellter individualisierter
-    Token (ggf. mit Preloads angereichert), nur diese Befragten können
-    teilnehmen.
-
--   Ohne Token (jede\*r mit Befragungslink kann an der Befragung teilnehmen;
-    bereits ausgefüllte Fragebögen lassen sich später nicht mehr betrachten oder
-    ändern)
-
-    -   \-\> [[LINK](#tokenerstellung)] siehe auch: Abläufe: Tokenerstellung
-
-Aufbau des Fragebogens
-======================
-
-Informationen zur Befragung
----------------------
-
--   Welche Informationen gehören auf eine Index-Seite: Thema und Ziel, Dauer der
-    Befragung, Ansprechpartner, grober Überblick über die Frageninhalte und ggf.
-    über den Aufbau
-
--   Weitere Infos:
-
-    -   Befragung ist oder ist nicht für mobile Geräte optimiert, (Hinweis zu Offerpage)
-
-    -   Unterbrechung möglich oder nicht?
-
-    -   Barrierefreiheit [[LINK](#barrierefreiheit)] siehe auch:
-        Barrierefreiheit
-
-Anleitung zur Beantwortung
----------------------
-
-Themenkomplexe und Fragen
----------------------
-
-Danksagung und Informationen
----------------------
-
 Textsorten
 ==========
 
@@ -411,6 +361,9 @@ von Items ist: Schriftfarbe schwarz, Schriftbreite und Schriftlage normal.
   
 Die Umsetzung innerhalb einer Frage können Sie sich
 [hier](http://vmtest.dzhw.local:8080/showroom/textsorten_item.html) ansehen.
+
+
+
 
 Fragetypen und Formatoptionen
 =============================
@@ -739,55 +692,28 @@ TIPP:
     eingegebene Textmenge (Bosnjak in Informationszentrum Sozialwissenschaften
     2003: 115f.), sondern zusätzlich auch auf die die Zahl der angesprochenen
     Themen (Christian und Dillman 2004).
-
-Weitere funktionale Elemente
-============================
-
-Preloads
----------------------
-
-Sogenannte Preloads oder Preload-Variablen sind Daten, die vorab in die
-Datenbank geladen und den Befragten zugewiesen werden. Das können bspw. bei
-Panelbefragungen Daten aus vorherigen Erhebungswellen sein oder auch
-Zugehörigkeiten zu den einladenen Institutionen.
-
-Sie können innerhalb der Befragung als reguläre Variablen für die
-Fragebogensteuerung verwendet werden oder lediglich als Zusatzinformation der
-späteren Datenanalyse dienen. Voraussetzung für die Verwendung von Preloads ist
-die Bekanntheit der Stichprobe, d.h. sie können lediglich in einer Befragung
-verwendet werden, bei der der Zugang durch Token organisiert ist.
-
--   [[LINK](#preloads-1)] Siehe auch: Abläufe:Preloads
-
-Zufallsvariablen
----------------------
-
--   ToDo: Generierung von Zufallsvariablen zur zufälligen Steuerung
-
-Abgeleitete Variablen
----------------------
-
--   ToDo: Erstellung von Hilfsvariablen während der Befragung (Summen,
-    Zusammenfassung, Zählung etc. von vorherigen Antworten)
-
-Antwortgruppierung
----------------------
-
-Antwortoptionen lassen sich innerhalb Zofars in übergeordnete Antwortkategorien
-zufammenfassen. Eine sogenannte Unit ist eine den Antwortkategorien
-übergeordnete Ebene, unter der Antwortoptionen subsumiert werden können. Units
-helfen dabei Aktionen für eine Gruppe von Kategorien auszuführen, wie bspw. Ein-
-und Ausblendungen oder [blockweise Randomisierungen](Link zu Randomisierungen).
-Zudem können sie mit einer Überschrift versehen werden um so die
-Antwortkategorien sichtbar für die Befragten zu gruppieren (ToDo: Link zu einer
-Single Choice mit Unit header).
-
+    
 Fragebogensteuerung
 ===================
 
 In Onlinebefragungen lässt sich steuern welche Fragen und Fragebogenanteile den
 Befragten angezeigt werden. Dadurch kann gewährleistet werden, dass den
 Befragten nur ihren Merkmalen entsprechende Fragen gestellt werden.
+
+Zugang zur Befragung
+---------------------
+Login-Methoden
+---------------------
+
+-   Mit Token, es gibt eine bestimmte Anzahl zuvor erstellter individualisierter
+    Token (ggf. mit Preloads angereichert), nur diese Befragten können
+    teilnehmen.
+
+-   Ohne Token (jede\*r mit Befragungslink kann an der Befragung teilnehmen;
+    bereits ausgefüllte Fragebögen lassen sich später nicht mehr betrachten oder
+    ändern)
+
+    -   \-\> [[LINK](#tokenerstellung)] siehe auch: Abläufe: Tokenerstellung
 
 Filterführung
 ---------------------
@@ -895,6 +821,50 @@ korrigieren.
 
 -   ToDo:
 
+
+Weitere funktionale Elemente
+============================
+
+Preloads
+---------------------
+
+Sogenannte Preloads oder Preload-Variablen sind Daten, die vorab in die
+Datenbank geladen und den Befragten zugewiesen werden. Das können bspw. bei
+Panelbefragungen Daten aus vorherigen Erhebungswellen sein oder auch
+Zugehörigkeiten zu den einladenen Institutionen.
+
+Sie können innerhalb der Befragung als reguläre Variablen für die
+Fragebogensteuerung verwendet werden oder lediglich als Zusatzinformation der
+späteren Datenanalyse dienen. Voraussetzung für die Verwendung von Preloads ist
+die Bekanntheit der Stichprobe, d.h. sie können lediglich in einer Befragung
+verwendet werden, bei der der Zugang durch Token organisiert ist.
+
+-   [[LINK](#preloads-1)] Siehe auch: Abläufe:Preloads
+
+Zufallsvariablen
+---------------------
+
+-   ToDo: Generierung von Zufallsvariablen zur zufälligen Steuerung
+
+Abgeleitete Variablen
+---------------------
+
+-   ToDo: Erstellung von Hilfsvariablen während der Befragung (Summen,
+    Zusammenfassung, Zählung etc. von vorherigen Antworten)
+
+Antwortgruppierung
+---------------------
+
+Antwortoptionen lassen sich innerhalb Zofars in übergeordnete Antwortkategorien
+zufammenfassen. Eine sogenannte Unit ist eine den Antwortkategorien
+übergeordnete Ebene, unter der Antwortoptionen subsumiert werden können. Units
+helfen dabei Aktionen für eine Gruppe von Kategorien auszuführen, wie bspw. Ein-
+und Ausblendungen oder [blockweise Randomisierungen](Link zu Randomisierungen).
+Zudem können sie mit einer Überschrift versehen werden um so die
+Antwortkategorien sichtbar für die Befragten zu gruppieren (ToDo: Link zu einer
+Single Choice mit Unit header).
+
+
 aufklappbare Elemente
 ---------------------
 - ToDo: Erläuterung zum Akkordeon
@@ -930,6 +900,15 @@ Kapitelüberschriften dienen dazu die Befragung in Sinneinheiten zu unterteilen.
 Die Überschriften dienen somit als Orientierung und Zielsetzung innerhalb der
 Befragung und ermöglichen den Befragten die Befragung kapitelweise zu
 beantworten.
+
+Mehrsprachigkeit
+================
+
+Layout
+======
+- Hinweis zur Responsivität des Layouts (automatische Anpassung an Bildschirmgröße)
+- Haupt-break-point: 768 Pixel Bildschirmbreite --> Matrizen brechen ins Carousel um
+- weiteres Erklärendes
 
 
 Barrierefreiheit
@@ -973,14 +952,6 @@ Die Barrierefreiheit einer Befragung hängt jedoch stark von den jeweiligen Inha
 -   ggf. Übersetzungsdatei für einfache Sprache anlegen
 
 
-Mehrsprachigkeit
-================
-
-Layout
-======
-- Hinweis zur Responsivität des Layouts (automatische Anpassung an Bildschirmgröße)
-- Haupt-break-point: 768 Pixel Bildschirmbreite --> Matrizen brechen ins Carousel um
-- weiteres Erklärendes
 
 
 Paradaten
@@ -1065,6 +1036,10 @@ Programmiervorlage
     -   en (oder anderes Kürzel): hier die entsprechende Übersetzung einfügen
 
 - ToDo: Beispieltabelle hochladen
+
+Pretest
+--------
+
     
 Preloads
 --------
@@ -1213,3 +1188,45 @@ Online-Forschung, 1).
   
 Young, S. (1998): Measuring and improving Web site design - case histories and
 insights. Perception Research Services.
+
+
+zu löchschen? 
+====================
+
+
+Einladung zur Befragung
+---------------------
+
+https://github.com/dzhw/zofar/issues/421
+
+
+
+Aufbau des Fragebogens
+======================
+
+Informationen zur Befragung
+---------------------
+
+-   Welche Informationen gehören auf eine Index-Seite: Thema und Ziel, Dauer der
+    Befragung, Ansprechpartner, grober Überblick über die Frageninhalte und ggf.
+    über den Aufbau
+
+-   Weitere Infos:
+
+    -   Befragung ist oder ist nicht für mobile Geräte optimiert, (Hinweis zu Offerpage)
+
+    -   Unterbrechung möglich oder nicht?
+
+    -   Barrierefreiheit [[LINK](#barrierefreiheit)] siehe auch:
+        Barrierefreiheit
+
+Anleitung zur Beantwortung
+---------------------
+
+Themenkomplexe und Fragen
+---------------------
+
+Danksagung und Informationen
+---------------------
+
+
