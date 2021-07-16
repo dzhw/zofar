@@ -1,4 +1,4 @@
-Willkommen 
+[Willkommen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#willkommen-1) 
 ===================
 
 ## [Hintergrundinformationen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#hintergrundinformationen-1)
@@ -145,20 +145,19 @@ Willkommen
 [Barrierefreiheit](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#barrierefreiheit-1)
 ===================
 
-## Generelle Anforderungen 
+## [Generelle Anforderungen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#generelle-anforderungen-1)
 
-## Barrierefreiheit bei zofar
+## [Barrierefreiheit bei zofar](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#barrierefreiheit-bei-zofar-1)
 
 
 [Paradaten](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#paradaten-1)
 ===================
 
-
-Datenschutz
+[Datenschutz](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#datenschutz-1) 
 ===================
 
 
-Dokumentation
+[Dokumentation](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#dokumentation-1) 
 ===================
 
 
@@ -172,29 +171,26 @@ Dokumentation
 [Übersetzung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#übersetzung-1)
 ---------------------
 
-Pretest
+[Pretest](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#pretest-1) 
 ---------------------
 
-
-[Preloads](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#preloads-1)
+[Preloads](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#preloads-3)
 ---------------------
-
 
 [Tokenerstellung](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#tokenerstellung-1)
 ---------------------
-
 
 [Versand von Einladungen und Remindern](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#versand-von-einladungen-und-remindern-1)
 ---------------------
 
 
-### Allgemein
+### [Allgemein](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#allgemein-1) 
 
-### Einladungen
+### [Einladungen](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#einladungen-1) 
 
-### Reminder
+### [Reminder](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#reminder-1) 
 
-Literaturverzeichnis
+[Literaturverzeichnis](https://github.com/dzhw/zofar/blob/master/Showroom_Konzept_2021-07-09.md#literaturverzeichnis-1) 
 ================
 
 ------------------------------------
@@ -933,8 +929,7 @@ Eine Website/Befragung gilt dann als barrierefrei, wenn Sie von jedermann ohne E
 •	Aussagekräftige Metadaten: Title-Tags und Meta-Description befüllen.
 •   Alternativtexte (Alt-Texte): Alt-Texte beschreiben ein digitales Bild, sodass ein Bildschirmleseprogramm oder andere Hilfstechnologien das Bild interpretieren können und behinderte Menschen es verstehen können. (Bsp.: Ein schwarzer Hund rennt von links über eine große Wiese). Weitere Infos: https://www.techsmith.de/blog/alternativtext/
 
-
-## Barrierefreiheit bei zofar-Befragungen: 
+## Barrierefreiheit bei zofar
 Die Seiten der Befragung sind relativ einfache Formularoberflächen mit geringen Java-Script-Anteilen. Diese sollten für Screen-Reader relativ gut wiedergebbar sein. Die Schrift ist größenverstellbar. I.A. ist es möglich sich per Tastatur durch die Befragung zu bewegen. Die Kontraste erfüllen nur teilweise die Norm. Es sind keine bewegten Bilder oder Videos enthalten. Es sind nur wenige Logos und Grafiken enthalten. Ein Ersatztext für Logos und Grafiken besteht nicht in allen Fällen. Auf Instrumente, die sich in einer vorangegangenen Barrierefreiheitsprüfung als besonders problematisch erwiesen haben, wurde verzichtet.
 Diese Einschätzung erfolgt vorbehaltlich eine möglichen umfassenderen externen Prüfung, die zu einem anderen Ergebnis kommen könnte. Insgesamt sehen wir die Barrierefreiheit als wichtige Entwicklungsaufgabe für unsere Online-Befragungen, der wir zukünftig ein noch höheres Augenmerk zukommen lassen wollen.
 
