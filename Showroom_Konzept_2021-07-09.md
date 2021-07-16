@@ -1185,7 +1185,7 @@ Young, S. (1998): Measuring and improving Web site design - case histories and
 insights. Perception Research Services.
 
 
-zu löchschen? 
+zu löschen:
 ====================
 
 
