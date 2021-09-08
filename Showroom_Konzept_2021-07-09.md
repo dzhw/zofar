@@ -892,10 +892,17 @@ Für sogenannte "Fortschrittsbalken" in Onlinebefragungen (an denen direkt die n
 
 ### Kapitelüberschrift
 
-Kapitelüberschriften dienen dazu die Befragung in Sinneinheiten zu unterteilen.
-Die Überschriften dienen somit als Orientierung und Zielsetzung innerhalb der
-Befragung und ermöglichen den Befragten die Befragung kapitelweise zu
-beantworten.
+Viele Fragebögen sind thematisch sortiert, d.h. es werden verschiedene Themenbereiche erfragt. 
+Diese thematischen Blöcke (im Folgenden _Module_ genannt) lassen sich dazu verwenden den Befragten einen groben Überblick 
+über den Fragebogen zu geben und eine Orientierung an welcher Stelle er sich gerade befindet.
+
+Im Gegensatz zu dem Fortschrittsbalken wird hier nicht die Gesamtlänge der Seiten zurückgemeldet sonden nur die Module,
+wodurch Unterschiede und Sprünge durch bedingte Filterführung innerhalb der Module den Befragten nicht ersichtlich wird.
+Der Befragungsfortschritt kann so, als Bild dargestellt, jeweils zum Übergang von Modulen oder im Header auf jede Seite eingefügt weden.
+ 
+
+- To Do: Beispiel einbauen (Bild im header)
+
 
 Mehrsprachigkeit
 ================
