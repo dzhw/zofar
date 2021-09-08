@@ -966,14 +966,26 @@ Paradaten auch serverseitig Paradaten generiert. Eine Auflistung der relevanten
 Paradaten, die bislang nur für die technische Durchführung einer Onlinebefragung
 von Zofar genutzt werden, befindet sich in der folgenden Tabelle.
 
-| width    | Bildschirmbreite (in Pixeln)                                                                                                                                                                                                                                                                |
-|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| height   | Bildschirmhöhe (in Pixeln)                                                                                                                                                                                                                                                                  |
-| uas      | User Agent String (gesamter User Agent String, mit Gerätetyp, Betriebssystem, Browser)                                                                                                                                                                                                      |
-| ismobile | Gibt an, ob im UserAgentString angegeben ist, ob es sich um ein mobiles Endgerät handelt: 0= kein mobiles Gerät, 1= Mobilgerät. Hinweis: der Wert ist abhängig, von dem was die Geräte weitergeben. Beispielsweise werden IPads nicht als Mobilgeräte angegeben, andere Tablets aber schon. |
-| jscheck  | Gibt an, ob JavaSkript deaktiviert ist, da dann bestimmte Funktionen nicht greifen.                                                                                                                                                                                                         |
-| url      | Gibt die URL an, von der die Befragten auf die Befragung zugegriffen haben.                                                                                                                                                                                                                 |
-| history  | Die history-Daten sind ein eigener Datensatz im long-format. Hier wird für jede Person und jede Seite der Zeitstempel des Seitenaufrufes (Seiteneingang) gespeichert.                                                                                                                       |
+
+Variablenname Zofar | Beschreibung 
+-- | -- 
+width | Bildschirmbreite (in Pixeln)
+height | Bildschirmhöhe (in Pixeln) 
+uas | User Agent String (gesamter User Agent String, mit Gerätetyp, Betriebssystem, Browser)
+ismobile | wertet aus, ob im UserAgentString angegeben ist, ob das Gerät ein mobiles Gerät ist, 0= kein mobiles Gerät, 1= Mobilgerät (Achtung: es ist abhängig, von dem was die Geräte weitergeben. Beispielsweise werden IPads nicht als Mobilgeräte angegeben, andere Tablets aber schon) 
+jscheck | gibt an, ob JavaSkript deaktiviert ist, da dann bestimmte Funktionen nicht greifen.
+url | gibt die URL an, von der die Befragten die Befragung gestartet haben.
+firstcontact | timestamp des ersten Befragungsaufrufes 
+lastcontact | timestamp des letzten Befragungsaufrufes 
+lastpage | zuletzt gesehene Seite 
+finished | zeigt an, ob die Befragung beendet wurde (bis zur End-Seite gekommen)
+language | wenn der Fragebogen mehrsprachig ist, gibt language die zuletzt verwendete Sprache an
+history | eigener Datensatz (im long-format) mit Zeitstempeln pro Person und FB-Seite
+im Nachhinein erstellte Variablen 
+screen |  
+maxpage | Befragungsfortschritt (wird mit der history in Stata erstellt, ist kein Zofar-Output) 
+
+                                                                                                                  |
 
 Für die sozialwissenschaftliche Umfrageforschung sind Paradaten eine wichtige
 Ergänzung, da durch sie z. B. Rückschlüsse auf die Qualität der erhobenen Daten
