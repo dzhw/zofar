@@ -1006,7 +1006,20 @@ gezogen werden können.
 
 Datenschutz
 =========
-- Anforderungen an Datenschutz
+
+Bei der Durchführung von Onlinebefragungen müssen verschiedene Aspekte des Datenschutzes beachtet und im besten Fall der gesamte Data-Life-Cycle bereits im Vorfeld eingeplant werden.
+Der gesetzliche Datenschutz dient dem Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten sowie der informationellen Selbstbestimmung dieser Personen über Art und Umfang der Erhebung und Verarbeitung ihrer Daten.
+In diesem Sinne dürfen „personenbezogene Daten, aus denen die rassische und ethnische Herkunft, politische Meinungen, religiöse oder weltanschauliche Überzeugungen oder die Gewerkschaftszugehörigkeit hervorgehen, sowie die Verarbeitung von genetischen Daten, biometrischen Daten zur eindeutigen Identifizierung einer natürlichen Person, Gesundheitsdaten oder Daten zum Sexualleben oder der sexuellen Orientierung“. (Art 9, Abs.1 DSGVO) nur dann erhoben und verarbeitet werden, wenn eine ausdrückliche und zweckgebundene Einwilligung vorhanden ist.
+Eine Einwilligung ist nur dann gültig, wenn die Befragten über die Verwendung und Verarbeitung der Daten informiert werden und sie dem ausdrücklich zustimmen. Die Zustimmung kann deshalb nur über die sogenannte 'Opt-In'-Methode zu Beginn jeder Befragung erfolgen. 
+Die Informierung erfolgt z. B. über ein sogenanntes Datenschutzblatt in dem ein Überblick über das jeweilige Projekt, die Personen oder Institutionen, die die Daten erhalten und den Verwendungszweck bzw. die Verwendungszwecke.
+
+Die Einwilligung erfolgt zu Beginn der Befragung über eine Frage mit einer Checkbox, die nicht bereits vorausgefüllt werden kann. Ohne diese Zustimmung darf der Befragte den Fragebogen nicht ausfüllen.
+
+[Screenshot der Zustimmung]
+
+
+- Screenshot einer Zustimmung
+- kommentiertest Datenschutzblatt
 - Vorlage für Datenschutzblatt
 - technische Hinweise zum Datenschutz
 
