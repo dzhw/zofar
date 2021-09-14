@@ -909,9 +909,20 @@ Mehrsprachigkeit
 
 Layout
 ======
-- Hinweis zur Responsivität des Layouts (automatische Anpassung an Bildschirmgröße)
-- Haupt-break-point: 768 Pixel Bildschirmbreite --> Matrizen brechen ins Carousel um
-- weiteres Erklärendes
+
+Das FrontEnd von Zofar ist mithilfe des CSS-Framework Boostrap entwickelt und reagiert als 'responsives Design' dynamisch auf die Eigenschaften des 
+jeweils verwendeten Gerätes, Browser und der Bildschirmgröße. Das Design enthält fluide Elemente sowie fixe Breakpoints, bei denen sich die Darstellung ändert.
+
+**Fluide Elemente** orientieren sich an der Bildschirmbreite und ordnen die einzelnen Elemente relativ zueinander an. Das ist beispielsweise bei horinzontalen Skalen 
+der Fall. Die Abstände zwischen den Skalenpunkten werden prozentual zur Gesamtbreite des Content-Bereiches dargestellt.
+
+Demgegenüber gibt es **fixe Breakpoints**, bei denen sich die Darstellung vollständig verändert, indem andere technische Elemente angewandt werden. Das ist bei dem sogenannten Carousel so. Das Carousel dient der Darstellung von Matrizen auf Bildschirmen die schmaler sind als 768 Pixel. Die Matrizen werden in ihre Items aufgeteilt und die Antwortskala vertikal gekippt. Während der Fragetext fixiert wird, werden die Items mit der Skala im Karussel rotiert.
+
+
+
+- Hinweis zur Responsivität des Layouts/ fluides Design (automatische Anpassung an Bildschirmgröße)
+- weiteres Breakpoints nennen und erläutern
+
 
 
 Barrierefreiheit
@@ -938,6 +949,7 @@ Eine Website/Befragung gilt dann als barrierefrei, wenn Sie von jedermann ohne E
 
 ## Barrierefreiheit bei zofar
 Die Seiten der Befragung sind relativ einfache Formularoberflächen mit geringen Java-Script-Anteilen. Diese sollten für Screen-Reader relativ gut wiedergebbar sein. Die Schrift ist größenverstellbar. I.A. ist es möglich sich per Tastatur durch die Befragung zu bewegen. Die Kontraste erfüllen nur teilweise die Norm. Es sind keine bewegten Bilder oder Videos enthalten. Es sind nur wenige Logos und Grafiken enthalten. Ein Ersatztext für Logos und Grafiken besteht nicht in allen Fällen. Auf Instrumente, die sich in einer vorangegangenen Barrierefreiheitsprüfung als besonders problematisch erwiesen haben, wurde verzichtet.
+
 Diese Einschätzung erfolgt vorbehaltlich eine möglichen umfassenderen externen Prüfung, die zu einem anderen Ergebnis kommen könnte. Insgesamt sehen wir die Barrierefreiheit als wichtige Entwicklungsaufgabe für unsere Online-Befragungen, der wir zukünftig ein noch höheres Augenmerk zukommen lassen wollen.
 
 Die Barrierefreiheit einer Befragung hängt jedoch stark von den jeweiligen Inhalten ab. Konkrete Aussagen zum Grad der Barrierefreiheit einer einzelnen Befragung sind daher nur nach Prüfung durch Externe möglich. 
@@ -946,10 +958,11 @@ Die Barrierefreiheit einer Befragung hängt jedoch stark von den jeweiligen Inha
 
 **Um eine Befragung möglichst barrierearm zu gestalten sind folgende Zulieferungen des Projektes notwendig: **
 
-
 -   Barrierefreie PDFs erstellen  (z.B.: Datenschutzbatt auf der Indexseite) - ToDo: Link zu Vorlage (von Petra)
--   Prüfung der Barrierefreiheit per PAC checken (<https://www.access-for-all.ch/ch/pdf-werkstatt/pdf-accessibility-checker-pac.html>) - ToDo: Liste mit wichtigen Indikatoren
--   Mitliefern von Alternativ-Texten in der Programmiervorlage, falls Bilder oder Logos eingefügt werden sollen
+-   Prüfung der Barrierefreiheit per PAC checken (<https://www.access-for-all.ch/ch/pdf-werkstatt/pdf-accessibility-checker-pac.html>) 
+-   Für Logos, Bilder und Graphiken die in eine Befragung eingebunden werden sollen, sollten immer auch Alternativtexte mitgeliefert werden (z. B. in der Programmiervorlage).
+-   Fragetypen, die den technischen Anforderungen an Barrierearmut nicht genügen, sollten übersprungen werden können oder es sollte eine Alternative Möglichkeit gefunden werden, diese Fragen zu beantworten.
+-   ToDo: Liste mit wichtigen Indikatoren
 -   Angabe von Überschriftenlevel (h1-h6) in der Programmiervorlage - ToDo: Link/Beispiel raussuchen
 -   ggf. Übersetzungsdatei für einfache Sprache anlegen
 
@@ -969,9 +982,9 @@ dass mit einem Endgerät auf eine Webseite zugegriffen wird. Gänzlich unbemerkt
 vom Nutzenden sendet das Endgerät Daten an die angeforderte Webseite, damit
 diese korrekt dargestellt werden kann. Damit eine Onlinebefragung technisch
 einwandfrei funktioniert, werden zusätzlich zur Erfassung dieser clientseitigen
-Paradaten auch serverseitig Paradaten generiert. Eine Auflistung der relevanten
-Paradaten, die bislang nur für die technische Durchführung einer Onlinebefragung
-von Zofar genutzt werden, befindet sich in der folgenden Tabelle.
+Paradaten auch serverseitig Paradaten generiert. 
+Eine Auflistung der Paradaten, die bislang 
+derzeit von Zofar erhoben werden können, befindet sich in der folgenden Tabelle.
 
 
 Variablenname Zofar | Beschreibung 
@@ -993,13 +1006,13 @@ screen |
 maxpage | Befragungsfortschritt (wird mit der history in Stata erstellt, ist kein Zofar-Output) 
 
                                                                                                                   |
-
 Für die sozialwissenschaftliche Umfrageforschung sind Paradaten eine wichtige
-Ergänzung, da durch sie z. B. Rückschlüsse auf die Qualität der erhobenen Daten
-gezogen werden können.
+Ergänzung, denn durch sie können z. B. Rückschlüsse auf die Qualität der erhobenen Daten
+gezogen werden.
 
--   ToDo: Hinweis zum Datenschutz (dürfen nur ausgelesen und mitgeliefert
-    werden, wenn auch im Datenschutzblatt enthalten)
+Da Paradaten automatisch erhoben werden, ohne Wissen des Befragten, müssen sie im Rahmen der
+Einwilligung der Befragten eigens genannt und beschrieben werden. Weitere Hinweise zur Behandlung 
+von Paradaten beim Datenschutz gibt es [hier; /datenschutz.html].
 
 -   ToDo: Literaturhinweis
 
@@ -1008,8 +1021,11 @@ Datenschutz
 =========
 
 Bei der Durchführung von Onlinebefragungen müssen verschiedene Aspekte des Datenschutzes beachtet und im besten Fall der gesamte Data-Life-Cycle bereits im Vorfeld eingeplant werden.
+
 Der gesetzliche Datenschutz dient dem Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten sowie der informationellen Selbstbestimmung dieser Personen über Art und Umfang der Erhebung und Verarbeitung ihrer Daten.
+
 In diesem Sinne dürfen „personenbezogene Daten, aus denen die rassische und ethnische Herkunft, politische Meinungen, religiöse oder weltanschauliche Überzeugungen oder die Gewerkschaftszugehörigkeit hervorgehen, sowie die Verarbeitung von genetischen Daten, biometrischen Daten zur eindeutigen Identifizierung einer natürlichen Person, Gesundheitsdaten oder Daten zum Sexualleben oder der sexuellen Orientierung“. (Art 9, Abs.1 DSGVO) nur dann erhoben und verarbeitet werden, wenn eine ausdrückliche und zweckgebundene Einwilligung vorhanden ist.
+
 Eine Einwilligung ist nur dann gültig, wenn die Befragten über die Verwendung und Verarbeitung der Daten informiert werden und sie dem ausdrücklich zustimmen. Die Zustimmung kann deshalb nur über die sogenannte 'Opt-In'-Methode zu Beginn jeder Befragung erfolgen. 
 Die Informierung erfolgt z. B. über ein sogenanntes Datenschutzblatt in dem ein Überblick über das jeweilige Projekt, die Personen oder Institutionen, die die Daten erhalten und den Verwendungszweck bzw. die Verwendungszwecke.
 
@@ -1017,9 +1033,9 @@ Die Einwilligung erfolgt zu Beginn der Befragung über eine Frage mit einer Chec
 
 [Screenshot der Zustimmung]
 
-
+To Do:
 - Screenshot einer Zustimmung
-- kommentiertest Datenschutzblatt
+- kommentiertes Datenschutzblatt
 - Vorlage für Datenschutzblatt
 - technische Hinweise zum Datenschutz
 
