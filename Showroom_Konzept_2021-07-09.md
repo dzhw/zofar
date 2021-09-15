@@ -466,7 +466,7 @@ entsprechenden Antwort. Kategorien für fehlende Werte, wie "nichts von alledem"
 "keine Angabe", "weiß nicht" oder "trifft nicht zu", können sowohl in der
 horizontalen als auch in der vertikalen Anordnung abgesetzt, d.h. mit Lücke zu
 den gültigen Werten, dargestellt werden, damit sie nicht mit Skalenpunkten
-verwechselt werden (Tourangeou et al. 2004).  
+verwechselt werden (Tourangeau et al. 2004).  
   
 Varianten der Einfachauswahl sind die Einfachauswahl als Leiste und mit
 Dropdown-Menü. Die Antwortalternativen werden bei einem Dropdown-Menü durch das
@@ -522,7 +522,7 @@ entsprechenden Antwort. Kategorien für fehlende Werte, wie "keine Angabe", "wei
 nicht" oder "trifft nicht zu", können sowohl in der horizontalen als auch in der
 vertikalen Anordnung abgesetzt, d.h. mit Lücke zu den gültigen Werten,
 dargestellt werden, damit sie nicht mit Skalenpunkten verwechselt werden
-(Tourangeou et al. 2004).  
+(Tourangeau et al. 2004).  
   
 Anschauungsbeispiele:
 
@@ -905,6 +905,18 @@ Der Befragungsfortschritt kann so, als Bild dargestellt, jeweils zum Übergang v
 
 Mehrsprachigkeit
 ================
+
+Fragebögen in Zofar können in mehreren Sprachen dargestellt werden. Hierfür werden für alle sichtbaren Textelemente Übersetzungen im Befragungssystem hinterlegt. 
+Die Sprachen können von den Befragten auf jeder Fargebogenseite bzw. jeder übersetzten Fragebogenseite ausgewählt werden. Es ist auch möglich, dass die bevorzugte
+Sprache einmalig zu Beginn des Fragebogens gewählt wird.
+
+Zofar unterstützt auch nicht-westliche Sprachen/Schriften. Da bei einer Übersetzung jedoch nur die Textelemente verändert werden, ist zu beachten, dass die Lesrichtung 
+bei einer Übersetzung einheitlich bleibt.
+
+Als Standardeinstellung hinterlegt Zofar für die vom Befragten gewählte Sprache lediglich ein Paradatum (language). Kann die Sprache im Verlauf des Fragebogens mehrfach
+gewechselt werden, spiegelt diese Variable den zuletzt gespeicherten Zustand wider. 
+
+
 
 Layout
 ======
