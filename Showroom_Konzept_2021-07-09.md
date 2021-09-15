@@ -698,8 +698,6 @@ Befragten nur ihren Merkmalen entsprechende Fragen gestellt werden.
 
 Zugang zur Befragung
 ---------------------
-Login-Methoden
----------------------
 
 -   Mit Token, es gibt eine bestimmte Anzahl zuvor erstellter individualisierter
     Token (ggf. mit Preloads angereichert), nur diese Befragten können
@@ -710,6 +708,7 @@ Login-Methoden
     ändern)
 
     -   \-\> [[LINK](#tokenerstellung)] siehe auch: Abläufe: Tokenerstellung
+
 
 Filterführung
 ---------------------
