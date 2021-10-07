@@ -921,7 +921,7 @@ gewechselt werden, spiegelt diese Variable den zuletzt gespeicherten Zustand wid
 Layout
 ======
 
-Das FrontEnd von Zofar ist mithilfe des CSS-Framework Boostrap entwickelt und reagiert als 'responsives Design' dynamisch auf die Eigenschaften des 
+Das FrontEnd von Zofar ist mithilfe des "CSS (Cascading Style Sheets)"-Framework Boostrap entwickelt und reagiert als 'responsives Design' dynamisch auf die Eigenschaften des 
 jeweils verwendeten Gerätes, Browser und der Bildschirmgröße. Das Design enthält fluide Elemente sowie fixe Breakpoints, bei denen sich die Darstellung ändert.
 
 **Fluide Elemente** orientieren sich an der Bildschirmbreite und ordnen die einzelnen Elemente relativ zueinander an. Das ist beispielsweise bei horinzontalen Skalen 
@@ -930,8 +930,21 @@ der Fall. Die Abstände zwischen den Skalenpunkten werden prozentual zur Gesamtb
 Demgegenüber gibt es **fixe Breakpoints**, bei denen sich die Darstellung vollständig verändert, indem andere technische Elemente angewandt werden. Das ist bei dem sogenannten Carousel so. Das Carousel dient der Darstellung von Matrizen auf Bildschirmen die schmaler sind als 768 Pixel. Die Matrizen werden in ihre Items aufgeteilt und die Antwortskala vertikal gekippt. Während der Fragetext fixiert wird, werden die Items mit der Skala im Karussel rotiert.
 
 
+Das Erscheinungsbild eines Fragebogens mit Zofar kann über eine Vielzahl von Layoutoptionen angepasst werden. Beispielweise lassen sich folgende Bausteine individuell anpassen: 
 
-- Hinweis zur Responsivität des Layouts/ fluides Design (automatische Anpassung an Bildschirmgröße)
+•	Logo(s) im Headerbereich
+
+•	Farbe des unteren Balkens
+
+•	Schriftart, -farbe und -größe
+
+•	Farbe des Zebra-Musters
+
+
+Zusätzlich zu CSS-Änderungen können unterschiedliche Schriftschnitte verwendet und Texte mittels Umbrüche und Absätze formatiert werden. Diese Anpassungen werden direkt im QML, dem Dokument der Fragebogenprogrammierung, vorgenommen.
+
+
+ToDo: 
 - weiteres Breakpoints nennen und erläutern
 
 
@@ -1073,6 +1086,16 @@ Programmiervorlage
 
 -   Link zur neuen Programmiervorlage (in statu nascendi):
     https://gist.github.com/christian-fr/959585d8e4414affce619605a8a6a1ea
+
+Layout-Anpassungen
+-----------
+-> Platz in der Programmiervorlage
+-> Formatanforderungen von Logos und Bildern
+
+
+Mögliche Schriftschnitte sind: Fett/Bold, Kursiv/Italic und Unterstrichen/Underline. 
+Hinweis: Um Layout-Änderungen zu prüfen, welche über das CSS erfolgt sind, muss der Cache deines Browers geleert werden. Eine Anleitung zum Leeren des Caches findest du hier: https://browser-cache-leeren.de/de/windows.html
+
 
 Übersetzung
 -----------
