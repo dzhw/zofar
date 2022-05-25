@@ -50,7 +50,9 @@ Bitte überprüfen und korrigieren Sie Ihre Eingabe.
 ### fo
 Antwortoptionen (Zebramuster)
 
-### tr: GOTO A03 IF bdsv04 > 0 OR bdsv04 = SYSMISS GOTO A12 if bdsv18==2 OR bdsv04 = 0 GOTO A12 IF ELSE
+### tr
+#### GOTO A03 IF bdsv04 > 0 OR bdsv04 = SYSMISS 
+#### GOTO A12 if bdsv18==2 OR bdsv04 = 0 GOTO A12 IF ELSE
 
 ### hi
 
