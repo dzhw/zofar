@@ -2,7 +2,7 @@
 
 tc: IF bdbi17 = 1 OR bdbi17 = 3 OR bdbi17 = 5
 
-vn: bdsv04, bdsv18
+vn: bdsv03, bdsv04, bdsv18
 
 qt: Einfachauswahl mit vertikaler ao und offene Frage (number)
 
@@ -19,6 +19,7 @@ it:
 
 ao1: (bdsv04): 1: 1 cm, [ao] Suffix: [number] Person(en)
 ao2: (bdsv18): 2 : Ich habe derzeit noch keine(n) Betreuer(in).
+ao3: : 3 : Weiß nicht.
 
 mv: 
 
