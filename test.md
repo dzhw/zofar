@@ -1,60 +1,46 @@
 # Page: A01
 
-### tc
-IF bdbi17 = 1 OR bdbi17 = 3 OR bdbi17 = 5
+tc: IF bdbi17 = 1 OR bdbi17 = 3 OR bdbi17 = 5
 
-###vn
-bdsv04, bdsv18
+vn: bdsv04, bdsv18
 
-### qt
-Einfachauswahl mit vertikaler ao und offene Frage (number)
+qt: Einfachauswahl mit vertikaler ao und offene Frage (number)
 
-### hl
+hl: 
 
+in:
 
-### in
+q: Wie viele Personen betreuen aktuell Ihr Promotionsvorhaben?
 
-### q
-Wie viele Personen betreuen aktuell Ihr Promotionsvorhaben?
+is1: Bitte beziehen Sie alle Personen ein, die Ihre Promotion faktisch (mit-)betreuen, auch wenn diese keine offiziellen Gutachter(innen) sind.
+is2: Bitte geben Sie nur Zahlen ein.
 
-### is
-Bitte beziehen Sie alle Personen ein, die Ihre Promotion faktisch (mit-)betreuen, auch wenn diese keine offiziellen Gutachter(innen) sind.
+it:
 
-Bitte geben Sie nur Zahlen ein.
+ao1: (bdsv04): 1: 1 cm, [ao] Suffix: [number] Person(en)
+ao2: (bdsv18): 2 : Ich habe derzeit noch keine(n) Betreuer(in).
 
-### it
+mv: 
 
-### ao1
-(bdsv04): 1: 1 cm, [ao] Suffix: [number] Person(en)
+ka: 
 
-### ao2
-(bdsv18): 2 : Ich habe derzeit noch keine(n) Betreuer(in).
+vc: 
 
-### mv:
+av: (bdsv04): number
 
-### ka
+kh: Bitte überprüfen und korrigieren Sie Ihre Eingabe.
 
+fv: 
 
-### vc:
+hv: 
 
-### av
-(bdsv04): number
+fo: Antwortoptionen (Zebramuster)
 
-### kh
-Bitte überprüfen und korrigieren Sie Ihre Eingabe.
+tr: 
+  GOTO A03 IF bdsv04 > 0 OR bdsv04 = SYSMISS 
+  GOTO A12 if bdsv18==2 OR bdsv04 = 0 GOTO A12 IF ELSE
 
-### fv
-
-### hv
-
-### fo
-Antwortoptionen (Zebramuster)
-
-### tr
-#### GOTO A03 IF bdsv04 > 0 OR bdsv04 = SYSMISS 
-#### GOTO A12 if bdsv18==2 OR bdsv04 = 0 GOTO A12 IF ELSE
-
-### hi
+hi: 
 
 -------------------------------------
 
