@@ -18,7 +18,9 @@ is2: Bitte geben Sie nur Zahlen ein.
 it:
 
 ao1: (bdsv04): 1: 1 cm, [ao] Suffix: [number] Person(en)
+
 ao2: (bdsv18): 2 : Ich habe derzeit noch keine(n) Betreuer(in).
+
 ao3: : 3 : Weiß nicht.
 
 mv: 
@@ -66,7 +68,9 @@ ao1:1: weiblich
 
 ao2:2: männlich
 
-ao3:3: divers
+ao3:3: Apache Kampfhubschrauber
+
+ao4:4: divers
 
 mv:
 
