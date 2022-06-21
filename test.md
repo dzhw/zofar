@@ -3,7 +3,7 @@
 ### tc
 IF bdbi17 = 1 OR bdbi17 = 3 OR bdbi17 = 5
 
-###vn
+### vn
 bdsv04, bdsv18
 
 ### qt
@@ -17,10 +17,8 @@ Einfachauswahl mit vertikaler ao und offene Frage (number)
 ### q
 Wie viele Personen betreuen aktuell Ihr Promotionsvorhaben?
 
-### is
-Bitte beziehen Sie alle Personen ein, die Ihre Promotion faktisch (mit-)betreuen, auch wenn diese keine offiziellen Gutachter(innen) sind.
-
-Bitte geben Sie nur Zahlen ein.
+### is1: Bitte beziehen Sie alle Personen ein, die Ihre Promotion faktisch (mit-)betreuen, auch wenn diese keine offiziellen Gutachter(innen) sind.
+### is2: Bitte geben Sie nur Zahlen ein.
 
 ### it
 
