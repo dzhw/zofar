@@ -43,6 +43,47 @@ tr:
 
 hi: 
 
+
+-------------------------------------
+
+# Page: soc1
+
+vn: soc001
+
+qt: Einfachauswahl vertikal
+
+hl:
+
+in:
+
+q: Welches Geschlecht haben Sie?
+
+is:
+
+it:
+
+ao1:1: weiblich
+
+ao2:2: männlich
+
+ao3:3: divers
+
+mv:
+
+ka:
+
+vc:
+
+av:
+
+kh:
+
+fv:
+
+hv:
+
+tr:
+
 -------------------------------------
 
 # Page: Calendar
