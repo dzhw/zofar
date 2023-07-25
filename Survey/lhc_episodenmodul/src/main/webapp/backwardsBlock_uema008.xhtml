@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="64"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.redirect('uema008')" condition="navigatorBean.getBackwardViewID().startsWith('/splitLanding') or navigatorBean.getBackwardViewID().startsWith('/defaultLanding')" onExit="false" navigator="#{navigatorBean}"/>
+    <action command="navigatorBean.redirect('episodeDispatcher')" condition="!(navigatorBean.getBackwardViewID().startsWith('/splitLanding') or navigatorBean.getBackwardViewID().startsWith('/defaultLanding'))" onExit="false" navigator="#{navigatorBean}"/>
+    <con:section id="backwardsBlock_uema008" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['backwardsBlock_uema008.t1_0']}</text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

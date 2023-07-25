@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:a4j="http://richfaces.org/a4j"
+    xmlns:rich="http://richfaces.org/rich"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:t="http://myfaces.apache.org/tomahawk">
+
+<h:head></h:head>
+<body>
+    <rich:panel>
+        <f:facet name="header">
+        Survey List
+        </f:facet>
+        <h:form>
+            <h:panelGrid columns="3">
+                <h:outputText value="Name" />
+                <h:inputText id="name"
+                    value="#{surveyListModelBean.surveyQuery.name}">
+                    <rich:validator event="change" />
+                </h:inputText>
+                <h:messages for="name" />
+                <h:outputText value="State" />
+                <h:selectManyCheckbox id="states"
+                    value="#{surveyListModelBean.surveyQuery.states}">
+                    <f:selectItems
+                        value="#{surveyListModelBean.surveyStates}" />
+                </h:selectManyCheckbox>
+                <h:messages for="states" />
+                <h:commandButton
+                    actionListener="#{surveyListControllerBean.search}"
+                    value="Search" />
+                <h:outputText value="" />
+                <h:outputText value="" />
+            </h:panelGrid>
+
+            <a4j:outputPanel ajaxRendered="true">
+                <rich:dataTable
+                    value="#{surveyListModelBean.surveysPage.content}"
+                    var="survey"
+                    rendered="#{surveyListModelBean.surveysPage != null}"
+                    rowClasses="odd, even" style="width: 100%;">
+                    <rich:column>
+                        <f:facet name="header">
+                            <h:outputText value="Name" />
+                        </f:facet>
+                        <h:outputText value="#{survey.name}" />
+                    </rich:column>
+                    <rich:column>
+                        <f:facet name="header">
+                            <h:outputText value="State" />
+                        </f:facet>
+                        <h:outputText value="#{survey.state}" />
+                    </rich:column>
+                    <rich:column>
+                        <a4j:commandLink
+                            action="#{surveyListControllerBean.delete(survey)}"
+                            execute="@this">
+                            <h:graphicImage
+                                url="./resources/edit-delete.png"
+                                alt="delete" />
+                        </a4j:commandLink>
+                    </rich:column>
+                </rich:dataTable>
+            </a4j:outputPanel>
+        </h:form>
+    </rich:panel>
+</body>
+</html>

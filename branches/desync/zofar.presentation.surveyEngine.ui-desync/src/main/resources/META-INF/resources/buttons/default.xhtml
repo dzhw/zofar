@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:zo="http://zofar.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.ButtonPanel">
+	<composite:attribute name="isLastPage" type="java.lang.Boolean"
+		required="false" default="false" />
+	<composite:attribute name="recorderEnabled" type="java.lang.Boolean"
+		required="false" default="false" />
+</composite:interface>
+
+<composite:implementation>
+	<zo:defaultAction value="#{cc.bundle.next}" isLastPage="#{cc.attrs.isLastPage}" recorderEnabled="#{cc.attrs.recorderEnabled}"/>
+</composite:implementation>
+
+</html>

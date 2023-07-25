@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.his.zofar</groupId>
+        <artifactId>zofar.service.surveyEngine</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>zofar.service.surveyEngine.interface-nodozer-noselect-experimental0</artifactId>
+    <name>zofar.service.surveyEngine.interface-nodozer-noselect-experimental0</name>
+    <dependencies>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.persistence.surveyEngine-noselect-experimental0</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</project>

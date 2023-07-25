@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/common"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:text="http://java.sun.com/jsf/composite/text"
+	xmlns:answer="http://java.sun.com/jsf/composite/answer" xmlns:common="http://java.sun.com/jsf/composite/common"
+	xmlns:matrix="http://java.sun.com/jsf/composite/matrix" xmlns:question="http://java.sun.com/jsf/composite/question"
+	xmlns:composite="http://java.sun.com/jsf/composite/composite"
+	xmlns:container="http://java.sun.com/jsf/composite/container"
+	xmlns:eps="http://java.sun.com/jsf/composite/episodes"
+	xmlns:display="http://java.sun.com/jsf/composite/display"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:import namespace="http://java.sun.com/jsf/composite/text"
+		schemaLocation="zofar_text.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/answer"
+		schemaLocation="zofar_answer.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/matrix"
+		schemaLocation="zofar_matrix.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/question"
+		schemaLocation="zofar_question.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/composite"
+		schemaLocation="zofar_composite.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/container"
+		schemaLocation="zofar_container.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/display"
+		schemaLocation="zofar_display.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/episodes"	
+		schemaLocation="zofar_episodes.xsd" />
+
+	<xs:element type="common:sortType" name="sort" />
+	<xs:element type="common:pageType" name="page" />
+	<xs:element type="common:jumperContainerType" name="jumperContainer" />
+	<xs:element type="common:jumperType" name="jumper" />
+	<xs:element type="common:devRenderConditionType" name="devRenderCondition" />
+
+	<xs:complexType name="devRenderConditionType">
+	</xs:complexType>
+
+	<xs:complexType name="identificationalType">
+		<!-- <xs:attribute type="xs:token" name="uid" use="required" /> -->
+		<xs:attribute type="xs:token" name="id" use="required" />
+	</xs:complexType>
+
+	<xs:attributeGroup name="renderedAttribute">
+		<!-- <xs:attribute type="xs:normalizedString" name="visibleCondition" /> -->
+		<xs:attribute type="xs:normalizedString" name="rendered" />
+	</xs:attributeGroup>
+
+	<xs:complexType name="pageType">
+		<xs:complexContent>
+			<xs:extension base="container:sectionType" />
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="jumperType">
+		<xs:attribute type="xs:normalizedString" name="value"
+			use="required" />
+		<xs:attribute type="xs:normalizedString" name="targetPage"
+			use="required" />
+		<xs:attribute type="xs:token" name="level" default="0" />
+		<xs:attribute name="disabled" type="xs:boolean" default="false" />
+		<xs:attribute type="xs:normalizedString" name="visible"
+			use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="jumperContainerType">
+
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
+				<xs:element name="jumper" type="common:jumperType" />
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute type="xs:normalizedString" name="separator" />
+
+	</xs:complexType>
+
+	<xs:complexType name="sortType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element ref="container:section" />
+					<xs:element ref="common:sort" />
+					<xs:element ref="question:boolean" />
+					<xs:element ref="question:singleChoice" />
+					<xs:element ref="question:multipleChoice" />
+					<xs:element ref="question:open" />
+					<xs:element ref="question:pretest" />
+					<xs:element ref="text:instruction" />
+					<xs:element ref="text:intro" />
+					<xs:element ref="text:question" />
+					<xs:element ref="text:text" />
+					<xs:element ref="text:title" />
+					<xs:element ref="text:responseOption" />
+					<xs:element ref="matrix:openMatrix" />
+					<xs:element ref="matrix:openMatrixItem" />
+					<xs:element ref="matrix:openMatrixResponseDomainUnit" />
+					<xs:element ref="matrix:singleChoiceMatrix" />
+					<xs:element ref="matrix:singleChoiceMatrixItem" />
+					<xs:element ref="matrix:singleChoiceMatrixResponseDomainUnit" />
+					<xs:element ref="composite:multipleChoiceComposite" />
+					<xs:element ref="composite:multipleChoiceCompositeItem" />
+					<xs:element ref="composite:multipleChoiceCompositeResponseDomainUnit" />
+					<xs:element ref="composite:doubleMatrix" />
+					<xs:element ref="composite:doubleMatrixItem" />
+					<xs:element ref="composite:doubleMatrixUnit" />
+					<xs:element ref="answer:singleOption" />
+					<xs:element ref="answer:multipleOption" />
+					<xs:element ref="composite:mixedMatrix" />
+					<xs:element ref="composite:mixedMatrixItem" />
+					<xs:element ref="composite:mixedMatrixUnit" />
+					<xs:element ref="composite:comparisonQuestion" />
+					<xs:element ref="composite:comparisonQuestionItem" />
+					<xs:element ref="composite:comparisonUnit" />
+					<xs:element ref="composite:calendar" />
+					<xs:element ref="eps:episodes" />
+					<xs:element ref="eps:episodesTable" />
+					<xs:element ref="display:container" />
+				</xs:choice>
+				<xs:attribute name="mode" default="random">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="random" />
+							<xs:enumeration value="randomonce" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute type="xs:token" name="bean" default="#{sortBean}" />
+				<xs:attribute type="xs:normalizedString" name="sorted" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

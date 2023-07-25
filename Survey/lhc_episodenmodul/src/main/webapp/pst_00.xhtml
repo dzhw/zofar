@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="99"/>
+  <ui:define name="template-content">
+    <variable var="#{h_staktsgang1}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsgang2}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsgang3}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsgang4}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsgang5}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsgang6}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach11}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach12}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach13}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach14}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach15}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach16}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach21}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach22}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach23}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach24}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach25}" value="0" navigator="#{navigatorBean}"/>
+    <variable var="#{h_staktsfach26}" value="0" navigator="#{navigatorBean}"/>
+    <con:section id="pst_00" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t">#{msgs['pst_00.t_0']}</text:text>
+        <text:text container="true" id="img1">#{msgs['pst_00.img1_0']}</text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

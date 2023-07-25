@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/composite" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="37"/>
+  <ui:define name="template-content">
+    <section id="doppelmatrix_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['doppelmatrix_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['doppelmatrix_beispiel.text_0']}</text:text>
+      </f:facet>
+      <com:doubleMatrix id="md">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['doppelmatrix_beispiel.b.md.q_0']}</text:question>
+        </f:facet>
+        <com:doubleMatrixResponseDomain id="rd" noResponseOptions="5" isShowValues="false">
+          <f:facet name="leftScaleHeader">
+            <text:text container="true" id="tl">#{msgs['doppelmatrix_beispiel.b.md.rd.tl_0']}</text:text>
+          </f:facet>
+          <f:facet name="rightScaleHeader">
+            <text:text container="true" id="tr">#{msgs['doppelmatrix_beispiel.b.md.rd.tr_0']}</text:text>
+          </f:facet>
+          <com:doubleMatrixItem id="i1">
+            <f:facet name="question">
+              <text:question container="true" id="q">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.q_0']}</text:question>
+            </f:facet>
+            <f:facet name="left">
+              <mat:singleChoiceMatrixItemResponseDomain id="le" value="#{matrixdouble_it11.valueId}">
+                <ans:singleOption id="ao1" itemValue="1">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.le.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao2" itemValue="2">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.le.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </mat:singleChoiceMatrixItemResponseDomain>
+            </f:facet>
+            <f:facet name="right">
+              <mat:singleChoiceMatrixItemResponseDomain id="ri" value="#{matrixdouble_it12.valueId}">
+                <ans:singleOption id="ao1" itemValue="1">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.ri.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao2" itemValue="2">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.ri.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao3" itemValue="3">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.ri.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao4" itemValue="4">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.ri.ao4.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao5" itemValue="5">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i1.ri.ao5.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </mat:singleChoiceMatrixItemResponseDomain>
+            </f:facet>
+          </com:doubleMatrixItem>
+          <com:doubleMatrixItem id="i2">
+            <f:facet name="question">
+              <text:question container="true" id="q">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.q_0']}</text:question>
+            </f:facet>
+            <f:facet name="left">
+              <mat:singleChoiceMatrixItemResponseDomain id="le" value="#{matrixdouble_it21.valueId}">
+                <ans:singleOption id="ao1" itemValue="1">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.le.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao2" itemValue="2">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.le.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </mat:singleChoiceMatrixItemResponseDomain>
+            </f:facet>
+            <f:facet name="right">
+              <mat:singleChoiceMatrixItemResponseDomain id="ri" value="#{matrixdouble_it22.valueId}">
+                <ans:singleOption id="ao1" itemValue="1">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.ri.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao2" itemValue="2">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.ri.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao3" itemValue="3">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.ri.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao4" itemValue="4">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.ri.ao4.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao5" itemValue="5">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i2.ri.ao5.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </mat:singleChoiceMatrixItemResponseDomain>
+            </f:facet>
+          </com:doubleMatrixItem>
+          <com:doubleMatrixItem id="i3">
+            <f:facet name="question">
+              <text:question container="true" id="q">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.q_0']}</text:question>
+            </f:facet>
+            <f:facet name="left">
+              <mat:singleChoiceMatrixItemResponseDomain id="le" value="#{matrixdouble_it31.valueId}">
+                <ans:singleOption id="ao1" itemValue="1">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.le.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao2" itemValue="2">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.le.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </mat:singleChoiceMatrixItemResponseDomain>
+            </f:facet>
+            <f:facet name="right">
+              <mat:singleChoiceMatrixItemResponseDomain id="ri" value="#{matrixdouble_it32.valueId}">
+                <ans:singleOption id="ao1" itemValue="1">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.ri.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao2" itemValue="2">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.ri.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao3" itemValue="3">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.ri.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao4" itemValue="4">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.ri.ao4.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption id="ao5" itemValue="5">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['doppelmatrix_beispiel.b.md.rd.i3.ri.ao5.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </mat:singleChoiceMatrixItemResponseDomain>
+            </f:facet>
+          </com:doubleMatrixItem>
+        </com:doubleMatrixResponseDomain>
+      </com:doubleMatrix>
+    </section>
+  </ui:define>
+</ui:composition>

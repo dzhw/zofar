@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/special.xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<ui:param name="target"
+		value="#{facesContext.externalContext.requestContextPath}/j_spring_security_check" />
+	<ui:define name="template-content">
+
+		<ui:fragment rendered="#{param['message']=='SessionExpired'}">
+			Session ist abgelaufen
+		</ui:fragment>
+		<ui:fragment  rendered="#{param['message']=='LoggedOut'}">
+			Ausgeloggt
+		</ui:fragment >
+<p></p>
+		<div class="form_line">
+			<div class="line_label">
+				<h:outputLabel value="Username: ">
+					<input type="text" name="j_username" tabindex="1" checked="checked" />
+				</h:outputLabel>
+			</div>
+
+		</div>
+
+		<div class="form_line">
+			<div class="line_label">
+				<br></br>
+				<h:outputLabel value="Password: ">
+					<input type="password" name="j_password" tabindex="2" />
+				</h:outputLabel>
+			</div>
+
+		</div>
+
+
+
+	</ui:define>
+	<ui:define name="template-buttons">
+		<input type="submit" value="Login" tabindex="3"
+			style="position: relative; left: 150px;" />
+	</ui:define>
+</ui:composition>

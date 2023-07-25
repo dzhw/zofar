@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/episodes"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:answer="http://java.sun.com/jsf/composite/answer"
+	xmlns:common="http://java.sun.com/jsf/composite/common"
+	xmlns:container="http://java.sun.com/jsf/composite/container"
+	xmlns:matrix="http://java.sun.com/jsf/composite/matrix" xmlns:question="http://java.sun.com/jsf/composite/question"
+	xmlns:composite="http://java.sun.com/jsf/composite/composite"
+	xmlns:eps="http://java.sun.com/jsf/composite/episodes"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:import namespace="http://java.sun.com/jsf/core"
+		schemaLocation="jsf_core.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+
+	<xs:element type="eps:episodesType" name="episodes" />
+	<xs:element type="eps:episodesTableType" name="episodesTable" />
+
+	<xs:complexType name="episodesType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:attribute type="xs:token" name="var" use="required" />
+				<xs:attribute name="configuration" type="xs:normalizedString" use="required" />
+				<xs:attribute name="lang" use="optional" default="de" type="xs:normalizedString" />
+
+				<xs:attribute name="minYear" use="optional" type="xs:normalizedString" default="2018"/>
+				<xs:attribute name="maxYear" use="optional" type="xs:normalizedString" default="2024"/>
+				<xs:attribute name="minMonth" use="optional" type="xs:normalizedString" default="01"/>
+				<xs:attribute name="maxMonth" use="optional" type="xs:normalizedString" default="12"/>
+				<xs:attribute name="disabled" use="optional" type="xs:normalizedString" default="{}"/>
+				<xs:attribute name="focus" use="optional" type="xs:normalizedString" default=""/>
+
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="episodesTableType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:attribute type="xs:token" name="var" use="required" />
+				<xs:attribute name="configuration" type="xs:normalizedString" use="required" />
+				<xs:attribute name="lang" use="optional" default="de" type="xs:normalizedString" />
+
+				<xs:attribute name="minYear" use="optional" type="xs:normalizedString" default="2018"/>
+				<xs:attribute name="maxYear" use="optional" type="xs:normalizedString" default="2024"/>
+				<xs:attribute name="minMonth" use="optional" type="xs:normalizedString" default="01"/>
+				<xs:attribute name="maxMonth" use="optional" type="xs:normalizedString" default="12"/>
+				<xs:attribute name="disabled" use="optional" type="xs:normalizedString" default="{}"/>
+				<xs:attribute name="focus" use="optional" type="xs:normalizedString" default=""/>
+
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

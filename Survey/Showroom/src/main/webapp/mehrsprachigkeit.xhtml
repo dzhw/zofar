@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="71"/>
+  <ui:define name="template-content">
+    <action command="sessionController.locationChanger(language,'de')" direction="backward" onExit="true" navigator="#{navigatorBean}"/>
+    <action command="sessionController.locationChanger(language,'de')" direction="forward" onExit="true" navigator="#{navigatorBean}"/>
+    <con:section id="mehrsprachigkeit" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['mehrsprachigkeit.t1_0']}</text:title>
+        <text:text container="true" id="t2">#{msgs['mehrsprachigkeit.t2_0']}</text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

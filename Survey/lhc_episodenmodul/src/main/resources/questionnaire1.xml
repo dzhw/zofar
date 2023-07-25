@@ -1,0 +1,1086 @@
+<zofar:questionnaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:zofar="http://www####/zofar/xml/questionnaire" xmlns:display="http://www.####/zofar/xml/display" language="de">
+	<zofar:name>lhc_episodentest</zofar:name>
+	<zofar:description/>
+	
+	<zofar:variables>
+		<zofar:variable name="debugMode" type="boolean"/>	
+		<zofar:variable name="skip_debug" type="boolean"/>
+	
+	<zofar:variable name="jsCheck1" type="boolean"/>
+	<zofar:variable name="width1" type="number" />
+	<zofar:variable name="height1" type="number"/>
+	
+        <zofar:variable name="language" type="string" />
+        <zofar:variable name="width" type="number" />
+		<zofar:variable name="height" type="number"/>
+		<zofar:variable name="isMobile" type="boolean"/>
+		<zofar:variable name="jsCheck" type="boolean"/>
+		<zofar:variable name="url" type="string"/>
+		<zofar:variable name="uas" type="string"/>
+
+		<zofar:variable name="calendarState" type="string"/>
+		<zofar:variable name="feedbackCalendar" type="boolean"/>
+		<zofar:variable name="startPoint" type="string"/>
+
+		<zofar:variable name="episode_range_start" type="string"/>
+		<zofar:variable name="episode_range_end" type="string"/>
+		<zofar:variable name="episode_property_type_value" type="string"/>
+		<zofar:variable name="episode_hasCurrentSplit" type="boolean"/>
+		
+		<!-- episodeDispatcher --> 
+		<zofar:variable name="h_studever" type="boolean"/>
+		<zofar:variable name="h_studakt" type="boolean"/>
+		<zofar:variable name="h_ausbever" type="boolean"/>
+		<zofar:variable name="h_ausbakt" type="boolean"/>
+		<zofar:variable name="h_erwerbever" type="boolean"/>
+		<zofar:variable name="h_erwerbakt" type="boolean"/>
+		<zofar:variable name="h_auslandever" type="boolean"/>
+		<zofar:variable name="h_ausbabs" type="boolean"/>
+		<zofar:variable name="h_staktma" type="boolean"/>
+		<zofar:variable name="h_stbaever" type="boolean"/>
+		<zofar:variable name="h_mastakt" type="boolean"/>
+		<zofar:variable name="h_mastabs" type="boolean"/>
+		<zofar:variable name="h_hochabs" type="boolean"/>
+		<zofar:variable name="h_promakt" type="boolean"/>
+		<zofar:variable name="h_promabs" type="boolean"/>	
+
+		<zofar:variable name="startmonth" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="startyear" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="endmonth" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="endyear" type="singleChoiceAnswerOption"/>
+		
+		<zofar:variable name="h_exitlabel" type="string"/>
+		<zofar:variable name="h_exitlabel_en" type="string"/>
+		<zofar:variable name="h_exitdatum" type="string"/>
+		<zofar:variable name="h_enterlabel" type="string"/>
+		<zofar:variable name="h_enterlabel_en" type="string"/>
+		<zofar:variable name="h_enterdatum" type="string"/>
+
+		<zofar:variable name="calendar_monthLabel_end" type="string"/>
+		<zofar:variable name="calendar_range_end_year" type="string"/>
+		<zofar:variable name="calendar_range_end_month" type="string"/>
+		<zofar:variable name="calendar_monthLabel_start" type="string"/>
+		<zofar:variable name="calendar_range_start_year" type="string"/>
+		<zofar:variable name="calendar_range_start_month" type="string"/>
+		
+		<zofar:variable name="dummy_month" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="hf_consent" type="boolean"/>
+		<zofar:variable name="mis200" type="string"/>
+	
+		<!-- beg_01 -->
+		<zofar:variable name="res101" type="singleChoiceAnswerOption"/>
+		
+		<!-- beg_02 -->
+		<zofar:variable name="mot101" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot102" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot103" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot104" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot105" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot106" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot107" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot108" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot109" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot110" type="singleChoiceAnswerOption"/>
+		
+		<!-- beg_03 -->
+		<zofar:variable name="att116" type="singleChoiceAnswerOption"/>
+		
+		<!-- beg_04 -->
+		<zofar:variable name="mis101" type="singleChoiceAnswerOption"/>
+		
+		<!-- mot_01 -->
+		<zofar:variable name="mot111" type="singleChoiceAnswerOption"/>
+		
+		<!-- mot_02 -->
+		<zofar:variable name="mot112" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot113" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot114" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot115" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot116" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot117" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot118" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot119" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot120" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot121" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot122" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot123" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot124" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot125" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot126" type="singleChoiceAnswerOption"/>
+		
+		<!-- mot_03 -->  
+		<zofar:variable name="mot127" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot128" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="mot129" type="singleChoiceAnswerOption"/>
+		
+		<!-- mot_04 -->
+		<zofar:variable name="res102" type="singleChoiceAnswerOption"/>
+		
+		<!-- mot_05 -->
+		<zofar:variable name="res103" type="singleChoiceAnswerOption"/>
+		
+		<!-- sch_01 -->
+		<zofar:variable name="sch101" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="sch102" type="string"/>
+		<zofar:variable name="sch103" type="string"/>
+		<zofar:variable name="sf_sch101" type="boolean"/>
+		
+		<!-- sch_02 -->
+		<zofar:variable name="sch104" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="sch105" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="sch106" type="string"/>
+		<zofar:variable name="sch107" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="sch108" type="string"/>
+		<zofar:variable name="sch109" type="string"/>
+		<zofar:variable name="sch110" type="string"/>
+		<zofar:variable name="sch111" type="string"/>
+		
+		<!-- sch_03 -->
+		<zofar:variable name="sch112" type="string"/>
+		<zofar:variable name="sch113" type="string"/>
+		<zofar:variable name="sch113b" type="string"/>
+		<zofar:variable name="sch113c" type="string"/>
+		<zofar:variable name="sch113d" type="string"/>
+		
+		<!-- sch_04 -->
+		<zofar:variable name="sch114" type="singleChoiceAnswerOption"/>
+		
+		<!-- sch_05 -->
+		<zofar:variable name="sch115" type="boolean"/>
+		<zofar:variable name="sch116" type="boolean"/>
+		<zofar:variable name="sch117" type="boolean"/>
+		<zofar:variable name="sch118" type="boolean"/>
+		<zofar:variable name="sch119" type="boolean"/>
+		<zofar:variable name="sch120" type="boolean"/>
+		<zofar:variable name="sch121" type="boolean"/>
+		<zofar:variable name="sch122" type="string"/>
+		
+		<!-- sch_06 -->
+		<zofar:variable name="sch123" type="boolean"/>
+		<zofar:variable name="sch124" type="boolean"/>
+		<zofar:variable name="sch125" type="boolean"/>
+		<zofar:variable name="sch126" type="boolean"/>
+		<zofar:variable name="sch127" type="boolean"/>
+		<zofar:variable name="sch128" type="boolean"/>
+		<zofar:variable name="sch129" type="boolean"/>
+		<zofar:variable name="sch130" type="boolean"/>
+		<zofar:variable name="sch131" type="boolean"/>
+		<zofar:variable name="sch132" type="boolean"/>
+		<zofar:variable name="sch133" type="string"/>
+		<zofar:variable name="sch134" type="boolean"/>
+		
+		<!-- pst_01 -->
+		<zofar:variable name="voc101" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc102" type="string"/>
+		<zofar:variable name="sf_voc101" type="boolean"/>
+		<zofar:variable name="sf_voc102" type="boolean"/>
+		
+		<!-- pst_02 -->
+		<zofar:variable name="voc103" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc104" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc105" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc106" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc107" type="string"/>
+		<zofar:variable name="voc108" type="string"/>
+		<zofar:variable name="voc109" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc110" type="string"/>
+		<zofar:variable name="voc111" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc112" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc113" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc114" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc115" type="string"/>
+		<zofar:variable name="voc116" type="string"/>
+		<zofar:variable name="voc117" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc118" type="string"/>
+		
+		<!-- pst_03 -->
+		<zofar:variable name="voc119" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc120" type="string"/>
+		<zofar:variable name="sf_voc119" type="boolean"/>
+		
+		<!-- pst_04-->
+		<zofar:variable name="voc121" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc122" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc123" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc124" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc125" type="string"/>
+		<zofar:variable name="voc126" type="string"/>
+		<zofar:variable name="voc127" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc128" type="string"/>
+		<zofar:variable name="voc129" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc130" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc131" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc132" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc133" type="string"/>
+		<zofar:variable name="voc134" type="string"/>
+		<zofar:variable name="voc135" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="voc136" type="string"/>
+		
+		<!-- pst_05-->
+		<zofar:variable name="stu121" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu122" type="string"/>
+		<zofar:variable name="sf_stu121" type="boolean"/>
+		
+		<!-- pst_06-->
+		<zofar:variable name="stu123" type="string"/>
+		<zofar:variable name="stu124" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu125" type="singleChoiceAnswerOption"/>
+		
+		<!-- pst_07-->
+		<zofar:variable name="stu126" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu127" type="string"/>
+		<zofar:variable name="stu128" type="string"/>
+		<zofar:variable name="stu129" type="string"/>
+		<zofar:variable name="stu130" type="string"/>
+		
+		<!-- pst_08-->
+		<zofar:variable name="stu131" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu132" type="string"/>
+		<zofar:variable name="stu133" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu134" type="string"/>
+		<zofar:variable name="stu135" type="string"/>
+		<zofar:variable name="stu136" type="string"/>
+		
+		<!-- pst_09-->
+		<zofar:variable name="stu137" type="string"/>
+		<zofar:variable name="stu138a" type="string"/>
+		<zofar:variable name="stu138b" type="string"/>
+		<zofar:variable name="stu138c" type="string"/>
+		<zofar:variable name="stu139" type="string"/>
+		
+		<!-- pst_10-->
+		<zofar:variable name="stu140" type="string"/>
+		<zofar:variable name="stu141" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu142" type="singleChoiceAnswerOption"/>
+		
+		<!-- pst_11-->
+		<zofar:variable name="stu143" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu144" type="string"/>
+		<zofar:variable name="stu145" type="string"/>
+		<zofar:variable name="stu146" type="string"/>
+		<zofar:variable name="stu147" type="string"/>
+		
+		<!-- pst_12-->
+		<zofar:variable name="stu148" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu149" type="string"/>
+		<zofar:variable name="stu150" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu151" type="string"/>
+		<zofar:variable name="stu152" type="string"/>
+		<zofar:variable name="stu153" type="string"/>
+		
+		<!-- pst_13-->
+		<zofar:variable name="stu154" type="string"/>
+		<zofar:variable name="stu155a" type="string"/>
+		<zofar:variable name="stu155b" type="string"/>
+		<zofar:variable name="stu155c" type="string"/>
+		
+		<!-- stu_01 -->
+		<zofar:variable name="stu101" type="singleChoiceAnswerOption"/>
+		
+		<!-- stu_02 -->
+		<zofar:variable name="stu102" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu103" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu104" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu105" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu106" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu107" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu108" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu109" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu110" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="stu111" type="singleChoiceAnswerOption"/>
+
+		<!-- mob_01 -->
+		<zofar:variable name="stu170" type="singleChoiceAnswerOption"/>
+		
+
+		<!-- mob_02 -->
+		<zofar:variable name="stu171" type="boolean"/>
+		<zofar:variable name="stu172" type="boolean"/>
+		<zofar:variable name="stu173" type="boolean"/>
+		<zofar:variable name="stu174" type="boolean"/>
+		<zofar:variable name="stu175" type="boolean"/>
+		
+		<!-- mob_03 -->
+		<zofar:variable name="stu176" type="boolean"/>
+		<zofar:variable name="stu177" type="boolean"/>
+		<zofar:variable name="stu178" type="boolean"/>
+		<zofar:variable name="stu179" type="boolean"/>
+		<zofar:variable name="stu180" type="boolean"/>
+		<zofar:variable name="stu181" type="boolean"/>
+		<zofar:variable name="stu182" type="boolean"/>
+
+		<!-- mob_04 -->
+		<zofar:variable name="stu183" type="string"/>
+		<!-- mob_05 -->
+		<zofar:variable name="stu184" type="singleChoiceAnswerOption"/>
+		<!-- mob_06 -->
+		<zofar:variable name="stu185" type="singleChoiceAnswerOption"/>
+		
+		<!-- stu_03 -->
+		<zofar:variable name="att101" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="sf_att101" type="boolean"/>
+		
+		<!-- stu_04 -->
+		<zofar:variable name="att102" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="att103" type="string"/>
+		
+		<!-- stu_05 -->
+		<zofar:variable name="att104" type="singleChoiceAnswerOption"/>
+		
+		<!-- stu_06 -->
+		<zofar:variable name="att105" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="att106" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="att107" type="boolean"/>
+		<zofar:variable name="att105_106_dp" type="string"/>
+		
+		<!-- stu_07 -->
+		<zofar:variable name="att108" type="string"/>
+		<zofar:variable name="att109" type="string"/>
+		<zofar:variable name="att110" type="string"/>
+		
+		<!-- stu_08 -->
+		<zofar:variable name="att111" type="singleChoiceAnswerOption"/>
+		
+		<!-- stu_09 -->
+		<zofar:variable name="att112" type="singleChoiceAnswerOption"/>
+		
+		<!-- stu_10 -->
+		<zofar:variable name="att113" type="string"/>
+		
+		<!-- stu_11 -->
+		<zofar:variable name="att114" type="singleChoiceAnswerOption"/>
+		
+		<!-- stu_12 -->
+		<zofar:variable name="att115" type="singleChoiceAnswerOption"/>
+		
+		<!-- suv_01 -->
+		<zofar:variable name="emp101" type="singleChoiceAnswerOption"/>
+		
+		<!-- suv_02 -->
+		<zofar:variable name="emp102" type="string"/>
+		
+		<!-- suv_03 -->
+		<zofar:variable name="emp103" type="boolean"/>
+		<zofar:variable name="emp104" type="boolean"/>
+		<zofar:variable name="emp105" type="boolean"/>
+		<zofar:variable name="emp106" type="boolean"/>
+		
+		<!-- suv_04 -->
+		<zofar:variable name="emp107" type="string"/>
+		<zofar:variable name="emp108" type="string"/>
+		<zofar:variable name="emp109" type="string"/>
+		<zofar:variable name="sf_suv_04" type="boolean"/>
+
+		<!-- emp_01 -->
+		<zofar:variable name="emp110" type="singleChoiceAnswerOption"/>
+
+		<!-- emp_02 -->
+		<zofar:variable name="emp111" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp112" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp113" type="singleChoiceAnswerOption"/>
+	
+		<!-- emp_03 -->
+		<zofar:variable name="emp114" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp115" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp116" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp117" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp118" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp119" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp120" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp121" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp122" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp123" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp124" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp125" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp126" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp127" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp128" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp129" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp130" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp131" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp132" type="singleChoiceAnswerOption"/>
+		
+		<!-- emp_09 -->
+		<zofar:variable name="emp133" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp134" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp135" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp136" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp137" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="emp138" type="singleChoiceAnswerOption"/>
+		
+		<!-- emp_11 -->
+		<zofar:variable name="emp139" type="singleChoiceAnswerOption"/>
+		
+		<!-- emp_12 -->
+		<zofar:variable name="emp140" type="boolean"/>
+		<zofar:variable name="emp141" type="string"/>
+		<zofar:variable name="emp142" type="boolean"/>
+		<zofar:variable name="emp143" type="string"/>
+		<zofar:variable name="emp144" type="boolean"/>
+		<zofar:variable name="emp145" type="boolean"/>
+		<zofar:variable name="emp146" type="string"/>
+		<zofar:variable name="emp147" type="boolean"/>
+		<zofar:variable name="emp148" type="string"/>
+		<zofar:variable name="emp149" type="boolean"/>
+		<zofar:variable name="emp150" type="boolean"/>
+		
+		<!-- res_01 -->
+		<zofar:variable name="res104" type="singleChoiceAnswerOption"/>
+		
+		<!-- res_02 -->
+		<zofar:variable name="res105" type="singleChoiceAnswerOption"/>
+		
+		<!-- res_03 -->
+		<zofar:variable name="res106" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res107" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res108" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res109" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res110" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res111" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res112" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res113" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res114" type="singleChoiceAnswerOption"/>
+		
+		<!-- res_04 -->
+		<zofar:variable name="res115" type="singleChoiceAnswerOption"/>
+		
+		<!-- res_05 -->
+		<zofar:variable name="res116" type="singleChoiceAnswerOption"/>
+		
+		<!-- res_06 -->
+		<zofar:variable name="res117" type="singleChoiceAnswerOption"/>
+		
+		<!-- res_07 -->
+		<zofar:variable name="res118" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res119" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="res120" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_01 -->
+		<zofar:variable name="dem101" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem102" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem103" type="string"/>
+		
+		<!-- dem_02 -->
+		<zofar:variable name="dem104" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_03 -->
+		<zofar:variable name="dem105" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem106" type="string"/>
+		
+		<!-- dem_04 -->
+		<zofar:variable name="dem107" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem108" type="string"/>
+		
+		<!-- dem_05 -->
+		<zofar:variable name="dem109" type="boolean"/>
+		<zofar:variable name="dem110" type="boolean"/>
+		<zofar:variable name="dem111" type="string"/>
+		
+		<!-- dem_06 -->
+		<zofar:variable name="dem112" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem113" type="string"/>
+		<zofar:variable name="dem114" type="string"/>
+		
+		<!-- dem_07 -->
+		<zofar:variable name="dem115" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem116" type="string"/>
+		<zofar:variable name="dem117" type="string"/>
+		<zofar:variable name="dem118" type="string"/>
+		<zofar:variable name="dem119" type="string"/>
+		
+		<!-- dem_08a -->
+		<zofar:variable name="dem120a" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_08b -->
+		<zofar:variable name="dem120" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem121" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem122" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem123" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem124" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem125" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem126" type="string"/>
+		
+
+		<!-- dem_09 -->
+		<zofar:variable name="res121" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_10 -->
+		<zofar:variable name="res122" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_11 -->
+		<zofar:variable name="res123" type="string"/>
+		
+		<!-- dem_12 -->
+		<zofar:variable name="res124" type="string"/>
+		
+		<!-- dem_13 -->
+		<zofar:variable name="dem127" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_14 -->
+		<zofar:variable name="dem128" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem129" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem130" type="string"/>
+		
+		<!-- dem_15 -->
+		<zofar:variable name="dem131" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_16 -->
+		<zofar:variable name="dem132" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem133" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem134" type="string"/>
+		
+		<!-- dem_17 -->
+		<zofar:variable name="dem135" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_18 -->
+		<zofar:variable name="dem136" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_19 -->
+		<zofar:variable name="dem137" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="sf_dem137" type="boolean"/>
+
+		<!-- dem_20 -->
+		<zofar:variable name="dem138" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem139" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem140" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem141" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem142" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem143" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem144" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem145" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem146" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem147" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem148" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem149" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem150" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem151" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem152" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem153" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem154" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem155" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem156" type="string"/>
+		<zofar:variable name="dem157" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem158" type="string"/>
+		<zofar:variable name="dem159" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem160" type="string"/>
+		<zofar:variable name="dem161" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem162" type="string"/>
+		<zofar:variable name="dem163" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem164" type="string"/>
+		<zofar:variable name="dem165" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem166" type="string"/>
+		<zofar:variable name="dem167" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_21 -->
+		<zofar:variable name="dem168" type="boolean"/>
+		<zofar:variable name="dem169" type="boolean"/>
+		<zofar:variable name="dem170" type="boolean"/>
+		<zofar:variable name="dem171" type="boolean"/>
+		<zofar:variable name="dem172" type="boolean"/>
+		<zofar:variable name="dem173" type="boolean"/>
+		<zofar:variable name="dem174" type="boolean"/>
+		<zofar:variable name="dem175" type="boolean"/>
+		<zofar:variable name="dem176" type="boolean"/>
+		<zofar:variable name="dem177" type="boolean"/>
+		<zofar:variable name="dem177b" type="boolean"/>
+		
+		<!-- dem_22 -->
+		<zofar:variable name="dem178" type="string"/>
+		
+		<!-- dem_23 -->
+		<zofar:variable name="dem179" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_24 -->
+		<zofar:variable name="dem180" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_25 -->
+		<zofar:variable name="dem181" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem182" type="string"/>
+		
+		<!-- dem_26 -->
+		<zofar:variable name="dem183" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem184" type="string"/>
+		
+		<!-- dem_27 -->
+		<zofar:variable name="dem185" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem186" type="string"/>
+		<zofar:variable name="dem187" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem188" type="string"/>
+		
+		<!-- dem_28 -->
+		<zofar:variable name="dem189" type="boolean"/>
+		<zofar:variable name="dem190" type="boolean"/>
+		<zofar:variable name="dem191" type="boolean"/>
+		<zofar:variable name="dem192" type="boolean"/>
+		<zofar:variable name="dem193" type="boolean"/>
+		<zofar:variable name="dem194" type="boolean"/>
+		<zofar:variable name="dem195" type="boolean"/>
+		<zofar:variable name="dem196" type="boolean"/>
+		<zofar:variable name="dem197" type="boolean"/>
+		<zofar:variable name="dem198" type="boolean"/>
+		<zofar:variable name="dem199" type="boolean"/>		
+		<zofar:variable name="dem200" type="boolean"/>		
+		<zofar:variable name="dem201" type="string"/>		
+		<zofar:variable name="dem202" type="string"/>		
+		<zofar:variable name="dem203" type="boolean"/>		
+		<zofar:variable name="dem204" type="boolean"/>		
+		<zofar:variable name="dem205" type="boolean"/>		
+		<zofar:variable name="dem206" type="boolean"/>
+		
+		<!-- dem_29 -->
+		<zofar:variable name="dem207" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem208" type="string"/>
+		<zofar:variable name="dem209" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem210" type="string"/>
+		
+		<!-- dem_30 -->
+		<zofar:variable name="dem211" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem212" type="string"/>
+		<zofar:variable name="dem213" type="singleChoiceAnswerOption"/>
+		<zofar:variable name="dem214" type="string"/>		
+		
+		<!-- dem_31 -->
+		<zofar:variable name="dem215" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_32 -->
+		<zofar:variable name="dem216" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_33 -->
+		<zofar:variable name="dem217" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_34 -->
+		<zofar:variable name="dem218" type="singleChoiceAnswerOption"/>
+		
+		<!-- dem_35 -->
+		<zofar:variable name="res125" type="singleChoiceAnswerOption"/>
+		
+		<zofar:variable name="calendar_monthLabel_start_english" type="string"/>
+		<zofar:variable name="calendar_monthLabel_end_english" type="string"/>
+
+		
+		</zofar:variables>
+
+	<zofar:page uid="index">
+		<zofar:header>
+			<zofar:text uid="t1" block="true">
+				#{layout.BOLD_START}
+				#{layout.HEADLINE_START}
+				#{layout.DZHW_GREY_START}
+				Herzlich willkommen zur ersten Befragung der Hochschulabsolvent*innen des 
+				Prüfungsjahrgangs 2021 im Rahmen des Student Life Cycle Panels (SLC)
+				#{layout.DZHW_GREY_END}
+				#{layout.HEADLINE_END}
+				#{layout.BOLD_END}
+				#{layout.BREAK}#{layout.BREAK}
+				#{layout.BOLD_START}
+				For an English version of the survey please click the flag in the header!
+				#{layout.BOLD_END}
+				#{layout.BREAK}#{layout.BREAK}
+			</zofar:text>
+			<zofar:text uid="t2" block="true">
+				Je nach Ihrer persönlichen Lebenssituation wird die Befragung etwa 20 bis 40 Minuten dauern. 
+				Sie können die Befragung auch am Smartphone ausfüllen, allerdings ist die Beantwortung an 
+				einem größeren Bildschirm bequemer und schneller. Sie haben jederzeit die Möglichkeit, 
+				die Befragung zu unterbrechen und zu einem späteren Zeitpunkt fortzuführen. 
+				#{layout.BREAK}
+				Am Ende des Fragebogens haben Sie die Gelegenheit, an der angekündigten Verlosung teilzunehmen: 
+				Als kleines Dankeschön für Ihr Engagement verlosen wir zwei Fahrradgutscheine im Wert 
+				von je 1.000 Euro, zwei Smartphones (iPhone 13 / Samsung S22), zwei Tablets 
+				(iPad Air / Samsung Tab S8), 25 Gutscheine der Deutschen Bahn im Wert von je 100 Euro 
+				und 50 Wunschgutscheine im Wert von je 50 Euro.#{layout.BREAK}
+				#{layout.BREAK}
+			</zofar:text>
+			<zofar:text uid="t3" block="true">
+				#{layout.BOLD_START}
+				Hinweise zum Datenschutz #{layout.hyperlink('./Abs21_Datenschutz.pdf','[Download PDF]','_blank')}
+				#{layout.BOLD_END}
+				#{layout.BREAK}#{layout.BREAK}
+			</zofar:text>
+			<zofar:text uid="t4" block="true">
+				Ihre Teilnahme ist selbstverständlich freiwillig. 
+				Ihre Angaben werden ausschließlich für Forschungs- und Evaluationszwecke genutzt. 
+				Sämtliche Befragungsdaten werden nur in anonymisierter Form publiziert und anderen 
+				Wissenschaftler*innen nur anonymisiert zur Verfügung gestellt. Ihre Kontaktdaten 
+				werden stets getrennt von den Befragungsdaten verarbeitet und gespeichert sowie 
+				nicht an Dritte weitergegeben. 
+				#{layout.BREAK}#{layout.BREAK}
+				Bitte bestätigen Sie Ihre Bereitschaft zur Teilnahme. Danach gelangen Sie mit einem Klick auf den Weiter-Button zur Befragung.
+				#{layout.BREAK}#{layout.BREAK}
+			</zofar:text>
+		</zofar:header>
+		<zofar:body uid="body">
+			<zofar:multipleChoice uid="mc1">
+				<zofar:header/>
+				<zofar:responseDomain uid="rd">
+					<zofar:answerOption variable="hf_consent" uid="ao1" label="Ich habe die Hinweise zum Datenschutz gelesen und bin mit der dort beschriebenen Verwendung meiner Daten einverstanden."/>
+					</zofar:responseDomain>
+				</zofar:multipleChoice>
+			<zofar:section uid="s1" visible="navigatorBean.isSame() and !hf_consent.value">
+				<zofar:header>
+					<zofar:introduction uid="in" >
+					#{layout.WARNING_START}#{layout.BOLD_START}
+						Für die Teilnahme an der Befragung ist die Zustimmung zum Datenschutz notwendig. 
+						Wenn Sie den Datenschutzbestimmungen nicht zustimmen, können Sie leider nicht an 
+						der Befragung teilnehmen. Alle Bestimmungen der Datenschutzgrundverordnung (DSGVO) 
+						werden vom DZHW eingehalten.
+					#{layout.WARNING_END}#{layout.BOLD_END}
+					#{layout.BREAK}#{layout.BREAK}
+					</zofar:introduction>
+					</zofar:header>
+				</zofar:section>
+				
+	
+		<zofar:display uid="d">
+			<display:text uid="td1" block="true">
+				#{layout.BREAK}
+				Für Ihre Teilnahme an dieser wissenschaftlichen Studie danken wir 
+				Ihnen bereits an dieser Stelle ganz herzlich!
+				#{layout.BREAK}
+				#{layout.BREAK}
+				Dr. Johann Carstensen und Dr. Heike Spangenberg
+				#{layout.BREAK}
+				(Projektleitung SLC)
+				#{layout.BREAK}#{layout.BREAK}
+							#{layout.BOLD_START}Kontakt:#{layout.BOLD_END}
+							#{layout.BREAK}#{layout.BREAK}
+							Bei Fragen zum Datenschutz wenden Sie sich bitte an den Datenschutzbeauftragten des DZHW, Herrn Martin Fuchs (Tel: +49 (0) 511 450 670-491; E-Mail: (#{layout.MAIL_START}datenschutz####.eu#{layout.MAIL_END}datenschutz####.eu#{layout.MAIL_STOP}). 
+							Weitere Informationen zum Datenschutz am DZHW finden Sie #{layout.hyperlink('https://www.####/gmbh/datenschutz','hier','_blank')}.
+							#{layout.BREAK}#{layout.BREAK}
+							Für alle anderen Fragen können Sie sich gerne per E-Mail (#{layout.MAIL_START}slc2021####.eu#{layout.MAIL_END}slc2021####.eu#{layout.MAIL_STOP}) oder telefonisch (Frau Heike Naumann, Rufnummer: +49 (0) 511/450 670-120) an das SLC-Team wenden.
+							#{layout.BREAK}#{layout.BREAK}
+							Unter #{layout.hyperlink('https://slc-absolv.####/','https://slc-absolv.####/','_blank')} finden Sie weitere Informationen zum Projekt sowie Ergebnisse aus vorangegangenen Befragungen.
+							#{layout.BREAK}#{layout.BREAK}
+			</display:text>
+		</zofar:display>
+	<zofar:questionSingleChoice uid="dummy_month" visible="false">
+			<zofar:header>
+				<zofar:question uid="qi2"/>
+			</zofar:header>
+			<zofar:responseDomain variable="dummy_month" uid="rd2">
+				<zofar:answerOption uid="ao1" value="1" label="Januar"/>
+				<zofar:answerOption uid="ao2" value="2" label="Februar"/>
+				<zofar:answerOption uid="ao3" value="3" label="März"/>
+				<zofar:answerOption uid="ao4" value="4" label="April"/>
+				<zofar:answerOption uid="ao5" value="5" label="Mai"/>
+				<zofar:answerOption uid="ao6" value="6" label="Juni"/>
+				<zofar:answerOption uid="ao7" value="7" label="Juli"/>
+				<zofar:answerOption uid="ao8" value="8" label="August"/>
+				<zofar:answerOption uid="ao9" value="9" label="September"/>
+				<zofar:answerOption uid="ao10" value="10" label="Oktober"/>
+				<zofar:answerOption uid="ao11" value="11" label="November"/>
+				<zofar:answerOption uid="ao12" value="12" label="Dezember"/>
+			</zofar:responseDomain>
+		</zofar:questionSingleChoice>
+	<zofar:matrixQuestionSingleChoice uid="msc" visible="false">
+		<zofar:header>
+			<zofar:question uid="q1" block="true">
+				unsichtbare Hilfsvariablen startmonth und startyear
+		</zofar:question>
+		</zofar:header>
+		<zofar:responseDomain noResponseOptions="1" uid="rd">
+			<zofar:header>
+				<zofar:title uid="t1"/>
+			</zofar:header>
+			<zofar:item uid="i1">
+				<zofar:header>
+					<zofar:question uid="qi1" block="true">#{layout.BOLD_START}von:
+						#{layout.BOLD_END}
+				</zofar:question>
+				</zofar:header>
+				<zofar:responseDomain variable="startmonth" uid="rd1">
+					<zofar:answerOption uid="ao0" value="999999" label="Monat"/>
+					<zofar:answerOption uid="ao1" value="1" label="Januar"/>
+					<zofar:answerOption uid="ao2" value="2" label="Februar"/>
+					<zofar:answerOption uid="ao3" value="3" label="März"/>
+					<zofar:answerOption uid="ao4" value="4" label="April"/>
+					<zofar:answerOption uid="ao5" value="5" label="Mai"/>
+					<zofar:answerOption uid="ao6" value="6" label="Juni"/>
+					<zofar:answerOption uid="ao7" value="7" label="Juli"/>
+					<zofar:answerOption uid="ao8" value="8" label="August"/>
+					<zofar:answerOption uid="ao9" value="9" label="September"/>
+					<zofar:answerOption uid="ao10" value="10" label="Oktober"/>
+					<zofar:answerOption uid="ao11" value="11" label="November"/>
+					<zofar:answerOption uid="ao12" value="12" label="Dezember"/>
+				</zofar:responseDomain>
+			</zofar:item>
+			<zofar:item uid="i2">
+				<zofar:header>
+					<zofar:question uid="qi2"/>
+				</zofar:header>
+				<zofar:responseDomain variable="startyear" uid="rd2">
+					<zofar:answerOption uid="ao0" value="999999" label="Jahr"/>
+					<zofar:answerOption uid="ao1" value="1971" label="1971" visible="calendar_range_start_year.value le 1971 and calendar_range_end_year.value ge 1971"/>
+					<zofar:answerOption uid="ao2" value="1972" label="1972" visible="calendar_range_start_year.value le 1972 and calendar_range_end_year.value ge 1972"/>
+					<zofar:answerOption uid="ao3" value="1973" label="1973" visible="calendar_range_start_year.value le 1973 and calendar_range_end_year.value ge 1973"/>
+					<zofar:answerOption uid="ao4" value="1974" label="1974" visible="calendar_range_start_year.value le 1974 and calendar_range_end_year.value ge 1974"/>
+					<zofar:answerOption uid="ao5" value="1975" label="1975" visible="calendar_range_start_year.value le 1975 and calendar_range_end_year.value ge 1975"/>
+					<zofar:answerOption uid="ao6" value="1976" label="1976" visible="calendar_range_start_year.value le 1976 and calendar_range_end_year.value ge 1976"/>
+					<zofar:answerOption uid="ao7" value="1977" label="1977" visible="calendar_range_start_year.value le 1977 and calendar_range_end_year.value ge 1977"/>
+					<zofar:answerOption uid="ao8" value="1978" label="1978" visible="calendar_range_start_year.value le 1978 and calendar_range_end_year.value ge 1978"/>
+					<zofar:answerOption uid="ao9" value="1979" label="1979" visible="calendar_range_start_year.value le 1979 and calendar_range_end_year.value ge 1979"/>
+					<zofar:answerOption uid="ao10" value="1980" label="1980" visible="calendar_range_start_year.value le 1980 and calendar_range_end_year.value ge 1980"/>
+					<zofar:answerOption uid="ao11" value="1981" label="1981" visible="calendar_range_start_year.value le 1981 and calendar_range_end_year.value ge 1981"/>
+					<zofar:answerOption uid="ao12" value="1982" label="1982" visible="calendar_range_start_year.value le 1982 and calendar_range_end_year.value ge 1982"/>
+					<zofar:answerOption uid="ao13" value="1983" label="1983" visible="calendar_range_start_year.value le 1983 and calendar_range_end_year.value ge 1983"/>
+					<zofar:answerOption uid="ao14" value="1984" label="1984" visible="calendar_range_start_year.value le 1984 and calendar_range_end_year.value ge 1984"/>
+					<zofar:answerOption uid="ao15" value="1985" label="1985" visible="calendar_range_start_year.value le 1985 and calendar_range_end_year.value ge 1985"/>
+					<zofar:answerOption uid="ao16" value="1986" label="1986" visible="calendar_range_start_year.value le 1986 and calendar_range_end_year.value ge 1986"/>
+					<zofar:answerOption uid="ao17" value="1987" label="1987" visible="calendar_range_start_year.value le 1987 and calendar_range_end_year.value ge 1987"/>
+					<zofar:answerOption uid="ao18" value="1988" label="1988" visible="calendar_range_start_year.value le 1988 and calendar_range_end_year.value ge 1988"/>
+					<zofar:answerOption uid="ao19" value="1989" label="1989" visible="calendar_range_start_year.value le 1989 and calendar_range_end_year.value ge 1989"/>
+					<zofar:answerOption uid="ao20" value="1990" label="1990" visible="calendar_range_start_year.value le 1990 and calendar_range_end_year.value ge 1990"/>
+					<zofar:answerOption uid="ao21" value="1991" label="1991" visible="calendar_range_start_year.value le 1991 and calendar_range_end_year.value ge 1991"/>
+					<zofar:answerOption uid="ao22" value="1992" label="1992" visible="calendar_range_start_year.value le 1992 and calendar_range_end_year.value ge 1992"/>
+					<zofar:answerOption uid="ao23" value="1993" label="1993" visible="calendar_range_start_year.value le 1993 and calendar_range_end_year.value ge 1993"/>
+					<zofar:answerOption uid="ao24" value="1994" label="1994" visible="calendar_range_start_year.value le 1994 and calendar_range_end_year.value ge 1994"/>
+					<zofar:answerOption uid="ao25" value="1995" label="1995" visible="calendar_range_start_year.value le 1995 and calendar_range_end_year.value ge 1995"/>
+					<zofar:answerOption uid="ao26" value="1996" label="1996" visible="calendar_range_start_year.value le 1996 and calendar_range_end_year.value ge 1996"/>
+					<zofar:answerOption uid="ao27" value="1997" label="1997" visible="calendar_range_start_year.value le 1997 and calendar_range_end_year.value ge 1997"/>
+					<zofar:answerOption uid="ao28" value="1998" label="1998" visible="calendar_range_start_year.value le 1998 and calendar_range_end_year.value ge 1998"/>
+					<zofar:answerOption uid="ao29" value="1999" label="1999" visible="calendar_range_start_year.value le 1999 and calendar_range_end_year.value ge 1999"/>
+					<zofar:answerOption uid="ao30" value="2000" label="2000" visible="calendar_range_start_year.value le 2000 and calendar_range_end_year.value ge 2000"/>
+					<zofar:answerOption uid="ao31" value="2001" label="2001" visible="calendar_range_start_year.value le 2001 and calendar_range_end_year.value ge 2001"/>
+					<zofar:answerOption uid="ao32" value="2002" label="2002" visible="calendar_range_start_year.value le 2002 and calendar_range_end_year.value ge 2002"/>
+					<zofar:answerOption uid="ao33" value="2003" label="2003" visible="calendar_range_start_year.value le 2003 and calendar_range_end_year.value ge 2003"/>
+					<zofar:answerOption uid="ao34" value="2004" label="2004" visible="calendar_range_start_year.value le 2004 and calendar_range_end_year.value ge 2004"/>
+					<zofar:answerOption uid="ao35" value="2005" label="2005" visible="calendar_range_start_year.value le 2005 and calendar_range_end_year.value ge 2005"/>
+					<zofar:answerOption uid="ao36" value="2006" label="2006" visible="calendar_range_start_year.value le 2006 and calendar_range_end_year.value ge 2006"/>
+					<zofar:answerOption uid="ao37" value="2007" label="2007" visible="calendar_range_start_year.value le 2007 and calendar_range_end_year.value ge 2007"/>
+					<zofar:answerOption uid="ao38" value="2008" label="2008" visible="calendar_range_start_year.value le 2008 and calendar_range_end_year.value ge 2008"/>
+					<zofar:answerOption uid="ao39" value="2009" label="2009" visible="calendar_range_start_year.value le 2009 and calendar_range_end_year.value ge 2009"/>
+					<zofar:answerOption uid="ao40" value="2010" label="2010" visible="calendar_range_start_year.value le 2010 and calendar_range_end_year.value ge 2010"/>
+					<zofar:answerOption uid="ao41" value="2011" label="2011" visible="calendar_range_start_year.value le 2011 and calendar_range_end_year.value ge 2011"/>
+					<zofar:answerOption uid="ao42" value="2012" label="2012" visible="calendar_range_start_year.value le 2012 and calendar_range_end_year.value ge 2012"/>
+					<zofar:answerOption uid="ao43" value="2013" label="2013" visible="calendar_range_start_year.value le 2013 and calendar_range_end_year.value ge 2013"/>
+					<zofar:answerOption uid="ao44" value="2014" label="2014" visible="calendar_range_start_year.value le 2014 and calendar_range_end_year.value ge 2014"/>
+					<zofar:answerOption uid="ao45" value="2015" label="2015" visible="calendar_range_start_year.value le 2015 and calendar_range_end_year.value ge 2015"/>
+					<zofar:answerOption uid="ao46" value="2016" label="2016" visible="calendar_range_start_year.value le 2016 and calendar_range_end_year.value ge 2016"/>
+					<zofar:answerOption uid="ao47" value="2017" label="2017" visible="calendar_range_start_year.value le 2017 and calendar_range_end_year.value ge 2017"/>
+					<zofar:answerOption uid="ao48" value="2018" label="2018" visible="calendar_range_start_year.value le 2018 and calendar_range_end_year.value ge 2018"/>
+					<zofar:answerOption uid="ao49" value="2019" label="2019" visible="calendar_range_start_year.value le 2019 and calendar_range_end_year.value ge 2019"/>
+					<zofar:answerOption uid="ao50" value="2020" label="2020" visible="calendar_range_start_year.value le 2020 and calendar_range_end_year.value ge 2020"/>
+					<zofar:answerOption uid="ao51" value="2021" label="2021" visible="calendar_range_start_year.value le 2021 and calendar_range_end_year.value ge 2021"/>
+					<zofar:answerOption uid="ao52" value="2022" label="2022" visible="calendar_range_start_year.value le 2022 and calendar_range_end_year.value ge 2022"/>
+					<zofar:answerOption uid="ao53" value="2023" label="2023" visible="calendar_range_start_year.value le 2023 and calendar_range_end_year.value ge 2023"/>
+					<zofar:answerOption uid="ao54" value="2024" label="2024" visible="calendar_range_start_year.value le 2024 and calendar_range_end_year.value ge 2024"/>
+					<zofar:answerOption uid="ao55" value="2025" label="2025" visible="calendar_range_start_year.value le 2025 and calendar_range_end_year.value ge 2025"/>
+					<zofar:answerOption uid="ao56" value="2026" label="2026" visible="calendar_range_start_year.value le 2026 and calendar_range_end_year.value ge 2026"/>
+					<zofar:answerOption uid="ao57" value="2027" label="2027" visible="calendar_range_start_year.value le 2027 and calendar_range_end_year.value ge 2027"/>
+					<zofar:answerOption uid="ao58" value="2028" label="2028" visible="calendar_range_start_year.value le 2028 and calendar_range_end_year.value ge 2028"/>
+					<zofar:answerOption uid="ao59" value="2029" label="2029" visible="calendar_range_start_year.value le 2029 and calendar_range_end_year.value ge 2029"/>
+					<zofar:answerOption uid="ao60" value="2030" label="2030" visible="calendar_range_start_year.value le 2030 and calendar_range_end_year.value ge 2030"/>
+					<zofar:answerOption uid="ao61" value="2031" label="2031" visible="calendar_range_start_year.value le 2031 and calendar_range_end_year.value ge 2031"/>
+					<zofar:answerOption uid="ao62" value="2032" label="2032" visible="calendar_range_start_year.value le 2032 and calendar_range_end_year.value ge 2032"/>
+					<zofar:answerOption uid="ao63" value="2033" label="2033" visible="calendar_range_start_year.value le 2033 and calendar_range_end_year.value ge 2033"/>
+					<zofar:answerOption uid="ao64" value="2034" label="2034" visible="calendar_range_start_year.value le 2034 and calendar_range_end_year.value ge 2034"/>
+					<zofar:answerOption uid="ao65" value="2035" label="2035" visible="calendar_range_start_year.value le 2035 and calendar_range_end_year.value ge 2035"/>
+					<zofar:answerOption uid="ao66" value="2036" label="2036" visible="calendar_range_start_year.value le 2036 and calendar_range_end_year.value ge 2036"/>
+					<zofar:answerOption uid="ao67" value="2037" label="2037" visible="calendar_range_start_year.value le 2037 and calendar_range_end_year.value ge 2037"/>
+					<zofar:answerOption uid="ao68" value="2038" label="2038" visible="calendar_range_start_year.value le 2038 and calendar_range_end_year.value ge 2038"/>
+					<zofar:answerOption uid="ao69" value="2039" label="2039" visible="calendar_range_start_year.value le 2039 and calendar_range_end_year.value ge 2039"/>
+					<zofar:answerOption uid="ao70" value="2040" label="2040" visible="calendar_range_start_year.value le 2040 and calendar_range_end_year.value ge 2040"/>
+					<zofar:answerOption uid="aox" value="1970" label="unbekanntes Startjahr"/>
+				</zofar:responseDomain>
+			</zofar:item>
+		</zofar:responseDomain>
+	</zofar:matrixQuestionSingleChoice>
+	<zofar:matrixQuestionSingleChoice uid="msc2" visible="false">
+		<zofar:header>
+			<zofar:question uid="q1" block="true">
+				unsichtbare Hilfsvariablen endmonth und endyear
+		</zofar:question>
+		</zofar:header>
+		<zofar:responseDomain noResponseOptions="1" uid="rd4">
+			<zofar:header>
+				<zofar:title uid="t2"/>
+			</zofar:header>
+			<zofar:item uid="i3">
+				<zofar:header>
+					<zofar:question uid="qi3">#{layout.BOLD_START}bis:
+						#{layout.BOLD_END}
+				</zofar:question>
+				</zofar:header>
+				<zofar:responseDomain variable="endmonth" uid="rd5">
+					<zofar:answerOption uid="ao0" value="999999" label="Monat"/>
+					<zofar:answerOption uid="ao1" value="1" label="Januar"/>
+					<zofar:answerOption uid="ao2" value="2" label="Februar"/>
+					<zofar:answerOption uid="ao3" value="3" label="März"/>
+					<zofar:answerOption uid="ao4" value="4" label="April"/>
+					<zofar:answerOption uid="ao5" value="5" label="Mai"/>
+					<zofar:answerOption uid="ao6" value="6" label="Juni"/>
+					<zofar:answerOption uid="ao7" value="7" label="Juli"/>
+					<zofar:answerOption uid="ao8" value="8" label="August"/>
+					<zofar:answerOption uid="ao9" value="9" label="September"/>
+					<zofar:answerOption uid="ao10" value="10" label="Oktober"/>
+					<zofar:answerOption uid="ao11" value="11" label="November"/>
+					<zofar:answerOption uid="ao12" value="12" label="Dezember"/>
+				</zofar:responseDomain>
+			</zofar:item>
+			<zofar:item uid="i4">
+				<zofar:header>
+					<zofar:question uid="qi4"/>
+				</zofar:header>
+				<zofar:responseDomain variable="endyear" uid="rd6">
+					<zofar:answerOption uid="ao0" value="999999" label="Jahr"/>
+					<zofar:answerOption uid="ao1" value="1971" label="1971" visible="calendar_range_start_year.value le 1971 and calendar_range_end_year.value ge 1971"/>
+					<zofar:answerOption uid="ao2" value="1972" label="1972" visible="calendar_range_start_year.value le 1972 and calendar_range_end_year.value ge 1972"/>
+					<zofar:answerOption uid="ao3" value="1973" label="1973" visible="calendar_range_start_year.value le 1973 and calendar_range_end_year.value ge 1973"/>
+					<zofar:answerOption uid="ao4" value="1974" label="1974" visible="calendar_range_start_year.value le 1974 and calendar_range_end_year.value ge 1974"/>
+					<zofar:answerOption uid="ao5" value="1975" label="1975" visible="calendar_range_start_year.value le 1975 and calendar_range_end_year.value ge 1975"/>
+					<zofar:answerOption uid="ao6" value="1976" label="1976" visible="calendar_range_start_year.value le 1976 and calendar_range_end_year.value ge 1976"/>
+					<zofar:answerOption uid="ao7" value="1977" label="1977" visible="calendar_range_start_year.value le 1977 and calendar_range_end_year.value ge 1977"/>
+					<zofar:answerOption uid="ao8" value="1978" label="1978" visible="calendar_range_start_year.value le 1978 and calendar_range_end_year.value ge 1978"/>
+					<zofar:answerOption uid="ao9" value="1979" label="1979" visible="calendar_range_start_year.value le 1979 and calendar_range_end_year.value ge 1979"/>
+					<zofar:answerOption uid="ao10" value="1980" label="1980" visible="calendar_range_start_year.value le 1980 and calendar_range_end_year.value ge 1980"/>
+					<zofar:answerOption uid="ao11" value="1981" label="1981" visible="calendar_range_start_year.value le 1981 and calendar_range_end_year.value ge 1981"/>
+					<zofar:answerOption uid="ao12" value="1982" label="1982" visible="calendar_range_start_year.value le 1982 and calendar_range_end_year.value ge 1982"/>
+					<zofar:answerOption uid="ao13" value="1983" label="1983" visible="calendar_range_start_year.value le 1983 and calendar_range_end_year.value ge 1983"/>
+					<zofar:answerOption uid="ao14" value="1984" label="1984" visible="calendar_range_start_year.value le 1984 and calendar_range_end_year.value ge 1984"/>
+					<zofar:answerOption uid="ao15" value="1985" label="1985" visible="calendar_range_start_year.value le 1985 and calendar_range_end_year.value ge 1985"/>
+					<zofar:answerOption uid="ao16" value="1986" label="1986" visible="calendar_range_start_year.value le 1986 and calendar_range_end_year.value ge 1986"/>
+					<zofar:answerOption uid="ao17" value="1987" label="1987" visible="calendar_range_start_year.value le 1987 and calendar_range_end_year.value ge 1987"/>
+					<zofar:answerOption uid="ao18" value="1988" label="1988" visible="calendar_range_start_year.value le 1988 and calendar_range_end_year.value ge 1988"/>
+					<zofar:answerOption uid="ao19" value="1989" label="1989" visible="calendar_range_start_year.value le 1989 and calendar_range_end_year.value ge 1989"/>
+					<zofar:answerOption uid="ao20" value="1990" label="1990" visible="calendar_range_start_year.value le 1990 and calendar_range_end_year.value ge 1990"/>
+					<zofar:answerOption uid="ao21" value="1991" label="1991" visible="calendar_range_start_year.value le 1991 and calendar_range_end_year.value ge 1991"/>
+					<zofar:answerOption uid="ao22" value="1992" label="1992" visible="calendar_range_start_year.value le 1992 and calendar_range_end_year.value ge 1992"/>
+					<zofar:answerOption uid="ao23" value="1993" label="1993" visible="calendar_range_start_year.value le 1993 and calendar_range_end_year.value ge 1993"/>
+					<zofar:answerOption uid="ao24" value="1994" label="1994" visible="calendar_range_start_year.value le 1994 and calendar_range_end_year.value ge 1994"/>
+					<zofar:answerOption uid="ao25" value="1995" label="1995" visible="calendar_range_start_year.value le 1995 and calendar_range_end_year.value ge 1995"/>
+					<zofar:answerOption uid="ao26" value="1996" label="1996" visible="calendar_range_start_year.value le 1996 and calendar_range_end_year.value ge 1996"/>
+					<zofar:answerOption uid="ao27" value="1997" label="1997" visible="calendar_range_start_year.value le 1997 and calendar_range_end_year.value ge 1997"/>
+					<zofar:answerOption uid="ao28" value="1998" label="1998" visible="calendar_range_start_year.value le 1998 and calendar_range_end_year.value ge 1998"/>
+					<zofar:answerOption uid="ao29" value="1999" label="1999" visible="calendar_range_start_year.value le 1999 and calendar_range_end_year.value ge 1999"/>
+					<zofar:answerOption uid="ao30" value="2000" label="2000" visible="calendar_range_start_year.value le 2000 and calendar_range_end_year.value ge 2000"/>
+					<zofar:answerOption uid="ao31" value="2001" label="2001" visible="calendar_range_start_year.value le 2001 and calendar_range_end_year.value ge 2001"/>
+					<zofar:answerOption uid="ao32" value="2002" label="2002" visible="calendar_range_start_year.value le 2002 and calendar_range_end_year.value ge 2002"/>
+					<zofar:answerOption uid="ao33" value="2003" label="2003" visible="calendar_range_start_year.value le 2003 and calendar_range_end_year.value ge 2003"/>
+					<zofar:answerOption uid="ao34" value="2004" label="2004" visible="calendar_range_start_year.value le 2004 and calendar_range_end_year.value ge 2004"/>
+					<zofar:answerOption uid="ao35" value="2005" label="2005" visible="calendar_range_start_year.value le 2005 and calendar_range_end_year.value ge 2005"/>
+					<zofar:answerOption uid="ao36" value="2006" label="2006" visible="calendar_range_start_year.value le 2006 and calendar_range_end_year.value ge 2006"/>
+					<zofar:answerOption uid="ao37" value="2007" label="2007" visible="calendar_range_start_year.value le 2007 and calendar_range_end_year.value ge 2007"/>
+					<zofar:answerOption uid="ao38" value="2008" label="2008" visible="calendar_range_start_year.value le 2008 and calendar_range_end_year.value ge 2008"/>
+					<zofar:answerOption uid="ao39" value="2009" label="2009" visible="calendar_range_start_year.value le 2009 and calendar_range_end_year.value ge 2009"/>
+					<zofar:answerOption uid="ao40" value="2010" label="2010" visible="calendar_range_start_year.value le 2010 and calendar_range_end_year.value ge 2010"/>
+					<zofar:answerOption uid="ao41" value="2011" label="2011" visible="calendar_range_start_year.value le 2011 and calendar_range_end_year.value ge 2011"/>
+					<zofar:answerOption uid="ao42" value="2012" label="2012" visible="calendar_range_start_year.value le 2012 and calendar_range_end_year.value ge 2012"/>
+					<zofar:answerOption uid="ao43" value="2013" label="2013" visible="calendar_range_start_year.value le 2013 and calendar_range_end_year.value ge 2013"/>
+					<zofar:answerOption uid="ao44" value="2014" label="2014" visible="calendar_range_start_year.value le 2014 and calendar_range_end_year.value ge 2014"/>
+					<zofar:answerOption uid="ao45" value="2015" label="2015" visible="calendar_range_start_year.value le 2015 and calendar_range_end_year.value ge 2015"/>
+					<zofar:answerOption uid="ao46" value="2016" label="2016" visible="calendar_range_start_year.value le 2016 and calendar_range_end_year.value ge 2016"/>
+					<zofar:answerOption uid="ao47" value="2017" label="2017" visible="calendar_range_start_year.value le 2017 and calendar_range_end_year.value ge 2017"/>
+					<zofar:answerOption uid="ao48" value="2018" label="2018" visible="calendar_range_start_year.value le 2018 and calendar_range_end_year.value ge 2018"/>
+					<zofar:answerOption uid="ao49" value="2019" label="2019" visible="calendar_range_start_year.value le 2019 and calendar_range_end_year.value ge 2019"/>
+					<zofar:answerOption uid="ao50" value="2020" label="2020" visible="calendar_range_start_year.value le 2020 and calendar_range_end_year.value ge 2020"/>
+					<zofar:answerOption uid="ao51" value="2021" label="2021" visible="calendar_range_start_year.value le 2021 and calendar_range_end_year.value ge 2021"/>
+					<zofar:answerOption uid="ao52" value="2022" label="2022" visible="calendar_range_start_year.value le 2022 and calendar_range_end_year.value ge 2022"/>
+					<zofar:answerOption uid="ao53" value="2023" label="2023" visible="calendar_range_start_year.value le 2023 and calendar_range_end_year.value ge 2023"/>
+					<zofar:answerOption uid="ao54" value="2024" label="2024" visible="calendar_range_start_year.value le 2024 and calendar_range_end_year.value ge 2024"/>
+					<zofar:answerOption uid="ao55" value="2025" label="2025" visible="calendar_range_start_year.value le 2025 and calendar_range_end_year.value ge 2025"/>
+					<zofar:answerOption uid="ao56" value="2026" label="2026" visible="calendar_range_start_year.value le 2026 and calendar_range_end_year.value ge 2026"/>
+					<zofar:answerOption uid="ao57" value="2027" label="2027" visible="calendar_range_start_year.value le 2027 and calendar_range_end_year.value ge 2027"/>
+					<zofar:answerOption uid="ao58" value="2028" label="2028" visible="calendar_range_start_year.value le 2028 and calendar_range_end_year.value ge 2028"/>
+					<zofar:answerOption uid="ao59" value="2029" label="2029" visible="calendar_range_start_year.value le 2029 and calendar_range_end_year.value ge 2029"/>
+					<zofar:answerOption uid="ao60" value="2030" label="2030" visible="calendar_range_start_year.value le 2030 and calendar_range_end_year.value ge 2030"/>
+					<zofar:answerOption uid="ao61" value="2031" label="2031" visible="calendar_range_start_year.value le 2031 and calendar_range_end_year.value ge 2031"/>
+					<zofar:answerOption uid="ao62" value="2032" label="2032" visible="calendar_range_start_year.value le 2032 and calendar_range_end_year.value ge 2032"/>
+					<zofar:answerOption uid="ao63" value="2033" label="2033" visible="calendar_range_start_year.value le 2033 and calendar_range_end_year.value ge 2033"/>
+					<zofar:answerOption uid="ao64" value="2034" label="2034" visible="calendar_range_start_year.value le 2034 and calendar_range_end_year.value ge 2034"/>
+					<zofar:answerOption uid="ao65" value="2035" label="2035" visible="calendar_range_start_year.value le 2035 and calendar_range_end_year.value ge 2035"/>
+					<zofar:answerOption uid="ao66" value="2036" label="2036" visible="calendar_range_start_year.value le 2036 and calendar_range_end_year.value ge 2036"/>
+					<zofar:answerOption uid="ao67" value="2037" label="2037" visible="calendar_range_start_year.value le 2037 and calendar_range_end_year.value ge 2037"/>
+					<zofar:answerOption uid="ao68" value="2038" label="2038" visible="calendar_range_start_year.value le 2038 and calendar_range_end_year.value ge 2038"/>
+					<zofar:answerOption uid="ao69" value="2039" label="2039" visible="calendar_range_start_year.value le 2039 and calendar_range_end_year.value ge 2039"/>
+					<zofar:answerOption uid="ao70" value="2040" label="2040" visible="calendar_range_start_year.value le 2040 and calendar_range_end_year.value ge 2040"/>
+					<zofar:answerOption uid="aox" value="1970" label="unbekanntes Startjahr"/>
+				</zofar:responseDomain>
+			</zofar:item>
+		</zofar:responseDomain>
+	</zofar:matrixQuestionSingleChoice>
+</zofar:body>
+		<zofar:triggers>
+			<zofar:variable variable="debugMode" value="'false'"/>
+
+			<zofar:variable variable="calendar_monthLabel_start_english" value="'January'"/>
+			<zofar:variable variable="calendar_monthLabel_start" value="'Januar'"/>
+			<zofar:variable variable="calendar_range_start_month" value="'01'"/>
+			<!-- <zofar:variable variable="calendar_range_start_month" value="'01'" condition="(calendar_range_start_month.value=='')"/> -->
+			<!-- <zofar:variable variable="calendar_range_start_month" value="'01'" condition="(!zofar.isSet('calendar_range_start_month',sessionController.participant))"/> -->
+			<!-- <zofar:variable variable="calendar_range_start_month" value="PRELOADcalendar_range_start_month.value" condition="zofar.asNumber(PRELOADcalendar_range_start_month) ge 1 and  zofar.asNumber(PRELOADcalendar_range_start_month) le 12"/> -->
+
+			<zofar:variable variable="calendar_range_start_year" value="'2018'"/>
+			<!-- <zofar:variable variable="calendar_range_start_year" value="2018" condition="(!zofar.isSet('calendar_range_start_year',sessionController.participant))"/> -->
+			<!-- <zofar:variable variable="calendar_range_start_year" value="2018" condition="(calendar_range_start_year.value=='')"/> -->
+			<!-- <zofar:variable variable="calendar_range_start_year" value="PRELOADcalendar_range_start_year.value" condition="zofar.asNumber(PRELOADcalendar_range_start_year) ge 1970 and  zofar.asNumber(PRELOADcalendar_range_start_year) le 4000  and zofar.asNumber(PRELOADcalendar_range_end_year) ge 1970 and  zofar.asNumber(PRELOADcalendar_range_end_year) le 4000 and zofar.asNumber(PRELOADcalendar_range_start_year) lt zofar.asNumber(PRELOADcalendar_range_end_year)"/> -->
+
+
+			<zofar:variable variable="calendar_monthLabel_end" value="'November'"/>
+			<zofar:variable variable="calendar_monthLabel_end_english" value="'November'"/>
+			<zofar:variable variable="calendar_range_end_month" value="'11'"/>
+			<!-- <zofar:variable variable="calendar_range_end_month" value="11" condition="(!zofar.isSet('calendar_range_end_month',sessionController.participant))"/> -->
+			<!-- <zofar:variable variable="calendar_range_end_month" value="11" condition="(calendar_range_end_month.value=='')"/> -->
+			<!-- <zofar:variable variable="calendar_range_end_month" value="PRELOADcalendar_range_end_month.value" condition="zofar.asNumber(PRELOADcalendar_range_end_month) ge 1 and  zofar.asNumber(PRELOADcalendar_range_end_month) le 12"/> -->
+
+			<zofar:variable variable="calendar_range_end_year" value="'2022'"/>
+			<!-- <zofar:variable variable="calendar_range_end_year" value="2022" condition="(!zofar.isSet('calendar_range_end_year',sessionController.participant))"/> -->
+			<!-- <zofar:variable variable="calendar_range_end_year" value="2022" condition="(calendar_range_end_year.value=='')"/> -->
+			<!-- <zofar:variable variable="calendar_range_end_year" value="PRELOADcalendar_range_end_year.value" condition="zofar.asNumber(PRELOADcalendar_range_start_year) ge 1970 and  zofar.asNumber(PRELOADcalendar_range_start_year) le 4000  and zofar.asNumber(PRELOADcalendar_range_end_year) ge 1970 and  zofar.asNumber(PRELOADcalendar_range_end_year) le 4000 and zofar.asNumber(PRELOADcalendar_range_start_year) lt zofar.asNumber(PRELOADcalendar_range_end_year)"/> -->
+
+			<zofar:variable variable="episode_property_type_value" value="&quot;[    {'label': {'de': 'Bitte auswählen','en': 'please select'},'id': 'SlotDefault','value': 'SlotDefault','color': '#4b4b4b'},      {'label': {'de': 'Schule (Abitur/Fachabitur)','en': 'School'},'id': 'sco','value': 'Slot1','color': '#f69f26'},      {'label': {'de': 'Studium','en': 'Study'},'id': 'stu','value': 'Slot2','color': '#0069b2'},      {'label': {'de': 'Berufsausbildung, Umschulung, Volontariat','en': 'Vocationaltraining, occupationalretraining, traineeship'},'id': 'voc','value': 'Slot3','color': '#097d95'},      {'label': {'de': 'Fort-, Weiterbildung (längerfristig, insgesamt mind. 70h)','en': 'Training and development (long-term, all together at least 70h)'},'id': 'fed','value': 'Slot4','color': '#FCD8A7'},      {'label': {'de': 'Jobben','en': 'Jobben'},'id': 'job','value': 'Slot5','color': '#F9F391'},      {'label': {'de': 'Erwerbstätigkeit (auch Selbständigkeit)','en': 'Employment(incl. self-employment)'},'id': 'emp','value': 'Slot6','color': '#7ab52a'},      {'label': {'de': 'Praktikum','en': 'Traineeship'},'id': 'int','value': 'Slot7','color': '#CCE1F0'},      {'label': {'de': 'Promotion','en': 'Doctorate'},'id': 'doc','value': 'Slot8','color': '#b5163f'},      {'label': {'de': 'Elternzeit/Mutterschutz, Hausmann/-frau, Familientätigkeit','en': 'Parental/maternityleave, homemaker, familywork'},'id': 'mpl','value': 'Slot9','color': '#D16021'},      {'label': {'de': 'Familientätigkeit, häusliche Pflege, Hausmann/-frau','en': 'Family occupations'},'id': 'fam','value': 'Slot10','color': '#79a0c0'},      {'label': {'de': 'Arbeitslosigkeit','en': 'Unemployment'},'id': 'uem','value': 'Slot11','color': '#DCE9C4'},      {'label': {'de': 'Sonstiges (z. B. Urlaub/Reisen, Krankheit, Studienvorbereitung, Freiwilligendienst)','en': 'Other occupation (e.g. vacation/travel, disease, preparation for studies, voluntary service)'},'id': 'oth','value': 'Slot12','color': '#053E49'}    ]&quot;"/>
+			<zofar:variable variable="url" value="zofar.baseUrl()"/>
+			<zofar:variable variable="uas" value="zofar.userAgent()"/>
+			<zofar:jsCheck variable="jsCheck" xvar="width" yvar="height"/>
+			<zofar:variable variable="isMobile" value="zofar.isMobile()"/>
+			<zofar:variable variable="h_exitlabel" value="'#{zofar.valueOf(calendar_monthLabel_end)} #{zofar.valueOf(calendar_range_end_year)}'"/>
+			<zofar:variable variable="h_exitlabel_en" value="'#{zofar.valueOf(calendar_monthLabel_end_english)} #{zofar.valueOf(calendar_range_end_year)}'"/>
+			<zofar:variable variable="h_exitdatum" value="#{zofar.valueOf(calendar_range_end_year)}#{zofar.valueOf(calendar_range_end_month)}"/>
+			<zofar:variable variable="h_enterlabel" value="'#{zofar.valueOf(calendar_monthLabel_start)} #{zofar.valueOf(calendar_range_start_year)}'"/>
+			<zofar:variable variable="h_enterlabel_en" value="'#{zofar.valueOf(calendar_monthLabel_start_english)} #{zofar.valueOf(calendar_range_start_year)}'"/>
+
+			<zofar:variable variable="h_enterdatum" value="#{zofar.valueOf(calendar_range_start_year)}#{zofar.valueOf(calendar_range_start_month)}"/>
+			<zofar:variable variable="warningpic" value="zofar.randomOf(zofar.list('1','2','3','4','5'))"/>
+			<zofar:variable variable="startPoint" value="zofar.getTimeStamp()"/>
+			<zofar:variable variable="feedbackCalendar" value="false"/>
+		</zofar:triggers>
+		<zofar:transitions>
+			<zofar:transition target="calendar"/>
+		</zofar:transitions>
+		</zofar:page>
+					
+	<zofar:page uid="end">
+		<zofar:body uid="b">
+            <zofar:display uid="Bilder">
+                <display:text uid="txt1" block="true">#{layout.image('./resources/html5/images/endseite.png','Vielen Dank für Ihre Teilnahme!')}</display:text>
+            </zofar:display>
+            <zofar:section uid="sc">
+                <zofar:header>
+					<zofar:text uid="t1" block="true">
+						Mit Ihrer Teilnahme haben Sie einen wichtigen Beitrag zur Hochschul- und Wissenschaftsforschung geleistet. 
+						Die daraus gewonnenen Erkenntnisse fließen in die Bildungspolitik ein und können die Bedingungen für zukünftige Absolvent*innen verbessern.
+						#{layout.BREAK}
+						#{layout.BREAK}
+						#{layout.BOLD_START}
+						Um Sie für weitere Befragungen im Rahmen dieser wissenschaftlichen Längsschnittstudie - 
+						die nächste Befragung ist in ca. 2 Jahren - und ggf. die Gewinnmitteilung der 
+						Verlosung erreichen zu können, bitten wir Sie, uns Ihre Kontaktdaten anzugeben.
+						#{layout.BOLD_END}
+					</zofar:text>
+                    <zofar:text uid="t2">
+						#{layout.BREAK}
+						#{layout.BREAK}	
+						#{layout.BOLD_START}
+<!-- 						#{layout.hyperlink('http://URL.TO.TEST:8080/slc_abs21-addon/special/login.html?zofar_token='.concat(PRELOADpanel),'Klicken Sie bitte hier, um Ihre Kontaktdaten anzugeben.','_blank')} -->
+						#{layout.hyperlink('http://survey01.####/slc_abs21-addon/special/login.html?zofar_token='.concat(PRELOADpanel),'Klicken Sie bitte hier, um Ihre Kontaktdaten anzugeben.','_blank')}
+					    #{layout.BOLD_END}
+					</zofar:text>
+					<zofar:text uid="t3">
+						#{layout.BREAK}
+						#{layout.BREAK}	
+					     Wenn Sie Fragen haben, können Sie uns gerne telefonisch (Frau Heike Naumann, +49 (0) 511 450 670-120) oder per E-Mail (#{layout.MAIL_START}slc2021####.eu#{layout.MAIL_END}slc2021####.eu#{layout.MAIL_STOP}) erreichen. 
+						 Weitere Informationen finden Sie zudem auf unserer #{layout.hyperlink('https://slc-absolv.####/','Homepage','_blank')}.
+					</zofar:text>
+                </zofar:header>
+            </zofar:section>
+		</zofar:body>
+	</zofar:page>
+</zofar:questionnaire>

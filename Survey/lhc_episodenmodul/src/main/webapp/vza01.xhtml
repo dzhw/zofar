@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="31"/>
+  <ui:define name="template-content">
+    <section id="vza01" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['vza01.t1_0']}</text:text>
+      </f:facet>
+      <mat:singleChoiceMatrix id="msc">
+        <f:facet name="header">
+          <text:instruction container="true" id="instr">#{msgs['vza01.body.msc.instr_0']}</text:instruction>
+          <text:question container="true" id="q1">#{msgs['vza01.body.msc.q1_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['vza01.body.msc.is_0']}</text:instruction>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t1"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="qi1">#{msgs['vza01.body.msc.rd.i1.qi1_0']}</text:question>
+            </f:facet>
+            <ans:dropDownMissingResponseDomain value="#{vza01.valueId}" var="#{vza01}">
+              <f:facet name="dropDown">
+                <ans:comboSingleChoiceResponseDomain value="#{vza01dropDown.valueId}" id="dropDown" showValues="false">
+                  <ans:singleOption id="ao0" itemValue="999999">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao0.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao1" itemValue="1">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao1.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao2" itemValue="2">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao2.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao3" itemValue="3">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao3.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao4" itemValue="4">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao4.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao5" itemValue="5">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao5.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao6" itemValue="6">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao6.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao7" itemValue="7">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao7.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao8" itemValue="8">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao8.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao9" itemValue="9">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao9.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao10" itemValue="10">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao10.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao11" itemValue="11">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao11.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao12" itemValue="12">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i1.rd1.ao12.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                </ans:comboSingleChoiceResponseDomain>
+              </f:facet>
+              <f:facet name="missing">
+                <mat:singleChoiceMatrixItemResponseDomain value="#{vza01missing.valueId}" id="missing"/>
+              </f:facet>
+            </ans:dropDownMissingResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="qi2"/>
+            </f:facet>
+            <ans:dropDownMissingResponseDomain value="#{vza02.valueId}" var="#{vza02}">
+              <f:facet name="dropDown">
+                <ans:comboSingleChoiceResponseDomain value="#{vza02dropDown.valueId}" id="dropDown" showValues="false">
+                  <ans:singleOption id="ao0" itemValue="999999">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao0.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao1" itemValue="2018">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao1.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao2" itemValue="2019">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao2.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao3" itemValue="2020">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao3.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao4" itemValue="2021">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao4.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao5" itemValue="2022">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao5.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao6" itemValue="2023">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao6.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao7" itemValue="2024">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc.rd.i2.rd2.ao7.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                </ans:comboSingleChoiceResponseDomain>
+              </f:facet>
+              <f:facet name="missing">
+                <mat:singleChoiceMatrixItemResponseDomain value="#{vza02missing.valueId}" id="missing"/>
+              </f:facet>
+            </ans:dropDownMissingResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <ques:multipleChoice id="mc1">
+        <f:facet name="header">
+          <text:question container="true" id="q1"/>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd3" missingSeparated="true">
+          <ans:multipleOption value="#{vza01a.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vza01.body.mc1.rd3.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <mat:singleChoiceMatrix id="msc2">
+        <f:facet name="header">
+          <text:question container="true" id="q3"/>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd4" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t2"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i3">
+            <f:facet name="header">
+              <text:question container="true" id="qi3">#{msgs['vza01.body.msc2.rd4.i3.qi3_0']}</text:question>
+            </f:facet>
+            <ans:dropDownMissingResponseDomain value="#{vza03.valueId}" var="#{vza03}">
+              <f:facet name="dropDown">
+                <ans:comboSingleChoiceResponseDomain value="#{vza03dropDown.valueId}" id="dropDown" showValues="false">
+                  <ans:singleOption id="ao0" itemValue="999999">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao0.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao1" itemValue="1">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao1.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao2" itemValue="2">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao2.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao3" itemValue="3">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao3.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao4" itemValue="4">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao4.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao5" itemValue="5">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao5.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao6" itemValue="6">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao6.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao7" itemValue="7">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao7.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao8" itemValue="8">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao8.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao9" itemValue="9">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao9.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao10" itemValue="10">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao10.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao11" itemValue="11">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao11.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao12" itemValue="12">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i3.rd5.ao12.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                </ans:comboSingleChoiceResponseDomain>
+              </f:facet>
+              <f:facet name="missing">
+                <mat:singleChoiceMatrixItemResponseDomain value="#{vza03missing.valueId}" id="missing"/>
+              </f:facet>
+            </ans:dropDownMissingResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i4">
+            <f:facet name="header">
+              <text:question container="true" id="qi4"/>
+            </f:facet>
+            <ans:dropDownMissingResponseDomain value="#{vza04.valueId}" var="#{vza04}">
+              <f:facet name="dropDown">
+                <ans:comboSingleChoiceResponseDomain value="#{vza04dropDown.valueId}" id="dropDown" showValues="false">
+                  <ans:singleOption id="ao0" itemValue="999999">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao0.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao1" itemValue="2018">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao1.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao2" itemValue="2019">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao2.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao3" itemValue="2020">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao3.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao4" itemValue="2021">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao4.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao5" itemValue="2022">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao5.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao6" itemValue="2023">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao6.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao7" itemValue="2024">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vza01.body.msc2.rd4.i4.rd6.ao7.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                </ans:comboSingleChoiceResponseDomain>
+              </f:facet>
+              <f:facet name="missing">
+                <mat:singleChoiceMatrixItemResponseDomain value="#{vza04missing.valueId}" id="missing"/>
+              </f:facet>
+            </ans:dropDownMissingResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <ques:multipleChoice id="mc2">
+        <f:facet name="header">
+          <text:question container="true" id="q4"/>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd7" missingSeparated="true">
+          <ans:multipleOption value="#{vza03a.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vza01.body.mc2.rd7.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <dis:container id="display">
+        <dis:text id="txt" rendered="#{flag_vza01.value}">#{msgs['vza01.body.display.txt_0']}</dis:text>
+      </dis:container>
+      <ques:multipleChoice id="mcsf" rendered="#{navigatorBean.isSame()                          and                          (                         ((zofar.asNumber(vza01dropDown)==999999 or zofar.asNumber(vza02dropDown)==999999) and !vza01a.value)         or                          ((zofar.asNumber(vza03dropDown)==999999 or zofar.asNumber(vza04dropDown)==999999) and !vza03a.value)         or sf_vza01.value                         )}">
+        <f:facet name="header">
+          <text:intro container="true" id="intro1">#{msgs['vza01.body.mcsf.intro1_0']}</text:intro>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd6" missingSeparated="true">
+          <ans:multipleOption value="#{sf_vza01.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vza01.body.mcsf.rd6.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['vza01.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['vza01.body.s1.b.tech.debug0_0']}#{msgs['vza01.body.s1.b.tech.debug0_2']}#{msgs['vza01.body.s1.b.tech.debug0_4']}</dis:text>
+          <dis:text id="debug1">#{msgs['vza01.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['vza01.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['vza01.body.s1.b.tech.debug3_0']}</dis:text>
+          <dis:text id="debug4">#{msgs['vza01.body.s1.b.tech.debug4_0']}</dis:text>
+          <dis:text id="debug5">#{msgs['vza01.body.s1.b.tech.debug5_0']}</dis:text>
+          <dis:text id="debug6">#{msgs['vza01.body.s1.b.tech.debug6_0']}</dis:text>
+        </dis:container>
+      </section>
+      <ques:pretest id="questioncommentvza01">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentvza01">#{msgs['textcommentvza01_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentvza01']}" columns="100" var="#{commentvza01}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </section>
+  </ui:define>
+</ui:composition>

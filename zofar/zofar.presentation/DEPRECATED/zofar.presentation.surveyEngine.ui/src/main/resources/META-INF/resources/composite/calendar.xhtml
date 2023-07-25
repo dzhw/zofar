@@ -1,0 +1,833 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:calendar="http://java.sun.com/jsf/composite/composite"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+	<composite:attribute name="slot1Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot2Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot3Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot4Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot5Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot6Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot7Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot8Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot9Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot10Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot11Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot12Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot13Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot14Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot15Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot16Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot17Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot18Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot19Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="slot20Label" type="java.lang.String"
+		default="null" />
+	<composite:attribute name="labelAll" type="java.lang.Boolean"
+		default="false" />
+
+	<composite:attribute name="behaviour" type="java.lang.String"
+		default="move" />
+
+	<composite:attribute name="columns" type="java.lang.String"
+		required="true" default="Column1,Column2,Column3" />
+
+	<composite:attribute name="rows" type="java.lang.String"
+		required="true" default="Row1,Row2,Row3" />
+
+	<composite:attribute name="slot1Color" type="java.lang.String"
+		default="#00ff00" />
+	<composite:attribute name="slot2Color" type="java.lang.String"
+		default="#ff99cc" />
+	<composite:attribute name="slot3Color" type="java.lang.String"
+		default="#663300" />
+	<composite:attribute name="slot4Color" type="java.lang.String"
+		default="#ff9900" />
+	<composite:attribute name="slot5Color" type="java.lang.String"
+		default="#6699ff" />
+	<composite:attribute name="slot6Color" type="java.lang.String"
+		default="#ffff00" />
+	<composite:attribute name="slot7Color" type="java.lang.String"
+		default="#008000" />
+	<composite:attribute name="slot8Color" type="java.lang.String"
+		default="#800080" />
+	<composite:attribute name="slot9Color" type="java.lang.String"
+		default="#00ccff" />
+	<composite:attribute name="slot10Color" type="java.lang.String"
+		default="#ff0000" />
+	<composite:attribute name="slot11Color" type="java.lang.String"
+		default="#0070c0" />
+	<composite:attribute name="slot12Color" type="java.lang.String"
+		default="#cc9900" />
+	<composite:attribute name="slot13Color" type="java.lang.String"
+		default="#404040" />
+	<composite:attribute name="slot14Color" type="java.lang.String"
+		default="#cccc00" />
+	<composite:attribute name="slot15Color" type="java.lang.String"
+		default="#9966ff" />
+	<composite:attribute name="slot16Color" type="java.lang.String"
+		default="#ff6600" />
+	<composite:attribute name="slot17Color" type="java.lang.String"
+		default="#00ff00" />
+	<composite:attribute name="slot18Color" type="java.lang.String"
+		default="#ff99cc" />
+	<composite:attribute name="slot19Color" type="java.lang.String"
+		default="#663300" />
+	<composite:attribute name="slot20Color" type="java.lang.String"
+		default="#ff9900" />
+	<composite:attribute name="slot1Pattern" type="java.lang.String"
+		default="Pattern1" />
+	<composite:attribute name="slot2Pattern" type="java.lang.String"
+		default="Pattern2" />
+	<composite:attribute name="slot3Pattern" type="java.lang.String"
+		default="Pattern3" />
+	<composite:attribute name="slot4Pattern" type="java.lang.String"
+		default="Pattern4" />
+	<composite:attribute name="slot5Pattern" type="java.lang.String"
+		default="Pattern5" />
+	<composite:attribute name="slot6Pattern" type="java.lang.String"
+		default="Pattern1" />
+	<composite:attribute name="slot7Pattern" type="java.lang.String"
+		default="Pattern2" />
+	<composite:attribute name="slot8Pattern" type="java.lang.String"
+		default="Pattern3" />
+	<composite:attribute name="slot9Pattern" type="java.lang.String"
+		default="Pattern4" />
+	<composite:attribute name="slot10Pattern" type="java.lang.String"
+		default="Pattern5" />
+	<composite:attribute name="slot11Pattern" type="java.lang.String"
+		default="Pattern1" />
+	<composite:attribute name="slot12Pattern" type="java.lang.String"
+		default="Pattern2" />
+	<composite:attribute name="slot13Pattern" type="java.lang.String"
+		default="Pattern3" />
+	<composite:attribute name="slot14Pattern" type="java.lang.String"
+		default="Pattern4" />
+	<composite:attribute name="slot15Pattern" type="java.lang.String"
+		default="Pattern5" />
+	<composite:attribute name="slot16Pattern" type="java.lang.String"
+		default="Pattern1" />
+	<composite:attribute name="slot17Pattern" type="java.lang.String"
+		default="Pattern2" />
+	<composite:attribute name="slot18Pattern" type="java.lang.String"
+		default="Pattern3" />
+	<composite:attribute name="slot19Pattern" type="java.lang.String"
+		default="Pattern4" />
+	<composite:attribute name="slot20Pattern" type="java.lang.String"
+		default="Pattern5" />
+
+	<composite:attribute name="blankPattern" type="java.lang.String"
+		default="PatternNone" />
+
+	<composite:attribute name="legendLayout" type="java.lang.String"
+		default="pageDirection" />
+	<composite:attribute name="legendPosition" type="java.lang.String"
+		default="left" />
+	<composite:attribute name="showLegendIcon" type="java.lang.Boolean"
+		default="true" />
+	<composite:attribute name="showIndicator" type="java.lang.Boolean"
+		default="true" />
+</composite:interface>
+
+<composite:implementation>
+	<h:outputStylesheet target="head">
+			.unselectable {
+			    -moz-user-select: -moz-none;
+			    -khtml-user-select: none;
+			    -webkit-user-select: none;
+			    -o-user-select: none;
+			    user-select: none;
+			    cursor:default;
+			}
+					
+			.legend input {
+			}
+			
+			.legend label{
+				outline:2px solid blue;
+			}		
+	</h:outputStylesheet>
+
+	<h:outputScript id="script">
+			var fieldMap_#{cc.id} = {};
+			function registerField_#{cc.id}(tileid,name, fieldId) {
+				fieldMap_#{cc.id}[name+tileid] = fieldId;       
+			}
+			
+			var tileMap_#{cc.id} = new Array(); 
+			function registerTile_#{cc.id}(tileid) {
+				tileMap_#{cc.id}.push(tileid);
+			}
+			
+			var indicator_#{cc.id} = {};
+			function registerIndicator_#{cc.id}(name, fieldId) {
+				var subset = indicator_#{cc.id}[name];
+   				if(subset == null) subset = new Array(); 
+   				subset.push(fieldId);
+   				indicator_#{cc.id}[name] = subset;
+			}
+			
+			function toggleIndicator_#{cc.id}(name) {
+				for (var slotId in indicator_#{cc.id}) {
+					var subset = indicator_#{cc.id}[slotId];
+					var color = 'white';
+					var pattern = '#{resource['images/calendar/'.concat(cc.attrs.blankPattern).concat('.png')]}';
+					if(slotId == name){
+							if(slotId == "Slot1"){
+								color = '#{cc.attrs.slot1Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot1Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot2"){
+								color = '#{cc.attrs.slot2Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot2Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot3"){
+								color = '#{cc.attrs.slot3Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot3Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot4"){
+								color = '#{cc.attrs.slot4Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot4Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot5"){
+								color = '#{cc.attrs.slot5Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot5Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot6"){
+								color = '#{cc.attrs.slot6Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot6Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot7"){
+								color = '#{cc.attrs.slot7Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot7Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot8"){
+								color = '#{cc.attrs.slot8Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot8Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot9"){
+								color = '#{cc.attrs.slot9Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot9Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot10"){
+								color = '#{cc.attrs.slot10Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot10Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot11"){
+								color = '#{cc.attrs.slot11Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot11Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot12"){
+								color = '#{cc.attrs.slot12Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot12Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot13"){
+								color = '#{cc.attrs.slot13Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot13Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot14"){
+								color = '#{cc.attrs.slot14Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot14Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot15"){
+								color = '#{cc.attrs.slot15Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot15Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot16"){
+								color = '#{cc.attrs.slot16Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot16Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot17"){
+								color = '#{cc.attrs.slot17Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot17Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot18"){
+								color = '#{cc.attrs.slot18Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot18Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot19"){
+								color = '#{cc.attrs.slot19Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot19Pattern).concat('.png')]}';
+							}
+							if(slotId == "Slot20"){
+								color = '#{cc.attrs.slot20Color}';
+								pattern = '#{resource['images/calendar/'.concat(cc.attrs.slot20Pattern).concat('.png')]}';
+							}
+					}
+					for (var fieldId in subset) {
+						var field = document.getElementById(subset[fieldId]);
+						if(field != null){
+							field.style.backgroundColor = color;
+							field.style.backgroundImage = &quot;url('"+pattern+"')&quot;;
+						}
+					}
+				}
+			}
+			
+			var pointer_#{cc.id} = new Array(); 
+			function registerPointer_#{cc.id}(fieldId) {
+   				pointer_#{cc.id}.push(fieldId);
+			}
+			
+			function setPointer_#{cc.id}(fieldId) {
+   				for (var tmpFieldId in pointer_#{cc.id}) {
+					var field = document.getElementById(pointer_#{cc.id}[tmpFieldId]);
+					if(field != null){
+						if(pointer_#{cc.id}[tmpFieldId] == fieldId)field.style.display = 'block';
+						else field.style.display = 'none';
+					}
+				}
+			}
+			
+			
+			var notpointer_#{cc.id} = new Array(); 
+			function registerNotPointer_#{cc.id}(fieldId) {
+   				notpointer_#{cc.id}.push(fieldId);
+			}
+			
+			function setNotPointer_#{cc.id}(fieldId) {
+   				for (var tmpFieldId in notpointer_#{cc.id}) {
+					var field = document.getElementById(notpointer_#{cc.id}[tmpFieldId]);
+					if(field != null){
+						if(notpointer_#{cc.id}[tmpFieldId] == fieldId){
+							field.style.borderTopColor = '#bbb';
+							field.style.borderTopWidth = '1px';
+							field.style.borderTopStyle = 'solid';
+							field.style.borderBottomColor = '#bbb';
+							field.style.borderBottomWidth = '1px';
+							field.style.borderBottomStyle = 'solid';						}
+						else{
+							field.style.borderTopColor = 'white';
+							field.style.borderTopWidth = '1px';
+							field.style.borderTopStyle = 'solid';
+							field.style.borderBottomColor = 'white';
+							field.style.borderBottomWidth = '1px';
+							field.style.borderBottomStyle = 'solid';	
+						}
+					}
+				}
+			}
+			
+			function registerIndicator_#{cc.id}(name, fieldId) {
+				var subset = indicator_#{cc.id}[name];
+   				if(subset == null) subset = new Array(); 
+   				subset.push(fieldId);
+   				indicator_#{cc.id}[name] = subset;
+			}
+			
+			function toggleSlotValue_#{cc.id}(tileId,slotId) {
+				var checkbox = document.getElementById(fieldMap_#{cc.id}[slotId+tileId]);
+				if(checkbox != null){
+					setSlotValue_#{cc.id}(tileId,slotId,!checkbox.checked);
+				}
+				return;
+			}
+			
+			function setSlotValue_#{cc.id}(tileId,slotId,flag) {
+				var checkbox = document.getElementById(fieldMap_#{cc.id}[slotId+tileId]);
+				if(checkbox != null){
+					checkbox.checked = flag;
+					ChangeColor_#{cc.id}(tileId,document.getElementById("TileTable"+tileId), slotId, checkbox.checked);
+					ChangePattern_#{cc.id}(tileId,document.getElementById("TileTable"+tileId), slotId, checkbox.checked);
+					ChangeTooltip_#{cc.id}(tileId,document.getElementById("TileTable"+tileId), slotId, checkbox.checked);
+				}
+				return;
+			}
+			
+			function ChangeColor_#{cc.id}(tileId,table, slotId, highLight) {
+				if(table != null){
+					var rows = table.rows;
+					for (a = 0; a &lt; rows.length; a++) {
+						var tableRow = rows[a];
+						if(tableRow.id == (slotId+tileId)){
+							if (highLight) {
+								if(slotId == "Slot1")tableRow.style.backgroundColor = '#{cc.attrs.slot1Color}';
+								if(slotId == "Slot2")tableRow.style.backgroundColor = '#{cc.attrs.slot2Color}';
+								if(slotId == "Slot3")tableRow.style.backgroundColor = '#{cc.attrs.slot3Color}';
+								if(slotId == "Slot4")tableRow.style.backgroundColor = '#{cc.attrs.slot4Color}';
+								if(slotId == "Slot5")tableRow.style.backgroundColor = '#{cc.attrs.slot5Color}';
+								if(slotId == "Slot6")tableRow.style.backgroundColor = '#{cc.attrs.slot6Color}';
+								if(slotId == "Slot7")tableRow.style.backgroundColor = '#{cc.attrs.slot7Color}';
+								if(slotId == "Slot8")tableRow.style.backgroundColor = '#{cc.attrs.slot8Color}';
+								if(slotId == "Slot9")tableRow.style.backgroundColor = '#{cc.attrs.slot9Color}';
+								if(slotId == "Slot10")tableRow.style.backgroundColor = '#{cc.attrs.slot10Color}';
+								if(slotId == "Slot11")tableRow.style.backgroundColor = '#{cc.attrs.slot11Color}';
+								if(slotId == "Slot12")tableRow.style.backgroundColor = '#{cc.attrs.slot12Color}';
+								if(slotId == "Slot13")tableRow.style.backgroundColor = '#{cc.attrs.slot13Color}';
+								if(slotId == "Slot14")tableRow.style.backgroundColor = '#{cc.attrs.slot14Color}';
+								if(slotId == "Slot15")tableRow.style.backgroundColor = '#{cc.attrs.slot15Color}';
+								if(slotId == "Slot16")tableRow.style.backgroundColor = '#{cc.attrs.slot16Color}';
+								if(slotId == "Slot17")tableRow.style.backgroundColor = '#{cc.attrs.slot17Color}';
+								if(slotId == "Slot18")tableRow.style.backgroundColor = '#{cc.attrs.slot18Color}';
+								if(slotId == "Slot19")tableRow.style.backgroundColor = '#{cc.attrs.slot19Color}';
+								if(slotId == "Slot20")tableRow.style.backgroundColor = '#{cc.attrs.slot20Color}';
+							} else {
+								tableRow.style.backgroundColor = 'white';
+							}
+						}
+					} 
+				}
+				return;
+			}
+						
+			function ChangePattern_#{cc.id}(tileId,table, slotId, highLight) {
+				if(table != null){
+					var rows = table.rows;
+					for (a = 0; a &lt; rows.length; a++) {
+						var tableRow = rows[a];
+						if(tableRow.id == (slotId+tileId)){
+							if (highLight) {
+								if(slotId == "Slot1")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot1Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot2")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot2Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot3")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot3Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot4")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot4Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot5")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot5Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot6")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot6Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot7")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot7Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot8")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot8Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot9")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot9Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot10")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot10Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot11")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot11Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot12")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot12Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot13")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot13Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot14")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot14Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot15")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot15Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot16")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot16Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot17")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot17Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot18")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot18Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot19")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot19Pattern).concat('.png')]}')&quot;;
+								if(slotId == "Slot20")tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.slot20Pattern).concat('.png')]}')&quot;;
+							} else {
+								tableRow.style.backgroundImage = &quot;url('#{resource['images/calendar/'.concat(cc.attrs.blankPattern).concat('.png')]}')&quot;;
+							}
+						}
+					}
+				}
+ 
+				return;
+			}
+			
+			function ChangeTooltip_#{cc.id}(tileId,table, slotId, highLight) {
+				if(table != null){
+					var rows = table.rows;
+					for (a = 0; a &lt; rows.length; a++) {
+						var tableRow = rows[a];
+						if(tableRow.id == (slotId+tileId)){
+							var title = '';
+							if (highLight) {
+								if(slotId == "Slot1")title = '#{cc.attrs.slot1Label}';
+								if(slotId == "Slot2")title = '#{cc.attrs.slot2Label}';
+								if(slotId == "Slot3")title = '#{cc.attrs.slot3Label}';
+								if(slotId == "Slot4")title = '#{cc.attrs.slot4Label}';
+								if(slotId == "Slot5")title = '#{cc.attrs.slot5Label}';
+								if(slotId == "Slot6")title = '#{cc.attrs.slot6Label}';
+								if(slotId == "Slot7")title = '#{cc.attrs.slot7Label}';
+								if(slotId == "Slot8")title = '#{cc.attrs.slot8Label}';
+								if(slotId == "Slot9")title = '#{cc.attrs.slot9Label}';
+								if(slotId == "Slot10")title = '#{cc.attrs.slot10Label}';
+								if(slotId == "Slot11")title = '#{cc.attrs.slot11Label}';
+								if(slotId == "Slot12")title = '#{cc.attrs.slot12Label}';
+								if(slotId == "Slot13")title = '#{cc.attrs.slot13Label}';
+								if(slotId == "Slot14")title = '#{cc.attrs.slot14Label}';
+								if(slotId == "Slot15")title = '#{cc.attrs.slot15Label}';
+								if(slotId == "Slot16")title = '#{cc.attrs.slot16Label}';
+								if(slotId == "Slot17")title = '#{cc.attrs.slot17Label}';
+								if(slotId == "Slot18")title = '#{cc.attrs.slot18Label}';
+								if(slotId == "Slot19")title = '#{cc.attrs.slot19Label}';
+								if(slotId == "Slot20")title = '#{cc.attrs.slot20Label}';
+							} else {
+								title = '';
+							}
+							var cell = document.getElementById(tableRow.id+"_cell");
+							if(cell != null)cell.title=title;
+						}
+					} 
+				}
+				return;
+			}
+			
+			function InitialChange_#{cc.id}(tileId,table, slotId, highLight) {
+				ChangeColor_#{cc.id}(tileId,table, slotId, highLight);
+				ChangePattern_#{cc.id}(tileId,table, slotId, highLight);
+				ChangeTooltip_#{cc.id}(tileId,table, slotId, highLight);
+			}
+			
+			function setRadioWert_#{cc.id}(rObjId,newValue) {
+				var rObj = document.getElementsByName(rObjId);
+				if(!rObj)return;
+				
+				var radioLength = rObj.length;
+				if(radioLength == undefined) {
+					rObj.checked = (rObj.value == newValue.toString());
+					return;
+				}
+				for(var i = 0; i &lt; radioLength; i++) {
+					rObj[i].checked = false;
+					if(rObj[i].value == newValue.toString()) {
+						rObj[i].checked = true;
+					}
+				}
+				return;
+			}
+
+			function radioWert_#{cc.id}(rObjId) {
+				var rObj = document.getElementsByName(rObjId);
+				if ((rObj.length &gt; 0) &amp;&amp; (rObj[0].checked))
+					return rObj[0].value;
+				if ((rObj.length &gt; 1) &amp;&amp; (rObj[1].checked))
+					return rObj[1].value;
+				if ((rObj.length &gt; 2) &amp;&amp; (rObj[2].checked))
+					return rObj[2].value;
+				if ((rObj.length &gt; 3) &amp;&amp; (rObj[3].checked))
+					return rObj[3].value;
+				if ((rObj.length &gt; 4) &amp;&amp; (rObj[4].checked))
+					return rObj[4].value;
+				if ((rObj.length &gt; 5) &amp;&amp; (rObj[5].checked))
+					return rObj[5].value;
+				if ((rObj.length &gt; 6) &amp;&amp; (rObj[6].checked))
+					return rObj[6].value;
+				if ((rObj.length &gt; 7) &amp;&amp; (rObj[7].checked))
+					return rObj[7].value;
+				if ((rObj.length &gt; 8) &amp;&amp; (rObj[8].checked))
+					return rObj[8].value;
+				if ((rObj.length &gt; 9) &amp;&amp; (rObj[9].checked))
+					return rObj[9].value;
+				if ((rObj.length &gt; 10) &amp;&amp; (rObj[10].checked))
+					return rObj[10].value;
+				if ((rObj.length &gt; 11) &amp;&amp; (rObj[11].checked))
+					return rObj[11].value;
+				if ((rObj.length &gt; 12) &amp;&amp; (rObj[12].checked))
+					return rObj[12].value;
+				if ((rObj.length &gt; 13) &amp;&amp; (rObj[13].checked))
+					return rObj[13].value;
+				if ((rObj.length &gt; 14) &amp;&amp; (rObj[14].checked))
+					return rObj[14].value;
+				if ((rObj.length &gt; 15) &amp;&amp; (rObj[15].checked))
+					return rObj[15].value;
+				if ((rObj.length &gt; 16) &amp;&amp; (rObj[16].checked))
+					return rObj[16].value;
+				if ((rObj.length &gt; 17) &amp;&amp; (rObj[17].checked))
+					return rObj[17].value;
+				if ((rObj.length &gt; 18) &amp;&amp; (rObj[18].checked))
+					return rObj[18].value;
+				if ((rObj.length &gt; 19) &amp;&amp; (rObj[19].checked))
+					return rObj[19].value;
+				return false;
+			}
+			
+			var startTile_#{cc.id};
+			
+			function startMark_#{cc.id}(tileId){
+				startTile_#{cc.id} = tileId;
+				currentTileId_#{cc.id} = tileId;
+			}
+			
+			var flag_#{cc.id};
+			
+			function flagDown_#{cc.id}(){
+				flag_#{cc.id} = true;
+			}
+			
+			function flagUp_#{cc.id}(){
+				flag_#{cc.id} = false;
+			}
+			
+			var currentTileId_#{cc.id};
+
+			function overMark_#{cc.id}(overTile){
+				if(flag_#{cc.id} &amp;&amp; (currentTileId_#{cc.id} != overTile)){
+					startMark_#{cc.id}(overTile)
+					stopMark_#{cc.id}(overTile)
+					currentTileId_#{cc.id} = overTile;
+				}
+			}
+			
+			function stopMark_#{cc.id}(stopTile){
+				if(true){
+					var flag = false;
+					var relevant = new Array();
+					for (b = 0; b &lt; tileMap_#{cc.id}.length; b++) {
+						var tileId = tileMap_#{cc.id}[b];
+						if(tileId == startTile_#{cc.id})flag = !flag;
+						if(tileId == stopTile)flag = !flag;
+						
+						if(flag || (tileId == stopTile) || (tileId == startTile_#{cc.id})){
+							relevant.push(tileId);
+						}
+					}
+					
+					for (c = 0; c &lt; relevant.length; c++) {
+						var tileId = relevant[c];
+						toggleSlotValue_#{cc.id}(tileId,radioWert_#{cc.id}('#{cc.clientId}:#{cc.id}:legend'));
+					}
+				}
+				startTile_#{cc.id} = null;
+			}
+			
+			function init_#{cc.id}(tileid,slot1id,slot2id,slot3id,slot4id,slot5id,slot6id,slot7id,slot8id,slot9id,slot10id,slot11id,slot12id,slot13id,slot14id,slot15id,slot16id,slot17id,slot18id,slot19id,slot20id){
+				registerField_#{cc.id}(tileid,'Slot1', slot1id);
+				registerField_#{cc.id}(tileid,'Slot2', slot2id);
+				registerField_#{cc.id}(tileid,'Slot3', slot3id);
+				registerField_#{cc.id}(tileid,'Slot4', slot4id);
+				registerField_#{cc.id}(tileid,'Slot5', slot5id);
+				registerField_#{cc.id}(tileid,'Slot6', slot6id);
+				registerField_#{cc.id}(tileid,'Slot7', slot7id);
+				registerField_#{cc.id}(tileid,'Slot8', slot8id);
+				registerField_#{cc.id}(tileid,'Slot9', slot9id);
+				registerField_#{cc.id}(tileid,'Slot10', slot10id);
+				registerField_#{cc.id}(tileid,'Slot11', slot11id);
+				registerField_#{cc.id}(tileid,'Slot12', slot12id);
+				registerField_#{cc.id}(tileid,'Slot13', slot13id);
+				registerField_#{cc.id}(tileid,'Slot14', slot14id);
+				registerField_#{cc.id}(tileid,'Slot15', slot15id);
+				registerField_#{cc.id}(tileid,'Slot16', slot16id);
+				registerField_#{cc.id}(tileid,'Slot17', slot17id);
+				registerField_#{cc.id}(tileid,'Slot18', slot18id);
+				registerField_#{cc.id}(tileid,'Slot19', slot19id);
+				registerField_#{cc.id}(tileid,'Slot20', slot20id);
+				registerTile_#{cc.id}(tileid);
+				var checkbox1 = document.getElementById(fieldMap_#{cc.id}['Slot1'+tileid]);
+				var checkbox2 = document.getElementById(fieldMap_#{cc.id}['Slot2'+tileid]);
+				var checkbox3 = document.getElementById(fieldMap_#{cc.id}['Slot3'+tileid]);
+				var checkbox4 = document.getElementById(fieldMap_#{cc.id}['Slot4'+tileid]);
+				var checkbox5 = document.getElementById(fieldMap_#{cc.id}['Slot5'+tileid]);
+				var checkbox6 = document.getElementById(fieldMap_#{cc.id}['Slot6'+tileid]);
+				var checkbox7 = document.getElementById(fieldMap_#{cc.id}['Slot7'+tileid]);
+				var checkbox8 = document.getElementById(fieldMap_#{cc.id}['Slot8'+tileid]);
+				var checkbox9 = document.getElementById(fieldMap_#{cc.id}['Slot9'+tileid]);
+				var checkbox10 = document.getElementById(fieldMap_#{cc.id}['Slot10'+tileid]);
+				var checkbox11 = document.getElementById(fieldMap_#{cc.id}['Slot11'+tileid]);
+				var checkbox12 = document.getElementById(fieldMap_#{cc.id}['Slot12'+tileid]);
+				var checkbox13 = document.getElementById(fieldMap_#{cc.id}['Slot13'+tileid]);
+				var checkbox14 = document.getElementById(fieldMap_#{cc.id}['Slot14'+tileid]);
+				var checkbox15 = document.getElementById(fieldMap_#{cc.id}['Slot15'+tileid]);
+				var checkbox16 = document.getElementById(fieldMap_#{cc.id}['Slot16'+tileid]);
+				var checkbox17 = document.getElementById(fieldMap_#{cc.id}['Slot17'+tileid]);
+				var checkbox18 = document.getElementById(fieldMap_#{cc.id}['Slot18'+tileid]);
+				var checkbox19 = document.getElementById(fieldMap_#{cc.id}['Slot19'+tileid]);
+				var checkbox20 = document.getElementById(fieldMap_#{cc.id}['Slot20'+tileid]);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot1', document.getElementById(fieldMap_#{cc.id}['Slot1'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot2', document.getElementById(fieldMap_#{cc.id}['Slot2'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot3', document.getElementById(fieldMap_#{cc.id}['Slot3'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot4', document.getElementById(fieldMap_#{cc.id}['Slot4'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot5', document.getElementById(fieldMap_#{cc.id}['Slot5'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot6', document.getElementById(fieldMap_#{cc.id}['Slot6'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot7', document.getElementById(fieldMap_#{cc.id}['Slot7'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot8', document.getElementById(fieldMap_#{cc.id}['Slot8'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot9', document.getElementById(fieldMap_#{cc.id}['Slot9'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot10', document.getElementById(fieldMap_#{cc.id}['Slot10'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot11', document.getElementById(fieldMap_#{cc.id}['Slot11'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot12', document.getElementById(fieldMap_#{cc.id}['Slot12'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot13', document.getElementById(fieldMap_#{cc.id}['Slot13'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot14', document.getElementById(fieldMap_#{cc.id}['Slot14'+tileid]).checked);				
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot15', document.getElementById(fieldMap_#{cc.id}['Slot15'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot16', document.getElementById(fieldMap_#{cc.id}['Slot16'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot17', document.getElementById(fieldMap_#{cc.id}['Slot17'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot18', document.getElementById(fieldMap_#{cc.id}['Slot18'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot19', document.getElementById(fieldMap_#{cc.id}['Slot19'+tileid]).checked);
+				InitialChange_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot20', document.getElementById(fieldMap_#{cc.id}['Slot20'+tileid]).checked);
+						}
+			
+			function initOld_#{cc.id}(tileid,slot1id,slot2id,slot3id,slot4id,slot5id,slot6id,slot7id,slot8id,slot9id,slot10id,slot11id,slot12id,slot13id,slot14id,slot15id,slot16id,slot17id,slot18id,slot19id,slot20id){
+				registerField_#{cc.id}(tileid,'Slot1', slot1id);
+				registerField_#{cc.id}(tileid,'Slot2', slot2id);
+				registerField_#{cc.id}(tileid,'Slot3', slot3id);
+				registerField_#{cc.id}(tileid,'Slot4', slot4id);
+				registerField_#{cc.id}(tileid,'Slot5', slot5id);
+				registerField_#{cc.id}(tileid,'Slot6', slot6id);
+				registerField_#{cc.id}(tileid,'Slot7', slot7id);
+				registerField_#{cc.id}(tileid,'Slot8', slot8id);
+				registerField_#{cc.id}(tileid,'Slot9', slot9id);
+				registerField_#{cc.id}(tileid,'Slot10', slot10id);
+				registerField_#{cc.id}(tileid,'Slot11', slot11id);
+				registerField_#{cc.id}(tileid,'Slot12', slot12id);
+				registerField_#{cc.id}(tileid,'Slot13', slot13id);
+				registerField_#{cc.id}(tileid,'Slot14', slot14id);
+				registerField_#{cc.id}(tileid,'Slot15', slot15id);
+				registerField_#{cc.id}(tileid,'Slot16', slot16id);
+				registerField_#{cc.id}(tileid,'Slot17', slot17id);
+				registerField_#{cc.id}(tileid,'Slot18', slot18id);
+				registerField_#{cc.id}(tileid,'Slot19', slot19id);
+				registerField_#{cc.id}(tileid,'Slot20', slot20id);
+				registerTile_#{cc.id}(tileid);
+				var checkbox1 = document.getElementById(fieldMap_#{cc.id}['Slot1'+tileid]);
+				var checkbox2 = document.getElementById(fieldMap_#{cc.id}['Slot2'+tileid]);
+				var checkbox3 = document.getElementById(fieldMap_#{cc.id}['Slot3'+tileid]);
+				var checkbox4 = document.getElementById(fieldMap_#{cc.id}['Slot4'+tileid]);
+				var checkbox5 = document.getElementById(fieldMap_#{cc.id}['Slot5'+tileid]);
+				var checkbox6 = document.getElementById(fieldMap_#{cc.id}['Slot6'+tileid]);
+				var checkbox7 = document.getElementById(fieldMap_#{cc.id}['Slot7'+tileid]);
+				var checkbox8 = document.getElementById(fieldMap_#{cc.id}['Slot8'+tileid]);
+				var checkbox9 = document.getElementById(fieldMap_#{cc.id}['Slot9'+tileid]);
+				var checkbox10 = document.getElementById(fieldMap_#{cc.id}['Slot10'+tileid]);
+				var checkbox11 = document.getElementById(fieldMap_#{cc.id}['Slot11'+tileid]);
+				var checkbox12 = document.getElementById(fieldMap_#{cc.id}['Slot12'+tileid]);
+				var checkbox13 = document.getElementById(fieldMap_#{cc.id}['Slot13'+tileid]);
+				var checkbox14 = document.getElementById(fieldMap_#{cc.id}['Slot14'+tileid]);
+				var checkbox15 = document.getElementById(fieldMap_#{cc.id}['Slot15'+tileid]);
+				var checkbox16 = document.getElementById(fieldMap_#{cc.id}['Slot16'+tileid]);
+				var checkbox17 = document.getElementById(fieldMap_#{cc.id}['Slot17'+tileid]);
+				var checkbox18 = document.getElementById(fieldMap_#{cc.id}['Slot18'+tileid]);
+				var checkbox19 = document.getElementById(fieldMap_#{cc.id}['Slot19'+tileid]);
+				var checkbox20 = document.getElementById(fieldMap_#{cc.id}['Slot20'+tileid]);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot1', document.getElementById(fieldMap_#{cc.id}['Slot1'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot2', document.getElementById(fieldMap_#{cc.id}['Slot2'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot3', document.getElementById(fieldMap_#{cc.id}['Slot3'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot4', document.getElementById(fieldMap_#{cc.id}['Slot4'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot5', document.getElementById(fieldMap_#{cc.id}['Slot5'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot6', document.getElementById(fieldMap_#{cc.id}['Slot6'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot7', document.getElementById(fieldMap_#{cc.id}['Slot7'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot8', document.getElementById(fieldMap_#{cc.id}['Slot8'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot9', document.getElementById(fieldMap_#{cc.id}['Slot9'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot10', document.getElementById(fieldMap_#{cc.id}['Slot10'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot11', document.getElementById(fieldMap_#{cc.id}['Slot11'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot12', document.getElementById(fieldMap_#{cc.id}['Slot12'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot13', document.getElementById(fieldMap_#{cc.id}['Slot13'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot14', document.getElementById(fieldMap_#{cc.id}['Slot14'+tileid]).checked);				
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot15', document.getElementById(fieldMap_#{cc.id}['Slot15'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot16', document.getElementById(fieldMap_#{cc.id}['Slot16'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot17', document.getElementById(fieldMap_#{cc.id}['Slot17'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot18', document.getElementById(fieldMap_#{cc.id}['Slot18'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot19', document.getElementById(fieldMap_#{cc.id}['Slot19'+tileid]).checked);
+				ChangeColor_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot20', document.getElementById(fieldMap_#{cc.id}['Slot20'+tileid]).checked);
+			
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot1', document.getElementById(fieldMap_#{cc.id}['Slot1'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot2', document.getElementById(fieldMap_#{cc.id}['Slot2'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot3', document.getElementById(fieldMap_#{cc.id}['Slot3'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot4', document.getElementById(fieldMap_#{cc.id}['Slot4'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot5', document.getElementById(fieldMap_#{cc.id}['Slot5'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot6', document.getElementById(fieldMap_#{cc.id}['Slot6'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot7', document.getElementById(fieldMap_#{cc.id}['Slot7'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot8', document.getElementById(fieldMap_#{cc.id}['Slot8'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot9', document.getElementById(fieldMap_#{cc.id}['Slot9'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot10', document.getElementById(fieldMap_#{cc.id}['Slot10'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot11', document.getElementById(fieldMap_#{cc.id}['Slot11'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot12', document.getElementById(fieldMap_#{cc.id}['Slot12'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot13', document.getElementById(fieldMap_#{cc.id}['Slot13'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot14', document.getElementById(fieldMap_#{cc.id}['Slot14'+tileid]).checked);				
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot15', document.getElementById(fieldMap_#{cc.id}['Slot15'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot16', document.getElementById(fieldMap_#{cc.id}['Slot16'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot17', document.getElementById(fieldMap_#{cc.id}['Slot17'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot18', document.getElementById(fieldMap_#{cc.id}['Slot18'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot19', document.getElementById(fieldMap_#{cc.id}['Slot19'+tileid]).checked);
+				ChangePattern_#{cc.id}(tileid,document.getElementById('TileTable'+tileid), 'Slot20', document.getElementById(fieldMap_#{cc.id}['Slot20'+tileid]).checked);			
+			}
+	</h:outputScript>
+
+	<calendar:calendarSheet id="#{cc.id}"
+		slot1Label="#{cc.attrs.slot1Label}"
+		slot2Label="#{cc.attrs.slot2Label}"
+		slot3Label="#{cc.attrs.slot3Label}"
+		slot4Label="#{cc.attrs.slot4Label}"
+		slot5Label="#{cc.attrs.slot5Label}"
+		slot6Label="#{cc.attrs.slot6Label}"
+		slot7Label="#{cc.attrs.slot7Label}"
+		slot8Label="#{cc.attrs.slot8Label}"
+		slot9Label="#{cc.attrs.slot9Label}"
+		slot10Label="#{cc.attrs.slot10Label}"
+		slot11Label="#{cc.attrs.slot11Label}"
+		slot12Label="#{cc.attrs.slot12Label}"
+		slot13Label="#{cc.attrs.slot13Label}"
+		slot14Label="#{cc.attrs.slot14Label}"
+		slot15Label="#{cc.attrs.slot15Label}"
+		slot16Label="#{cc.attrs.slot16Label}"
+		slot17Label="#{cc.attrs.slot17Label}"
+		slot18Label="#{cc.attrs.slot18Label}"
+		slot19Label="#{cc.attrs.slot19Label}"
+		slot20Label="#{cc.attrs.slot20Label}" labelAll="#{cc.attrs.labelAll}"
+		columns="#{cc.attrs.columns}" rows="#{cc.attrs.rows}"
+		behaviour="#{cc.attrs.behaviour}" rendered="#{cc.attrs.rendered}">
+		<composite:insertChildren />
+		<f:facet name="legend">
+			<calendar:calendarLegend layout="#{cc.attrs.legendLayout}"
+				position="#{cc.attrs.legendPosition}" id="legend"
+				rendered="#{cc.attrs.rendered}" showLegendIcon="#{cc.attrs.showLegendIcon}" showIndicator="#{cc.attrs.showIndicator}">
+				<f:selectItem itemValue="Slot1" itemLabel="#{cc.attrs.slot1Label}"
+					color="#{cc.attrs.slot1Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot1Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot2" itemLabel="#{cc.attrs.slot2Label}"
+					color="#{cc.attrs.slot2Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot2Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot3" itemLabel="#{cc.attrs.slot3Label}"
+					color="#{cc.attrs.slot3Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot3Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot4" itemLabel="#{cc.attrs.slot4Label}"
+					color="#{cc.attrs.slot4Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot4Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot5" itemLabel="#{cc.attrs.slot5Label}"
+					color="#{cc.attrs.slot5Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot5Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot6" itemLabel="#{cc.attrs.slot6Label}"
+					color="#{cc.attrs.slot6Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot6Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot7" itemLabel="#{cc.attrs.slot7Label}"
+					color="#{cc.attrs.slot7Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot7Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot8" itemLabel="#{cc.attrs.slot8Label}"
+					color="#{cc.attrs.slot8Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot8Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot9" itemLabel="#{cc.attrs.slot9Label}"
+					color="#{cc.attrs.slot9Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot9Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot10" itemLabel="#{cc.attrs.slot10Label}"
+					color="#{cc.attrs.slot10Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot10Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot11" itemLabel="#{cc.attrs.slot11Label}"
+					color="#{cc.attrs.slot11Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot11Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot12" itemLabel="#{cc.attrs.slot12Label}"
+					color="#{cc.attrs.slot12Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot12Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot13" itemLabel="#{cc.attrs.slot13Label}"
+					color="#{cc.attrs.slot13Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot13Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot14" itemLabel="#{cc.attrs.slot14Label}"
+					color="#{cc.attrs.slot14Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot14Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot15" itemLabel="#{cc.attrs.slot15Label}"
+					color="#{cc.attrs.slot15Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot15Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot16" itemLabel="#{cc.attrs.slot16Label}"
+					color="#{cc.attrs.slot16Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot16Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot17" itemLabel="#{cc.attrs.slot17Label}"
+					color="#{cc.attrs.slot17Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot17Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot18" itemLabel="#{cc.attrs.slot18Label}"
+					color="#{cc.attrs.slot18Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot18Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot19" itemLabel="#{cc.attrs.slot19Label}"
+					color="#{cc.attrs.slot19Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot19Pattern).concat('.png')]}" />
+				<f:selectItem itemValue="Slot20" itemLabel="#{cc.attrs.slot20Label}"
+					color="#{cc.attrs.slot20Color}"
+					pattern="#{resource['images/calendar/'.concat(cc.attrs.slot20Pattern).concat('.png')]}" />
+			</calendar:calendarLegend>
+		</f:facet>
+	</calendar:calendarSheet>
+</composite:implementation>
+</html>

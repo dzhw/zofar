@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/answer"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:text="http://java.sun.com/jsf/composite/text"
+	xmlns:answer="http://java.sun.com/jsf/composite/answer" xmlns:common="http://java.sun.com/jsf/composite/common"
+	xmlns:container="http://java.sun.com/jsf/composite/container"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:import namespace="http://java.sun.com/jsf/core"
+		schemaLocation="jsf_core.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/html"
+		schemaLocation="jsf_html.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/text"
+		schemaLocation="zofar_text.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/container"
+		schemaLocation="zofar_container.xsd" />
+
+	<xs:element type="answer:selectBooleanOptionType" name="selectBooleanOption" />
+	<xs:element type="answer:booleanResponseDomainType" name="booleanResponseDomain" />
+	<xs:element type="answer:singleOptionType" name="singleOption" />
+	<xs:element type="answer:comboSingleChoiceResponseDomainType"
+		name="comboSingleChoiceResponseDomain" />
+	<xs:element type="answer:radioButtonSingleChoiceResponseDomainType"
+		name="radioButtonSingleChoiceResponseDomain" />
+	<xs:element type="answer:dropDownMissingResponseDomainType"
+		name="dropDownMissingResponseDomain" />
+	<xs:element type="answer:likertResponseDomainType" name="likertResponseDomain" />
+	<xs:element type="answer:multipleOptionType" name="multipleOption" />
+	<xs:element type="answer:multipleChoiceResponseDomainType"
+		name="multipleChoiceResponseDomain" />
+	<xs:element type="answer:attachedOpenQuestionType" name="attachedOpenQuestion" />
+	<xs:element type="answer:attachedNumberQuestionType" name="attachedNumberQuestion" />
+	<xs:element type="answer:attachedMailQuestionType" name="attachedMailQuestion" />
+	<xs:element type="answer:attachedNoNumbersQuestionType" name="attachedNoNumbersQuestion" />
+	<xs:element type="answer:attachedGradeQuestionType" name="attachedGradeQuestion" />
+	<xs:element type="answer:openResponseDomainType" name="openResponseDomain" />
+	<xs:element type="answer:largeOpenOptionType" name="largeOpenOption" />
+	<xs:element type="answer:largeOpenNoNumbersOptionType" name="largeOpenNoNumbersOption" />
+	<xs:element type="answer:smallOpenOptionType" name="smallOpenOption" />
+	<xs:element type="answer:openNumberOptionType" name="openNumberOption" />
+	<xs:element type="answer:openGradeOptionType" name="openGradeOption" />
+	<xs:element type="answer:openMailOptionType" name="openMailOption" />
+	<xs:element type="answer:openNoNumbersOptionType" name="openNoNumbersOption" />
+
+	<xs:attributeGroup name="directionAttribute">
+		<xs:attribute type="xs:normalizedString" name="direction" />
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="itemClassesAttribute">
+		<xs:attribute name="itemClasses" type="xs:string" fixed="zo-odd zo-even" />
+	</xs:attributeGroup>
+
+	<xs:attributeGroup name="openAttributes">
+
+	</xs:attributeGroup>
+
+	<xs:complexType name="selectBooleanOptionType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:attribute type="xs:token" name="var" use="required" />
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="booleanResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="answer:selectBooleanOption" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="baseOptionType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element ref="answer:attachedOpenQuestion"
+							minOccurs="0" />
+						<xs:element ref="answer:attachedNumberQuestion"
+							minOccurs="0" />
+						<xs:element ref="answer:attachedMailQuestion"
+							minOccurs="0" />
+						<xs:element ref="answer:attachedGradeQuestion"
+							minOccurs="0" />
+						<xs:element ref="answer:attachedNoNumbersQuestion"
+							minOccurs="0" />
+					</xs:choice>
+
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+				<xs:attribute type="xs:boolean" name="missing" default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:baseOptionType">
+				<xs:attribute type="xs:token" name="itemValue" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element ref="container:section" />
+					<xs:element ref="answer:singleOption" />
+					<xs:element ref="common:sort" />
+				</xs:choice>
+				<xs:attribute type="xs:normalizedString" name="rowClasses" />
+				<xs:attribute type="xs:boolean" name="showValues"
+					default="false" />
+				<xs:attribute type="xs:boolean" name="missingSeparated"
+					default="true" />
+				<xs:attribute type="xs:token" name="value" />
+				<xs:attribute type="xs:token" name="var" />
+				<xs:attributeGroup ref="answer:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comboSingleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="answer:singleChoiceResponseDomainType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="radioButtonSingleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="answer:singleChoiceResponseDomainType">
+				<xs:attributeGroup ref="answer:directionAttribute" />
+				<xs:attribute name="labelPosition" default="right">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="right" />
+							<xs:enumeration value="left" />
+							<xs:enumeration value="top" />
+							<xs:enumeration value="bottom" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="dropDownMissingResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="answer:singleChoiceResponseDomainType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="2" maxOccurs="2" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="likertResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="answer:singleChoiceResponseDomainType">
+				<xs:attributeGroup ref="answer:directionAttribute" />
+				<xs:attribute type="xs:boolean" name="showMidScaleHeader" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:baseOptionType">
+				<xs:attribute type="xs:token" name="value" use="required" />
+				<xs:attribute type="xs:boolean" name="exclusive"
+					default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element ref="container:section" />
+					<xs:element ref="answer:multipleOption" />
+					<xs:element ref="common:sort" />
+				</xs:choice>
+				<xs:attributeGroup ref="answer:itemClassesAttribute" />
+				<xs:attributeGroup ref="answer:directionAttribute" />
+				<xs:attribute type="xs:boolean" name="missingSeparated"
+					default="true" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="attachedOpenQuestionType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" maxOccurs="2" minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute type="xs:positiveInteger" name="maxlength"
+					default="255" />
+				<xs:attribute type="xs:token" name="var" use="required" />
+				<xs:attributeGroup ref="common:renderedAttribute" />
+				<xs:attributeGroup ref="answer:openAttributes" />
+				<xs:attribute type="xs:int" name="size" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="attachedNumberQuestionType">
+		<xs:complexContent>
+			<xs:extension base="answer:attachedOpenQuestionType">
+				<xs:attribute type="xs:double" name="minValue" />
+				<xs:attribute type="xs:double" name="maxValue" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="attachedGradeQuestionType">
+		<xs:complexContent>
+			<xs:extension base="answer:attachedOpenQuestionType">
+				<xs:attribute type="xs:double" name="minValue" />
+				<xs:attribute type="xs:double" name="maxValue" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="attachedMailQuestionType">
+		<xs:complexContent>
+			<xs:extension base="answer:attachedOpenQuestionType">
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="attachedNoNumbersQuestionType">
+		<xs:complexContent>
+			<xs:extension base="answer:attachedOpenQuestionType">
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="openResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:choice>
+					<xs:element ref="answer:smallOpenOption" minOccurs="0"
+						maxOccurs="1" />
+					<xs:element ref="answer:openGradeOption" minOccurs="0"
+						maxOccurs="1" />
+					<xs:element ref="answer:openNumberOption" minOccurs="0"
+						maxOccurs="1" />
+					<xs:element ref="answer:openMailOption" minOccurs="0"
+						maxOccurs="1" />
+					<xs:element ref="answer:openNoNumbersOption" minOccurs="0"
+						maxOccurs="1" />
+					<xs:element ref="answer:largeOpenNoNumbersOption" minOccurs="0"
+						maxOccurs="1" />
+					<xs:element ref="answer:largeOpenOption" minOccurs="0"
+						maxOccurs="1" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="openOptionType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" maxOccurs="2" minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute type="xs:token" name="var" use="required" />
+				<xs:attributeGroup ref="common:renderedAttribute" />
+				<xs:attributeGroup ref="answer:openAttributes" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="largeOpenOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:openOptionType">
+				<xs:attribute type="xs:int" name="maxlength" />
+				<xs:attribute type="xs:int" name="columns" />
+				<xs:attribute type="xs:int" name="rows" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="largeOpenNoNumbersOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:largeOpenOptionType">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="smallOpenOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:openOptionType">
+				<xs:attribute type="xs:int" name="maxlength" />
+				<xs:attribute type="xs:int" name="size" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="openNumberOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:smallOpenOptionType">
+				<xs:attribute type="xs:double" name="minValue" />
+				<xs:attribute type="xs:double" name="maxValue" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="openGradeOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:smallOpenOptionType">
+				<xs:attribute type="xs:double" name="minValue" />
+				<xs:attribute type="xs:double" name="maxValue" />
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="openMailOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:smallOpenOptionType">
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="openNoNumbersOptionType">
+		<xs:complexContent>
+			<xs:extension base="answer:smallOpenOptionType">
+				<xs:attribute name="validationMessage" type="xs:normalizedString"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

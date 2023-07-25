@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.his.zofar</groupId>
+        <artifactId>zofar.presentation</artifactId>
+        <version>1.0.2</version>
+    </parent>
+    <artifactId>zofar.presentation.valuetype</artifactId>
+    <packaging>war</packaging>
+    <name>zofar.presentation.valuetype</name>
+    <dependencies>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.service.valuetype.interface</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.service.valuetype.mock</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.presentation.common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <attachClasses>true</attachClasses>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

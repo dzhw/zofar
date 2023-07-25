@@ -1,0 +1,159 @@
+<ui:composition template="template/special.xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+	<ui:param name="userpassHandler"
+		value="#{facesContext.externalContext.requestContextPath}/j_spring_security_check" />
+	<ui:param name="tokenHandler"
+		value="#{facesContext.externalContext.requestContextPath}/special/login.html" />
+	<ui:param name="method"
+		value="#{loginController.loginMode() == 'TOKEN' ? 'GET' : 'POST'}" />
+	
+	<ui:param name="target"
+		value="#{(loginController.loginMode() == 'TOKEN' || loginController.loginMode() == 'ANONYM') ? tokenHandler : userpassHandler}" />
+
+	<ui:define name="template-header">
+		<div class="question-main">
+			<div class="question-text">
+				Willkommen im Zofar Showroom <small></small>
+			</div>
+			<div class="question-intruction"></div>
+		</div>
+	</ui:define>
+
+	<ui:define name="template-content">
+		<ui:fragment rendered="#{loginController.loginMode() == 'TOKEN'}">
+			<ui:fragment
+				rendered="#{(not empty param['zofar_token']) and (empty param['message'])}">
+				#{loginController.directLogin(param['zofar_token'])}
+			</ui:fragment>
+		</ui:fragment>
+		
+		<ui:fragment rendered="#{loginController.loginMode() == 'ANONYM'}">
+			<div class="form_line">
+				<br />
+				<h:graphicImage library="images" name="zofar193x60.png"
+					width="147px" url="" />
+				<br /> <br /> <span
+					style="color: #396FA6; font-weight: bold; font-size: 170%; margin-top: 20px; margin-bottom: 25px; text-align: center;">
+
+					<br />Das Onlinebefragungssystem Zofar <br />
+					<br /> <br />
+				</span> <span
+					style="display: block; text-align: center; font-size: medium; margin-right: 15%; margin-left: 15%">
+					Zwischen 2009 und 2015 wurde am Deutschen Zentrum für Hochschul- und Wissenschaftsforschung GmbH
+
+					(DZHW) das Onlinebefragungssystem Zofar entwickelt. Es handelt sich um eine auf die spezifischen Bedürfnisse sozialwissenschaftlicher Forschung zugeschnittene Java-Enterprise-Anwendung, die wir unter einer Open Source Lizenz (AGPL V3+) betreiben. Zofar unterstützt etliche Standardfragetypen (darunter sowohl offene Fragen als auch Einfach- und Mehrfachauswahlen, verschiedene Auswahlmatrizen, semantische Differenziale sowie Hybride daraus) und ist darüber hinaus in der Lage, neue Fragetypen abzubilden, wie die benutzerfreundliche Erfassung langjähriger Biographien auf Monatsebene oder die Erhebung komplexer Daten mittels mehrerer verbundener Fragen auf einer Formularseite. Es bietet Ihnen nicht zuletzt eine Reihe von Möglichkeiten der inhaltlichen und visuellen Gestaltung von Onlinebefragungen (bpsw. verschiedene Login-Verfahren, optionale Anzeige der Befragungslänge, Integration von Corporate Designs, Einbindung von Fremdsprachen, Umsetzung von komplexen Filterführungen).  <br />
+				<br />
+				<br />Bitte verschaffen Sie sich einen eigenen Eindruck vom Befragungssystem <br />
+				und starten Sie Zofar mit einem Klick auf den unten stehenden Button.<br />
+				<br />
+				</span> 
+				
+				<input type="submit" value="Hier starten" tabindex="3"
+					style="text-align: center;" class="zo-button_login" />
+				<br />
+				<br /> <br />
+				<div class="line_label">
+					<input type="hidden" id="zofar_captcha_validated"
+						name="zofar_captcha_validated"
+						value="#{anonymousCreator.generateCaptchaId()}" tabindex="1"
+						size="20" checked="checked" />
+				</div>
+			</div>
+		</ui:fragment>
+
+
+					
+<!--
+ 		<ui:fragment rendered="#{loginController.loginMode() == 'ANONYM'}">
+			<ui:fragment
+				rendered="#{(not empty param['zofar_captcha_validated']) and (empty param['message'])}">
+				#{loginController.anonymLogin(param['zofar_captcha_validated'],'huschelpuschel')}
+			</ui:fragment>
+		</ui:fragment> 
+
+		<ui:fragment rendered="#{loginController.loginMode() == 'ANONYM'}">
+			<div class="form-inline form-group">
+				<label for="zofar_token"><input type="submit"
+					value="Hier starten" tabindex="3"
+					class="form-control ml-sm-1 mr-sm-1 mt-1 mb-1 mt-sm-0 mb-sm-0" />
+					<input type="hidden" id="zofar_captcha_validated"
+					name="zofar_captcha_validated"
+					value="#{anonymousCreator.generateCaptchaId()}" tabindex="1"
+					size="20" checked="checked" /> </label>
+			</div>
+		</ui:fragment>
+-->
+
+		<ui:fragment rendered="#{param['message']=='SessionExpired'}">
+			<div class="col-12">
+				<div class="lead text-center">Session ist abgelaufen</div>
+			</div>
+		</ui:fragment>
+		<ui:fragment rendered="#{param['message']=='LoggedOut'}">
+			<div class="col-12">
+				<div class="lead text-center">Ausgeloggt</div>
+			</div>
+		</ui:fragment>
+		<ui:fragment rendered="#{param['message']=='AuthentificationFailed'}">
+			<div class="col-12">
+				<div class="lead text-center">Login fehlgeschlagen</div>
+			</div>
+		</ui:fragment>
+		<div class="form-orientation form-responsive">
+			<div class="form-scroller">
+				<div class="form-inner form-1-col">
+					<ui:fragment rendered="#{loginController.loginMode() == 'TOKEN'}">
+						<div class="form-inline form-group">
+							<label for="zofar_token">Token: <input
+								class="form-control ml-sm-1 mr-sm-1 mt-1 mb-1 mt-sm-0 mb-sm-0"
+								type="text" name="zofar_token" id="zofar_token"
+								value="#{param['zofar_token']}" size="20"
+								placeholder="bitte eingeben" />
+							</label>
+						</div>
+
+
+					</ui:fragment>
+
+
+
+					<ui:fragment
+						rendered="#{loginController.loginMode() != 'TOKEN' and loginController.loginMode() != 'ANONYM'}">
+						<div class="form-inline form-group">
+							<label for="j_username">Username: <input
+								class="form-control ml-sm-1 mr-sm-1 mt-1 mb-1 mt-sm-0 mb-sm-0"
+								type="text" name="j_username" id="j_username"
+								value="#{param['j_username']}" size="20"
+								placeholder="bitte eingeben" />
+							</label>
+						</div>
+
+						<div class="form-inline form-group">
+							<label for="j_password">Password: <input
+								class="form-control ml-sm-1 mr-sm-1 mt-1 mb-1 mt-sm-0 mb-sm-0"
+								type="text" name="j_password" id="j_password"
+								value="#{param['j_password']}" size="20"
+								placeholder="bitte eingeben" />
+							</label>
+						</div>
+					</ui:fragment>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+
+	<ui:define name="template-buttons">
+		<div class="controlls-outer">
+			<div class="btn-toolbar justify-content-between" role="toolbar"
+				aria-label="Toolbar with button groups">
+				<div class="btn-group btn-group-sm " role="group" aria-label="Login">
+<!-- 					<button class="btn btn-secondary" type="submit" value="Login"> -->
+<!-- 						Login<i class="fa fa-angle-right pl-1" aria-hidden="true"></i> -->
+<!-- 					</button> -->
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

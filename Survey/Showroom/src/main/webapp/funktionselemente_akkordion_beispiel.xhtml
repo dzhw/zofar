@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="67"/>
+  <ui:define name="template-content">
+    <section id="funktionselemente_akkordion_beispiel" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t">#{msgs['funktionselemente_akkordion_beispiel.t_0']}</text:text>
+        <text:instruction container="true" id="is">#{msgs['funktionselemente_akkordion_beispiel.is_0']}</text:instruction>
+      </f:facet>
+      <section id="accordion1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t1">#{msgs['funktionselemente_akkordion_beispiel.b.accordion1.t1_0']}</text:title>
+        </f:facet>
+        <ques:singleChoice id="qsc_acc1">
+          <f:facet name="header">
+            <text:question container="true" id="q">#{msgs['funktionselemente_akkordion_beispiel.b.accordion1.accordion1.qsc_acc1.q_0']}</text:question>
+          </f:facet>
+          <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{qsc_acc1.valueId}" var="#{qsc_acc1}" id="qsc_acc1" showValues="false" missingSeparated="true" itemClasses="zo-pipes">
+            <ans:singleOption itemValue="1" id="ao1" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion1.accordion1.qsc_acc1.qsc_acc1.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="2" id="ao2" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion1.accordion1.qsc_acc1.qsc_acc1.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="3" id="ao3" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion1.accordion1.qsc_acc1.qsc_acc1.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="4" id="ao4" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion1.accordion1.qsc_acc1.qsc_acc1.ao4.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+          </ans:radioButtonSingleChoiceResponseDomain>
+        </ques:singleChoice>
+        <ques:open id="qo_acc1">
+          <f:facet name="header">
+            <text:question container="true" id="q">#{msgs['funktionselemente_akkordion_beispiel.b.accordion1.accordion1.qo_acc1.q_0']}</text:question>
+          </f:facet>
+          <ans:openResponseDomain id="responsedomain">
+            <ans:smallOpenOption size="25" var="#{qo_acc1}" id="response"/>
+          </ans:openResponseDomain>
+        </ques:open>
+      </section>
+      <section id="accordion2" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t1">#{msgs['funktionselemente_akkordion_beispiel.b.accordion2.t1_0']}</text:title>
+        </f:facet>
+        <ques:singleChoice id="qsc_acc2">
+          <f:facet name="header">
+            <text:question container="true" id="q">#{msgs['funktionselemente_akkordion_beispiel.b.accordion2.accordion2.qsc_acc2.q_0']}</text:question>
+          </f:facet>
+          <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{qsc_acc2.valueId}" var="#{qsc_acc2}" id="qsc_acc2" showValues="false" missingSeparated="true" itemClasses="zo-pipes">
+            <ans:singleOption itemValue="1" id="ao1" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion2.accordion2.qsc_acc2.qsc_acc2.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="2" id="ao2" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion2.accordion2.qsc_acc2.qsc_acc2.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="3" id="ao3" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion2.accordion2.qsc_acc2.qsc_acc2.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="4" id="ao4" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion2.accordion2.qsc_acc2.qsc_acc2.ao4.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+          </ans:radioButtonSingleChoiceResponseDomain>
+        </ques:singleChoice>
+        <ques:open id="qo_acc2">
+          <f:facet name="header">
+            <text:question container="true" id="q">#{msgs['funktionselemente_akkordion_beispiel.b.accordion2.accordion2.qo_acc2.q_0']}</text:question>
+          </f:facet>
+          <ans:openResponseDomain id="responsedomain">
+            <ans:smallOpenOption size="25" var="#{qo_acc2}" id="response"/>
+          </ans:openResponseDomain>
+        </ques:open>
+      </section>
+      <section id="accordion3" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t1">#{msgs['funktionselemente_akkordion_beispiel.b.accordion3.t1_0']}</text:title>
+        </f:facet>
+        <ques:singleChoice id="qsc_acc3">
+          <f:facet name="header">
+            <text:question container="true" id="q">#{msgs['funktionselemente_akkordion_beispiel.b.accordion3.accordion3.qsc_acc3.q_0']}</text:question>
+          </f:facet>
+          <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{qsc_acc3.valueId}" var="#{qsc_acc3}" id="qsc_acc3" showValues="false" missingSeparated="true" itemClasses="zo-pipes">
+            <ans:singleOption itemValue="1" id="ao1" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion3.accordion3.qsc_acc3.qsc_acc3.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="2" id="ao2" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion3.accordion3.qsc_acc3.qsc_acc3.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="3" id="ao3" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion3.accordion3.qsc_acc3.qsc_acc3.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="4" id="ao4" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['funktionselemente_akkordion_beispiel.b.accordion3.accordion3.qsc_acc3.qsc_acc3.ao4.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+          </ans:radioButtonSingleChoiceResponseDomain>
+        </ques:singleChoice>
+        <ques:open id="qo_acc3">
+          <f:facet name="header">
+            <text:question container="true" id="q">#{msgs['funktionselemente_akkordion_beispiel.b.accordion3.accordion3.qo_acc3.q_0']}</text:question>
+          </f:facet>
+          <ans:openResponseDomain id="responsedomain">
+            <ans:smallOpenOption size="25" var="#{qo_acc3}" id="response"/>
+          </ans:openResponseDomain>
+        </ques:open>
+      </section>
+    </section>
+  </ui:define>
+</ui:composition>

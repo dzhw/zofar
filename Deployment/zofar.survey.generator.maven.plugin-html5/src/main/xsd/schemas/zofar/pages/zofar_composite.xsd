@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/composite"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:answer="http://java.sun.com/jsf/composite/answer"
+	xmlns:common="http://java.sun.com/jsf/composite/common"
+	xmlns:container="http://java.sun.com/jsf/composite/container"
+	xmlns:matrix="http://java.sun.com/jsf/composite/matrix" xmlns:question="http://java.sun.com/jsf/composite/question"
+	xmlns:composite="http://java.sun.com/jsf/composite/composite"
+	xmlns:eps="http://java.sun.com/jsf/composite/episodes"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:import namespace="http://java.sun.com/jsf/core"
+		schemaLocation="jsf_core.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/text"
+		schemaLocation="zofar_text.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/answer"
+		schemaLocation="zofar_answer.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/question"
+		schemaLocation="zofar_question.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/container"
+		schemaLocation="zofar_container.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/matrix"
+		schemaLocation="zofar_matrix.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/episodes"	
+		schemaLocation="zofar_episodes.xsd" />
+		
+		
+	<xs:element type="composite:multipleChoiceCompositeType"
+		name="multipleChoiceComposite" />
+	<xs:element type="composite:multipleChoiceCompositeItemType"
+		name="multipleChoiceCompositeItem" />
+	<xs:element type="composite:multipleChoiceCompositeResponseDomainType"
+		name="multipleChoiceCompositeResponseDomain" />
+	<xs:element type="composite:multipleChoiceCompositeResponseDomainUnitType"
+		name="multipleChoiceCompositeResponseDomainUnit" />
+	<xs:element type="composite:doubleMatrixType" name="doubleMatrix" />
+	<xs:element type="composite:doubleMatrixResponseDomainType"
+		name="doubleMatrixResponseDomain" />
+	<xs:element type="composite:doubleMatrixUnitType" name="doubleMatrixUnit" />
+	<xs:element type="composite:doubleMatrixItemType" name="doubleMatrixItem" />
+	<xs:element type="composite:mixedMatrixType" name="mixedMatrix" />
+	<xs:element type="composite:mixedMatrixResponseDomainType"
+		name="mixedMatrixResponseDomain" />
+	<xs:element type="composite:mixedMatrixUnitType" name="mixedMatrixUnit" />
+	<xs:element type="composite:mixedMatrixItemType" name="mixedMatrixItem" />
+	<xs:element type="composite:comparisonQuestionType" name="comparisonQuestion" />
+	<xs:element type="composite:comparisonQuestionResponseDomainType"
+		name="comparisonQuestionResponseDomain" />
+	<xs:element type="composite:comparisonUnitType" name="comparisonUnit" />
+	<xs:element type="composite:comparisonQuestionItemType"
+		name="comparisonQuestionItem" />
+	<xs:element type="composite:calendarType" name="calendar" />
+	<xs:element type="composite:calendarLegendItemType" name="calendarLegendItem" />
+	<xs:element type="composite:calendarRowItemType" name="calendarRowItem" />
+	<xs:element type="composite:calendarColumnItemType" name="calendarColumnItem" />
+	<xs:element type="composite:calendarItemType" name="calendarItem" />
+
+	<xs:complexType name="multipleChoiceCompositeItemType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" />
+					<xs:choice>
+						<xs:element ref="answer:attachedOpenQuestion"
+							minOccurs="0" maxOccurs="1" />
+						<xs:element ref="answer:attachedGradeQuestion"
+							minOccurs="0" maxOccurs="1" />
+						<xs:element ref="answer:attachedNumberQuestion"
+							minOccurs="0" maxOccurs="1" />
+						<xs:element ref="answer:attachedNoNumbersQuestion"
+							minOccurs="0" maxOccurs="1" />
+						<xs:element ref="answer:attachedMailQuestion"
+							minOccurs="0" maxOccurs="1" />
+						<xs:element ref="answer:multipleOption" maxOccurs="unbounded" />
+					</xs:choice>
+
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceCompositeResponseDomainUnitType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="common:sort" minOccurs="0" />
+						<xs:element ref="composite:multipleChoiceCompositeResponseDomainUnit"
+							minOccurs="0" />
+						<xs:element ref="composite:multipleChoiceCompositeItem"
+							minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceCompositeResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element ref="composite:multipleChoiceCompositeItem"
+						minOccurs="0" />
+					<xs:element ref="composite:multipleChoiceCompositeResponseDomainUnit"
+						minOccurs="0" />
+				</xs:sequence>
+				<xs:attributeGroup ref="answer:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceCompositeType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixType">
+				<xs:sequence>
+					<xs:element ref="composite:multipleChoiceCompositeResponseDomain" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="doubleMatrixType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixType">
+				<xs:sequence>
+					<xs:element ref="composite:doubleMatrixResponseDomain" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="doubleMatrixResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" maxOccurs="6" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="composite:doubleMatrixUnit" minOccurs="0" />
+						<xs:element ref="composite:doubleMatrixItem" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute type="xs:positiveInteger" name="noResponseOptions" />
+				<xs:attribute type="xs:boolean" name="isDifferential"
+					default="false" />
+				<xs:attribute type="xs:boolean" name="isShowValues"
+					default="false" />
+				<xs:attributeGroup ref="answer:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="doubleMatrixUnitType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="common:sort" minOccurs="0" />
+						<xs:element ref="composite:doubleMatrixUnit" minOccurs="0" />
+						<xs:element ref="composite:doubleMatrixItem" minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="doubleMatrixItemType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" maxOccurs="3" minOccurs="3" />
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="mixedMatrixType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixType">
+				<xs:sequence>
+					<xs:element ref="composite:mixedMatrixResponseDomain" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="mixedMatrixResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element ref="composite:mixedMatrixItem" minOccurs="0" />
+					<xs:element ref="composite:mixedMatrixUnit" minOccurs="0" />
+				</xs:sequence>
+				<xs:attributeGroup ref="answer:itemClassesAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="mixedMatrixUnitType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="common:sort" minOccurs="0" />
+						<xs:element ref="composite:mixedMatrixUnit" minOccurs="0" />
+						<xs:element ref="composite:mixedMatrixItem" minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="mixedMatrixItemType">
+		<xs:complexContent>
+			<xs:extension base="container:sectionType">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonQuestionType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixType">
+				<xs:sequence>
+					<xs:element name="comparisonResponseDomain"
+						type="composite:comparisonQuestionResponseDomainType">
+						<xs:unique name="unique-matrix-comparison-responsedomain-element-uid">
+							<xs:selector xpath="./*" />
+							<xs:field xpath="@uid" />
+						</xs:unique>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonQuestionResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" maxOccurs="2" minOccurs="1" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="comparisonItem" type="composite:comparisonQuestionItemType"
+							maxOccurs="unbounded" />
+						<!-- <xs:element name="comparisonUnit" type="composite:comparisonQuestionUnitType" 
+							maxOccurs="unbounded" /> -->
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute name="isShowValues" type="xs:boolean"
+					default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonQuestionItemType">
+		<xs:complexContent>
+			<xs:extension base="container:sectionType">
+				<xs:choice maxOccurs="1" minOccurs="1">
+					<xs:element name="questionSingleChoice" type="question:singleChoiceType" />
+					<xs:element name="multipleChoice" type="question:multipleChoiceType" />
+				</xs:choice>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="comparisonUnitType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="common:sort" minOccurs="0" />
+						<xs:element ref="composite:comparisonUnit" minOccurs="0" />
+						<xs:element ref="text:text" minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="calendarType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0"/>
+
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+				<xs:attribute name="labelAll" use="optional" default="false">
+					<xs:simpleType>
+						<xs:restriction base="xs:normalizedString">
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="showIndicator" use="optional"
+					default="false">
+					<xs:simpleType>
+						<xs:restriction base="xs:normalizedString">
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="showLegendIcon" use="optional"
+					default="false">
+					<xs:simpleType>
+						<xs:restriction base="xs:normalizedString">
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="legendLayout" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="pageDirection" />
+							<xs:enumeration value="lineDirection" />
+							<xs:enumeration value="flowDirection" />
+							<xs:enumeration value="2Columns" />
+							<xs:enumeration value="3Columns" />
+							<xs:enumeration value="4Columns" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="behaviour" use="required">
+<!-- 					<xs:simpleType>
+						<xs:restriction base="xs:token">
+							<xs:enumeration value="move" />
+							<xs:enumeration value="drag" />
+							<xs:enumeration value="click" />
+						</xs:restriction>
+					</xs:simpleType> -->
+					<xs:simpleType>
+						<xs:restriction base="xs:normalizedString">
+							<xs:minLength value="1" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="calendarLegendType"> <xs:sequence> <xs:choice 
+		maxOccurs="20" minOccurs="1"> <xs:element name="legendItem" type="composite:calendarLegendItemType" 
+		/> </xs:choice> </xs:sequence> </xs:complexType> 
+
+	<xs:complexType name="calendarLegendItemType">
+		<xs:attribute name="id" type="xs:normalizedString" use="required" />
+		<xs:attribute name="label" type="xs:normalizedString"
+			use="required" />
+		<xs:attribute name="color" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="pattern" type="xs:normalizedString"
+			use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="calendarRowsType"> <xs:sequence> <xs:choice maxOccurs="unbounded" 
+		minOccurs="1"> <xs:element name="row" type="composite:calendarRowItemType" 
+		/> </xs:choice> </xs:sequence> </xs:complexType>
+
+	<xs:complexType name="calendarRowItemType">
+		<xs:attribute name="label" type="xs:normalizedString"
+			use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="calendarColumnsType"> <xs:sequence> <xs:choice 
+		maxOccurs="unbounded" minOccurs="1"> <xs:element name="column" type="composite:calendarColumnItemType" 
+		/> </xs:choice> </xs:sequence> </xs:complexType>
+
+	<xs:complexType name="calendarColumnItemType">
+		<xs:attribute name="label" type="xs:normalizedString"
+			use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="calendarItemsType"> <xs:sequence> <xs:choice> 
+		<xs:element maxOccurs="unbounded" minOccurs="1" name="calendarItem" type="composite:calendarItemType" 
+		/> </xs:choice> </xs:sequence> </xs:complexType>
+
+	<xs:complexType name="calendarItemType">
+		<xs:attribute name="id" type="xs:normalizedString" use="required" />
+		<xs:attribute name="slot1" type="xs:normalizedString"
+			use="required" />
+		<xs:attribute name="slot2" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot3" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot4" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot5" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot6" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot7" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot8" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot9" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot10" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot11" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot12" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot13" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot14" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot15" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot16" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot17" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot18" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot19" type="xs:normalizedString"
+			use="optional" />
+		<xs:attribute name="slot20" type="xs:normalizedString"
+			use="optional" />
+		<xs:attributeGroup ref="common:renderedAttribute" />
+	</xs:complexType>
+</xs:schema>

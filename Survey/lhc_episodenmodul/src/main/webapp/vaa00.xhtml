@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="15"/>
+  <ui:define name="template-content">
+    <variable var="#{episode_index}" value="-1" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{flag_no_v}" value="'0'" condition="true" onExit="true" navigator="#{navigatorBean}"/>
+    <variable var="#{flag_no_v}" value="'1'" condition="zofar.asNumber(vaa00) == 2 or sf_vaa00.value" onExit="true" navigator="#{navigatorBean}"/>
+    <con:section id="vaa00" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['vaa00.t1_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="qsc1">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['vaa00.body.qsc1.q1_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{vaa00.valueId}" var="#{vaa00}" id="rd1" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa00.body.qsc1.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa00.body.qsc1.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:multipleChoice id="mcsf" rendered="#{(navigatorBean.isSame() and zofar.isMissing(vaa00)) or sf_vaa00.value}">
+        <f:facet name="header">
+          <text:intro container="true" id="intro1">#{msgs['vaa00.body.mcsf.intro1_0']}</text:intro>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd2" missingSeparated="true">
+          <ans:multipleOption value="#{sf_vaa00.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa00.body.mcsf.rd2.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <con:section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['vaa00.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['vaa00.body.s1.b.tech.debug0_0']}#{msgs['vaa00.body.s1.b.tech.debug0_2']}#{msgs['vaa00.body.s1.b.tech.debug0_4']}</dis:text>
+          <dis:text id="debug1">#{msgs['vaa00.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['vaa00.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['vaa00.body.s1.b.tech.debug3_0']}#{msgs['vaa00.body.s1.b.tech.debug3_2']}</dis:text>
+          <dis:text id="debug4">#{msgs['vaa00.body.s1.b.tech.debug4_0']}</dis:text>
+          <dis:text id="debug5">#{msgs['vaa00.body.s1.b.tech.debug5_0']}</dis:text>
+          <dis:text id="debug6">#{msgs['vaa00.body.s1.b.tech.debug6_0']}</dis:text>
+        </dis:container>
+      </con:section>
+      <ques:pretest id="questioncommentvaa00">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentvaa00">#{msgs['textcommentvaa00_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentvaa00']}" columns="100" var="#{commentvaa00}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+</ui:composition>

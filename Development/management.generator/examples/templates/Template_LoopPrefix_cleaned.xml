@@ -1,0 +1,18 @@
+<!-- LOOP Prefix -->    
+
+<!--preLoop:  [[preLoop]] loop:  [[loop]] nextLoop:  [[nextLoop]]-->    
+
+	<zofar:page uid="[[modul]][[loop]]start">
+        <zofar:header>
+            <zofar:title uid="t1">[[modul]]</zofar:title>
+        </zofar:header>
+        <zofar:body uid="b">
+
+                        
+        </zofar:body>
+
+        <zofar:transitions>
+            <zofar:transition target="[[modul]][[loop]][[split1]]start" />
+        </zofar:transitions>		
+    </zofar:page>
+

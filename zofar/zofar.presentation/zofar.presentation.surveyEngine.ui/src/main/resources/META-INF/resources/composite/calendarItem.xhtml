@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:calendar="http://java.sun.com/jsf/composite/composite"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="de.his.zofar.Calendar.Item">
+	<composite:attribute name="label" type="java.lang.String" default="" />
+	<composite:attribute name="slot1"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot2"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot3"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot4"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot5"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot6"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot7"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot8"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot9"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot10"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot11"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot12"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot13"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot14"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot15"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot16"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot17"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot18"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot19"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="slot20"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+</composite:interface>
+
+<composite:implementation>
+	<calendar:calendarTile id="tile" legend="#{legend.clientId}"
+		label="#{cc.attrs.label}" slot1Label="#{cc.parent.attrs.slot1Label}"
+		slot2Label="#{cc.parent.attrs.slot2Label}"
+		slot3Label="#{cc.parent.attrs.slot3Label}"
+		slot4Label="#{cc.parent.attrs.slot4Label}"
+		slot5Label="#{cc.parent.attrs.slot5Label}"
+		slot6Label="#{cc.parent.attrs.slot6Label}"
+		slot7Label="#{cc.parent.attrs.slot7Label}"
+		slot8Label="#{cc.parent.attrs.slot8Label}"
+		slot9Label="#{cc.parent.attrs.slot9Label}"
+		slot10Label="#{cc.parent.attrs.slot10Label}"
+		slot11Label="#{cc.parent.attrs.slot11Label}"
+		slot12Label="#{cc.parent.attrs.slot12Label}"
+		slot13Label="#{cc.parent.attrs.slot13Label}"
+		slot14Label="#{cc.parent.attrs.slot14Label}"
+		slot15Label="#{cc.parent.attrs.slot15Label}"
+		slot16Label="#{cc.parent.attrs.slot16Label}"
+		slot17Label="#{cc.parent.attrs.slot17Label}"
+		slot18Label="#{cc.parent.attrs.slot18Label}"
+		slot19Label="#{cc.parent.attrs.slot19Label}"
+		slot20Label="#{cc.parent.attrs.slot20Label}"
+		behaviour="#{cc.parent.attrs.behaviour}" slot1="#{cc.attrs.slot1}"
+		slot2="#{cc.attrs.slot2}" slot3="#{cc.attrs.slot3}"
+		slot4="#{cc.attrs.slot4}" slot5="#{cc.attrs.slot5}"
+		slot6="#{cc.attrs.slot6}" slot7="#{cc.attrs.slot7}"
+		slot8="#{cc.attrs.slot8}" slot9="#{cc.attrs.slot9}"
+		slot10="#{cc.attrs.slot10}" slot11="#{cc.attrs.slot11}"
+		slot12="#{cc.attrs.slot12}" slot13="#{cc.attrs.slot13}"
+		slot14="#{cc.attrs.slot14}" slot15="#{cc.attrs.slot15}"
+		slot16="#{cc.attrs.slot16}" slot17="#{cc.attrs.slot17}"
+		slot18="#{cc.attrs.slot18}" slot19="#{cc.attrs.slot19}"
+		slot20="#{cc.attrs.slot20}" rendered="#{cc.attrs.rendered}">
+		<f:facet name="slotCheck">
+			<!-- null check für cc.attrs.slotx.value fehlt -->
+			<h:selectBooleanCheckbox id="slot1Check"
+				value="#{cc.attrs.slot1.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot1}" />
+			<h:selectBooleanCheckbox id="slot2Check"
+				value="#{cc.attrs.slot2.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot2}" />
+			<h:selectBooleanCheckbox id="slot3Check"
+				value="#{cc.attrs.slot3.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot3}" />
+			<h:selectBooleanCheckbox id="slot4Check"
+				value="#{cc.attrs.slot4.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot4}" />
+			<h:selectBooleanCheckbox id="slot5Check"
+				value="#{cc.attrs.slot5.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot5}" />
+			<h:selectBooleanCheckbox id="slot6Check"
+				value="#{cc.attrs.slot6.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot6}" />
+			<h:selectBooleanCheckbox id="slot7Check"
+				value="#{cc.attrs.slot7.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot7}" />
+			<h:selectBooleanCheckbox id="slot8Check"
+				value="#{cc.attrs.slot8.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot8}" />
+			<h:selectBooleanCheckbox id="slot9Check"
+				value="#{cc.attrs.slot9.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot9}" />
+			<h:selectBooleanCheckbox id="slot10Check"
+				value="#{cc.attrs.slot10.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot10}" />
+			<h:selectBooleanCheckbox id="slot11Check"
+				value="#{cc.attrs.slot11.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot11}" />
+			<h:selectBooleanCheckbox id="slot12Check"
+				value="#{cc.attrs.slot12.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot12}" />
+			<h:selectBooleanCheckbox id="slot13Check"
+				value="#{cc.attrs.slot13.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot13}" />
+			<h:selectBooleanCheckbox id="slot14Check"
+				value="#{cc.attrs.slot14.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot14}" />
+			<h:selectBooleanCheckbox id="slot15Check"
+				value="#{cc.attrs.slot15.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot15}" />
+			<h:selectBooleanCheckbox id="slot16Check"
+				value="#{cc.attrs.slot16.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot16}" />
+			<h:selectBooleanCheckbox id="slot17Check"
+				value="#{cc.attrs.slot17.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot17}" />
+			<h:selectBooleanCheckbox id="slot18Check"
+				value="#{cc.attrs.slot18.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot18}" />
+			<h:selectBooleanCheckbox id="slot19Check"
+				value="#{cc.attrs.slot19.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot19}" />
+			<h:selectBooleanCheckbox id="slot20Check"
+				value="#{cc.attrs.slot20.value}" style="display:none"
+				rendered="#{not empty cc.attrs.slot20}" />
+		</f:facet>
+	</calendar:calendarTile>
+</composite:implementation>
+</html>

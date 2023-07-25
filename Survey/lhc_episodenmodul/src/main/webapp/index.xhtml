@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="100"/>
+  <ui:define name="template-content">
+    <variable var="#{debugMode}" value="'false'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_monthLabel_start_english}" value="'January'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_monthLabel_start}" value="'Januar'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_range_start_month}" value="'01'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_range_start_year}" value="'2018'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_monthLabel_end}" value="'November'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_monthLabel_end_english}" value="'November'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_range_end_month}" value="'11'" navigator="#{navigatorBean}"/>
+    <variable var="#{calendar_range_end_year}" value="'2022'" navigator="#{navigatorBean}"/>
+    <variable var="#{episode_property_type_value}" value="&quot;[    {'label': {'de': 'Bitte auswählen','en': 'please select'},'id': 'SlotDefault','value': 'SlotDefault','color': '#4b4b4b'},      {'label': {'de': 'Schule (Abitur/Fachabitur)','en': 'School'},'id': 'sco','value': 'Slot1','color': '#f69f26'},      {'label': {'de': 'Studium','en': 'Study'},'id': 'stu','value': 'Slot2','color': '#0069b2'},      {'label': {'de': 'Berufsausbildung, Umschulung, Volontariat','en': 'Vocationaltraining, occupationalretraining, traineeship'},'id': 'voc','value': 'Slot3','color': '#097d95'},      {'label': {'de': 'Fort-, Weiterbildung (längerfristig, insgesamt mind. 70h)','en': 'Training and development (long-term, all together at least 70h)'},'id': 'fed','value': 'Slot4','color': '#FCD8A7'},      {'label': {'de': 'Jobben','en': 'Jobben'},'id': 'job','value': 'Slot5','color': '#F9F391'},      {'label': {'de': 'Erwerbstätigkeit (auch Selbständigkeit)','en': 'Employment(incl. self-employment)'},'id': 'emp','value': 'Slot6','color': '#7ab52a'},      {'label': {'de': 'Praktikum','en': 'Traineeship'},'id': 'int','value': 'Slot7','color': '#CCE1F0'},      {'label': {'de': 'Promotion','en': 'Doctorate'},'id': 'doc','value': 'Slot8','color': '#b5163f'},      {'label': {'de': 'Elternzeit/Mutterschutz, Hausmann/-frau, Familientätigkeit','en': 'Parental/maternityleave, homemaker, familywork'},'id': 'mpl','value': 'Slot9','color': '#D16021'},      {'label': {'de': 'Familientätigkeit, häusliche Pflege, Hausmann/-frau','en': 'Family occupations'},'id': 'fam','value': 'Slot10','color': '#79a0c0'},      {'label': {'de': 'Arbeitslosigkeit','en': 'Unemployment'},'id': 'uem','value': 'Slot11','color': '#DCE9C4'},      {'label': {'de': 'Sonstiges (z. B. Urlaub/Reisen, Krankheit, Studienvorbereitung, Freiwilligendienst)','en': 'Other occupation (e.g. vacation/travel, disease, preparation for studies, voluntary service)'},'id': 'oth','value': 'Slot12','color': '#053E49'}    ]&quot;" navigator="#{navigatorBean}"/>
+    <variable var="#{url}" value="zofar.baseUrl()" navigator="#{navigatorBean}"/>
+    <variable var="#{uas}" value="zofar.userAgent()" navigator="#{navigatorBean}"/>
+    <jscheck var="#{jsCheck}" xvar="#{width}" yvar="#{height}"/>
+    <variable var="#{isMobile}" value="zofar.isMobile()" navigator="#{navigatorBean}"/>
+    <variable var="#{h_exitlabel}" value="'#{zofar.valueOf(calendar_monthLabel_end)} #{zofar.valueOf(calendar_range_end_year)}'" navigator="#{navigatorBean}"/>
+    <variable var="#{h_exitlabel_en}" value="'#{zofar.valueOf(calendar_monthLabel_end_english)} #{zofar.valueOf(calendar_range_end_year)}'" navigator="#{navigatorBean}"/>
+    <variable var="#{h_exitdatum}" value="#{zofar.valueOf(calendar_range_end_year)}#{zofar.valueOf(calendar_range_end_month)}" navigator="#{navigatorBean}"/>
+    <variable var="#{h_enterlabel}" value="'#{zofar.valueOf(calendar_monthLabel_start)} #{zofar.valueOf(calendar_range_start_year)}'" navigator="#{navigatorBean}"/>
+    <variable var="#{h_enterlabel_en}" value="'#{zofar.valueOf(calendar_monthLabel_start_english)} #{zofar.valueOf(calendar_range_start_year)}'" navigator="#{navigatorBean}"/>
+    <variable var="#{h_enterdatum}" value="#{zofar.valueOf(calendar_range_start_year)}#{zofar.valueOf(calendar_range_start_month)}" navigator="#{navigatorBean}"/>
+    <variable var="#{warningpic}" value="zofar.randomOf(zofar.list('1','2','3','4','5'))" navigator="#{navigatorBean}"/>
+    <variable var="#{startPoint}" value="zofar.getTimeStamp()" navigator="#{navigatorBean}"/>
+    <variable var="#{feedbackCalendar}" value="false" navigator="#{navigatorBean}"/>
+    <con:section id="index" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['index.t1_0']}</text:text>
+        <text:text container="true" id="t2">#{msgs['index.t2_0']}</text:text>
+        <text:text container="true" id="t3">#{msgs['index.t3_0']}</text:text>
+        <text:text container="true" id="t4">#{msgs['index.t4_0']}</text:text>
+      </f:facet>
+      <ques:multipleChoice id="mc1">
+        <f:facet name="header"/>
+        <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <ans:multipleOption value="#{hf_consent.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.mc1.rd.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <con:section id="s1" rendered="#{navigatorBean.isSame() and !hf_consent.value}">
+        <f:facet name="header">
+          <text:intro container="true" id="in">#{msgs['index.body.s1.in_0']}</text:intro>
+        </f:facet>
+      </con:section>
+      <dis:container id="d">
+        <dis:text id="td1">#{msgs['index.body.d.td1_0']}</dis:text>
+      </dis:container>
+      <ques:singleChoice id="dummy_month" rendered="#{false}">
+        <f:facet name="header">
+          <text:question container="true" id="qi2"/>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{dummy_month.valueId}" var="#{dummy_month}" id="rd2" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="3" id="ao3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao3.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="4" id="ao4" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao4.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="5" id="ao5" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao5.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="6" id="ao6" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao6.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="7" id="ao7" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao7.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="8" id="ao8" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao8.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="9" id="ao9" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao9.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="10" id="ao10" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao10.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="11" id="ao11" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao11.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="12" id="ao12" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['index.body.dummy_month.rd2.ao12.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <mat:singleChoiceMatrix id="msc" rendered="#{false}">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['index.body.msc.q1_0']}</text:question>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t1"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="qi1">#{msgs['index.body.msc.rd.i1.qi1_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd1" value="#{startmonth.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="4">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="5">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="6">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="7">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" itemValue="8">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" itemValue="9">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" itemValue="10">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" itemValue="11">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" itemValue="12">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i1.rd1.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="qi2"/>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd2" value="#{startyear.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" rendered="#{calendar_range_start_year.value le 1971 and calendar_range_end_year.value ge 1971}" itemValue="1971">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" rendered="#{calendar_range_start_year.value le 1972 and calendar_range_end_year.value ge 1972}" itemValue="1972">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" rendered="#{calendar_range_start_year.value le 1973 and calendar_range_end_year.value ge 1973}" itemValue="1973">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" rendered="#{calendar_range_start_year.value le 1974 and calendar_range_end_year.value ge 1974}" itemValue="1974">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" rendered="#{calendar_range_start_year.value le 1975 and calendar_range_end_year.value ge 1975}" itemValue="1975">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" rendered="#{calendar_range_start_year.value le 1976 and calendar_range_end_year.value ge 1976}" itemValue="1976">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" rendered="#{calendar_range_start_year.value le 1977 and calendar_range_end_year.value ge 1977}" itemValue="1977">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" rendered="#{calendar_range_start_year.value le 1978 and calendar_range_end_year.value ge 1978}" itemValue="1978">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" rendered="#{calendar_range_start_year.value le 1979 and calendar_range_end_year.value ge 1979}" itemValue="1979">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" rendered="#{calendar_range_start_year.value le 1980 and calendar_range_end_year.value ge 1980}" itemValue="1980">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" rendered="#{calendar_range_start_year.value le 1981 and calendar_range_end_year.value ge 1981}" itemValue="1981">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" rendered="#{calendar_range_start_year.value le 1982 and calendar_range_end_year.value ge 1982}" itemValue="1982">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao13" rendered="#{calendar_range_start_year.value le 1983 and calendar_range_end_year.value ge 1983}" itemValue="1983">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao13.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao14" rendered="#{calendar_range_start_year.value le 1984 and calendar_range_end_year.value ge 1984}" itemValue="1984">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao14.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao15" rendered="#{calendar_range_start_year.value le 1985 and calendar_range_end_year.value ge 1985}" itemValue="1985">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao15.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao16" rendered="#{calendar_range_start_year.value le 1986 and calendar_range_end_year.value ge 1986}" itemValue="1986">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao16.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao17" rendered="#{calendar_range_start_year.value le 1987 and calendar_range_end_year.value ge 1987}" itemValue="1987">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao17.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao18" rendered="#{calendar_range_start_year.value le 1988 and calendar_range_end_year.value ge 1988}" itemValue="1988">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao18.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao19" rendered="#{calendar_range_start_year.value le 1989 and calendar_range_end_year.value ge 1989}" itemValue="1989">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao19.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao20" rendered="#{calendar_range_start_year.value le 1990 and calendar_range_end_year.value ge 1990}" itemValue="1990">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao20.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao21" rendered="#{calendar_range_start_year.value le 1991 and calendar_range_end_year.value ge 1991}" itemValue="1991">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao21.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao22" rendered="#{calendar_range_start_year.value le 1992 and calendar_range_end_year.value ge 1992}" itemValue="1992">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao22.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao23" rendered="#{calendar_range_start_year.value le 1993 and calendar_range_end_year.value ge 1993}" itemValue="1993">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao23.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao24" rendered="#{calendar_range_start_year.value le 1994 and calendar_range_end_year.value ge 1994}" itemValue="1994">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao24.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao25" rendered="#{calendar_range_start_year.value le 1995 and calendar_range_end_year.value ge 1995}" itemValue="1995">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao25.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao26" rendered="#{calendar_range_start_year.value le 1996 and calendar_range_end_year.value ge 1996}" itemValue="1996">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao26.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao27" rendered="#{calendar_range_start_year.value le 1997 and calendar_range_end_year.value ge 1997}" itemValue="1997">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao27.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao28" rendered="#{calendar_range_start_year.value le 1998 and calendar_range_end_year.value ge 1998}" itemValue="1998">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao28.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao29" rendered="#{calendar_range_start_year.value le 1999 and calendar_range_end_year.value ge 1999}" itemValue="1999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao29.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao30" rendered="#{calendar_range_start_year.value le 2000 and calendar_range_end_year.value ge 2000}" itemValue="2000">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao30.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao31" rendered="#{calendar_range_start_year.value le 2001 and calendar_range_end_year.value ge 2001}" itemValue="2001">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao31.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao32" rendered="#{calendar_range_start_year.value le 2002 and calendar_range_end_year.value ge 2002}" itemValue="2002">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao32.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao33" rendered="#{calendar_range_start_year.value le 2003 and calendar_range_end_year.value ge 2003}" itemValue="2003">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao33.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao34" rendered="#{calendar_range_start_year.value le 2004 and calendar_range_end_year.value ge 2004}" itemValue="2004">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao34.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao35" rendered="#{calendar_range_start_year.value le 2005 and calendar_range_end_year.value ge 2005}" itemValue="2005">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao35.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao36" rendered="#{calendar_range_start_year.value le 2006 and calendar_range_end_year.value ge 2006}" itemValue="2006">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao36.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao37" rendered="#{calendar_range_start_year.value le 2007 and calendar_range_end_year.value ge 2007}" itemValue="2007">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao37.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao38" rendered="#{calendar_range_start_year.value le 2008 and calendar_range_end_year.value ge 2008}" itemValue="2008">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao38.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao39" rendered="#{calendar_range_start_year.value le 2009 and calendar_range_end_year.value ge 2009}" itemValue="2009">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao39.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao40" rendered="#{calendar_range_start_year.value le 2010 and calendar_range_end_year.value ge 2010}" itemValue="2010">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao40.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao41" rendered="#{calendar_range_start_year.value le 2011 and calendar_range_end_year.value ge 2011}" itemValue="2011">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao41.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao42" rendered="#{calendar_range_start_year.value le 2012 and calendar_range_end_year.value ge 2012}" itemValue="2012">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao42.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao43" rendered="#{calendar_range_start_year.value le 2013 and calendar_range_end_year.value ge 2013}" itemValue="2013">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao43.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao44" rendered="#{calendar_range_start_year.value le 2014 and calendar_range_end_year.value ge 2014}" itemValue="2014">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao44.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao45" rendered="#{calendar_range_start_year.value le 2015 and calendar_range_end_year.value ge 2015}" itemValue="2015">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao45.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao46" rendered="#{calendar_range_start_year.value le 2016 and calendar_range_end_year.value ge 2016}" itemValue="2016">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao46.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao47" rendered="#{calendar_range_start_year.value le 2017 and calendar_range_end_year.value ge 2017}" itemValue="2017">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao47.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao48" rendered="#{calendar_range_start_year.value le 2018 and calendar_range_end_year.value ge 2018}" itemValue="2018">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao48.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao49" rendered="#{calendar_range_start_year.value le 2019 and calendar_range_end_year.value ge 2019}" itemValue="2019">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao49.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao50" rendered="#{calendar_range_start_year.value le 2020 and calendar_range_end_year.value ge 2020}" itemValue="2020">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao50.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao51" rendered="#{calendar_range_start_year.value le 2021 and calendar_range_end_year.value ge 2021}" itemValue="2021">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao51.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao52" rendered="#{calendar_range_start_year.value le 2022 and calendar_range_end_year.value ge 2022}" itemValue="2022">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao52.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao53" rendered="#{calendar_range_start_year.value le 2023 and calendar_range_end_year.value ge 2023}" itemValue="2023">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao53.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao54" rendered="#{calendar_range_start_year.value le 2024 and calendar_range_end_year.value ge 2024}" itemValue="2024">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao54.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao55" rendered="#{calendar_range_start_year.value le 2025 and calendar_range_end_year.value ge 2025}" itemValue="2025">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao55.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao56" rendered="#{calendar_range_start_year.value le 2026 and calendar_range_end_year.value ge 2026}" itemValue="2026">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao56.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao57" rendered="#{calendar_range_start_year.value le 2027 and calendar_range_end_year.value ge 2027}" itemValue="2027">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao57.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao58" rendered="#{calendar_range_start_year.value le 2028 and calendar_range_end_year.value ge 2028}" itemValue="2028">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao58.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao59" rendered="#{calendar_range_start_year.value le 2029 and calendar_range_end_year.value ge 2029}" itemValue="2029">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao59.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao60" rendered="#{calendar_range_start_year.value le 2030 and calendar_range_end_year.value ge 2030}" itemValue="2030">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao60.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao61" rendered="#{calendar_range_start_year.value le 2031 and calendar_range_end_year.value ge 2031}" itemValue="2031">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao61.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao62" rendered="#{calendar_range_start_year.value le 2032 and calendar_range_end_year.value ge 2032}" itemValue="2032">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao62.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao63" rendered="#{calendar_range_start_year.value le 2033 and calendar_range_end_year.value ge 2033}" itemValue="2033">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao63.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao64" rendered="#{calendar_range_start_year.value le 2034 and calendar_range_end_year.value ge 2034}" itemValue="2034">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao64.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao65" rendered="#{calendar_range_start_year.value le 2035 and calendar_range_end_year.value ge 2035}" itemValue="2035">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao65.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao66" rendered="#{calendar_range_start_year.value le 2036 and calendar_range_end_year.value ge 2036}" itemValue="2036">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao66.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao67" rendered="#{calendar_range_start_year.value le 2037 and calendar_range_end_year.value ge 2037}" itemValue="2037">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao67.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao68" rendered="#{calendar_range_start_year.value le 2038 and calendar_range_end_year.value ge 2038}" itemValue="2038">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao68.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao69" rendered="#{calendar_range_start_year.value le 2039 and calendar_range_end_year.value ge 2039}" itemValue="2039">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao69.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao70" rendered="#{calendar_range_start_year.value le 2040 and calendar_range_end_year.value ge 2040}" itemValue="2040">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.ao70.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="aox" itemValue="1970">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc.rd.i2.rd2.aox.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <mat:singleChoiceMatrix id="msc2" rendered="#{false}">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['index.body.msc2.q1_0']}</text:question>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd4" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t2"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i3">
+            <f:facet name="header">
+              <text:question container="true" id="qi3">#{msgs['index.body.msc2.rd4.i3.qi3_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd5" value="#{endmonth.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="4">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="5">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="6">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="7">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" itemValue="8">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" itemValue="9">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" itemValue="10">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" itemValue="11">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" itemValue="12">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i3.rd5.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i4">
+            <f:facet name="header">
+              <text:question container="true" id="qi4"/>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd6" value="#{endyear.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" rendered="#{calendar_range_start_year.value le 1971 and calendar_range_end_year.value ge 1971}" itemValue="1971">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" rendered="#{calendar_range_start_year.value le 1972 and calendar_range_end_year.value ge 1972}" itemValue="1972">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" rendered="#{calendar_range_start_year.value le 1973 and calendar_range_end_year.value ge 1973}" itemValue="1973">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" rendered="#{calendar_range_start_year.value le 1974 and calendar_range_end_year.value ge 1974}" itemValue="1974">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" rendered="#{calendar_range_start_year.value le 1975 and calendar_range_end_year.value ge 1975}" itemValue="1975">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" rendered="#{calendar_range_start_year.value le 1976 and calendar_range_end_year.value ge 1976}" itemValue="1976">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" rendered="#{calendar_range_start_year.value le 1977 and calendar_range_end_year.value ge 1977}" itemValue="1977">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" rendered="#{calendar_range_start_year.value le 1978 and calendar_range_end_year.value ge 1978}" itemValue="1978">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" rendered="#{calendar_range_start_year.value le 1979 and calendar_range_end_year.value ge 1979}" itemValue="1979">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" rendered="#{calendar_range_start_year.value le 1980 and calendar_range_end_year.value ge 1980}" itemValue="1980">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" rendered="#{calendar_range_start_year.value le 1981 and calendar_range_end_year.value ge 1981}" itemValue="1981">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" rendered="#{calendar_range_start_year.value le 1982 and calendar_range_end_year.value ge 1982}" itemValue="1982">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao13" rendered="#{calendar_range_start_year.value le 1983 and calendar_range_end_year.value ge 1983}" itemValue="1983">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao13.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao14" rendered="#{calendar_range_start_year.value le 1984 and calendar_range_end_year.value ge 1984}" itemValue="1984">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao14.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao15" rendered="#{calendar_range_start_year.value le 1985 and calendar_range_end_year.value ge 1985}" itemValue="1985">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao15.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao16" rendered="#{calendar_range_start_year.value le 1986 and calendar_range_end_year.value ge 1986}" itemValue="1986">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao16.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao17" rendered="#{calendar_range_start_year.value le 1987 and calendar_range_end_year.value ge 1987}" itemValue="1987">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao17.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao18" rendered="#{calendar_range_start_year.value le 1988 and calendar_range_end_year.value ge 1988}" itemValue="1988">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao18.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao19" rendered="#{calendar_range_start_year.value le 1989 and calendar_range_end_year.value ge 1989}" itemValue="1989">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao19.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao20" rendered="#{calendar_range_start_year.value le 1990 and calendar_range_end_year.value ge 1990}" itemValue="1990">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao20.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao21" rendered="#{calendar_range_start_year.value le 1991 and calendar_range_end_year.value ge 1991}" itemValue="1991">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao21.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao22" rendered="#{calendar_range_start_year.value le 1992 and calendar_range_end_year.value ge 1992}" itemValue="1992">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao22.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao23" rendered="#{calendar_range_start_year.value le 1993 and calendar_range_end_year.value ge 1993}" itemValue="1993">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao23.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao24" rendered="#{calendar_range_start_year.value le 1994 and calendar_range_end_year.value ge 1994}" itemValue="1994">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao24.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao25" rendered="#{calendar_range_start_year.value le 1995 and calendar_range_end_year.value ge 1995}" itemValue="1995">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao25.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao26" rendered="#{calendar_range_start_year.value le 1996 and calendar_range_end_year.value ge 1996}" itemValue="1996">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao26.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao27" rendered="#{calendar_range_start_year.value le 1997 and calendar_range_end_year.value ge 1997}" itemValue="1997">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao27.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao28" rendered="#{calendar_range_start_year.value le 1998 and calendar_range_end_year.value ge 1998}" itemValue="1998">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao28.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao29" rendered="#{calendar_range_start_year.value le 1999 and calendar_range_end_year.value ge 1999}" itemValue="1999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao29.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao30" rendered="#{calendar_range_start_year.value le 2000 and calendar_range_end_year.value ge 2000}" itemValue="2000">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao30.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao31" rendered="#{calendar_range_start_year.value le 2001 and calendar_range_end_year.value ge 2001}" itemValue="2001">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao31.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao32" rendered="#{calendar_range_start_year.value le 2002 and calendar_range_end_year.value ge 2002}" itemValue="2002">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao32.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao33" rendered="#{calendar_range_start_year.value le 2003 and calendar_range_end_year.value ge 2003}" itemValue="2003">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao33.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao34" rendered="#{calendar_range_start_year.value le 2004 and calendar_range_end_year.value ge 2004}" itemValue="2004">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao34.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao35" rendered="#{calendar_range_start_year.value le 2005 and calendar_range_end_year.value ge 2005}" itemValue="2005">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao35.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao36" rendered="#{calendar_range_start_year.value le 2006 and calendar_range_end_year.value ge 2006}" itemValue="2006">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao36.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao37" rendered="#{calendar_range_start_year.value le 2007 and calendar_range_end_year.value ge 2007}" itemValue="2007">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao37.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao38" rendered="#{calendar_range_start_year.value le 2008 and calendar_range_end_year.value ge 2008}" itemValue="2008">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao38.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao39" rendered="#{calendar_range_start_year.value le 2009 and calendar_range_end_year.value ge 2009}" itemValue="2009">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao39.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao40" rendered="#{calendar_range_start_year.value le 2010 and calendar_range_end_year.value ge 2010}" itemValue="2010">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao40.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao41" rendered="#{calendar_range_start_year.value le 2011 and calendar_range_end_year.value ge 2011}" itemValue="2011">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao41.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao42" rendered="#{calendar_range_start_year.value le 2012 and calendar_range_end_year.value ge 2012}" itemValue="2012">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao42.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao43" rendered="#{calendar_range_start_year.value le 2013 and calendar_range_end_year.value ge 2013}" itemValue="2013">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao43.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao44" rendered="#{calendar_range_start_year.value le 2014 and calendar_range_end_year.value ge 2014}" itemValue="2014">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao44.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao45" rendered="#{calendar_range_start_year.value le 2015 and calendar_range_end_year.value ge 2015}" itemValue="2015">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao45.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao46" rendered="#{calendar_range_start_year.value le 2016 and calendar_range_end_year.value ge 2016}" itemValue="2016">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao46.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao47" rendered="#{calendar_range_start_year.value le 2017 and calendar_range_end_year.value ge 2017}" itemValue="2017">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao47.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao48" rendered="#{calendar_range_start_year.value le 2018 and calendar_range_end_year.value ge 2018}" itemValue="2018">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao48.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao49" rendered="#{calendar_range_start_year.value le 2019 and calendar_range_end_year.value ge 2019}" itemValue="2019">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao49.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao50" rendered="#{calendar_range_start_year.value le 2020 and calendar_range_end_year.value ge 2020}" itemValue="2020">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao50.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao51" rendered="#{calendar_range_start_year.value le 2021 and calendar_range_end_year.value ge 2021}" itemValue="2021">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao51.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao52" rendered="#{calendar_range_start_year.value le 2022 and calendar_range_end_year.value ge 2022}" itemValue="2022">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao52.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao53" rendered="#{calendar_range_start_year.value le 2023 and calendar_range_end_year.value ge 2023}" itemValue="2023">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao53.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao54" rendered="#{calendar_range_start_year.value le 2024 and calendar_range_end_year.value ge 2024}" itemValue="2024">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao54.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao55" rendered="#{calendar_range_start_year.value le 2025 and calendar_range_end_year.value ge 2025}" itemValue="2025">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao55.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao56" rendered="#{calendar_range_start_year.value le 2026 and calendar_range_end_year.value ge 2026}" itemValue="2026">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao56.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao57" rendered="#{calendar_range_start_year.value le 2027 and calendar_range_end_year.value ge 2027}" itemValue="2027">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao57.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao58" rendered="#{calendar_range_start_year.value le 2028 and calendar_range_end_year.value ge 2028}" itemValue="2028">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao58.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao59" rendered="#{calendar_range_start_year.value le 2029 and calendar_range_end_year.value ge 2029}" itemValue="2029">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao59.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao60" rendered="#{calendar_range_start_year.value le 2030 and calendar_range_end_year.value ge 2030}" itemValue="2030">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao60.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao61" rendered="#{calendar_range_start_year.value le 2031 and calendar_range_end_year.value ge 2031}" itemValue="2031">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao61.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao62" rendered="#{calendar_range_start_year.value le 2032 and calendar_range_end_year.value ge 2032}" itemValue="2032">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao62.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao63" rendered="#{calendar_range_start_year.value le 2033 and calendar_range_end_year.value ge 2033}" itemValue="2033">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao63.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao64" rendered="#{calendar_range_start_year.value le 2034 and calendar_range_end_year.value ge 2034}" itemValue="2034">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao64.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao65" rendered="#{calendar_range_start_year.value le 2035 and calendar_range_end_year.value ge 2035}" itemValue="2035">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao65.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao66" rendered="#{calendar_range_start_year.value le 2036 and calendar_range_end_year.value ge 2036}" itemValue="2036">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao66.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao67" rendered="#{calendar_range_start_year.value le 2037 and calendar_range_end_year.value ge 2037}" itemValue="2037">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao67.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao68" rendered="#{calendar_range_start_year.value le 2038 and calendar_range_end_year.value ge 2038}" itemValue="2038">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao68.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao69" rendered="#{calendar_range_start_year.value le 2039 and calendar_range_end_year.value ge 2039}" itemValue="2039">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao69.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao70" rendered="#{calendar_range_start_year.value le 2040 and calendar_range_end_year.value ge 2040}" itemValue="2040">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.ao70.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="aox" itemValue="1970">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['index.body.msc2.rd4.i4.rd6.aox.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+    </con:section>
+  </ui:define>
+  <ui:define name="template-left-navigation">
+    <com:jumperContainer separator="side"/>
+  </ui:define>
+  <ui:define name="template-top-navigation">
+    <com:jumperContainer separator="top"/>
+  </ui:define>
+</ui:composition>

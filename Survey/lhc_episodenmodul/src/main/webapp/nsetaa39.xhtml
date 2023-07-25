@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="73"/>
+  <ui:define name="template-content">
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('toReset',zofar.list())"/>
+      <scriptItem value="toReset.add('emaa39')"/>
+      <scriptItem value="toReset.add('sf_emaa39')"/>
+      <scriptItem value="zofar.resetVars(toReset)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toLoad',zofar.list())"/>
+      <scriptItem value="toLoad.add('emaa39')"/>
+      <scriptItem value="toLoad.add('sf_emaa39')"/>
+      <scriptItem value="zofar.getJsonProperties(episodeObj,toLoad)"/>
+    </action>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toPersist',zofar.map())"/>
+      <scriptItem value="toPersist.put('emaa39',emaa39.valueId)"/>
+      <scriptItem value="toPersist.put('sf_emaa39',sf_emaa39)"/>
+      <scriptItem value="zofar.setJsonProperties('episodeObj',episodeObj,toPersist)"/>
+      <scriptItem value="zofar.assign('defrac',zofar.addOrReplaceJson(defrac,episodeObj,zofar.toInteger(episode_index.value)))"/>
+    </action>
+    <con:section id="nsetaa39" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t4">#{msgs['nsetaa39.t4_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="sc">
+        <f:facet name="header">
+          <text:question container="true" id="q1" rendered="#{zofar.asNumber(emaa01)!=999999 and zofar.asNumber(emaa02)!=999999}">#{msgs['nsetaa39.b.sc.q1_0']}</text:question>
+          <text:question container="true" id="q2" rendered="#{zofar.asNumber(emaa01)==999999 or zofar.asNumber(emaa02)==999999}">#{msgs['nsetaa39.b.sc.q2_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{emaa39.valueId}" var="#{emaa39}" id="rd1" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa39.b.sc.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa39.b.sc.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="3" id="ao3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa39.b.sc.rd1.ao3.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="4" id="ao4" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa39.b.sc.rd1.ao4.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="5" id="ao5" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa39.b.sc.rd1.ao5.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:multipleChoice id="mcsf" rendered="#{(navigatorBean.isSame() and zofar.isMissing(emaa39)) or sf_emaa39.value}">
+        <f:facet name="header">
+          <text:intro container="true" id="intro1">#{msgs['nsetaa39.b.mcsf.intro1_0']}</text:intro>
+          <text:question container="true" id="q1"/>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd2" missingSeparated="true">
+          <ans:multipleOption value="#{sf_emaa39.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa39.b.mcsf.rd2.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <ques:pretest id="questioncommentnsetaa39">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentnsetaa39">#{msgs['textcommentnsetaa39_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentnsetaa39']}" columns="100" var="#{commentnsetaa39}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+  <ui:define name="template-left-navigation">
+    <com:jumperContainer separator="side"/>
+  </ui:define>
+  <ui:define name="template-top-navigation">
+    <com:jumperContainer separator="top"/>
+  </ui:define>
+</ui:composition>

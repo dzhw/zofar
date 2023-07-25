@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:calendar="http://java.sun.com/jsf/composite/composite"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="de.his.zofar.Calendar.calendarHTML5">
+	<composite:attribute name="labelAll" type="java.lang.Boolean"
+		default="false" />
+
+	<composite:attribute name="behaviour" type="java.lang.String"
+		default="move" />
+
+	<composite:attribute name="legendLayout" type="java.lang.String"
+		default="pageDirection" />
+	<composite:attribute name="legendPosition" type="java.lang.String"
+		default="left" />
+	<composite:attribute name="showLegendIcon" type="java.lang.Boolean"
+		default="true" />
+	<composite:attribute name="showIndicator" type="java.lang.Boolean"
+		default="true" />
+	<composite:facet name="legend" />
+	<composite:facet name="items" />
+	<composite:facet name="rows" />
+	<composite:facet name="columns" />
+</composite:interface>
+
+<composite:implementation>
+</composite:implementation>
+</html>

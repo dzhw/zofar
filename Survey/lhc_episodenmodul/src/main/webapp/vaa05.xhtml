@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="20"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.redirect('indexWarning')" condition="zofar.toInteger(episode_index.value) lt 0" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.log('episode index -1, backup to calendar',sessionController.participant)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('toReset',zofar.list())"/>
+      <scriptItem value="toReset.add('v_startmonth')"/>
+      <scriptItem value="toReset.add('v_startyear')"/>
+      <scriptItem value="toReset.add('v_endmonth')"/>
+      <scriptItem value="toReset.add('v_endyear')"/>
+      <scriptItem value="toReset.add('vaa05')"/>
+      <scriptItem value="toReset.add('sf_vaa05')"/>
+      <scriptItem value="zofar.resetVars(toReset)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('monthMap',zofar.map('1=ao1,2=ao2,3=ao3,4=ao4,5=ao5,6=ao6,7=ao7,8=ao8,9=ao9,10=ao10,11=ao11,12=ao12'))"/>
+      <scriptItem value="zofar.assign('yearMap',zofar.map('2018=ao1,2019=ao2,2020=ao3,2021=ao4,2022=ao5,2023=ao6,2024=ao7'))"/>
+      <scriptItem value="zofar.assign('startDate',zofar.getJsonProperty(episodeObj,'startDate')) "/>
+      <scriptItem value="zofar.assign('endDate',zofar.getJsonProperty(episodeObj,'endDate')) "/>
+      <scriptItem value="zofar.setVariableValue(v_startmonth,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(startDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(v_startyear,zofar.getFromMap(yearMap,zofar.getYearFromStamp(startDate)))"/>
+      <scriptItem value="zofar.setVariableValue(v_endmonth,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(endDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(v_endyear,zofar.getFromMap(yearMap,zofar.getYearFromStamp(endDate)))"/>
+      <scriptItem value="zofar.assign('toLoad',zofar.list())"/>
+      <scriptItem value="toLoad.add('vaa05')"/>
+      <scriptItem value="toLoad.add('sf_vaa05')"/>
+      <scriptItem value="zofar.getJsonProperties(episodeObj,toLoad)"/>
+    </action>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toPersist',zofar.map())"/>
+      <scriptItem value="toPersist.put('vaa05',vaa05.valueId)"/>
+      <scriptItem value="toPersist.put('sf_vaa05',sf_vaa05.value)"/>
+      <scriptItem value="zofar.setJsonProperties('episodeObj',episodeObj,toPersist)"/>
+      <scriptItem value="zofar.assign('defrac',zofar.addOrReplaceJson(defrac,episodeObj,zofar.toInteger(episode_index.value)))"/>
+    </action>
+    <con:section id="vaa05" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['vaa05.t1_0']}</text:text>
+      </f:facet>
+      <mat:singleChoiceMatrix id="msc" rendered="#{false}">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['vaa05.body.msc.q1_0']}</text:question>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t1"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="qi1">#{msgs['vaa05.body.msc.rd.i1.qi1_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd1" value="#{v_startmonth.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="4">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="5">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="6">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="7">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" itemValue="8">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" itemValue="9">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" itemValue="10">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" itemValue="11">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" itemValue="12">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i1.rd1.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="qi2"/>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd2" value="#{v_startyear.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="2018">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2019">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2020">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="2021">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="2022">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="2023">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="2024">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc.rd.i2.rd2.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <mat:singleChoiceMatrix id="msc2" rendered="#{false}">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['vaa05.body.msc2.q1_0']}</text:question>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd4" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t2"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i3">
+            <f:facet name="header">
+              <text:question container="true" id="qi3">#{msgs['vaa05.body.msc2.rd4.i3.qi3_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd5" value="#{v_endmonth.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="4">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="5">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="6">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="7">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" itemValue="8">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" itemValue="9">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" itemValue="10">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" itemValue="11">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" itemValue="12">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i3.rd5.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i4">
+            <f:facet name="header">
+              <text:question container="true" id="qi4"/>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd6" value="#{v_endyear.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="2018">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2019">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2020">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="2021">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="2022">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="2023">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="2024">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['vaa05.body.msc2.rd4.i4.rd6.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <ques:singleChoice id="qsc1">
+        <f:facet name="header">
+          <text:intro container="true" id="i1">#{msgs['vaa05.body.qsc1.i1_0']}</text:intro>
+          <text:intro container="true" id="i2">#{msgs['vaa05.body.qsc1.i2_0']}</text:intro>
+          <text:question container="true" id="q1">#{msgs['vaa05.body.qsc1.q1_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{vaa05.valueId}" var="#{vaa05}" id="rd1" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa05.body.qsc1.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa05.body.qsc1.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="3" id="ao3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa05.body.qsc1.rd1.ao3.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="4" id="ao4" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa05.body.qsc1.rd1.ao4.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:multipleChoice id="mcsf" rendered="#{(navigatorBean.isSame() and zofar.isMissing(vaa05)) or sf_vaa05.value}">
+        <f:facet name="header">
+          <text:intro container="true" id="intro1">#{msgs['vaa05.body.mcsf.intro1_0']}</text:intro>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd2" missingSeparated="true">
+          <ans:multipleOption value="#{sf_vaa05.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa05.body.mcsf.rd2.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <con:section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['vaa05.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['vaa05.body.s1.b.tech.debug0_0']}#{msgs['vaa05.body.s1.b.tech.debug0_2']}#{msgs['vaa05.body.s1.b.tech.debug0_4']}</dis:text>
+          <dis:text id="debug1">#{msgs['vaa05.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['vaa05.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['vaa05.body.s1.b.tech.debug3_0']}#{msgs['vaa05.body.s1.b.tech.debug3_2']}</dis:text>
+          <dis:text id="debug4">#{msgs['vaa05.body.s1.b.tech.debug4_0']}</dis:text>
+          <dis:text id="debug5">#{msgs['vaa05.body.s1.b.tech.debug5_0']}</dis:text>
+          <dis:text id="debug6">#{msgs['vaa05.body.s1.b.tech.debug6_0']}</dis:text>
+        </dis:container>
+      </con:section>
+      <ques:pretest id="questioncommentvaa05">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentvaa05">#{msgs['textcommentvaa05_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentvaa05']}" columns="100" var="#{commentvaa05}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+</ui:composition>

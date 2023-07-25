@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/trigger"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:trigger="http://java.sun.com/jsf/composite/trigger"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:element type="trigger:consistencyType" name="consistency" />
+	<xs:element type="trigger:variableType" name="variable" />
+	<xs:element type="trigger:sessionType" name="session" />
+	<xs:element type="trigger:actionType" name="action" />
+	<xs:element type="trigger:jscheckType" name="jscheck" />
+	<xs:element type="trigger:scriptItemType" name="scriptItem" />
+
+	<xs:complexType name="scriptItemType">
+		<xs:attribute type="xs:string" name="value" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="triggerType">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="scriptItem" type="trigger:scriptItemType" />
+		</xs:sequence>
+		<xs:attribute type="xs:normalizedString" name="condition" />
+		<xs:attribute type="trigger:directionType" name="direction" />
+		<xs:attribute type="xs:boolean" name="onExit" default="false" />
+		<xs:attribute type="xs:token" name="navigator" default="#{navigatorBean}" />
+	</xs:complexType>
+
+	<xs:complexType name="consistencyType">
+		<xs:complexContent>
+			<xs:extension base="trigger:triggerType">
+				<xs:attribute type="xs:normalizedString" name="constraints" />
+				<xs:attribute type="xs:string" name="message" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="variableType">
+		<xs:complexContent>
+			<xs:extension base="trigger:triggerType">
+				<xs:attribute type="xs:token" name="var" use="required" />
+				<xs:attribute type="xs:token" name="value" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="jscheckType">
+		<xs:attribute type="xs:token" name="var" use="required" />
+		<xs:attribute type="xs:token" name="xvar"/>
+		<xs:attribute type="xs:token" name="yvar"/>
+	</xs:complexType>
+
+	<xs:complexType name="sessionType">
+		<xs:complexContent>
+			<xs:extension base="trigger:triggerType">
+				<xs:attribute type="xs:normalizedString" name="timeout"
+					default="1800" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="actionType">
+		<xs:complexContent>
+			<xs:extension base="trigger:triggerType">
+				<xs:attribute type="xs:normalizedString" name="command"
+					default="" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:simpleType name="directionType">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="unknown" />
+			<xs:enumeration value="same" />
+			<xs:enumeration value="forward" />
+			<xs:enumeration value="backward" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

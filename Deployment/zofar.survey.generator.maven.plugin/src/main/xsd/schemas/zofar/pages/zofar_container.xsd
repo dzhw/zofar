@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/container"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:answer="http://java.sun.com/jsf/composite/answer"
+	xmlns:common="http://java.sun.com/jsf/composite/common" xmlns:matrix="http://java.sun.com/jsf/composite/matrix"
+	xmlns:question="http://java.sun.com/jsf/composite/question"
+	xmlns:composite="http://java.sun.com/jsf/composite/composite"
+	xmlns:container="http://java.sun.com/jsf/composite/container"
+	xmlns:display="http://java.sun.com/jsf/composite/display"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:import namespace="http://java.sun.com/jsf/core"
+		schemaLocation="jsf_core.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/text"
+		schemaLocation="zofar_text.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/answer"
+		schemaLocation="zofar_answer.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/matrix"
+		schemaLocation="zofar_matrix.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/question"
+		schemaLocation="zofar_question.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/composite"
+		schemaLocation="zofar_composite.xsd" />
+			<xs:import namespace="http://java.sun.com/jsf/composite/display"
+		schemaLocation="zofar_display.xsd" />
+
+	<xs:element name="section" type="container:sectionType" />
+
+	<xs:complexType name="sectionType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element ref="container:section" />
+						<xs:element ref="common:sort" />
+						<xs:element ref="question:boolean" />
+						<xs:element ref="question:singleChoice" />
+						<xs:element ref="question:multipleChoice" />
+						<xs:element ref="question:open" />
+						<xs:element ref="question:pretest" />
+						<xs:element ref="matrix:singleChoiceMatrix" />
+						<xs:element ref="composite:multipleChoiceComposite" />
+						<xs:element ref="matrix:openMatrix" />
+						<xs:element ref="text:text" />
+						<xs:element ref="answer:singleOption" />
+						<xs:element ref="answer:multipleOption" />
+						<xs:element ref="composite:doubleMatrix" />
+						<xs:element ref="composite:mixedMatrix" />
+						<xs:element ref="composite:comparisonQuestion" />
+						<xs:element ref="composite:calendar" />
+						<xs:element ref="display:container" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

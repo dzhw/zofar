@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="20"/>
+  <ui:define name="template-content">
+    <section id="offene_frage_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['offene_frage_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['offene_frage_beispiel.text_0']}</text:text>
+      </f:facet>
+      <ques:open id="qo1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo1.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['offene_frage_beispiel.b.qo1.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="25" var="#{qo1}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo2">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo2.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['offene_frage_beispiel.b.qo2.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openNumberOption validationMessage="#{msgs['offene_frage_beispiel.b.qo2']}" var="#{qo2}" id="response" size="10"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo3">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo3.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['offene_frage_beispiel.b.qo3.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openGradeOption validationMessage="#{msgs['offene_frage_beispiel.b.qo3']}" var="#{qo3}" id="response" size="5"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo4">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo4.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['offene_frage_beispiel.b.qo4.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="50" var="#{qo4}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo5">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo5.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['offene_frage_beispiel.b.qo5.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openNumberOption minValue="25.0" maxValue="9.999999999999E12" validationMessage="#{msgs['offene_frage_beispiel.b.qo5']}" var="#{qo5}" id="response" size="5"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo6">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo6.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['offene_frage_beispiel.b.qo6.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openNumberOption minValue="0.0" maxValue="25.0" validationMessage="#{msgs['offene_frage_beispiel.b.qo6']}" var="#{qo6}" id="response" size="5"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo7">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo7.q_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="5" var="#{qo7}" id="response">
+            <f:facet name="prefix">
+              <text:responseOption container="true" id="l">#{msgs['offene_frage_beispiel.b.qo7.l_0']}</text:responseOption>
+            </f:facet>
+          </ans:smallOpenOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo8">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo8.q_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="5" var="#{qo8}" id="response">
+            <f:facet name="postfix">
+              <text:responseOption container="true" id="l">#{msgs['offene_frage_beispiel.b.qo8.l_0']}</text:responseOption>
+            </f:facet>
+          </ans:smallOpenOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo9">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo9.q_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="5" var="#{qo9}" id="response" infieldText="#{msgs['offene_frage_beispiel.b.qo9.placeholder']}"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo10">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['offene_frage_beispiel.b.qo10.q_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="5" var="#{qo10}" id="response" infieldText="#{msgs['offene_frage_beispiel.b.qo10.placeholder']}">
+            <f:facet name="prefix">
+              <text:responseOption container="true" id="l">#{msgs['offene_frage_beispiel.b.qo10.l_0']}</text:responseOption>
+            </f:facet>
+          </ans:smallOpenOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo11">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['offene_frage_beispiel.b.qo11.q1_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="80" list="Berufsbenennungen_v1" var="#{qo11}" id="response" infieldText="#{msgs['offene_frage_beispiel.b.qo11.placeholder']}">
+            <f:facet name="prefix">
+              <text:responseOption container="true" id="l">#{msgs['offene_frage_beispiel.b.qo11.l_0']}</text:responseOption>
+            </f:facet>
+          </ans:smallOpenOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <dis:container id="di">
+        <dis:text id="t1">#{msgs['offene_frage_beispiel.b.di.t1_0']}</dis:text>
+      </dis:container>
+    </section>
+  </ui:define>
+</ui:composition>

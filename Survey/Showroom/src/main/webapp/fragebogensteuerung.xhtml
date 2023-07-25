@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="48"/>
+  <ui:define name="template-content">
+    <section id="fragebogensteuerung" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['fragebogensteuerung.t1_0']}</text:title>
+        <text:text container="true" id="t2">
+          #{msgs['fragebogensteuerung.t2_0']}
+          <com:jumper value="#{msgs['fragebogensteuerung.t2_1']}" targetPage="/fragebogensteuerung_zugang"/>
+          #{msgs['fragebogensteuerung.t2_2']}
+          <com:jumper value="#{msgs['fragebogensteuerung.t2_3']}" targetPage="/fragebogensteuerung_filterfuehrung"/>
+          #{msgs['fragebogensteuerung.t2_4']}
+          <com:jumper value="#{msgs['fragebogensteuerung.t2_5']}" targetPage="/fragebogensteuerung_bedingte_anzeige"/>
+          #{msgs['fragebogensteuerung.t2_6']}#{msgs['fragebogensteuerung.t2_8']}
+        </text:text>
+      </f:facet>
+    </section>
+  </ui:define>
+</ui:composition>

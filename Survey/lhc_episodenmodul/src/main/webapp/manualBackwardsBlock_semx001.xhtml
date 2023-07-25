@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="70"/>
+  <ui:define name="template-content">
+    <variable var="#{sem002_date}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem005_date}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem008}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem002}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem003}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem005}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem006}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem004}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sem007}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sf_sem002}" value="false" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{flag_sem002}" value="false" onExit="false" navigator="#{navigatorBean}"/>
+    <action command="navigatorBean.redirect('semx001')" condition="navigatorBean.getBackwardViewID().startsWith('/episodeDispatcher') or navigatorBean.getBackwardViewID().startsWith('/semx002')" onExit="false" navigator="#{navigatorBean}"/>
+    <action command="navigatorBean.redirect('calendar')" condition="!(navigatorBean.getBackwardViewID().startsWith('/episodeDispatcher') or navigatorBean.getBackwardViewID().startsWith('/semx002'))" onExit="false" navigator="#{navigatorBean}"/>
+    <con:section id="manualBackwardsBlock_semx001" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['manualBackwardsBlock_semx001.t1_0']}</text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

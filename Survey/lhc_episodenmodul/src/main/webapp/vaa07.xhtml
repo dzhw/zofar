@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="24"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.redirect('indexWarning')" condition="zofar.toInteger(episode_index.value) lt 0" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.log('episode index -1, backup to calendar',sessionController.participant)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('toReset',zofar.list())"/>
+      <scriptItem value="toReset.add('v_startmonth')"/>
+      <scriptItem value="toReset.add('v_startyear')"/>
+      <scriptItem value="toReset.add('v_endmonth')"/>
+      <scriptItem value="toReset.add('v_endyear')"/>
+      <scriptItem value="toReset.add('vaa07')"/>
+      <scriptItem value="toReset.add('sf_vaa07')"/>
+      <scriptItem value="toReset.add('state')"/>
+      <scriptItem value="toReset.add('v_episodeCount_done')"/>
+      <scriptItem value="zofar.resetVars(toReset)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('monthMap',zofar.map('1=ao1,2=ao2,3=ao3,4=ao4,5=ao5,6=ao6,7=ao7,8=ao8,9=ao9,10=ao10,11=ao11,12=ao12'))"/>
+      <scriptItem value="zofar.assign('yearMap',zofar.map('2018=ao1,2019=ao2,2020=ao3,2021=ao4,2022=ao5,2023=ao6,2024=ao7'))"/>
+      <scriptItem value="zofar.assign('startDate',zofar.getJsonProperty(episodeObj,'startDate')) "/>
+      <scriptItem value="zofar.assign('endDate',zofar.getJsonProperty(episodeObj,'endDate')) "/>
+      <scriptItem value="zofar.setVariableValue(v_startmonth,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(startDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(v_startyear,zofar.getFromMap(yearMap,zofar.getYearFromStamp(startDate)))"/>
+      <scriptItem value="zofar.setVariableValue(v_endmonth,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(endDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(v_endyear,zofar.getFromMap(yearMap,zofar.getYearFromStamp(endDate)))"/>
+      <scriptItem value="zofar.assign('toLoad',zofar.list())"/>
+      <scriptItem value="toLoad.add('vaa07')"/>
+      <scriptItem value="toLoad.add('sf_vaa07')"/>
+      <scriptItem value="toLoad.add('state')"/>
+      <scriptItem value="zofar.getJsonProperties(episodeObj,toLoad)"/>
+    </action>
+    <variable var="#{state}" value="'done'" direction="forward" condition="zofar.asNumber(vaa07)==2" onExit="true" navigator="#{navigatorBean}"/>
+    <variable var="#{v_episodeCount_done}" value="found.size()" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('filter',zofar.map())"/>
+      <scriptItem value="filter.put('state','done')"/>
+      <scriptItem value="filter.put('type','Slot2')"/>
+      <scriptItem value="zofar.assign('found',zofar.hasEpisodes(defrac,'2018-01-01T01:00:00.000Z','2024-12-31T01:00:00.000Z',filter))"/>
+    </variable>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toPersist',zofar.map())"/>
+      <scriptItem value="toPersist.put('vaa07',vaa07.valueId)"/>
+      <scriptItem value="toPersist.put('sf_vaa07',sf_vaa07.value)"/>
+      <scriptItem value="toPersist.put('state',state.value)"/>
+      <scriptItem value="zofar.setJsonProperties('episodeObj',episodeObj,toPersist)"/>
+      <scriptItem value="zofar.assign('defrac',zofar.addOrReplaceJson(defrac,episodeObj,zofar.toInteger(episode_index.value)))"/>
+    </action>
+    <con:section id="vaa07" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['vaa07.t1_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="qsc1">
+        <f:facet name="header">
+          <text:intro container="true" id="i1">#{msgs['vaa07.body.qsc1.i1_0']}</text:intro>
+          <text:question container="true" id="q1">#{msgs['vaa07.body.qsc1.q1_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{vaa07.valueId}" var="#{vaa07}" id="rd1" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa07.body.qsc1.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa07.body.qsc1.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <con:section id="sw" rendered="#{(navigatorBean.isSame() and zofar.isMissing(vaa07)) or sf_vaa07.value}">
+        <f:facet name="header"/>
+        <ques:multipleChoice id="mcsf">
+          <f:facet name="header">
+            <text:intro container="true" id="intro1">#{msgs['vaa07.body.sw.bb.mcsf.intro1_0']}</text:intro>
+          </f:facet>
+          <ans:multipleChoiceResponseDomain id="rd2" missingSeparated="true">
+            <ans:multipleOption value="#{sf_vaa07.value}" id="ao1" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['vaa07.body.sw.bb.mcsf.rd2.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+      </con:section>
+      <con:section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['vaa07.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['vaa07.body.s1.b.tech.debug0_0']}#{msgs['vaa07.body.s1.b.tech.debug0_2']}#{msgs['vaa07.body.s1.b.tech.debug0_4']}</dis:text>
+          <dis:text id="debug1">#{msgs['vaa07.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['vaa07.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['vaa07.body.s1.b.tech.debug3_0']}</dis:text>
+          <dis:text id="debug4">#{msgs['vaa07.body.s1.b.tech.debug4_0']}</dis:text>
+          <dis:text id="debug5">#{msgs['vaa07.body.s1.b.tech.debug5_0']}</dis:text>
+          <dis:text id="debug6">#{msgs['vaa07.body.s1.b.tech.debug6_0']}</dis:text>
+        </dis:container>
+      </con:section>
+      <ques:pretest id="questioncommentvaa07">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentvaa07">#{msgs['textcommentvaa07_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentvaa07']}" columns="100" var="#{commentvaa07}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,535 @@
+@CHARSET "UTF-8";
+
+html {
+	height: 100%;
+}
+
+th {
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+.zo-button {
+	background-color:transparent;
+	-webkit-border-top-left-radius:15px;
+	-moz-border-radius-topleft:15px;
+	border-top-left-radius:15px;
+	-webkit-border-top-right-radius:15px;
+	-moz-border-radius-topright:15px;
+	border-top-right-radius:15px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-left-radius:15px;
+	-moz-border-radius-bottomleft:15px;
+	border-bottom-left-radius:15px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:20px;
+	line-height:20px;
+	width:65px;
+	padding-left:2px;
+	padding-right:2px;
+	text-decoration:none;
+	text-align:center;
+}.zo-button:active {
+	position:relative;
+	top:1px;
+}
+
+.zo-question-open-attached {
+	/* margin-left: 5px; */
+	
+}
+
+/* general zofar page styles */
+.zofar-page {
+	font-family: verdana, helvetica, sans-serif;
+	font-size: small;
+	line-height: 1.4em;
+	width: 1000px;
+	text-align: left;
+}
+
+.zo-singlechoice-values {
+	width: 2.5%;
+	text-align: right;
+}
+
+.zo-singlechoice-leftColumn {
+	width: 2%;
+}
+
+.zo-singlechoice-rightlabel {
+	margin-left: 10px;
+	text-align: left;
+}
+
+.zo-singlechoice-middleColumn {
+	text-align: left;
+	width: 90%;
+}
+
+.zo-singlechoice-horizontal.zo-singlechoice-values {
+	text-align: center;
+}
+
+/*	
+	SINGLECHOICE
+*/
+.zo-responsedomain {
+	width: 100%;
+	/*margin-top: 25px;*/
+}
+
+/* zofar section styles */
+.zo-section {
+	width: 100%;
+}
+
+/* general zofar text styles */
+.zo-text-intro {
+	/*font-weight: bold;*/
+	margin-top: 10px;
+}
+
+.zo-text-introduction {
+	margin-top: 10px;
+}
+
+.zo-text-text {
+	
+}
+
+.zo-text-instruction {
+	font-style: italic;
+	margin-top: 10px;
+}
+
+.zo-text-question {
+	
+}
+
+.zo-text-title {
+	font-weight: bold;
+	font-size: 110%;
+}
+
+/* general zofar-question styles */
+.zo-question {
+	margin-bottom: 30px;
+}
+
+.zo-matrix-singlechoice {
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+.zo-sc-matrix-values {
+	text-align: center;
+}
+
+.zo-sc-matrix-response-domain .zofar-missing-0,.zo-sc-matrix-response-domain .zo-sc-matrix-item-response-domain-radio-missing-0
+	{
+	/*	min-width: 120px;*/
+	padding-left: 40px;
+	text-align: center;
+}
+
+.zo-sc-matrix-response-domain .zo-sc-matrix-values-missing-0 {
+	padding-left: 40px;
+	text-align: center;
+}
+
+.zo-matrix-open {
+	margin-bottom: 30px;
+	margin-top: 10px;
+}
+
+/* question title SINGLECHOICE,MULTIPLECHOICE*/
+.zo-question-header .zo-text-question,.zofar-matrix-header {
+	font-weight: bold;
+	font-size: 120%;
+	margin-top: 20px;
+}
+
+/*	question title MATRIX*/
+.zo-matrix-header .zo-text-question {
+	font-weight: bold;
+	font-size: 120%;
+}
+
+/* matrix and composite styles */
+.zo-table-responsedomain {
+	width: 100%;
+	margin-top: 25px;
+}
+
+.zo-table-responsedomain td {
+	text-align: center;
+}
+
+.zo-table-responsedomain th {
+	vertical-align: bottom;
+}
+
+.zo-table-responsedomain .zo-matrix-table-header {
+	min-width: 50%;
+}
+
+.zo-table-responsedomain .zo-matrix-item-header {
+	text-align: left;
+}
+
+.zo-open-matrix-response-domain .question-open {
+	text-align: center;
+}
+
+.zo-odd {
+	margin-left: 0px;
+	background-color: lightgrey;
+}
+
+.zo-even {
+	
+}
+
+.zo-radio-button-top-label {
+	text-align: center;
+	width: 10%;
+	vertical-align: bottom;
+}
+
+.zo-radio-button-bottom-label {
+	text-align: center;
+	width: 10%;
+	vertical-align: bottom;
+}
+
+/*######################################################*/
+/*				LIKERT					*/
+/*####################################################*/
+.zo-likert  {
+	margin: 0 auto;
+	width: 60px;
+}
+/*
+	LIKERT Vertical
+*/
+.zo-likert-ao-input-cell {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	height: 3.5em;
+	text-align: center;
+	border-right: none;
+}
+
+.zo-likert-ao-label-cell {
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;	
+	height: 3.5em;
+	text-align: center;
+	border-left: none;
+}
+
+.zo-ao-likert-missing-vertical-0 td {
+	border-color: white !important;
+	border-width: 0px !important;
+}
+
+.zo-likert-missing-cell {
+	text-align: center;
+}
+
+.zo-likert-top-label {
+	width: 3.5em;
+	height: 3.5em;
+	text-align: center;
+}
+
+.zo-likert-bottom-label {
+	width: 3.5em;
+	height: 3.5em;
+	text-align: center;
+}
+
+.zo-likert-vertical-missing {
+    margin: 0 auto;
+    text-align: center;
+    width: 40%;
+}
+.zo-likert-vertical-missing .zo-likert-ao-input-cell {
+    text-align: right;
+    width: 36px;
+}
+.zo-likert-vertical-missing .zo-likert-ao-label-cell {
+    text-align: left;
+    width: 0px;
+}
+/*
+	LIKERT Horizontal*/
+	
+.zo-likert-label-horizontal-left {
+    padding-bottom: 8px;
+    padding-right: 8px;
+}
+.zo-likert-label-horizontal-right {
+    padding-bottom: 8px;
+    padding-left: 8px;
+}
+.zo-likert-item-horizontal-radio {
+    border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    min-width: 35px;
+    height: 30px;
+    border-bottom: none;
+}
+.zo-likert-item-horizontal-value {
+	text-align: center;
+	border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    border-top: none;
+	
+}
+
+.zo-likert-horizontal-value-empty {
+	text-align: center;
+	border-color: #000000;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.zo-ao-missing-likert-horizontal {
+	padding-left: 50px;
+}
+
+.zo-ao-missing-likert-horizontal-label {
+	padding-bottom: 5px
+}
+
+/*#############################################*/
+.zo-singlechoice-table,.zo-multiplechoice-responsedomain,.zo-singlechoice-dropdown-table
+	{
+	width: 100%;
+}
+
+/*
+	CUSTOM  differential
+*/
+.zo-dif-matrix-response-domain,.zofar-matrix-double {
+	margin-top: 30px;
+}
+
+.zo-dif-matrix-response-domain th {
+	text-align: right;
+}
+
+.zo-dif-matrix-response-domain .zo-dif-matrix-scale-header {
+	text-align: center !important;
+}
+
+.zo-dif-matrix-response-domain .zofar-missing-0,.zo-dif-matrix-response-domain .zo-sc-matrix-values-missing-0
+	{
+	text-align: center !important;
+}
+
+.zo-dif-matrix-item-response-domain-radio {
+	min-width: 25px;
+}
+
+.zo-dif-left-label {
+	text-align: right !important;
+}
+
+.zo-dif-right-label {
+	text-align: left !important;
+}
+
+/* line breaks after text types in all headers */
+.zo-section-header span,.zo-question-header span,.zo-matrix-header span
+	{
+	display: block;
+}
+
+.zo-section-header,.zo-question-header,.zo-matrix-header {
+	margin-bottom: 1em;
+}
+
+.zo-singlechoice-horizontal td,.zo-singlechoice-horizontal .zo-singlechoice-values
+	{
+	text-align: center;
+	vertical-align: bottom;
+}
+
+/*
+	CUSTOM DOUBLE Matrix
+*/
+.zo-db-item-question {
+	text-align: center;
+}
+
+.zofar-matrix-double .zofar-missing,.zofar-matrix-double .zo-missing-value,.zofar-matrix-double .zo-sc-matrix-item-response-domain-radio-missing-0
+	{
+	padding-left: 40px;
+	text-align: center;
+}
+
+/*
+	CUSTOM: single-choice-horizontal
+*/
+.zo-ao-missing-horizontal-0 {
+	padding-left: 45px;
+}
+
+/*
+	custom: single choice-vertical
+*/
+.zo-ao-value-empty {
+	width: 0px !important;
+}
+
+.zo-ao-input-vertical {
+	width: 5px;
+}
+
+.zo-ao-value-vertical {
+	width: 25px;
+	padding-right: 8px;
+	text-align: right;
+}
+
+.zo-ao-label-vertical {
+	padding-left: 8px;
+}
+
+.zo-ao-attached-vertical {
+	padding-left: 8px
+}
+
+.zo-ao-missing-vertical-0 .zo-ao-attached-vertical {
+	padding-top: 15px;
+}
+
+.zo-ao-missing {
+	background: white;
+}
+
+.zo-rd-singlechoice-vertical .zo-ao-missing-vertical-0 .zo-ao-input-vertical
+	{
+	height: 40px;
+	vertical-align: bottom;
+}
+
+.zo-rd-singlechoice-vertical .zo-ao-missing-vertical-0 .zo-ao-value-vertical
+	{
+	height: 40px;
+	vertical-align: bottom;
+}
+
+.zo-rd-singlechoice-vertical .zo-ao-missing-vertical-0 .zo-ao-label-vertical
+	{
+	height: 40px;
+	vertical-align: bottom;
+}
+
+/*
+	CUSTOM multiplechoice
+*/
+
+/*##########################################################*/
+/*test*/
+/*
+	custom dropdown
+*/
+/*
+.zo-dropdown-matrix-responsedomain .zo-sc-matrix-item-response-domain-radio-missing-0, .zo-dropdown-matrix-responsedomain .zofar-missing-0 {
+ 	padding-left: 0px !important;
+ 	width: 140px !important;
+ 	text-align: center;
+ }
+*/
+.zo-dropdown-matrix-responsedomain th {
+	min-width: 50px !important;
+}
+
+.zo-dropdown-matrix-responsedomain .zo-matrix-values {
+	text-align: center;
+}
+
+.zo-dropdown-dropdown-area {
+	
+}
+
+.zo-dropdown-missing-area {
+	
+}
+
+.zo-dropdown-main .zo-ao-missing-vertical-0 .zo-ao-input-vertical {
+	
+}
+
+.zo-ao-missing-vertical-0 .zo-ao-value-vertical {
+	
+}
+
+.zo-dropdown-main .zo-ao-missing-vertical-0 .zo-ao-label-vertical {
+	
+}
+/*
+######################	HIGHLIGHT  #################################
+*/
+.zo-highlight {
+	color: blue;
+}
+
+/*
+########################## UNIT  ########################################
+*/
+
+.zo-matrix-unit {
+	width: 100%;
+}
+
+.zo-singlechoice-unit,.zo-multiplechoice-unit {
+	width: 100%;
+}
+.zo-unit-header .zo-text-text {
+	font-weight: bold;
+}
+.zo-multiple-unit-header{
+	font-weight: bold;
+}
+
+.zo-vertical-sc-unit {
+	text-align: left;
+	font-weight: bold;
+}
+/*
+.zo-sc-matrix-response-domain .zo-text-common 	{
+	
+}
+*/
+
+.zo-matrix-rd-unitheader {
+	font-weight: bold;
+	text-align: left !important;
+}

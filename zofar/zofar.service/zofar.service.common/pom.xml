@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.his.zofar</groupId>
+        <artifactId>zofar.service</artifactId>
+        <version>1.0.2</version>
+    </parent>
+    <artifactId>zofar.service.common</artifactId>
+    <name>Common Service Dependencies</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.persistence.common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>ma.glasnost.orika</groupId> -->
+<!--             <artifactId>orika-core</artifactId> -->
+<!--         </dependency> -->
+    </dependencies>
+</project>

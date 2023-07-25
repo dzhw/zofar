@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/question"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:answer="http://java.sun.com/jsf/composite/answer"
+	xmlns:common="http://java.sun.com/jsf/composite/common" xmlns:question="http://java.sun.com/jsf/composite/question"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:import namespace="http://java.sun.com/jsf/core"
+		schemaLocation="jsf_core.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/text"
+		schemaLocation="zofar_text.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/answer"
+		schemaLocation="zofar_answer.xsd" />
+
+	<xs:element type="question:booleanType" name="boolean" />
+	<xs:element type="question:singleChoiceType" name="singleChoice" />
+	<xs:element type="question:multipleChoiceType" name="multipleChoice" />
+	<xs:element type="question:openType" name="open" />
+	<xs:element type="question:baseQuestionType" name="baseQuestion" />
+	<xs:element type="question:pretestType" name="pretest" />
+
+	<xs:complexType name="baseQuestionType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="booleanType">
+		<xs:complexContent>
+			<xs:extension base="question:baseQuestionType">
+				<xs:sequence>
+					<xs:element ref="answer:booleanResponseDomain" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleChoiceType">
+		<xs:complexContent>
+			<xs:extension base="question:baseQuestionType">
+				<xs:choice>
+					<xs:element ref="answer:comboSingleChoiceResponseDomain"
+						minOccurs="0" />
+					<xs:element ref="answer:radioButtonSingleChoiceResponseDomain"
+						minOccurs="0" />
+					<xs:element ref="answer:likertResponseDomain" minOccurs="0" />
+					<xs:element ref="answer:dropDownMissingResponseDomain" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="multipleChoiceType">
+		<xs:complexContent>
+			<xs:extension base="question:baseQuestionType">
+				<xs:sequence>
+					<xs:element ref="answer:multipleChoiceResponseDomain" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="openType">
+		<xs:complexContent>
+			<xs:extension base="question:baseQuestionType">
+				<xs:sequence>
+					<xs:element ref="answer:openResponseDomain" />
+				</xs:sequence>
+				<xs:attributeGroup ref="answer:openAttributes" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="pretestType">
+		<xs:complexContent>
+			<xs:extension base="question:baseQuestionType">
+				<xs:sequence>
+					<xs:element ref="answer:openResponseDomain" />
+				</xs:sequence>
+				<xs:attributeGroup ref="answer:openAttributes" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

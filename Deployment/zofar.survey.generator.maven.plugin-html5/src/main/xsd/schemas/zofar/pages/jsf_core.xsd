@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/core"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:text="http://java.sun.com/jsf/composite/text"
+	xmlns:answer="http://java.sun.com/jsf/composite/answer" xmlns:matrix="http://java.sun.com/jsf/composite/matrix"
+	xmlns:composite="http://java.sun.com/jsf/composite/composite"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:import namespace="http://java.sun.com/jsf/html"
+		schemaLocation="jsf_html.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/text"
+		schemaLocation="zofar_text.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/answer"
+		schemaLocation="zofar_answer.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/matrix"
+		schemaLocation="zofar_matrix.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/composite"
+		schemaLocation="zofar_composite.xsd" />
+
+	<xs:element type="f:facetType" name="facet" />
+
+	<xs:complexType name="facetType">
+		<xs:choice maxOccurs="unbounded" minOccurs="0">
+			<xs:element ref="text:text" />
+			<xs:element ref="text:intro" />
+			<xs:element ref="text:title" />
+			<xs:element ref="text:question" />
+			<xs:element ref="text:instruction" />
+			<xs:element ref="text:responseOption" />
+			<xs:element ref="matrix:singleChoiceMatrixItemResponseDomain" />
+			<xs:element ref="answer:radioButtonSingleChoiceResponseDomain" />
+			<xs:element ref="answer:comboSingleChoiceResponseDomain" />
+			<xs:element ref="composite:comparisonUnit" />
+			<xs:element ref="composite:calendarLegendItem" />
+			<xs:element ref="composite:calendarRowItem" />
+			<xs:element ref="composite:calendarColumnItem" />
+			<xs:element ref="composite:calendarItem" />
+		</xs:choice>
+		<xs:attribute name="name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="header" />
+					<xs:enumeration value="footer" />
+					<xs:enumeration value="scaleHeader" />
+					<xs:enumeration value="prefix" />
+					<xs:enumeration value="postfix" />
+					<xs:enumeration value="missingHeader" />
+					<xs:enumeration value="leftHeader" />
+					<xs:enumeration value="rightHeader" />
+					<xs:enumeration value="leftScaleHeader" />
+					<xs:enumeration value="rightScaleHeader" />
+					<xs:enumeration value="leftMissingHeader" />
+					<xs:enumeration value="rightMissingHeader" />
+					<xs:enumeration value="left" />
+					<xs:enumeration value="right" />
+					<xs:enumeration value="question" />
+					<xs:enumeration value="labels" />
+					<xs:enumeration value="dropDown" />
+					<xs:enumeration value="missing" />
+					<xs:enumeration value="legend" />
+					<xs:enumeration value="rows" />
+					<xs:enumeration value="columns" />
+					<xs:enumeration value="items" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

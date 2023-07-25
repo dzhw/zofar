@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.his.zofar</groupId>
+        <artifactId>zofar</artifactId>
+        <version>1.0.2</version>
+    </parent>
+    <artifactId>zofar.persistence</artifactId>
+    <packaging>pom</packaging>
+    <name>Parent Persistence Module</name>
+
+    <modules>
+        <module>zofar.persistence.common</module>
+        <module>zofar.persistence.test</module>
+        <module>zofar.persistence.valuetype</module>
+        <module>zofar.persistence.question</module>
+        <module>zofar.persistence.questionnaire</module>
+        <module>zofar.persistence.surveyEngine</module>
+    </modules>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.mysema.maven</groupId>
+                <artifactId>apt-maven-plugin</artifactId>
+                <version>1.0.7</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>target/generated-sources/java</outputDirectory>
+                            <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

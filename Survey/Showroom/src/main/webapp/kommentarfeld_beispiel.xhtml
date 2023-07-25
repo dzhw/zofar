@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="47"/>
+  <ui:define name="template-content">
+    <section id="kommentarfeld_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['kommentarfeld_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['kommentarfeld_beispiel.text_0']}</text:text>
+      </f:facet>
+      <ques:open id="kommentar_1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['kommentarfeld_beispiel.b.kommentar_1.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['kommentarfeld_beispiel.b.kommentar_1.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="8" columns="50" var="#{kommentar_1}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="kommentar_2">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['kommentarfeld_beispiel.b.kommentar_2.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['kommentarfeld_beispiel.b.kommentar_2.is_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="5" columns="20" var="#{kommentar_2}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:open>
+    </section>
+  </ui:define>
+</ui:composition>

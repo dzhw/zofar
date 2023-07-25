@@ -1,0 +1,6 @@
+<!-- Module Postfix -->
+    <zofar:page uid="end">
+        <zofar:header>
+            <zofar:title uid="t1">Vielen Dank!</zofar:title>
+        </zofar:header>
+    </zofar:page>

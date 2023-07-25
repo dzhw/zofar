@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="custom">
+  <fileSets>
+<!--     <fileSet > -->
+<!--       <directory>src/main/webapp/resources/html5</directory> -->
+<!--     </fileSet> -->
+<!--     <fileSet > -->
+<!--       <directory>src/main/webapp/resources/html5</directory> -->
+<!--       <includes> -->
+<!--         <include>**</include> -->
+<!--       </includes> -->
+<!--     </fileSet> -->
+<fileSet >
+      <directory>src/main</directory>
+    </fileSet>
+    <fileSet >
+      <directory>src/main</directory>
+      <includes>
+        <include>**</include>
+      </includes>
+    </fileSet>
+  </fileSets>
+</archetype-descriptor>

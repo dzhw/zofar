@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.his.zofar</groupId>
+        <artifactId>zofar.service</artifactId>
+        <version>1.0.2</version>
+    </parent>
+    <artifactId>zofar.service.questionnaire</artifactId>
+    <name>zofar.service.questionnaire</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.persistence.questionnaire</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.service.common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.service.test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <packaging>pom</packaging>
+    <modules>
+<!--         <module>zofar.service.questionnaire.interface</module>
+        <module>zofar.service.questionnaire.impl</module>
+        <module>zofar.service.questionnaire.mock</module> -->
+        <module>zofar.service.questionnaire.xml</module>
+    </modules>
+</project>

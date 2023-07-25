@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="4"/>
+  <ui:define name="template-content">
+    <section id="offer" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t">#{msgs['offer.t_0']}</text:title>
+      </f:facet>
+      <ques:pretest id="questioncommentoffer">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentoffer">#{msgs['textcommentoffer_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentoffer']}" columns="100" var="#{commentoffer}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </section>
+  </ui:define>
+</ui:composition>

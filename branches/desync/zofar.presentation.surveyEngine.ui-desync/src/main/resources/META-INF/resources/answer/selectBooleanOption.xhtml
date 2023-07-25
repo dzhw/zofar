@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.BooleanOption">
+    <composite:attribute name="var"  required="true"
+        type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+</composite:interface>
+
+<composite:implementation>
+    <f:loadBundle basename="de.his.zofar.messages.selectBooleanOption"
+        var="selectBooleanOptionMsgs" />
+    <h:selectOneRadio id="#{cc.attrs.var.variableName}"
+        styleClass="zofar-question-singlechoice-boolean-option"
+        value="#{cc.attrs.var.value}" layout="lineDirection"
+        rendered="#{cc.attrs.rendered}">
+        <f:selectItem id="item1"
+            itemLabel="#{selectBooleanOptionMsgs.yes}" itemValue="true" />
+        <f:selectItem id="item2"
+            itemLabel="#{selectBooleanOptionMsgs.no}" itemValue="false" />
+    </h:selectOneRadio>
+</composite:implementation>
+
+</html>

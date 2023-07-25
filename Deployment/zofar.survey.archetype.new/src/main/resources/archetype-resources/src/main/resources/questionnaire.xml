@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zofar:questionnaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:zofar="http://www####/zofar/xml/questionnaire" xmlns:display="http://www.####/zofar/xml/display"
+	language="de">
+	<zofar:name>A tmeplate of a survey</zofar:name>
+	<zofar:description></zofar:description>
+	<zofar:preloads>
+		<zofar:preload password="tester1" name="tester1"></zofar:preload>
+	</zofar:preloads>
+
+
+	<zofar:variables>
+		<zofar:variable name="sample" type="string"/>
+	</zofar:variables>
+    
+    <zofar:name>${zofar.survey.name}</zofar:name>
+    
+    <zofar:description>${zofar.survey.description}</zofar:description>
+    
+    <zofar:page uid="index">
+        <zofar:header>
+            <zofar:title uid="t1">Das ist eine Zofar Befragung.</zofar:title>
+            <zofar:text uid="t2">Hier haben Sie die Möglichkeit eine Befragung zu erstellen.</zofar:text>
+        </zofar:header>
+        <zofar:body uid="b">
+        </zofar:body>
+        <zofar:transitions>
+			<zofar:transition target="end"/>
+		</zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="end">
+        <zofar:header>
+            <zofar:title uid="t1">Das ist eine Zofar Befragung.</zofar:title>
+            <zofar:text uid="t2">Hier haben Sie die Möglichkeit eine Befragung zu erstellen.</zofar:text>
+        </zofar:header>
+        <zofar:body uid="b">
+        </zofar:body>
+    </zofar:page>
+</zofar:questionnaire>

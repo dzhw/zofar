@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:container="http://java.sun.com/jsf/composite/container"
+	xmlns:question="http://java.sun.com/jsf/composite/question"
+	xmlns:answer="http://java.sun.com/jsf/composite/answer"
+	xmlns:text="http://java.sun.com/jsf/composite/text"
+	xmlns:common="http://java.sun.com/jsf/composite/common"
+	xmlns:buttons="http://java.sun.com/jsf/composite/buttons"
+	xmlns:trigger="http://java.sun.com/jsf/composite/trigger"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head></head>
+<body>
+	<h:form>
+		<h:panelGroup layout="block"
+			rendered="#{errorStack.exception != null}">
+			<h:outputText value="#{errorStack.message}" />
+		</h:panelGroup>
+		<h:panelGroup layout="block"
+			rendered="#{errorStack.exception == null}">
+			<h:outputText value="No Exception found" />
+		</h:panelGroup>
+		<h:commandButton id="constraintsBackwardBt" value="Zurück"
+			action="same" />
+	#{errorStack.reset()}
+	</h:form>
+</body>
+</html>

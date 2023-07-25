@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/matrix"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:answer="http://java.sun.com/jsf/composite/answer"
+	xmlns:common="http://java.sun.com/jsf/composite/common" xmlns:matrix="http://java.sun.com/jsf/composite/matrix"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:import namespace="http://java.sun.com/jsf/core"
+		schemaLocation="jsf_core.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/text"
+		schemaLocation="zofar_text.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/answer"
+		schemaLocation="zofar_answer.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+	<xs:element type="matrix:singleChoiceMatrixItemResponseDomainType"
+		name="singleChoiceMatrixItemResponseDomain" />
+	<xs:element type="matrix:singleChoiceMatrixItemType" name="singleChoiceMatrixItem" />
+	<xs:element type="matrix:singleChoiceMatrixResponseDomainUnitType"
+		name="singleChoiceMatrixResponseDomainUnit" />
+	<xs:element type="matrix:singleChoiceMatrixResponseDomainType"
+		name="singleChoiceMatrixResponseDomain" />
+	<xs:element type="matrix:singleChoiceMatrixType" name="singleChoiceMatrix" />
+	<xs:element type="matrix:openMatrixItemType" name="openMatrixItem" />
+	<xs:element type="matrix:openMatrixResponseDomainType" name="openMatrixResponseDomain" />
+	<xs:element type="matrix:openMatrixResponseDomainUnitType"
+		name="openMatrixResponseDomainUnit" />
+	<xs:element type="matrix:openMatrixType" name="openMatrix" />
+	<xs:complexType name="baseMatrixType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="baseMatrixResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" maxOccurs="3" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="common:sort" minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attribute type="xs:boolean" name="questionColumn"
+					default="true" />
+				<xs:attributeGroup ref="answer:itemClassesAttribute" />
+				<xs:attribute type="xs:integer" name="noResponseOptions"
+					use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleChoiceMatrixItemResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="answer:singleOption" maxOccurs="unbounded"
+						minOccurs="2" />
+				</xs:sequence>
+				<xs:attribute type="xs:string" name="value" use="required" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleChoiceMatrixItemType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice>
+						<xs:element ref="answer:attachedOpenQuestion"
+							minOccurs="0" maxOccurs="1" />
+						<xs:element ref="answer:attachedGradeQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="answer:attachedNumberQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="answer:attachedNoNumbersQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="answer:attachedMailQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="matrix:singleChoiceMatrixItemResponseDomain"
+							minOccurs="0" />
+						<xs:element ref="answer:comboSingleChoiceResponseDomain"
+							minOccurs="0" />
+						<xs:element ref="answer:dropDownMissingResponseDomain"
+							minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleChoiceMatrixResponseDomainUnitType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="common:sort" minOccurs="0" />
+						<xs:element ref="matrix:singleChoiceMatrixResponseDomainUnit"
+							minOccurs="0" />
+						<xs:element ref="matrix:singleChoiceMatrixItem"
+							minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleChoiceMatrixResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element ref="matrix:singleChoiceMatrixItem"
+						minOccurs="0" />
+					<xs:element ref="matrix:singleChoiceMatrixResponseDomainUnit"
+						minOccurs="0" />
+				</xs:sequence>
+				<xs:attribute type="xs:boolean" name="isDifferential"
+					default="false" />
+				<xs:attribute type="xs:boolean" name="isShowValues"
+					default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="singleChoiceMatrixType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixType">
+				<xs:sequence>
+					<xs:element ref="matrix:singleChoiceMatrixResponseDomain" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="openMatrixItemType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" />
+					<xs:choice>
+						<xs:element ref="answer:attachedOpenQuestion"
+							minOccurs="0" maxOccurs="1" />
+						<xs:element ref="answer:attachedGradeQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="answer:attachedNumberQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="answer:attachedNoNumbersQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="answer:attachedMailQuestion" minOccurs="0"
+							maxOccurs="1" />
+						<xs:element ref="answer:smallOpenOption" minOccurs="0"
+							maxOccurs="unbounded" />
+						<xs:element ref="answer:openGradeOption" minOccurs="0"
+							maxOccurs="unbounded" />
+						<xs:element ref="answer:openNumberOption" minOccurs="0"
+							maxOccurs="unbounded" />
+						<xs:element ref="answer:openNoNumbersOption" minOccurs="0"
+							maxOccurs="unbounded" />
+						<xs:element ref="answer:openMailOption" minOccurs="0"
+							maxOccurs="unbounded" />
+						<xs:element ref="answer:largeOpenOption" minOccurs="0"
+							maxOccurs="unbounded" />
+					</xs:choice>
+					<!-- <xs:element ref="answer:smallOpenOption" maxOccurs="unbounded" 
+						/> -->
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="openMatrixResponseDomainUnitType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element ref="f:facet" minOccurs="0" />
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="common:sort" minOccurs="0" />
+						<xs:element ref="matrix:openMatrixResponseDomainUnit"
+							minOccurs="0" />
+						<xs:element ref="matrix:openMatrixItem" minOccurs="0" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="openMatrixResponseDomainType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixResponseDomainType">
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element ref="matrix:openMatrixItem" minOccurs="0" />
+					<xs:element ref="matrix:openMatrixResponseDomainUnit"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="openMatrixType">
+		<xs:complexContent>
+			<xs:extension base="matrix:baseMatrixType">
+				<xs:sequence>
+					<xs:element ref="matrix:openMatrixResponseDomain" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

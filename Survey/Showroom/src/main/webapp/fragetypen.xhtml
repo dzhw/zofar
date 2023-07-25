@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="17"/>
+  <ui:define name="template-content">
+    <section id="fragetypen" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['fragetypen.t1_0']}</text:title>
+        <text:text container="true" id="t2">
+          #{msgs['fragetypen.t2_0']}
+          <com:jumper value="#{msgs['fragetypen.t2_1']}" targetPage="/fragetypen_offene_frage"/>
+          #{msgs['fragetypen.t2_2']}
+          <com:jumper value="#{msgs['fragetypen.t2_3']}" targetPage="/fragetypen_einfachauswahl"/>
+          #{msgs['fragetypen.t2_4']}
+          <com:jumper value="#{msgs['fragetypen.t2_5']}" targetPage="/fragetypen_mehrfachauswahl"/>
+          #{msgs['fragetypen.t2_6']}
+          <com:jumper value="#{msgs['fragetypen.t2_7']}" targetPage="/fragetypen_matrix"/>
+          #{msgs['fragetypen.t2_8']}
+          <com:jumper value="#{msgs['fragetypen.t2_9']}" targetPage="/fragetypen_doppelmatrix"/>
+          #{msgs['fragetypen.t2_10']}
+          <com:jumper value="#{msgs['fragetypen.t2_11']}" targetPage="/fragetypen_differenzial"/>
+          #{msgs['fragetypen.t2_12']}
+          <com:jumper value="#{msgs['fragetypen.t2_13']}" targetPage="/fragetypen_kalendarium"/>
+          #{msgs['fragetypen.t2_14']}
+          <com:jumper value="#{msgs['fragetypen.t2_15']}" targetPage="/fragetypen_kommentarfeld"/>
+          #{msgs['fragetypen.t2_16']}
+        </text:text>
+      </f:facet>
+    </section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="13"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.redirect('indexWarning')" condition="zofar.toInteger(episode_index.value) lt 0" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.log('episode index -1, backup to calendar',sessionController.participant)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('toReset',zofar.list())"/>
+      <scriptItem value="toReset.add('delEpisode')"/>
+      <scriptItem value="zofar.resetVars(toReset)"/>
+    </action>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" condition="delEpisode.valueId == 'ao1'" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('defrac',zofar.deleteEpisode(defrac,zofar.toInteger(episode_index.value)))"/>
+    </action>
+    <con:section id="delEpisode" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['delEpisode.t1_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="qsc1">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['delEpisode.body.qsc1.q1_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{delEpisode.valueId}" var="#{delEpisode}" id="rd1" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['delEpisode.body.qsc1.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['delEpisode.body.qsc1.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:pretest id="questioncommentdelEpisode">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentdelEpisode">#{msgs['textcommentdelEpisode_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentdelEpisode']}" columns="100" var="#{commentdelEpisode}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+</ui:composition>

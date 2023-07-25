@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="35"/>
+  <ui:define name="template-content">
+    <section id="vza06" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['vza06.t1_0']}</text:text>
+      </f:facet>
+      <ques:open id="qopen1">
+        <f:facet name="header">
+          <text:question container="true" id="q1" rendered="#{zofar.asNumber(vza03dropDown) != 999999 and zofar.asNumber(vza04dropDown) != 999999}">#{msgs['vza06.body.qopen1.q1_0']}</text:question>
+          <text:question container="true" id="q2" rendered="#{zofar.asNumber(vza03dropDown) == 999999 or zofar.asNumber(vza04dropDown) == 999999}">#{msgs['vza06.body.qopen1.q2_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:smallOpenOption size="35" var="#{vza06}" id="response">
+            <f:facet name="prefix">
+              <text:responseOption container="true" id="label">#{msgs['vza06.body.qopen1.label_0']}</text:responseOption>
+            </f:facet>
+          </ans:smallOpenOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['vza06.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['vza06.body.s1.b.tech.debug0_0']}#{msgs['vza06.body.s1.b.tech.debug0_2']}#{msgs['vza06.body.s1.b.tech.debug0_4']}</dis:text>
+          <dis:text id="debug1">#{msgs['vza06.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['vza06.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['vza06.body.s1.b.tech.debug3_0']}</dis:text>
+          <dis:text id="debug4">#{msgs['vza06.body.s1.b.tech.debug4_0']}</dis:text>
+          <dis:text id="debug5">#{msgs['vza06.body.s1.b.tech.debug5_0']}</dis:text>
+          <dis:text id="debug6">#{msgs['vza06.body.s1.b.tech.debug6_0']}</dis:text>
+        </dis:container>
+      </section>
+      <ques:pretest id="questioncommentvza06">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentvza06">#{msgs['textcommentvza06_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentvza06']}" columns="100" var="#{commentvza06}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </section>
+  </ui:define>
+</ui:composition>

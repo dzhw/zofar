@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:zo="http://zofar.org/ui"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.ButtonPanel">
+	<composite:attribute name="isLastPage" type="java.lang.Boolean"
+		required="false" default="false" />
+	<composite:attribute name="recorderEnabled" type="java.lang.Boolean"
+		required="false" default="false" />
+</composite:interface>
+
+<composite:implementation>
+	<div class="controlls-outer">
+		<div class="btn-toolbar justify-content-between" role="toolbar"
+			aria-label="Toolbar with button groups">
+				
+				<div class="btn-group btn-group-sm d-flex justify-content-between w-100" role="group" aria-label="Page Navigation">
+				<zo:backward id="backward" name="backward" value="#{cc.bundle.previous}"
+					recorderEnabled="#{cc.attrs.recorderEnabled}" />
+					
+				<zo:final id="final" name="final" value="#{cc.bundle.finalSurvey}"
+					isLastPage="#{cc.attrs.isLastPage}"
+					recorderEnabled="#{cc.attrs.recorderEnabled}" />
+					
+				<zo:forward id="forward" name="forward" value="#{cc.bundle.next}"
+					isLastPage="#{cc.attrs.isLastPage}"
+					recorderEnabled="#{cc.attrs.recorderEnabled}" />
+			</div>
+		</div>
+	</div>
+
+
+</composite:implementation>
+
+</html>

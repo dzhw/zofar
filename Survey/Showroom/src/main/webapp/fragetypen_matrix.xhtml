@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="29"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.setShowroom('fragetypen')" navigator="#{navigatorBean}"/>
+    <con:section id="fragetypen_matrix" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t_h3">#{msgs['fragetypen_matrix.t_h3_0']}</text:text>
+        <text:text container="true" id="txt1">
+          #{msgs['fragetypen_matrix.txt1_0']}
+          <com:jumper value="#{msgs['fragetypen_matrix.txt1_1']}" targetPage="/singlechoicematrix_beispiel"/>
+          #{msgs['fragetypen_matrix.txt1_2']}
+          <com:jumper value="#{msgs['fragetypen_matrix.txt1_3']}" targetPage="/multiplechoicematrix_beispiel"/>
+          #{msgs['fragetypen_matrix.txt1_4']}
+          <com:jumper value="#{msgs['fragetypen_matrix.txt1_5']}" targetPage="/comparison_beispiel"/>
+          #{msgs['fragetypen_matrix.txt1_6']}
+          <com:jumper value="#{msgs['fragetypen_matrix.txt1_7']}" targetPage="/offenematrix_beispiel"/>
+          #{msgs['fragetypen_matrix.txt1_8']}#{msgs['fragetypen_matrix.txt1_10']}
+        </text:text>
+        <text:text container="true" id="t2">#{msgs['fragetypen_matrix.t2_0']}</text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+<session-factory>
+
+<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+<property name="connection.driver_class">org.postgresql.Driver</property>
+<property name="connection.url">jdbc:postgresql://${db.host}:${db.port}/${db.dbname}.session</property>
+<property name="connection.username">${db.username}</property>
+<property name="connection.password">${db.password}</property>
+
+<property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+
+<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+<property name="current_session_context_class">thread</property>
+<property name="hibernate.show_sql">false</property>
+
+<property name="hibernate.hbm2ddl.auto">update</property>
+
+<!-- Persistent classes -->
+<mapping class="de.his.zofar.presentation.surveyengine.security.concurrentSession.SessionMap"/>
+</session-factory>
+
+</hibernate-configuration>

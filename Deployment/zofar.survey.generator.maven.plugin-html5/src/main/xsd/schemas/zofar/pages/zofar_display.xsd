@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/display" xmlns:h="http://java.sun.com/jsf/html" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:display="http://java.sun.com/jsf/composite/display"
+	xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:common="http://java.sun.com/jsf/composite/common" attributeFormDefault="unqualified" elementFormDefault="qualified">
+	<xs:import namespace="http://java.sun.com/jsf/composite/common" schemaLocation="zofar_common.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/text" schemaLocation="zofar_text.xsd" />
+	<xs:element name="container" type="display:displayType" />
+	<xs:element name="table" type="display:displayTableType" />
+	<xs:element name="text" type="display:displayTextType" />
+	<xs:element name="reload" type="display:displayReloadType" />
+	<xs:element name="calendar" type="display:displayCalendarType" />
+	<xs:complexType name="displayType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element ref="display:table" />
+						<xs:element ref="display:text" />
+						<xs:element ref="display:reload" />
+						<xs:element ref="display:calendar" />
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="displayTableType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:element name="header" type="display:displayTableHeaderType" minOccurs="0" maxOccurs="1" />
+					<xs:element name="body" type="display:displayTableBodyType" minOccurs="1" maxOccurs="1" />
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="displayTableHeaderType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element name="text" type="display:displayTextType" />
+					</xs:choice>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="displayTableBodyType">
+		<xs:annotation>
+			<xs:documentation> Defines a table element to display given informations in a zofar questionnaire.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element name="row" type="display:displayTableRowType" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="displayTableRowType">
+		<xs:annotation>
+			<xs:documentation> Defines a table element to display given informations in a zofar questionnaire.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element name="item" type="display:displayTableItemType" minOccurs="1" />
+				</xs:choice>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="displayTableItemType">
+		<xs:annotation>
+			<xs:documentation> Defines a table element to display given informations in a zofar questionnaire.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:choice maxOccurs="unbounded" minOccurs="0">
+					<xs:element name="text" type="display:displayTextType" />
+					<xs:element name="jumper" type="common:jumperType" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="displayTextType">
+		<xs:complexContent>
+			<xs:extension base="text:textType">
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="displayReloadType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:attribute type="xs:normalizedString" name="value" use="required" />
+				<xs:attribute type="xs:normalizedString" name="recorderEnabled" use="optional" />
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+		<xs:complexType name="displayCalendarType">
+		<xs:complexContent>
+			<xs:extension base="common:identificationalType">
+				<xs:attribute type="xs:normalizedString" name="events" use="optional" />
+				<xs:attribute type="xs:normalizedString" name="data" use="optional" />
+				<xs:attribute type="xs:normalizedString" name="columns"	use="optional" />
+				<xs:attribute type="xs:normalizedString" name="rows" use="optional" />
+				<xs:attribute type="xs:normalizedString" name="config" use="optional" />
+				<xs:attributeGroup ref="common:renderedAttribute" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

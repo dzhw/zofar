@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="41"/>
+  <ui:define name="template-content">
+    <variable var="#{flag1}" value="false" condition="flag1.value == null" onExit="true" navigator="#{navigatorBean}"/>
+    <variable var="#{color1}" value="'ao1'" condition="color1.value==''" onExit="true" navigator="#{navigatorBean}"/>
+    <con:section id="fragetypen_kalendarium" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['fragetypen_kalendarium.t1_0']}</text:title>
+        <text:text container="true" id="t2">
+          #{msgs['fragetypen_kalendarium.t2_0']}
+          <com:jumper value="#{msgs['fragetypen_kalendarium.t2_1']}" targetPage="/kalendarium_beispiel"/>
+          #{msgs['fragetypen_kalendarium.t2_2']}
+        </text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

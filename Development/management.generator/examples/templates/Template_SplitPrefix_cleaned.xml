@@ -1,0 +1,17 @@
+<!-- Split Prefix -->
+
+<!--preSplit:  [[preSplit]] split:  [[split]] nextSplit:  [[nextSplit]]-->    
+
+	<zofar:page uid="[[modul]][[loop]][[split]]start">
+        <zofar:header>
+            <zofar:title uid="t1">[[modul]]</zofar:title>
+        </zofar:header>
+        <zofar:body uid="b">
+
+                        
+        </zofar:body>
+
+        <zofar:transitions>
+            <zofar:transition target="[[modul]][[loop]][[split]]01" />
+        </zofar:transitions>		
+    </zofar:page>

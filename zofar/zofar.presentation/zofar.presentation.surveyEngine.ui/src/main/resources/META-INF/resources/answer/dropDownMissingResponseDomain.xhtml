@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:zo="http://zofar.org/ui" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:trigger="http://java.sun.com/jsf/composite/trigger"
+	xmlns:cc="http://java.sun.com/jsf/composite">
+
+<cc:interface componentType="org.zofar.responsedomain.DropDownMissing">
+	<cc:attribute name="var"
+		type="de.his.zofar.presentation.surveyengine.ui.interfaces.IAnswerBean"
+		required="true" />
+	<cc:facet name="dropDown" />
+	<cc:facet name="missing" />
+</cc:interface>
+
+<cc:implementation>
+	<h:outputScript id="script" target="head" library="js"
+		name="selection.js">
+	</h:outputScript>
+
+	<h:outputScript id="script">
+			function deselectDropDown_#{fn:replace(cc.clientId, ':', '_')}(){
+				var questionObject = document.getElementById('#{cc.clientId}:dropDown:select');
+				//alert("deselectRadio "+questionObject);
+				if (questionObject != null) {
+					questionObject.selectedIndex = 0;
+				}
+				
+			}
+	
+			function deselectRadio_#{fn:replace(cc.clientId, ':', '_')}(){
+				var itemsObject = document.getElementsByName('#{cc.clientId}:missing');
+				//alert("deselectRadio "+itemsObject);
+				var index;
+				for (index = 0; index &lt; itemsObject.length; ++index) {
+					var inputObj = itemsObject[index];
+					inputObj.checked=false;
+					zofar_singleChoice_triggerRadio(inputObj.name, null);
+				}
+				
+			}
+			
+			function addTriggerToDropDownRadio_#{fn:replace(cc.clientId, ':', '_')}(){
+				var questionObject = document.getElementById('#{cc.clientId}:dropDown:select');
+				//questionObject.addEventListener("change",deselectRadio,false);
+				//questionObject.attachEvent("change",deselectRadio);
+				addZofarEventListener(questionObject,"change",deselectRadio_#{fn:replace(cc.clientId, ':', '_')});
+				
+				var itemsObject = document.getElementsByName('#{cc.clientId}:missing');
+				var index;
+				for (index = 0; index &lt; itemsObject.length; ++index) {
+					var inputObj = itemsObject[index];
+					//inputObj.addEventListener("click",deselectDropDown,false);
+					//inputObj.attachEvent("click",deselectDropDown);
+					addZofarEventListener(inputObj,"click",deselectDropDown_#{fn:replace(cc.clientId, ':', '_')});
+				}
+
+				if ('#{cc.clientId}:missing' in zofar_singleChoice_openMap) {
+					temp = zofar_singleChoice_openMap['#{cc.clientId}:missing'];
+					var index;
+					for (index = 0; index &lt; temp.length; ++index) {
+						var oid = temp[index];
+						var openObj = document.getElementById(oid);
+						//openObj.addEventListener("keydown",deselectDropDown,false);
+						//openObj.attachEvent("keydown",deselectDropDown);
+						addZofarEventListener(openObj,"keydown",deselectDropDown_#{fn:replace(cc.clientId, ':', '_')});
+					}
+				}
+			}
+	</h:outputScript>
+
+	<ui:fragment rendered="#{cc.parent.family == 'org.zofar.MatrixItem'}">
+		<cc:renderFacet name="dropDown" />
+		<cc:renderFacet name="missing" />
+	</ui:fragment>
+
+	<ui:fragment rendered="#{cc.parent.family != 'org.zofar.MatrixItem'}">
+		<table class="zo-dropdown-main">
+			<tr>
+				<td class="zo-dropdown-dropdown-area"><cc:renderFacet
+						name="dropDown" /></td>
+			</tr>
+			<tr>
+				<td class="zo-dropdown-missing-area"><cc:renderFacet
+						name="missing" /></td>
+			</tr>
+		</table>
+	</ui:fragment>
+
+
+	<h:outputScript id="initScript">			
+			addTriggerToDropDownRadio_#{fn:replace(cc.clientId, ':', '_')}()
+	</h:outputScript>
+
+	<trigger:variable var="#{cc.attrs.var}"
+		value="zofar.chooseSettedDropDown(#{cc.attrs.var.variableName}missing,#{cc.attrs.var.variableName}dropDown)"
+		onExit="#{true}" navigator="#{navigatorBean}" />
+</cc:implementation>
+
+</html>

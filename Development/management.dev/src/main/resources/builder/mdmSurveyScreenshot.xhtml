@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:zo="http://zofar.org/ui">
+
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title></title>
+	<h:outputStylesheet library="css" name="general.css" />
+	<h:outputScript library="js" name="zofarBanane.js" />
+</h:head>
+<h:body>
+    #{navigatorBean.registerViewID(view.viewId.substring(1, view.viewId.length()-6))}
+    <c:if test="#{!zofar.isSet('language',sessionController.participant)}">
+		<c:set value="en" target="#{language}" property="value" />
+	</c:if> 
+	<c:if test="#{not empty param['zofar_lang']}">
+		<c:set value="#{param['zofar_lang']}" target="#{language}" property="value" />
+	</c:if>   
+    #{sessionController.switchPageLocale(zofar.ifthenelse(zofar.isSet('language',sessionController.participant),language.value,'en'))}	 
+    <f:view locale="#{sessionController.currentLocale}">
+		<h:form>
+		<zo:default isLastPage="#{lastPage}" />
+			<center>
+				<h:panelGroup layout="block" class="zofar-page custom-#{view.viewId.substring(1, view.viewId.length()-6)}">
+					
+					<table class="zo-template-header" width="100%">
+						<tr>
+							<td width="20%">
+<!-- 								<h:outputLink   value="http://www.sozialerhebung.de" target="_blanck" >
+								<h:graphicImage library="images" name="soz21_logo.png" width="207px" url="www.sozialerhebung.de"/>
+								</h:outputLink> -->
+							</td>
+							<td width="40%">
+<!-- 								<h:outputLink   value="http://www.####/impressum" target="_blanck" > -->
+<!-- 								<h:graphicImage library="images" name="dzhw.jpg" width="530px" height="50px" url="www.####"/> -->
+<!-- 								</h:outputLink> -->
+							</td>
+							<td width="20%">
+<!-- 								<zo:section id="languagePanel" 
+								rendered="#{zofar.inList(zofar.explode('index,st1,st2,st3,st3,b2,b3,b5a,b5b,b6,b7,b8,b9,b10,b11a,b11b,b11c,b11d,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b43,b44,b45,b46,b47a,b47b,b47c,b48a,b48b,b48c,b49,b50b,b51,b52,b53,b54,b55,b57,b58a,b58b_1,b58b_2,b59,b60,b61,b63,b64,b65,b66,b67,b68,b70,b71,b73,b74,b75',','),view.viewId.substring(1, view.viewId.length()-6))}">
+									<h:commandButton id="changeToEng" value="English" action="same"
+										actionListener="#{sessionController.locationChanger(language,'en')}"
+										class="zo-multi-en" rendered="#{language.value!='en'}"
+										image="images/gb.png">
+										<f:actionListener binding="#{navigatorBean}" />
+										<f:actionListener binding="#{onExitBean}" />
+										<f:actionListener binding="#{sessionController}" />
+									</h:commandButton>
+
+									<h:commandButton id="changeToGer" value="German" action="same"
+										actionListener="#{sessionController.locationChanger(language,'de')}"
+										class="zo-multi-de" rendered="#{language.value=='en'}"
+										image="images/de.png">
+										<f:actionListener binding="#{navigatorBean}" />
+										<f:actionListener binding="#{onExitBean}" />
+										<f:actionListener binding="#{sessionController}" />
+									</h:commandButton>
+								</zo:section> -->
+							</td>
+							<td width="20%" valign="bottom">
+								<ui:insert name="template-buttons">
+										<!-- <zo:logout value="Logout" /> -->
+								</ui:insert>
+<!-- 								<zo:progressbar value="#{progress}" />	 -->
+<!-- 								<h:outputLink   value="http://www.hisbus.de" target="_blanck" > -->
+<!-- 								<h:graphicImage library="images" name="Logo_HISBUS.jpg" width="130px" url="http://www.hisbus.de"/> -->
+<!-- 								</h:outputLink> -->
+							</td>
+						</tr>
+					</table>
+					
+					<div style="width:100%">
+					<!-- <hr class="zo-spacer" /> -->
+					</div>
+					<h:panelGroup layout="block" class="zo-template-content">
+						<ui:fragment rendered="#{loginController.isReLogin()}">
+			Sie wurden umgeleitet. Bitte wiederholen Sie Ihre letzten Eingaben oder Änderungen. You were redirected. Please repeat your last inserts or changes
+		</ui:fragment>
+						<ui:insert name="template-content" />
+					</h:panelGroup>
+
+
+					<div class="zo-template-footer"  style="padding-top:10px">
+						<!-- <hr class="zo-spacer"/> -->
+						<h:panelGroup layout="block" class="zo-buttons"
+							style="padding-top:15px;opacity: 0;-webkit-opacity: 0;display: block;">
+							<ui:insert name="template-buttons">
+								<zo:panel isLastPage="#{lastPage}" />
+							</ui:insert>
+<!-- 							<a id="finish" name="finish" href="/sozerh21_mod1/j_spring_security_logout" type="submit" class="zo-button zo-finish" >Fragebogen abschicken</a> -->
+						</h:panelGroup>
+<!-- 						<ui:insert name="template-footer">
+						 	<h:graphicImage library="images" name="his_dzhw_Logo.jpg" style="position:relative;top:-34px" height="40px"/>
+							<h:outputLabel name = "Plalzhalter"></h:outputLabel>
+						</ui:insert> -->
+					</div>
+				</h:panelGroup>
+			</center>
+		</h:form>
+	</f:view>
+</h:body>
+</html>

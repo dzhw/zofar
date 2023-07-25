@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.JSCheckTrigger">
+	<composite:attribute name="var" required="true"
+		type="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" />
+	<composite:attribute name="xvar" required="false"
+		type="de.his.zofar.presentation.surveyengine.StringValueTypeBean" />
+	<composite:attribute name="yvar" required="false"
+		type="de.his.zofar.presentation.surveyengine.StringValueTypeBean" />
+</composite:interface>
+
+<composite:implementation>
+	<h:selectBooleanCheckbox id="jscheckBox" value="#{cc.proxy}"
+		style="display:none" />
+	<h:inputText id="xField" value="#{cc.proxyx}" style="display:none" rendered="#{not empty cc.attrs.xvar}"
+		/>
+	<h:inputText id="yField" value="#{cc.proxyy}" style="display:none" rendered="#{not empty cc.attrs.yvar}"
+		/>
+
+	<h:outputScript id="script">
+		function checkJS_#{cc.id}() {
+			var checkbox = document.getElementById('#{cc.clientId}:jscheckBox');
+			if(checkbox != null){
+				checkbox.checked = "true";
+			}
+		} 
+		checkJS_#{cc.id}();
+	</h:outputScript>
+
+	<h:outputScript id="xscript" rendered="#{not empty cc.attrs.xvar}">
+		function xres_#{cc.id}() {
+			var xField = document.getElementById('#{cc.clientId}:xField');
+			if(xField != null){
+				xField.value=screen.width;
+			}
+		} 
+		xres_#{cc.id}();
+	</h:outputScript>
+	
+	<h:outputScript id="yscript" rendered="#{not empty cc.attrs.yvar}">
+		function yres_#{cc.id}() {
+			var yField = document.getElementById('#{cc.clientId}:yField');
+			if(yField != null){
+				yField.value=screen.height;
+			}
+		} 
+		yres_#{cc.id}();
+	</h:outputScript>
+
+</composite:implementation>
+
+</html>

@@ -1,0 +1,874 @@
+
+.zo-tooltip {
+	margin-left: 1.5rem;
+}
+.tooltip-inner {
+  background-color: lightgrey;
+  color: black;
+  max-width: 180px;
+  padding: 3px 8px;
+  text-align: center;
+  font-size: 1.0rem !important;
+}
+.zo-tooltip-image {
+	width: 1.5rem;
+}
+
+
+.warning-modal .modal-content {
+	
+/* 	height: 150px !important; */
+	background-color: #f3f3f3 !important;
+	margin-top: 5rem;
+	width: 80%;
+	margin-left: 4rem;
+}
+
+.zo-episode-table-range {
+	color: red !important;
+	display: flex;
+}
+
+
+
+.modal-warning {
+	color: red !important;
+	margin-left: 15px;
+}
+.warning-table-range {
+	margin-left: 14px !important;
+}
+.modal-warning-span {
+	margin-left: 10px;
+}
+.modal-warning-info {
+	display: block !important;
+	margin-left: 27px !important;
+}
+.modal-warning-type, .modal-warning-typechange {
+	color:red;
+	margin-left: 14px !important;
+	display: flex;
+}
+.modal-warning-range {
+	color: red;
+}
+.modal-warning-range label {
+  margin-bottom: 1rem !important;
+  top: 0.5rem !important;
+}
+
+.warning-modal .modal-content {
+	
+/* 	height: 150px !important; */
+	background-color: #f3f3f3 !important;
+	margin-top: 5rem;
+	width: 80%;
+	margin-left: 4rem;
+}
+
+
+
+
+/*
+	!!! 
+	Matrizen GLOBAL linksbündig setzen
+	!!!  
+	2 unten folgende Methoden aktivieren
+*/
+/*
+.singlechoicematrix .form-inner .text-sub
+{
+	justify-content: flex-start !important;
+    text-align: left !important;
+}
+.multiplechoicematrix .form-inner .text-sub
+{
+	justify-content: flex-start !important;
+    text-align: left !important;
+}
+.openmatrix .form-inner .text-sub {
+    display: flex !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+*/
+
+
+
+/*
+	single choice visually demarcate missing category
+*/
+.custom-pageUID .singlechoice-ismissing {
+    height: 30px !important;
+}
+
+
+/*
+	CUSTOMIZING OF UNIT-TITLE for SingleChoiceMatrix
+*/
+.custom-PAGEUID legend {
+	/*
+		it possible to change font-size or weight
+	*/
+    font-size: 1.2rem;
+    font-weight: 600;
+	/*
+		a better way is to change the distance upwards
+	*/		    
+    top: -5.5rem;
+}
+.custom-PAGEUID fieldset {
+    margin-top: 7.5rem !important;
+}
+
+
+/*
+	TWO DROPDOWNS IN A ROW
+*/
+/*
+.custom-PAGEUID #form\:PAGEUID\:QESUTIONUID {
+    margin-top: -8.65rem;
+    margin-left: 12rem;
+}
+
+@media (max-width: 767px) {
+	.custom-PAGEUID #form\:PAGEUID\:QESUTIONUID {
+		margin-top: -7.8rem;
+		margin-left: 12rem;
+	}	
+}
+*/
+
+
+/*
+	visually demarcate of exclusive category in multiplechoice questions
+*/
+.custom-checkbox-exclusive {
+	height: 6rem !important;
+}
+
+
+
+
+/*
+HIDE RADIO BUTTON in SingleChoice: 
+Dies ist ein Beispiel, wo der radiobutton in der ersten answeroption versteckt wird
+*/
+
+	/*
+		Label (bzw. der Platzhalter) soll mit ausgeblendet werden, da das Prefix als Infield angezeigt wird
+	*/
+	/*.custom-PAGEUID .custom-radio:nth-child(1) label .custom-control-description span:nth-child(1), 
+	.custom-PAGEUID .custom-radio:nth-child(1) label .custom-control-indicator, 
+	.custom-PAGEUID .custom-radio:nth-child(1) label input[type="radio"] 
+	{
+		display: none !important;
+	}
+	.custom-PAGEUID .custom-radio:nth-child(1) label .custom-control-description span:nth-child(2) 
+	{
+		margin-left: -25px !important;
+		
+	}	
+	*/
+
+
+
+	/*
+		Label bleibt bestehen
+	*/
+	/*
+	.custom-test_singlechoice .custom-radio:nth-child(1) label .custom-control-indicator, 
+	.custom-test_singlechoice .custom-radio:nth-child(1) label input[type="radio"] 
+	{
+		display: none !important;
+	}
+
+	.custom-test_singlechoice .custom-radio:nth-child(1) label .custom-control-description span:nth-child(1)
+	{
+		margin-left: -15px !important;
+	}
+	*/
+	
+	
+	
+	/* HIDE CHECKBOX in MultipleChoice:  
+	 Dies ist ein Beispiel, wo die checkbox in der ersten answeroption versteckt wird 
+	*/
+	/*
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label .custom-control-description span:nth-child(1), 
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label .custom-control-indicator, 
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label input[type="checkbox"] 
+	{
+		display: none !important;
+	}
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label .custom-control-description span:nth-child(2) 
+	{
+		margin-left: -26px !important;
+	}
+	*/
+	
+	
+	
+	/*
+		Label bleibt bestehen
+	*/
+	/*
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label .custom-control-indicator, 
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label input[type="checkbox"] 
+	{
+		display: none !important;
+	}
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label .custom-control-description span:nth-child(2) 
+	{
+		margin-left: 5px !important;
+	}
+
+	.custom-PAGEUID .custom-checkbox:nth-child(1) label .custom-control-description span:nth-child(1) 
+
+	{
+		margin-left: -25px !important;
+	}
+	*/
+	
+	/*
+		optimize distance from scale label to scale and question text 
+	*/
+@media ( min-width : 768px) {
+	/*
+		Mehr Abstand zwischen Questiontext und Matrix
+	*/
+	.custom-PAGEUID .survey-outer .question-main {
+	    margin-bottom: 3rem !important;
+	}
+	/*
+		
+	*/
+	.custom-PAGEUID .form-horizontal .custom-form.custom-form-radio .custom-control-description  
+	{
+		min-width: 5rem !important;
+	}	
+	/*
+		Für das Verschieben der Title bitte die PageUID anpassen 
+		sowie die Koordinaten entsprechend des aktuellen Falls
+	*/
+	.custom-PAGEUID article:not(.openmatrix) .row:first-of-type label .custom-control-description 
+	{
+		position: absolute !important;
+	    -moz-transform: translate(-40px, 0px) !important;
+	    -ms-transform: translate(-40px, 0px) !important;
+	    -o-transform: translate(-40px, 0px) !important;
+	    -webkit-transform: translate(-40px, 0px) !important;
+	    transform: translate(-40px, 0px) !important;
+	}
+	
+}
+
+
+
+
+
+/*
+	!!!!!!!!!!!!!!
+	
+	Bitte NUR in dem Fall weitere MEDIA QUERRIS definieren, wenn die gewünschte MIN/MAX-Width 
+	noch NICHT vorhanden ist.
+	Ansonsten bitte nur innerhalb der unten stehenden arbeiten
+	 	
+	!!!!! 
+*/
+
+@media ( max-width : 415px) { 
+	
+
+}
+@media ( max-width : 767px) { 
+
+	
+}
+@media ( min-width : 768px) { 
+
+	
+}
+@media ( min-width : 1200px) { 
+
+	
+}
+
+
+
+
+
+
+input:focus {  outline: 4px solid #0081D6  }
+
+select:focus {  outline: 4px solid #0081D6  }
+
+textarea:focus {  outline: 4px solid #0081D6  }
+
+a:focus {  outline: 3px solid  #0081D6  }
+
+.img-fluid {
+    max-width: 65%;
+}
+.logout-icon {
+	padding-left: 2rem;
+	/*width: 33.3333%;*/
+}
+
+.logout-icon img {
+	height: 22px;
+	max-width: initial !important;
+}
+
+/* Start Accordion*/
+
+
+.containerAcc {
+	padding-bottom: 5px;
+}
+
+.containerAcc div {
+	width: 100%;
+	text-align: left;
+}
+
+.containerAcc .headerAcc {
+	background-color: #e5f0f7 !important;
+	cursor: pointer;
+	font-weight: bold;
+	border-left: 6px solid grey;
+	padding: 10px;
+}
+
+ .headerAcc { 
+  position: relative;
+}
+
+.headerAcc:after {
+  content: "\25B6";
+  color: #777;
+  font-weight: bold;
+  float: left;
+  margin-left: 5px;
+  margin-top: -2rem;
+}
+
+.containerAcc > .active:after {
+  content: "\25BC";
+}
+.containerAcc .collapseDiv {
+	display: none;
+	padding: 10px;
+}
+
+.containerAcc .headerAcc .title-text 
+{
+    margin-left: 30px;
+}
+
+/*END Accordion*/
+
+
+
+
+/*
+optimize position of attachedOpen for singlechoice/multiplechoice on smartphone 
+*/
+.custom-control-description .attached {
+    margin-left: 5px !important;
+    margin-top: 0px !important;
+}
+
+
+/*CHECK: VD*/
+/* Bugfix Overlapping long labels on small screens*/
+@media ( max-width : 992px) {
+	.form-horizontal .custom-form.custom-form.custom-form-radio .custom-control-description
+	{
+		top: -30px;
+	}
+}
+
+/* Bugfix Overflowing highlight box before wrap in Carousel-Mode*/
+@media ( max-width : 766px) {
+	.custom-form.custom-form-radio.make-2-cols .custom-control-description {
+		min-width: 25vw !important;
+	}
+}
+
+/* Bugfix Overflowing highlight box before wrap in Carousel-Mode*/
+@media ( min-width : 767px) {
+	.custom-form.custom-form-radio.make-2-cols .custom-control-description {
+		min-width: 5vw !important;
+		font-size: 1vw;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.custom-form.custom-form-radio.make-2-cols .custom-control-description {
+		min-width: 10rem !important;
+		font-size: 1.2rem;
+	}
+}
+
+
+
+
+.openmatrix .row label input {
+	max-width: 50px !important;
+	margin-top: 5px;
+}
+
+@media ( max-width : 767px) {
+	.openmatrix .carousel-item.active {
+        display:table;
+        margin: 0 auto;
+     	width: 100px; 
+	} 
+	
+	.openmatrix .carousel-item.active label {
+        display:table-row;
+	} 
+	
+	.openmatrix .carousel-item.active label .prefix{
+        display:table-cell;
+        padding-right : 10px;
+        padding-left : 10px;
+	} 
+	
+	.openmatrix .carousel-item.active label .column{
+        display:table-cell;
+        padding-right : 10px;
+        padding-left : 10px;
+	} 
+	
+	.openmatrix .carousel-item.active label input{
+        display:table-cell;
+        max-width: inherit !important;
+        margin-right : 10px;
+	} 
+	
+	.openmatrix .carousel-item.active  label:first-of-type{
+        padding-top : 15px;
+	} 
+	
+	.openmatrix .carousel-item.active label:last-of-type input{
+        margin-bottom : 10px;
+	} 
+}
+
+@media ( min-width : 768px) {
+	.custom-form-checkbox .flex-wrapper .custom-checkbox .custom-control-description
+	{
+		top: 0px !important;
+		padding-bottom: 50px;
+	}
+	.comparison .row .custom-control label .custom-control-description {
+		margin-top: inherit !important;
+	}
+	
+	.openmatrix .row label:not(:first-of-type) input{
+		margin-left:5px;
+	} 
+	
+	.openmatrix .row:first-of-type{
+		margin-bottom:5px;
+	} 
+	
+	.openmatrix .row:not(:first-of-type){
+		margin-top:5px;
+	} 
+	
+	.openmatrix .row label .column {
+			position: absolute;
+			-moz-transform: translate(25px, -25px);
+			-ms-transform: translate(25px, -25px);
+			-o-transform: translate(25px, -25px);
+			-webkit-transform: translate(25px, -25px);
+			transform: translate(25px, -25px);
+		}
+	
+	.openmatrix .row label input {
+		max-width: 6rem !important;
+	}
+	
+	.openmatrix .row:not(:nth-child(1)) label input{
+
+	}
+	
+	.openmatrix .row label .prefix {
+		display : none !important;
+	}
+	
+	.openmatrix .row:not(:nth-child(1)) label .column {
+		display : none !important;
+	}
+	
+	.zofar_openmatrix_error_tooltip .tooltip-inner{
+		background-color: red !important;
+		color: #fff;
+		opacity: 0.75;
+	}
+	
+	
+	/*Bugfix misselected AnswerOption in first row of Matrix*/
+	 article:not(.openmatrix) .row label {
+			position: absolute;
+			width: 0px;
+	}
+	
+	article:not(.openmatrix) .row:first-of-type label .custom-control-description{
+			position: absolute;
+			-moz-transform:  translate(-55px, 10px);
+			-ms-transform: translate(-55px, 10px);
+			-o-transform: translate(-55px, 10px);
+			-webkit-transform: translate(-55px, 10px);
+			transform: translate(-55px, 10px);
+	} 
+	
+	article:not(.openmatrix) .carousel .row .text-sub {
+/* 	ToDo:  */
+/* 		padding-top: 15px !important; */
+	}
+	.carousel .row .text-sub {
+	    display: flex !important;
+	}
+	
+	
+	/* Textfields under AnswerLabel on small screens*/
+	.attached {
+		max-width: 70% !important;
+	}
+/* 	.custom-control-description .attached { */
+/* 		margin-left: 5px; */
+/* 		margin-top: 0px; */
+/* 	} */
+	.custom-control-description .attached input[type="text"] {
+		width: auto;
+		max-width: 70%;
+		font-size: 1.2rem !important;
+		line-height: 1.3 !important;
+		flex-grow: 1;
+	}
+
+	.text-sub .attached {
+		/* color: orange; */
+		position: relative;
+		top: 0px;
+		margin-left: 5px;
+		margin-top: 3px;
+		width: 100%;
+	}
+	.text-subdropdown {
+		/* color: orange; */
+		position: relative;
+		top: 0px;
+		margin-left: 5px;
+		margin-top: 3px;
+		width: 100%;
+	}
+
+	/* Small Textfields on small screens*/
+	.attached input[type="text"] {
+		width: 100%;
+	}
+
+	/* No Breaks in Labels on small screens*/
+	.custom-control-description br {
+		display: inline;
+	}
+
+	/* Labels over Row Items */
+	.row .custom-control-description {
+		/*margin-bottom: 44px;*/
+		margin-top: -42px !important;
+		$(this).parents('.row').css("property","value");
+	}
+
+	/* No Breaks in Matrix Labels on big screens*/
+	.row .custom-control-description br {
+		display: none;
+	}
+	.row .custom-control-description {
+		word-wrap: break-word;
+	}
+
+}
+
+
+
+
+/*
+	ToDo:  genauer zu prüfen
+*/
+@media ( min-width : 0px) {
+	fieldset {
+		min-width: min-content !important;
+	}
+}
+
+					
+/*	
+		TEMPLATES
+*/
+	.custom-PAGE article:not(.openmatrix) .row:first-of-type label .custom-control-description
+	{
+		position: relative !important;			
+	} 
+
+
+/*
+	Header im Contentbereich einer Page absetzen
+*/
+	.custom-PAGE #form\:PAGE\:UID header {
+		margin-bottom: 10px;
+	}
+
+
+/* 	Unit und Unit-Text ausblenden */
+	.custom-PAGE fieldset 
+	{
+		border: none !important;
+		background:inherit;
+	}
+	.custom-PAGE fieldset legend 
+	{
+		display: none;
+	}	
+
+/* 
+	Verbindungslinien/Pipes transparent machen
+*/
+.custom-PAGE .add-pipe::before
+{
+	background-color: transparent;
+}
+
+/*
+	Breite von Unit in einfachen Singlechoice und Multiplechoice optimieren
+*/
+.custom-PAGE fieldset 
+{
+	min-width: min-content !important;
+}
+
+/*
+	Zeilenhöhe verringer SingleChoice
+*/
+	.custom-PAGE .custom-form.custom-form-radio .custom-control
+	{
+	    height: 5px !important;
+	}
+
+/*
+	ein BEISPIEL für die Optimierung von Title in Matrizen
+*/
+	@media ( min-width : 415px) {
+		.custom-PAGE .survey-outer .question-main {
+		    margin-bottom: -2.5rem;
+		}
+		.custom-PAGE .form-orientation:not(.form-vertical) .custom-form.custom-form-radio {
+		    margin: 1.5rem auto;
+		}
+		.custom-PAGE .col-md-8 {
+		    max-width: 50% !important;
+		}
+		.custom-PAGE .carousel {
+		    padding-top: 20px;
+		}
+		.custom-PAGE .form-orientation:not(.form-vertical) .custom-form.custom-form-radio .custom-control-description {
+		    top: -2.5rem;
+		    margin-left: 0px;
+		}
+	}
+
+/*Zeilenhöhe und "LUFTIG" verringern*/
+@media ( min-width : 768x) {
+	.custom-PAGE .survey-outer .question-main {
+	    margin-bottom: 0rem;
+	}
+	.custom-PAGE .form-orientation:not(.form-vertical) .custom-form.custom-form-radio {
+	    margin: 1.5rem auto;
+	}
+	.custom-PAGE .col-md-8 {
+	    max-width: 50% !important;
+	}
+	.custom-C1_6 .carousel {
+	    padding-top: 20px;
+	}
+	.custom-PAGE .form-orientation:not(.form-vertical) .custom-form.custom-form-radio .custom-control-description {
+	    top: -2.5rem;
+	    margin-left: 0px;
+	}
+}
+
+/*
+	ersten Text eines Types formatieren
+*/
+.custom-PAGE section .text-common:first-of-type
+{
+    font-size: 1.6rem !important;
+    font-weight: 600 !important;
+}
+
+/*
+	Itemlabel in Matrix linksbündig ausrichten
+*/
+	.custom-N_9b .form-inner .text-sub 
+	{
+	    justify-content: flex-start !important;
+	    text-align: left !important;
+	}
+
+/*
+	Missing AO absetzen; X durch Zeilenummer ersetzen
+*/
+	.custom-PAGE .custom-form .custom-control:nth-child(X) 
+	{
+	    margin-top: 15px !important;
+	}
+
+/*
+	Länge des Inputfeldes ändern
+*/
+	.custom-PAGE input[type="text"]{
+		max-width: 300px !important;
+	}
+
+/*
+	ein BEISPIEL für die Optimierung der Title in einer MultipleChoiceMatrix
+*/
+	.custom-PAGE .question-instruction 
+	{
+		padding-bottom: 140px !important;
+	}
+	.custom-PAGE article:not(.openmatrix) .row:first-of-type label .custom-control-description {
+	    position: absolute;
+	    -moz-transform: translate(-45px, -130px) !important;
+	    -ms-transform: translate(-45px, -130px) !important;
+	    -o-transform: translate(-45px, -130px) !important;
+	    -webkit-transform: translate(-45px, -130px) !important;
+	    transform: translate(-45px, -130px) !important;
+	}
+	/*	NUR bei zu langen Itemlabel verwenden*/
+	.custom-PAGE .row	 
+	{
+	    padding-bottom: 10px !important;
+	}
+
+/*
+	erzwingt 2zeilige Label in SC Horizontal 
+*/
+	.custom-PAGE .form-horizontal .custom-form.custom-form-radio .custom-control-description
+	{
+	    min-width: 5rem !important;
+	}
+
+/*
+	Optimierung für SC Horizontal
+*/
+	.custom-PAGE .form-horizontal .custom-form.custom-form-radio .custom-control-description  
+	{
+		min-width: 5rem !important;
+	}
+	.custom-PAGE  .form-horizontal .form-inner 
+	{
+	    margin-left: 2.5rem !important;
+	    margin-right: 1rem !important;
+	}
+
+/*
+	Fix für Matrix-Itemlabel mit Layoutproperties
+*/
+	.custom-PAGE .carousel .row .text-sub 
+	{
+	    display: inherit !important;
+	}
+	
+/*
+	Sonderfall: deaktivieren vom ersten Skalenitem in der ersten Row in einer Matrix
+*/
+	.custom-PAGE .row:nth-child(1) .custom-control:nth-child(1) .custom-control-indicator, 
+	.custom-PAGE .row:nth-child(1) .custom-control:nth-child(1) input[type="text"]
+	{
+		display: none !important;
+	}
+
+/*
+	eine kleine Optimierung für Accordion
+*/
+	.custom-PAGE .containerAcc .headerAcc div
+	{
+		margin-left: 30px;
+	}
+
+/*
+	Sonderformatierung einer OpenMatrix	
+*/
+@media ( min-width : 1200px){
+	.custom-PAGE .openmatrix .row .openmatrix-rdc label .prefix .xx{
+ 		font-size: 12px !important;
+ 	} 
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label .column .text-common{
+ 		font-size: 12px !important;
+ 	}
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label input{
+ 		max-width: inherit !important;
+ 		-moz-transform: translate(  25px, 0px);
+		-ms-transform: translate(  25px, 0px);
+	 	-o-transform: translate( 25px, 0px);
+	 	-webkit-transform: translate( 25px, 0px);
+	 	transform: translate( 25px, 0px); 
+	} 
+	.custom-PAGE .openmatrix .row .openmatrix-rdc label:first-of-type{
+		margin-right:9vw !important;
+	} 
+}
+@media ( min-width : 1000px) and ( max-width : 1199px){
+	.custom-PAGE .openmatrix .row .openmatrix-rdc label .prefix .xx{
+ 		font-size: 1vw !important;
+ 	} 
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label .column .text-common{
+ 		font-size: 1vw !important;
+ 	} 
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label input{
+ 		max-width: 15vw !important;
+ 		-moz-transform: translate(  25px, 0px);
+		-ms-transform: translate(  25px, 0px);
+	 	-o-transform: translate(  25px, 0px);
+	 	-webkit-transform: translate(  25px, 0px);
+	 	transform: translate(  25px, 0px); 
+	} 
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label:first-of-type{
+		margin-right:9vw !important;
+	} 
+}
+@media ( min-width : 767px) and ( max-width : 999px){
+	.custom-PAGE .openmatrix .row .openmatrix-rdc label .prefix .xx{
+		font-size: 10px !important;
+ 	} 
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label .column .text-common{
+		font-size: 10px !important;
+ 	}
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label input{
+ 		max-width: 15vw !important;
+ 		-moz-transform: translate(  25px, 0px);
+		-ms-transform: translate(  25px, 0px);
+	 	-o-transform: translate(  25px, 0px);
+	 	-webkit-transform: translate(  25px, 0px);
+	 	transform: translate(  25px, 0px); 
+	} 
+ 	.custom-PAGE .openmatrix .row .openmatrix-rdc label:first-of-type{
+		margin-right:9vw !important;
+	} 
+}
+
+/*
+	Pipes for matrix singlechoice
+*/
+.singlechoicematrix .form-orientation:not(.form-vertical) .add-pipe::before
+{
+	background-color: #dfdfdf !important;
+}
+

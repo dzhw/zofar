@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="14"/>
+  <ui:define name="template-content">
+    <section id="textsorten_beispiel_1" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['textsorten_beispiel_1.t1_0']}</text:title>
+        <text:intro container="true" id="intro1">#{msgs['textsorten_beispiel_1.intro1_0']}</text:intro>
+      </f:facet>
+      <ques:singleChoice id="sc1">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['textsorten_beispiel_1.b.sc1.q1_0']}</text:question>
+          <text:instruction container="true" id="i1">#{msgs['textsorten_beispiel_1.b.sc1.i1_0']}</text:instruction>
+          <text:intro container="true" id="text1">#{msgs['textsorten_beispiel_1.b.sc1.text1_0']}</text:intro>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{textsorten_beispiel.valueId}" var="#{textsorten_beispiel}" id="rd1" showValues="true" missingSeparated="true">
+          <ans:singleOption itemValue="Wert 1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['textsorten_beispiel_1.b.sc1.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="Wert 2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['textsorten_beispiel_1.b.sc1.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="Wert 3" id="ao3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['textsorten_beispiel_1.b.sc1.rd1.ao3.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="Wert 4" id="ao4" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['textsorten_beispiel_1.b.sc1.rd1.ao4.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="Wert 5" id="ao5" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['textsorten_beispiel_1.b.sc1.rd1.ao5.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="Wert 6" id="ao6" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['textsorten_beispiel_1.b.sc1.rd1.ao6.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+    </section>
+  </ui:define>
+</ui:composition>

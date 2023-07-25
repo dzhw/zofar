@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:pass="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:zo="http://zofar.org/ui">
+
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+
+	<!--    	<link rel="apple-touch-icon" href="#{request.contextPath}/resources/html5/images/apple-touch-icon.png"/> -->
+
+	<title>SLC</title>
+
+<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" /> 
+	<link rel="stylesheet" type="text/css" href="resources/html5/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="resources/html5/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="resources/html5/bootstrap/css/bootstrap.min.css" />
+	
+	<script type="text/javascript" src="resources/html5/js/modernizr-2.8.3.min.js"></script>
+	<script type="text/javascript" src="resources/html5/js/plugins.js"></script>
+	<script type="text/javascript" src="resources/js/zofarEvent.js"></script>
+	
+	<h:outputScript library="html5/moment/js" name="moment.min.js" />
+	<h:outputScript library="html5/moment/js" name="moment-timezone-with-data.min.js" />
+	
+	<h:outputScript library="html5/tether/js" name="tether.min.js" />
+	
+ 	<h:outputScript library="html5/jquery/js" name="jquery.3.3.1.min.js" />
+
+	<h:outputScript library="html5/js" name="plugins.js" />
+
+ 	<h:outputStylesheet library="html5/bootstrap/css" name="bootstrap.4.0.0.min.css" />
+ 	<h:outputScript library="html5/bootstrap/js" name="bootstrap.4.0.0.min.js" />
+
+  	<h:outputStylesheet library="frameworks/episodes" name="js-year-calendar.zofar.1.0.3.css" />
+  	<h:outputScript library="frameworks/episodes" name="js-year-calendar.zofar.1.0.5.js" />
+  	<!-- <h:outputScript library="html5/js" name="calendarMod.js" /> -->
+	<h:outputScript library="frameworks/episodes/locales/1.0.2" name="js-year-calendar.#{zofar.ifthenelse(zofar.isSet('language',sessionController.participant),language.value,'de')}.js" /> 
+
+	<h:outputStylesheet library="html5/bootstrap-fs-modal/bootstrap4-fs-modal-master/dist/css" name="bootstrap-fs-modal.min.css" />
+  	<h:outputStylesheet library="html5/css" name="master.css" />
+	<h:outputStylesheet library="html5/css" name="additional.css" />
+	
+	<h:outputScript library="html5/modernizr/js" name="modernizr-2.8.3.min.js" />
+	
+	
+	<h:outputStylesheet library="html5/monthpicker/css" name="datepicker.css" />
+		
+	<h:outputScript library="js" name="zofarEvent.js" />
+	
+	
+
+</h:head>
+<h:body class="custom-#{view.viewId.substring(1, view.viewId.length()-6)}">
+    #{navigatorBean.registerViewID(view.viewId.substring(1, view.viewId.length()-6))}
+    <c:if test="#{!zofar.isSet('language',sessionController.participant)}">
+		<c:set value="de" target="#{language}" property="value" />
+	</c:if>  
+	<c:if test="#{not empty param['zofar_lang']}">
+		<c:set value="#{param['zofar_lang']}" target="#{language}" property="value" />
+	</c:if>   
+    #{sessionController.switchPageLocale(zofar.ifthenelse(zofar.isSet('language',sessionController.participant),language.value,'de'))}	 
+    <f:view locale="#{sessionController.currentLocale}">
+		<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+		<div class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="logos-outer justify-content-between">
+							<div class="logo">
+								<h:graphicImage library="html5/images" alt="DZHW Logo"
+									title="DZHW Logo" name="dzhw.png" class="img-fluid"
+									url="http://www.####/impressum" />
+							</div>
+							
+
+							<!-- LANGUAGE BUTTON -->
+							<div class="language">
+								<h:form id="langform" name="langform" class="survey">
+									<zo:section id="languagePanel" >
+										<h:commandButton id="changeToEng" value="English" action="same"
+											actionListener="#{sessionController.locationChanger(language,'en')}"
+											class="zo-multi-en" rendered="#{language.value!='en'}"
+											image="images/gb.png">
+											<f:actionListener binding="#{navigatorBean}" />
+											<f:actionListener binding="#{onExitBean}" />
+											<f:actionListener binding="#{sessionController}" />
+										</h:commandButton>
+
+										<h:commandButton id="changeToGer" value="German" action="same"
+											actionListener="#{sessionController.locationChanger(language,'de')}"
+											class="zo-multi-de" rendered="#{language.value=='en'}"
+											image="images/de.png">
+											<f:actionListener binding="#{navigatorBean}" />
+											<f:actionListener binding="#{onExitBean}" />
+											<f:actionListener binding="#{sessionController}" />
+										</h:commandButton>
+									</zo:section>
+								</h:form>
+							</div>
+
+							
+<!-- 							<div class="logo2"> -->
+<!-- 								<h:graphicImage library="images" alt="Development Logo" -->
+<!-- 									title="Development Logo" name="development1.jpg" class="img-fluid2" /> -->
+<!-- 							</div> -->
+								<!-- <zo:progressbar value="#{progress}" /> -->
+							<div class="logout-icon">
+								<zo:logout-icon id="logout" name="logout" value="Logout" />
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<h:form id="form" name="form" class="survey">
+				<zo:default id="defaultActionPanel" name="defaultActionPanel" isLastPage="#{lastPage}" />
+
+
+<!-- <div class="input-group input-daterange"> -->
+<!--  <div class="input-append date" id="monthpickerStart1" data-date="01-2018" data-value="0"  data-dates-disabled="07-2018,08-2018"  -->
+<!--  	style="display:inline-block; font-weight:bold;"> -->
+<!--   Start: <input  type="text" readonly="readonly" name="episodeStart1" value="" /> -->
+<!--   <span class="add-on"><i class="glyphicon glyphicon-calendar"></i></span>       -->
+<!--  </div>  -->
+       
+<!--  <div class="input-append date" id="monthpickerEnd1" data-date="01-2018" data-value="0" data-dates-disabled="07-2018,08-2018"  -->
+<!--  	style="display:inline-block; font-weight:bold;"> -->
+<!--   End: <input  type="text" readonly="readonly" name="episodeEnd1"  value=""/> -->
+<!--   <span class="add-on"><i class="glyphicon glyphicon-calendar"></i></span>       -->
+<!--  </div>       -->
+<!-- </div>   -->
+
+				
+				<div class="survey-outer">
+					<ui:insert name="template-header" />
+					<ui:insert name="template-content" />
+					
+						
+<!-- 						<div class="calendar-table table-responsive"> -->
+<!-- 						     <div class="row"> -->
+<!-- 						        <div class="col-10"> -->
+<!-- 						        	<span class="col-name">Ausbildung</span> -->
+<!-- 						        	<span class="col-art">Berufsausbildung, Umschulung, Volontariat</span> -->
+<!-- 						            <span class="col-period">01.2018-12.2018</span> -->
+<!-- 						        </div> -->
+<!-- 						        <div class="col-2"> -->
+<!-- 						            <button id="edit" class="cal-button" ><i class='fas fa-edit fa-md'></i></button> -->
+<!-- 						            <button id="delete" class="cal-button" ><i class='fas fa-trash-alt fa-md'></i></button> -->
+<!-- 						        </div> -->
+<!-- 						    </div> -->
+						    
+						    
+<!-- 						     <div class="row"> -->
+<!-- 						        <div class="col-10"> -->
+<!-- 						            <span class="col-name">Weiterbildung</span> -->
+<!-- 						        	<span class="col-art">Fort-, Weiterbildung (längerfristig, insgesamt mind. 70 h)</span> -->
+<!-- 						            <span class="col-period">01.2018-12.2020</span> -->
+<!-- 						        </div> -->
+<!-- 						        <div class="col-2"> -->
+<!-- 						            <button id="edit" class="cal-button" ><i class='fas fa-edit fa-md'></i></button> -->
+<!-- 						            <button id="delete" class="cal-button" ><i class='fas fa-trash-alt fa-md'></i></button> -->
+<!-- 						        </div> -->
+<!-- 						    </div> -->
+						
+<!-- 						</div> -->
+						
+						
+						
+<!-- 					Standard: alle Buttons unten; incl. Logout -->
+<!-- 					<zo:panel id="btPanel" name="btPanel" isLastPage="#{lastPage}" /> -->
+<!-- 					Responsive: Vor und Zurück Buttons unten an den Ränden; Logout-Icon oben rechts -->
+					<zo:panel-responsive id="btPanel" name="btPanel" isLastPage="#{lastPage}" />
+				</div>
+			</h:form>
+		</div>
+		<div class="footer">
+			<div class="container">
+				<div class="">Deutsches Zentrum für Hochschul- und
+					Wissenschaftsforschung GmbH</div>
+			</div>
+		</div>
+	</f:view>
+ 	<h:outputScript library="html5/js" name="master.js" />
+	<h:outputScript library="html5/js" name="additional.js" />
+	<h:outputScript library="html5/monthpicker/js" name="bootstrap-datepicker.js" />
+</h:body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="52"/>
+  <ui:define name="template-content">
+    <section id="fragebogensteuerung_bedingte_anzeige" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['fragebogensteuerung_bedingte_anzeige.t1_0']}</text:title>
+        <text:text container="true" id="t2">
+          #{msgs['fragebogensteuerung_bedingte_anzeige.t2_0']}
+          <com:jumper value="#{msgs['fragebogensteuerung_bedingte_anzeige.t2_1']}" targetPage="/textsorten"/>
+          #{msgs['fragebogensteuerung_bedingte_anzeige.t2_2']}
+          <com:jumper value="#{msgs['fragebogensteuerung_bedingte_anzeige.t2_3']}" targetPage="/textsorten_item"/>
+          #{msgs['fragebogensteuerung_bedingte_anzeige.t2_4']}
+          <com:jumper value="#{msgs['fragebogensteuerung_bedingte_anzeige.t2_5']}" targetPage="/textsorten_antwortkategorie"/>
+          #{msgs['fragebogensteuerung_bedingte_anzeige.t2_6']}
+        </text:text>
+      </f:facet>
+    </section>
+  </ui:define>
+</ui:composition>

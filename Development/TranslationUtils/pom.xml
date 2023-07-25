@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.his.zofar</groupId>
+	<artifactId>TranslationUtils</artifactId>
+	<version>1.0.0</version>
+	<properties>
+		<opencsv.version>2.3</opencsv.version>
+	</properties>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>zofar-maven-deployment</id>
+			<name>Internal Releases</name>
+            <url>http://URL.TO.NEXUS/repository/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<dependencies>
+		<dependency>
+			<groupId>net.sf.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>${opencsv.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+					<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	
+	</build>
+</project>

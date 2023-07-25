@@ -1,0 +1,74 @@
+<!-- Split -->
+
+	<zofar:page uid="[[modul]][[loop]][[split]]01">
+        <zofar:header>
+            <zofar:title uid="t1">[[modul]]</zofar:title>
+        </zofar:header>
+        <zofar:body uid="b">
+            <zofar:questionSingleChoice uid="sc">
+                <zofar:header>
+                    <zofar:question uid="q1" block="true">
+                        Wann haben Sie dieses Studienfach erstmals gewechselt?
+                    </zofar:question>
+                </zofar:header>
+                <zofar:responseDomain variable="[[modul]][[loop]][[split]]01" uid="rd1" type="dropdown">
+                    <zofar:answerOption uid="ao0" value="999999" label="Monat"/>
+                    <zofar:answerOption uid="ao1" value="1" label="Januar"/>
+                    <zofar:answerOption uid="ao2" value="2" label="Februar"/>
+                    <zofar:answerOption uid="ao3" value="3" label="März"/>
+                    <zofar:answerOption uid="ao4" value="4" label="April"/>
+                    <zofar:answerOption uid="ao5" value="5" label="Mai"/>
+                    <zofar:answerOption uid="ao6" value="6" label="Juni"/>
+                    <zofar:answerOption uid="ao7" value="7" label="Juli"/>
+                    <zofar:answerOption uid="ao8" value="8" label="August"/>
+                    <zofar:answerOption uid="ao9" value="9" label="September"/>
+                    <zofar:answerOption uid="ao10" value="10" label="Oktober"/>
+                    <zofar:answerOption uid="ao11" value="11" label="November"/>
+                    <zofar:answerOption uid="ao12" value="12" label="Dezember"/>
+                </zofar:responseDomain>
+            </zofar:questionSingleChoice>	
+            
+                        
+        </zofar:body>
+
+        <zofar:transitions>
+            <zofar:transition target="[[modul]][[loop]][[split]]02" />
+        </zofar:transitions>		
+    </zofar:page>
+
+    
+    <zofar:page uid="[[modul]][[loop]][[split]]02">
+        <zofar:header>
+            <zofar:title uid="t1">[[modul]]</zofar:title>
+        </zofar:header>
+        <zofar:body uid="b">
+            <zofar:questionSingleChoice uid="sc">
+                <zofar:header>
+                    <zofar:question uid="q1" block="true">
+                        Wann haben Sie dieses Studienfach erstmals gewechselt?
+                    </zofar:question>
+                </zofar:header>
+                <zofar:responseDomain variable="[[modul]][[loop]][[split]]02" uid="rd1" type="dropdown">
+                    <zofar:answerOption uid="ao0" value="999999" label="Monat"/>
+                    <zofar:answerOption uid="ao1" value="1" label="Januar"/>
+                    <zofar:answerOption uid="ao2" value="2" label="Februar"/>
+                    <zofar:answerOption uid="ao3" value="3" label="März"/>
+                    <zofar:answerOption uid="ao4" value="4" label="April"/>
+                    <zofar:answerOption uid="ao5" value="5" label="Mai"/>
+                    <zofar:answerOption uid="ao6" value="6" label="Juni"/>
+                    <zofar:answerOption uid="ao7" value="7" label="Juli"/>
+                    <zofar:answerOption uid="ao8" value="8" label="August"/>
+                    <zofar:answerOption uid="ao9" value="9" label="September"/>
+                    <zofar:answerOption uid="ao10" value="10" label="Oktober"/>
+                    <zofar:answerOption uid="ao11" value="11" label="November"/>
+                    <zofar:answerOption uid="ao12" value="12" label="Dezember"/>
+                </zofar:responseDomain>
+            </zofar:questionSingleChoice>	
+            
+                        
+        </zofar:body>
+
+        <zofar:transitions>
+            <zofar:transition target="[[modul]][[loop]][[split]]end" />
+        </zofar:transitions>		
+    </zofar:page>

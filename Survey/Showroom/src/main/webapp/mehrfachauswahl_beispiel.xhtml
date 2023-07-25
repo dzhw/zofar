@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="28"/>
+  <ui:define name="template-content">
+    <section id="mehrfachauswahl_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['mehrfachauswahl_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['mehrfachauswahl_beispiel.text_0']}</text:text>
+      </f:facet>
+      <ques:multipleChoice id="mc_1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['mehrfachauswahl_beispiel.b.mc_1.q_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['mehrfachauswahl_beispiel.b.mc_1.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <ans:multipleOption value="#{mc1_1.value}" id="mc1_1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_1.rd.mc1_1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc1_2.value}" id="mc1_2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_1.rd.mc1_2.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc1_3.value}" id="mc1_3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_1.rd.mc1_3.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <ques:multipleChoice id="mc_2">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['mehrfachauswahl_beispiel.b.mc_2.q_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['mehrfachauswahl_beispiel.b.mc_2.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <ans:multipleOption value="#{mc2_1.value}" id="mc2_1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_2.rd.mc2_1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc2_2.value}" id="mc2_2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_2.rd.mc2_2.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc2_3.value}" id="mc2_3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_2.rd.mc2_3.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc2_4.value}" id="mc2_4" missing="false" exclusive="true">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_2.rd.mc2_4.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <ques:multipleChoice id="mc_3">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['mehrfachauswahl_beispiel.b.mc_3.q_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['mehrfachauswahl_beispiel.b.mc_3.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <ans:multipleOption value="#{mc3_1.value}" id="mc3_1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_3.rd.mc3_1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc3_2.value}" id="mc3_2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_3.rd.mc3_2.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc3_3.value}" id="mc3_3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_3.rd.mc3_3.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc3_4.value}" id="mc3_4" missing="false" exclusive="true">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_3.rd.mc3_4.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <ques:multipleChoice id="mc_4">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['mehrfachauswahl_beispiel.b.mc_4.q_0']}</text:question>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <ans:multipleOption value="#{mc4_1.value}" id="mc4_1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_4.rd.mc4_1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc4_2.value}" id="mc4_2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_4.rd.mc4_2.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+          <ans:multipleOption value="#{mc4_3.value}" id="mc4_3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['mehrfachauswahl_beispiel.b.mc_4.rd.mc4_3.label']}</text:responseOption>
+            </f:facet>
+            <ans:attachedOpenQuestion id="ato2" var="#{ato2}" maxlength="25"/>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+    </section>
+  </ui:define>
+</ui:composition>

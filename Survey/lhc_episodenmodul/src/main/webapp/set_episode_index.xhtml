@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="3"/>
+  <ui:define name="template-content">
+    <section id="set_episode_index" page="true">
+      <f:facet name="header"/>
+      <ques:open id="qo1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['set_episode_index.b.qo1.q_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openNumberOption validationMessage="#{msgs['set_episode_index.b.qo1']}" var="#{episode_index}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:open>
+    </section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:zo="http://zofar.org/ui">
+
+<h:head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Zofar Befragung</title>
+    <h:outputStylesheet library="css" name="general.css" />
+    <h:outputScript library="js" name="zofar.js" />
+</h:head>
+<h:body>
+    #{navigatorBean.registerViewID(view.viewId.substring(1, view.viewId.length()-6))}
+    <f:view locale="#{sessionController.currentLocale}">
+        <center>
+            <h:panelGroup layout="block" class="zofar-page">
+                <div class="zo-template-header">
+                    <ui:insert name="template-header">
+                        Der Zofar Meilenstein 003a
+                        <div style="float: right; width: 25%">
+                            <zo:progressbar value="#{progress}" />
+                        </div>
+                    </ui:insert>
+                </div>
+                <h:form>
+                    <h:messages />
+                    <hr class="zo-spacer" />
+                    <h:panelGroup layout="block" class="zo-template-content">
+                        <ui:insert name="template-content" />
+                    </h:panelGroup>
+                    <hr class="zo-spacer" />
+                    <h:panelGroup layout="block" class="zo-buttons">
+                        <ui:insert name="template-buttons">
+                            <zo:panel isLastPage="#{lastPage}" />
+                        </ui:insert>
+                    </h:panelGroup>
+                </h:form>
+                <div class="zo-template-footer">
+                    <ui:insert name="template-footer" />
+                </div>
+            </h:panelGroup>
+        </center>
+    </f:view>
+</h:body>
+</html>

@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zofar:questionnaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:zofar="http://www####/zofar/xml/questionnaire" language="de">
+    <zofar:name>Zofar Befragungsdemonstrator</zofar:name>
+    <zofar:description>Ein Zofar Fragebogen mit allen möglichen Fragebogenelementen.</zofar:description>
+    <zofar:variables>
+        <zofar:variable name="v1" type="string" />
+        <zofar:variable name="v2" type="string" />
+        <zofar:variable name="v3" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v4" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v5" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v6" type="boolean" />
+        <zofar:variable name="v7" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v18" type="string" />
+        <zofar:variable name="v8" type="boolean" />
+        <zofar:variable name="v9" type="boolean" />
+        <zofar:variable name="v10" type="boolean" />
+        <zofar:variable name="v11" type="boolean" />
+        <zofar:variable name="v12" type="boolean" />
+        <zofar:variable name="v13" type="boolean" />
+        <zofar:variable name="v14" type="boolean" />
+        <zofar:variable name="v15" type="boolean" />
+        <zofar:variable name="v16" type="string" />
+        <zofar:variable name="v17" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v19" type="string" />
+        <zofar:variable name="v20" type="string" />
+        <zofar:variable name="v21" type="string" />
+        <zofar:variable name="v22" type="string" />
+        <zofar:variable name="v23" type="string" />
+        <zofar:variable name="v24" type="string" />
+        <zofar:variable name="v25" type="string" />
+        <zofar:variable name="v26" type="string" />
+        <zofar:variable name="v27" type="string" />
+        <zofar:variable name="v28" type="boolean" />
+        <zofar:variable name="v29" type="boolean" />
+        <zofar:variable name="v30" type="boolean" />
+        <zofar:variable name="v31" type="boolean" />
+        <zofar:variable name="v32" type="boolean" />
+        <zofar:variable name="v33" type="boolean" />
+        <zofar:variable name="v34" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v35" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v36" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v37" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v38" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v39" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v40" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v41" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v42" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v43" type="singleChoiceAnswerOption" />
+        <zofar:variable name="v44" type="string" />
+    </zofar:variables>
+    <zofar:page uid="index">
+        <zofar:header>
+            <zofar:title uid="title">Im Folgenden sehen Sie alle möglichen Fragebogenelemente eines Zofar Fragebogens.</zofar:title>
+            <zofar:text uid="paragraph"> Bitte beachten Sie, dass das Layout vom Benutzer über eine Layoutdatei verändert werden kann und die das aktuelle Layout nur eine vorläufige Version ist.</zofar:text>
+        </zofar:header>
+        <zofar:transitions>
+            <zofar:transition target="page1" />
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="page1">
+        <zofar:header>
+            <zofar:title uid="paragraph">Sie sehen nun alle offene Fragen.</zofar:title>
+        </zofar:header>
+        <zofar:body uid="body" sortCondition="true">
+            <zofar:questionOpen uid="openquestion1"
+                variable="v1" smallOption="false">
+                <zofar:header>
+                    <zofar:question uid="questiontext">Das ist eine offene Frage mit einem großen Textfeld</zofar:question>
+                </zofar:header>
+            </zofar:questionOpen>
+            <zofar:questionOpen uid="openquestion2"
+                variable="v2" smallOption="true" maxLength="10" size="200">
+                <zofar:header>
+                    <zofar:question uid="questiontext">Das ist eine offene Frage die mit einem kleinen Textfeld erhoben wird</zofar:question>
+                </zofar:header>
+            </zofar:questionOpen>
+            <zofar:questionOpen uid="o3"
+                variable="v44" smallOption="true">
+                <zofar:header>
+                    <zofar:question uid="questiontext">Das ist eine offene Frage die mit einem kleinen Textfeld erhoben wird</zofar:question>
+                </zofar:header>
+                <zofar:prefix>
+                    <zofar:label uid="pr1">Prefix</zofar:label>
+                </zofar:prefix>
+                <zofar:postfix>
+                    <zofar:label uid="po1">Postfix</zofar:label>
+                </zofar:postfix>
+            </zofar:questionOpen>
+        </zofar:body>
+        <zofar:triggers>
+            <zofar:session timeout="1800" />
+        </zofar:triggers>
+        <zofar:transitions>
+            <zofar:transition target="page2" />
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="page2">
+        <zofar:header>
+            <zofar:title uid="paragraph">Sie sehen nun alle Einfachnennungen.</zofar:title>
+        </zofar:header>
+        <zofar:body uid="body" sortCondition="true">
+            <zofar:questionSingleChoice uid="sc1">
+                <zofar:header>
+                    <zofar:question uid="questiontext1">Das ist die Standardeinfachnennung vertikal, mit Radiobuttons und zufälliger Sortierung.</zofar:question>
+                </zofar:header>
+                <zofar:responseDomain variable="v3" type="radio"
+                    direction="vertical" uid="responsedomain" sortCondition="true">
+                    <zofar:answerOption label="ja"
+                        uid="answer1" value="0" />
+                    <zofar:answerOption label="nein"
+                        uid="answer2" value="1" />
+                    <zofar:unit uid="unit">
+                        <zofar:header>
+                            <zofar:title uid="title">Unit 1</zofar:title>
+                        </zofar:header>
+                        <zofar:answerOption label="vielleicht"
+                            uid="answer3" value="-97" />
+                    </zofar:unit>
+                </zofar:responseDomain>
+            </zofar:questionSingleChoice>
+            <zofar:section uid="sec1">
+                <zofar:header>
+                    <zofar:title uid="title">Section 1</zofar:title>
+                </zofar:header>
+                <zofar:body uid="body" sortCondition="true">
+                    <zofar:questionSingleChoice uid="sc2">
+                        <zofar:header>
+                            <zofar:question uid="questiontext1">Das ist die Standardeinfachnennung horizontal und mit Radiobuttons.</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v4" type="radio"
+                            direction="horizontal" uid="responsedomain">
+                            <zofar:answerOption label="ja"
+                                uid="answer1" value="0" />
+                            <zofar:answerOption label="nein"
+                                uid="answer2" value="1" />
+                            <zofar:answerOption label="vielleicht"
+                                uid="answer3" value="-97" />
+                        </zofar:responseDomain>
+                    </zofar:questionSingleChoice>
+                    <zofar:questionSingleChoice uid="sc6">
+                        <zofar:header>
+                            <zofar:question uid="questiontext1">Das ist die Standardeinfachnennung vertikal, mit Radiobuttons und einer Unit.</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v4" type="radio"
+                            direction="vertical" uid="responsedomain">
+                            <zofar:answerOption label="ja"
+                                uid="answer1" value="0" />
+                            <zofar:answerOption label="nein"
+                                uid="answer2" value="1" />
+                            <zofar:answerOption label="vielleicht"
+                                uid="answer3" value="-97" />
+                        </zofar:responseDomain>
+                    </zofar:questionSingleChoice>
+                    <zofar:questionSingleChoice uid="sc3">
+                        <zofar:header>
+                            <zofar:question uid="questiontext1">Das ist die Einfachnennung in einem DropDown dargestellt.</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v5" type="dropdown"
+                            uid="responsedomain" sortCondition="true">
+                            <zofar:answerOption label="label 1"
+                                uid="answer1" value="1" />
+                            <zofar:answerOption label="label 2"
+                                uid="answer2" value="2" />
+                            <zofar:answerOption label="label 3"
+                                uid="answer3" value="3" />
+                            <zofar:answerOption label="label 4"
+                                uid="answer4" value="4" />
+                            <zofar:answerOption label="label 5"
+                                uid="answer5" value="5" />
+                            <zofar:answerOption label="label 6"
+                                uid="answer6" value="6" />
+                            <zofar:answerOption label="label 7"
+                                uid="answer7" value="7" />
+                            <zofar:answerOption label="label 8"
+                                uid="answer8" value="8" />
+                            <zofar:answerOption label="label 9"
+                                uid="answer9" value="9" />
+                            <zofar:answerOption label="label 10"
+                                uid="answer10" value="10" />
+                            <zofar:answerOption label="label 11"
+                                uid="answer11" value="11" />
+                            <zofar:answerOption label="label 12"
+                                uid="answer12" value="12" />
+                            <zofar:answerOption label="label 13"
+                                uid="answer13" value="13" />
+                            <zofar:answerOption label="label 14"
+                                uid="answer14" value="14" />
+                            <zofar:answerOption label="label 15"
+                                uid="answer15" value="15" />
+                            <zofar:answerOption label="label 16"
+                                uid="answer16" value="16" />
+                            <zofar:unit uid="unit" sortCondition="true">
+                                <zofar:answerOption label="label 17"
+                                    uid="answer17" value="17" />
+                                <zofar:answerOption label="label 18"
+                                    uid="answer18" value="18" />
+                                <zofar:answerOption label="label 19"
+                                    uid="answer19" value="19" />
+                                <zofar:answerOption label="label 20"
+                                    uid="answer20" value="20" />
+                            </zofar:unit>
+                        </zofar:responseDomain>
+                    </zofar:questionSingleChoice>
+                    <zofar:questionSingleChoice uid="sc4">
+                        <zofar:header>
+                            <zofar:question uid="questiontext1">Das ist eine Ja / Nein Einfachnennung.</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v6" type="boolean"
+                            uid="responsedomain">
+                            <zofar:answerOption label="ja"
+                                uid="answer1" value="0" />
+                            <zofar:answerOption label="nein"
+                                uid="answer2" value="1" />
+                        </zofar:responseDomain>
+                    </zofar:questionSingleChoice>
+                    <zofar:questionSingleChoice uid="sc5">
+                        <zofar:header>
+                            <zofar:question uid="questiontext1">Das ist eine Einfachnennung mit einem offenen Textfeld an einer Antwortoption.</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v7" type="radio"
+                            uid="responsedomain">
+                            <zofar:answerOption label="ja"
+                                uid="answer1" value="0" />
+                            <zofar:answerOption label="nein"
+                                uid="answer2" value="1" />
+                            <zofar:answerOption uid="answer3"
+                                label="vielleicht" value="2">
+                                <zofar:questionOpen uid="openoption"
+                                    variable="v18">
+                                    <zofar:prefix>
+                                        <zofar:label uid="questiontext">vielleicht auch nicht</zofar:label>
+                                    </zofar:prefix>
+                                </zofar:questionOpen>
+                            </zofar:answerOption>
+                        </zofar:responseDomain>
+                    </zofar:questionSingleChoice>
+                </zofar:body>
+            </zofar:section>
+        </zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="page3" />
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="page3">
+        <zofar:header>
+            <zofar:title uid="paragraph">Sie sehen nun alle Mehrfachnennungen.</zofar:title>
+        </zofar:header>
+        <zofar:body uid="body" sortCondition="true">
+            <zofar:multipleChoice uid="mc1">
+                <zofar:header>
+                    <zofar:question uid="questiontext">Eine normale Mehrfachnennung</zofar:question>
+                </zofar:header>
+                <zofar:responseDomain uid="responsedomain" sortCondition="true">
+                    <zofar:answerOption variable="v8" uid="item1">
+                        <zofar:label uid="l">item1</zofar:label>
+                    </zofar:answerOption>
+                    <zofar:answerOption variable="v9" uid="item2">
+                        <zofar:label uid="l">item2</zofar:label>
+                    </zofar:answerOption>
+                    <zofar:unit uid="unit" sortCondition="true">
+                        <zofar:answerOption variable="v10" uid="item3">
+                            <zofar:label uid="l">item3</zofar:label>
+                        </zofar:answerOption>
+                        <zofar:answerOption variable="v11" uid="item4">
+                            <zofar:label uid="l">item4</zofar:label>
+                        </zofar:answerOption>
+                    </zofar:unit>
+                </zofar:responseDomain>
+            </zofar:multipleChoice>
+            <zofar:multipleChoice uid="mc2">
+                <zofar:header>
+                    <zofar:question uid="questiontext">Eine normale Mehrfachnennung mit einem offenen Textfeld in einem der Antwortoptionen</zofar:question>
+                </zofar:header>
+                <zofar:responseDomain uid="responsedomain">
+                    <zofar:answerOption variable="v12" uid="item1">
+                        <zofar:label uid="l">item1</zofar:label>
+                    </zofar:answerOption>
+                    <zofar:answerOption variable="v13" uid="item2">
+                        <zofar:label uid="l">item2</zofar:label>
+                    </zofar:answerOption>
+                    <zofar:answerOption variable="v14" uid="item3">
+                        <zofar:label uid="l">item3</zofar:label>
+                    </zofar:answerOption>
+                    <zofar:answerOption variable="v15" uid="item4">
+                        <zofar:questionOpen uid="open"
+                            variable="v16">
+                            <zofar:prefix>
+                                <zofar:label uid="questiontext">etwas anderes</zofar:label>
+                            </zofar:prefix>
+                        </zofar:questionOpen>
+                    </zofar:answerOption>
+                </zofar:responseDomain>
+            </zofar:multipleChoice>
+        </zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="page4" />
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="page4">
+        <zofar:header>
+            <zofar:title uid="title">Offene Matrix, einspaltig und mehrspaltig</zofar:title>
+        </zofar:header>
+        <zofar:body uid="body" sortCondition="true">
+        <zofar:matrixQuestionOpen uid="one">
+            <zofar:header>
+                <zofar:question uid="matrix">Einspaltige offene Matrix</zofar:question>
+            </zofar:header>
+            <zofar:responseDomain noResponseOptions="1" uid="rd">
+                <zofar:header>
+                    <zofar:title uid="title">Spalte 1</zofar:title>
+                </zofar:header>
+                <zofar:item uid="item1">
+                    <zofar:header>
+                        <zofar:question uid="text">Item 1</zofar:question>
+                    </zofar:header>
+                    <zofar:question variable="v19" uid="1">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 1</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                </zofar:item>
+                <zofar:item uid="item2">
+                    <zofar:header>
+                        <zofar:question uid="text">Item 2</zofar:question>
+                    </zofar:header>
+                    <zofar:question variable="v20" uid="2">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 2</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                </zofar:item>
+                <zofar:item uid="item3">
+                    <zofar:header>
+                        <zofar:question uid="text">Item 3</zofar:question>
+                    </zofar:header>
+                    <zofar:question variable="v21" uid="3">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 3</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                </zofar:item>
+            </zofar:responseDomain>
+        </zofar:matrixQuestionOpen>
+        <zofar:matrixQuestionOpen uid="two">
+            <zofar:header>
+                <zofar:question uid="matrix">Zweispaltige offene Matrix als Beispiel für mehrspaltige Matrizen</zofar:question>
+            </zofar:header>
+            <zofar:responseDomain noResponseOptions="1" uid="rd">
+                <zofar:header>
+                    <zofar:title uid="title1">Spalte 1</zofar:title>
+                    <zofar:title uid="title2">Spalte 2</zofar:title>
+                </zofar:header>
+                <zofar:item uid="item1">
+                    <zofar:header>
+                        <zofar:question uid="text">Item 1</zofar:question>
+                    </zofar:header>
+                    <zofar:question variable="v22" uid="1">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 1</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                    <zofar:question variable="v25" uid="1">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 1</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                </zofar:item>
+                <zofar:item uid="item2">
+                    <zofar:header>
+                        <zofar:question uid="text">Item 2</zofar:question>
+                    </zofar:header>
+                    <zofar:question variable="v23" uid="2">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 2</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                    <zofar:question variable="v26" uid="1">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 1</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                </zofar:item>
+                <zofar:item uid="item3">
+                    <zofar:header>
+                        <zofar:question uid="text">Item 3</zofar:question>
+                    </zofar:header>
+                    <zofar:question variable="v24" uid="3">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 3</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                    <zofar:question variable="v27" uid="1">
+                        <zofar:header>
+                            <zofar:question uid="qt">Item 1</zofar:question>
+                        </zofar:header>
+                    </zofar:question>
+                </zofar:item>
+            </zofar:responseDomain>
+        </zofar:matrixQuestionOpen>
+        </zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="page5"/>
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="page5">
+        <zofar:header>
+            <zofar:text uid="text">Hier nun alle Matrizen mit Mehrfachnennungen</zofar:text>
+        </zofar:header>
+        <zofar:body uid="body" sortCondition="true">
+            <zofar:matrixMultipleChoice uid="m1">
+                <zofar:header>
+                    <zofar:question uid="q">Eine Matrix</zofar:question>
+                </zofar:header>
+                <zofar:responseDomain noResponseOptions="3" uid="rd">
+                    <zofar:scaleHeader>
+                        <zofar:title uid="sh">Header 1</zofar:title>
+                    </zofar:scaleHeader>
+                    <zofar:header>
+                        <zofar:title uid="c1">Spalte 1</zofar:title>
+                        <zofar:title uid="c2">Spalte 2</zofar:title>
+                        <zofar:title uid="c3">Spalte 3</zofar:title>
+                    </zofar:header>
+                    <zofar:item uid="r1">
+                        <zofar:header>
+                            <zofar:question uid="q">Zeile 1</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain uid="rd">
+                            <zofar:answerOption variable="v28" uid="i1" />
+                            <zofar:answerOption variable="v29" uid="i2" />
+                            <zofar:answerOption variable="v30" uid="i3" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                    <zofar:item uid="r2">
+                        <zofar:header>
+                            <zofar:question uid="q">Zeile 2</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain uid="rd">
+                            <zofar:answerOption variable="v31" uid="i1" />
+                            <zofar:answerOption variable="v32" uid="i2" />
+                            <zofar:answerOption variable="v33" uid="i3" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                </zofar:responseDomain>
+            </zofar:matrixMultipleChoice>
+        </zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="page6"/>
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="page6">
+        <zofar:header>
+            <zofar:text uid="text">verdammt viele Matrizen aus Einfachnennungen</zofar:text>
+        </zofar:header>
+        <zofar:body uid="body" sortCondition="true">
+            <zofar:matrixQuestionSingleChoice uid="scm1">
+                <zofar:header>
+                    <zofar:question uid="q">Eine einfache Matrix mit Einfachnennungen</zofar:question>
+                </zofar:header>
+                <zofar:responseDomain noResponseOptions="2" uid="rd">
+                    <zofar:header>
+                        <zofar:title uid="t1">0</zofar:title>
+                        <zofar:title uid="t2">1</zofar:title>
+                    </zofar:header>
+                    <zofar:item uid="i1">
+                        <zofar:header>
+                            <zofar:question uid="q">Item 1</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v34" uid="rd">
+                            <zofar:answerOption uid="o1" label="klein" value="0" />
+                            <zofar:answerOption uid="o2" label="groß" value="1" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                    <zofar:item uid="i2">
+                        <zofar:header>
+                            <zofar:question uid="q">Item 2</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v35" uid="rd">
+                            <zofar:answerOption uid="o1" label="laut" value="0" />
+                            <zofar:answerOption uid="o2" label="leise" value="1" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                    <zofar:item uid="i3">
+                        <zofar:header>
+                            <zofar:question uid="q">Item 3</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v36" uid="rd">
+                            <zofar:answerOption uid="o1" label="viel" value="0" />
+                            <zofar:answerOption uid="o2" label="wenig" value="1" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                </zofar:responseDomain>
+            </zofar:matrixQuestionSingleChoice>
+            <zofar:matrixQuestionSingleChoice uid="scm2">
+                <zofar:header>
+                    <zofar:question uid="q">Eine Matrix mit Differentialen</zofar:question>
+                </zofar:header>
+                <zofar:responseDomain noResponseOptions="2" uid="rd" isDifferential="true">
+                    <zofar:header>
+                        <zofar:title uid="t1">Spalte 1</zofar:title>
+                        <zofar:title uid="t2">Spalte 2</zofar:title>
+                    </zofar:header>
+                    <zofar:item uid="i1">
+                        <zofar:header>
+                            <zofar:question uid="q">Item 1</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v37" uid="rd">
+                            <zofar:answerOption uid="o1" label="" value="0" />
+                            <zofar:answerOption uid="o2" label="" value="1" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                    <zofar:item uid="i2">
+                        <zofar:header>
+                            <zofar:question uid="q">Item 2</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v38" uid="rd">
+                            <zofar:answerOption uid="o1" label="" value="0" />
+                            <zofar:answerOption uid="o2" label="" value="1" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                    <zofar:item uid="i3">
+                        <zofar:header>
+                            <zofar:question uid="q">Item 3</zofar:question>
+                        </zofar:header>
+                        <zofar:responseDomain variable="v39" uid="rd">
+                            <zofar:answerOption uid="o1" label="" value="0" />
+                            <zofar:answerOption uid="o2" label="" value="1" />
+                        </zofar:responseDomain>
+                    </zofar:item>
+                </zofar:responseDomain>
+            </zofar:matrixQuestionSingleChoice>
+        </zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="page7" />
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="page7">
+        <zofar:body uid="body" sortCondition="true">
+            <zofar:matrixDouble uid="double">
+                <zofar:header>
+                    <zofar:question uid="q">Das ist also eine Doppelmatrix</zofar:question>
+                </zofar:header>
+                <zofar:responseDomain uid="rd" noResponseOptions="5">
+                    <zofar:leftScaleHeader>
+                        <zofar:title uid="t1">Vergangenheit</zofar:title>
+                    </zofar:leftScaleHeader>
+                    <zofar:rightScaleHeader>
+                        <zofar:title uid="t2">Zukunft</zofar:title>
+                    </zofar:rightScaleHeader>
+                    <zofar:leftHeader>
+                        <zofar:title uid="l1">1</zofar:title>
+                        <zofar:title uid="l2">2</zofar:title>
+                        <zofar:title uid="l3">3</zofar:title>
+                        <zofar:title uid="l4">4</zofar:title>
+                        <zofar:title uid="l5">5</zofar:title>
+                    </zofar:leftHeader>
+                    <zofar:rightHeader>
+                        <zofar:title uid="r1">1</zofar:title>
+                        <zofar:title uid="r2">2</zofar:title>
+                        <zofar:title uid="r3">3</zofar:title>
+                        <zofar:title uid="r4">4</zofar:title>
+                        <zofar:title uid="r5">5</zofar:title>
+                    </zofar:rightHeader>
+                    <zofar:item uid="i1">
+                        <zofar:question>
+                            <zofar:question uid="i1q">Zeile 1</zofar:question>
+                        </zofar:question>
+                        <zofar:left uid="i1l" variable="v40">
+                            <zofar:answerOption uid="answer1" label="" value="1" />
+                            <zofar:answerOption uid="answer2" label="" value="2" />
+                            <zofar:answerOption uid="answer3" label="" value="3" />
+                            <zofar:answerOption uid="answer4" label="" value="4" />
+                            <zofar:answerOption uid="answer5" label="" value="5" />
+                        </zofar:left>
+                        <zofar:right uid="i1r" variable="v41">
+                            <zofar:answerOption uid="answer1" label="" value="1" />
+                            <zofar:answerOption uid="answer2" label="" value="2" />
+                            <zofar:answerOption uid="answer3" label="" value="3" />
+                            <zofar:answerOption uid="answer4" label="" value="4" />
+                            <zofar:answerOption uid="answer5" label="" value="5" />
+                        </zofar:right>
+                    </zofar:item>
+                    <zofar:item uid="i2">
+                        <zofar:question>
+                            <zofar:question uid="i1q">Zeile 1</zofar:question>
+                        </zofar:question>
+                        <zofar:left uid="i1l" variable="v43">
+                            <zofar:answerOption uid="answer1" label="" value="1" />
+                            <zofar:answerOption uid="answer2" label="" value="2" />
+                            <zofar:answerOption uid="answer3" label="" value="3" />
+                            <zofar:answerOption uid="answer4" label="" value="4" />
+                            <zofar:answerOption uid="answer5" label="" value="5" />
+                        </zofar:left>
+                        <zofar:right uid="i1r" variable="v44">
+                            <zofar:answerOption uid="answer1" label="" value="1" />
+                            <zofar:answerOption uid="answer2" label="" value="2" />
+                            <zofar:answerOption uid="answer3" label="" value="3" />
+                            <zofar:answerOption uid="answer4" label="" value="4" />
+                            <zofar:answerOption uid="answer5" label="" value="5" />
+                        </zofar:right>
+                    </zofar:item>
+                </zofar:responseDomain>
+            </zofar:matrixDouble>
+        </zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="end"/>
+        </zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="end">
+        <zofar:header>
+            <zofar:text uid="paragraph">Sie haben das Ende der Befragung erreicht.</zofar:text>
+        </zofar:header>
+    </zofar:page>
+</zofar:questionnaire>

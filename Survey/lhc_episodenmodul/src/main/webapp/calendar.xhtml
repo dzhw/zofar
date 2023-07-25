@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:dis="http://java.sun.com/jsf/composite/display" xmlns:epis="http://java.sun.com/jsf/composite/episodes" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="0"/>
+  <ui:define name="template-content">
+    <variable var="#{calendarState}" value="'1'" condition="zofar.isMissing(calendarState)" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{calendarState}" value="'4'" direction="forward" condition="zofar.asNumber(calendarState) == 3" onExit="true" navigator="#{navigatorBean}"/>
+    <variable var="#{episode_index}" value="-1" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{episodeData}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',episodes.str2jsonArrNoEmpty(episodes.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200))))"/>
+      <scriptItem value="zofar.setVariableValue(episodeData,zofar.urlencode(defrac))"/>
+    </action>
+    <action command="episodes.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200),episodes.jsonArr2str(defrac))" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',episodes.str2jsonArrNoEmpty(episodes.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200))))"/>
+      <scriptItem value="zofar.assign('defrac',episodes.mergeEpisodes(episodes.str2jsonArrNoEmpty(episodeData.value),defrac,'id'))"/>
+      <scriptItem value="zofar.setVariableValue(episodeData,'')"/>
+    </action>
+    <variable var="#{complete}" value="zofar.minFloatList(episodes.countEpisodesRatioYearwise(episodes.str2jsonArrNoEmpty(episodes.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200))), calendar_range_start_year, calendar_range_start_month, calendar_range_end_year, calendar_range_end_month)) gt 0.5" onExit="true" navigator="#{navigatorBean}"/>
+    <variable var="#{mplUem_full}" value="ratio ge 0.98" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('json_array',episodes.str2jsonArrNoEmpty(episodes.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200))))"/>
+      <scriptItem value="zofar.assign('filterList',zofar.list())"/>
+      <scriptItem value="zofar.assign('filter1',zofar.map())"/>
+      <scriptItem value="filter.put('type','mpl')"/>
+      <scriptItem value="zofar.assign('filter2',zofar.map())"/>
+      <scriptItem value="filter.put('type','uem')"/>
+      <scriptItem value="filterList.add(filter1)"/>
+      <scriptItem value="filterList.add(filter2)"/>
+      <scriptItem value="zofar.assign('filteredArray',episodes.filterArray(json_array, filterList))"/>
+      <scriptItem value="zofar.assign('ratio',episodes.countEpisodesRatio(filteredArray, calendar_range_start_year, calendar_range_start_month, calendar_range_end_year, calendar_range_end_month))"/>
+    </variable>
+    <variable var="#{haupt_episodeCount}" value="countvar" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',episodes.str2jsonArrNoEmpty(episodes.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200))))"/>
+      <scriptItem value="zofar.assign('filter_sco',zofar.map())"/>
+      <scriptItem value="filter_sco.put('type','sco')"/>
+      <scriptItem value="zofar.assign('found_sco',episodes.hasEpisodes(defrac,calendar_range_start_year.value.concat('-01-01T01:00:00.000Z'),calendar_range_end_year.value.concat('-12-31T23:59:00.000Z'),filter_sco).size())"/>
+      <scriptItem value="zofar.assign('filter_stu',zofar.map())"/>
+      <scriptItem value="filter_stu.put('type','stu')"/>
+      <scriptItem value="zofar.assign('found_stu',episodes.hasEpisodes(defrac,calendar_range_start_year.value.concat('-01-01T01:00:00.000Z'),calendar_range_end_year.value.concat('-12-31T23:59:00.000Z'),filter_stu).size())"/>
+      <scriptItem value="zofar.assign('filter_emp',zofar.map())"/>
+      <scriptItem value="filter_emp.put('type','emp')"/>
+      <scriptItem value="zofar.assign('found_emp',episodes.hasEpisodes(defrac,calendar_range_start_year.value.concat('-01-01T01:00:00.000Z'),calendar_range_end_year.value.concat('-12-31T23:59:00.000Z'),filter_emp).size())"/>
+      <scriptItem value="zofar.assign('filter_sem',zofar.map())"/>
+      <scriptItem value="filter_sem.put('type','sem')"/>
+      <scriptItem value="zofar.assign('found_sem',episodes.hasEpisodes(defrac,calendar_range_start_year.value.concat('-01-01T01:00:00.000Z'),calendar_range_end_year.value.concat('-12-31T23:59:00.000Z'),filter_sem).size())"/>
+      <scriptItem value="zofar.assign('filter_int',zofar.map())"/>
+      <scriptItem value="filter_int.put('type','int')"/>
+      <scriptItem value="zofar.assign('found_int',episodes.hasEpisodes(defrac,calendar_range_start_year.value.concat('-01-01T01:00:00.000Z'),calendar_range_end_year.value.concat('-12-31T23:59:00.000Z'),filter_int).size())"/>
+      <scriptItem value="zofar.assign('filter_job',zofar.map())"/>
+      <scriptItem value="filter_job.put('type','job')"/>
+      <scriptItem value="zofar.assign('found_job',episodes.hasEpisodes(defrac,calendar_range_start_year.value.concat('-01-01T01:00:00.000Z'),calendar_range_end_year.value.concat('-12-31T23:59:00.000Z'),filter_job).size())"/>
+      <scriptItem value="zofar.assign('countvar',zofar.asNumber(found_sco) + zofar.asNumber(found_stu) + zofar.asNumber(found_emp) + zofar.asNumber(found_sem) + zofar.asNumber(found_int) + zofar.asNumber(found_job))"/>
+    </variable>
+    <con:section id="calendar" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1" rendered="#{zofar.asNumber(calendarState) le 1}">#{msgs['calendar.t1_0']}</text:text>
+        <text:text container="true" id="t2" rendered="#{zofar.asNumber(calendarState) == 2}">#{msgs['calendar.t2_0']}</text:text>
+        <text:text container="true" id="t3" rendered="#{zofar.asNumber(calendarState) ge 3}">#{msgs['calendar.t3_0']}</text:text>
+        <text:text container="true" id="t4" rendered="#{zofar.asNumber(calendarState) le 1 and jsCheck.value}">#{msgs['calendar.t4_0']}</text:text>
+        <text:text container="true" id="t5" rendered="#{zofar.asNumber(calendarState) == 2 and jsCheck.value}">#{msgs['calendar.t5_0']}</text:text>
+        <text:text container="true" id="t6" rendered="#{zofar.asNumber(calendarState) ge 3 and jsCheck.value}">#{msgs['calendar.t6_0']}</text:text>
+      </f:facet>
+      <con:section id="sec2" isaccordion="true" rendered="#{width.value lt 768  and jsCheck.value}">
+        <f:facet name="header">
+          <text:title container="true" id="title">#{msgs['calendar.b.sec2.title_0']}</text:title>
+        </f:facet>
+        <dis:container id="Bilder1">
+          <dis:text id="txt3">#{msgs['calendar.b.sec2.b.Bilder1.txt3_0']}</dis:text>
+        </dis:container>
+      </con:section>
+      <con:section id="sec1" isaccordion="true" rendered="#{width.value ge 768 and jsCheck.value}">
+        <f:facet name="header">
+          <text:title container="true" id="title">#{msgs['calendar.b.sec1.title_0']}</text:title>
+        </f:facet>
+        <dis:container id="Bilder2">
+          <dis:text id="text">#{msgs['calendar.b.sec1.b.Bilder2.text_0']}</dis:text>
+        </dis:container>
+      </con:section>
+      <epis:episodes id="graphicalCalendar" rendered="#{true}" configuration="&quot;{'link':'episodes123','translation':{'de':{'shortmonth':{'1':'Jan', '2':'Feb', '3':'Mär', '4':'Apr', '5':'Mai', '6':'Jun', '7':'Jul', '8':'Aug', '9':'Sep', '10':'Okt', '11':'Nov', '12':'Dez'}, 'month':{'1':'Januar', '2':'Februar', '3':'März', '4':'April','5':'Mai', '6':'Juni', '7':'Juli', '8':'August', '9':'September',  '10':'Oktober', '11':'November', '12':'Dezember'}}, 'en':{'shortmonth':{'1':'Jan', '2':'Feb', '3':'Mar', '4':'Apr', '5':'May', '6':'Jun', '7':'Jul', '8':'Aug', '9':'Sept', '10':'Oct', '11':'Nov', '12':'Dec'}, 'month':{'1':'January', '2':'February', '3':'March', '4':'April','5':'May', '6':'June', '7':'July', '8':'August', '9':'September', '10':'October', '11':'November', '12':'December'}}}, 'actions':{'update':'episodeUpdateDispatcher','edit':'episodeEdit','delete':'episodeDelete'}, 'type':{'label': {'de':'Art','en':'Type'}, 'values' : [{'label': {'de': 'Bitte auswählen','en': 'please select'},'id': 'SlotDefault','value': 'SlotDefault','color': '#4b4b4b'},{'label': {'de': 'Schule (Abitur/Fachabitur)','en': 'school (general higher education entrance qualification (Abitur), higher education entrance qualification to a university of applied sciences (Fachhochschulreife))'},'id': 'sco','value': 'Slot1','color': '#f69f26'},{'label': {'de': 'Studium','en': 'higher education studies'},'id': 'stu','value': 'Slot2','color': '#0069b2'},{'label': {'de': 'Berufsausbildung, Umschulung, Volontariat','en': 'apprenticeship, re-training, practical training period (“Volontariat”)'},'id': 'voc','value': 'Slot3','color': '#097d95'},{'label': {'de': 'Praktikum','en': 'internship'},'id': 'int','value': 'Slot7','color': '#CCE1F0'},{'label': {'de': 'Fort-, Weiterbildung (längerfristig, insgesamt mind. 70h)','en': 'continuing vocational education and training (CVET) (long-term, in total at least 70h)'},'id': 'fed','value': 'Slot4','color': '#FCD8A7'},{'label': {'de': 'nichtselbständige Erwerbstätigkeit (auch Vorbereitungsdienste wie Referendariat o.Ä.)','en': 'dependent employment (also preparatory service such as “Referendariat”)'},'id': 'emp','value': 'Slot6','color': '#7ab52a'},{'label': {'de': 'Selbständigkeit (auch Honorar- und Werksverträge)','en': 'self-employment (also fee contracts or a contracts for work (Honorar-/Werkvertrag))'},'id': 'sem','value': 'Slot13','color': '#CFC60D'},{'label': {'de': 'Jobben','en': 'jobbing'},'id': 'job','value': 'Slot5','color': '#F9F391'},{'label': {'de': 'Promotion','en': 'doctorate (PhD)'},'id': 'doc','value': 'Slot8','color': '#b5163f'},{'label': {'de': 'Elternzeit/Mutterschutz','en': 'parental/maternity leave'},'id': 'mpl','value': 'Slot9','color': '#D16021'},{'label': {'de': 'Hausmann/-frau','en': 'housemaker'},'id': 'fam','value': 'Slot10','color': '#79a0c0'},{'label': {'de': 'Arbeitslosigkeit','en': 'unemployment'},'id': 'uem','value': 'Slot11','color': '#DCE9C4'},{'label': {'de': 'Sonstiges (z.B. Urlaub/Reisen, Krankheit, Studienvorbereitung, Freiwilligendienst)','en': 'other (e.g. vacation/travels, illness, study preparation, voluntary service)'},'id': 'oth','value': 'Slot12','color': '#053E49'}], 'description': {'SlotDefault':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'sco':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'stu':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'voc':{'de':'Nicht gemeint sind Weiterbildungen (z.B. Facharzt/-ärztin) oder Aufstiegsfortbildungen. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'This does not include further training (e.g. medical specialist) or advanced further training. Please assign a name that you can understand for orientation.'},'int':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'fed':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'emp':{'de':'Legen Sie für jede*n Arbeitgeber*in einen eigenen Zeitraum an. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please create a separate period for each employer. Please assign a name that you can understand for orientation.'},'sem':{'de':'Legen Sie für jede Selbständigkeit einen eigenen Zeitraum an. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please create a separate period for each self-employment. Please assign a name that you can understand for orientation.'},'job':{'de':'Legen Sie für jede*n Arbeitgeber*in einen eigenen Zeitraum an. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please create a separate period for each employer. Please assign a name that you can understand for orientation.'},'doc':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'mpl':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'fam':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'uem':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'oth':{'de':'Geben Sie bitte für die folgenden Tätigkeiten getrennte Zeiträume an: Freiwilligendienst, AuPair, Work &amp; Travel, längere Krankheit, Urlaub, Sonstiges. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please indicate separate periods for the following activities: Volunteer service, AuPair, Work &amp; Travel, longer illness, vacation, other. Please assign a name that you can understand for orientation.'}}}, 'name':{'label':{'de':'Name','en':'Name'},'values':'Name'}}&quot;" maxYear="calendar_range_end_year.value" minYear="calendar_range_start_year.value" minMonth="calendar_range_start_month.value" maxMonth="calendar_range_end_month.value" var="#{episodeData}" lang="#{sessionController.currentLocale}"/>
+      <epis:episodesTable id="tableCalendar" rendered="#{true}" configuration="&quot;{'link':'episodes123','translation':{'de':{'shortmonth':{'1':'Jan', '2':'Feb', '3':'Mär', '4':'Apr', '5':'Mai', '6':'Jun', '7':'Jul', '8':'Aug', '9':'Sep', '10':'Okt', '11':'Nov', '12':'Dez'}, 'month':{'1':'Januar', '2':'Februar', '3':'März', '4':'April','5':'Mai', '6':'Juni', '7':'Juli', '8':'August', '9':'September',  '10':'Oktober', '11':'November', '12':'Dezember'}}, 'en':{'shortmonth':{'1':'Jan', '2':'Feb', '3':'Mar', '4':'Apr', '5':'May', '6':'Jun', '7':'Jul', '8':'Aug', '9':'Sept', '10':'Oct', '11':'Nov', '12':'Dec'}, 'month':{'1':'January', '2':'February', '3':'March', '4':'April','5':'May', '6':'June', '7':'July', '8':'August', '9':'September', '10':'October', '11':'November', '12':'December'}}}, 'actions':{'update':'episodeUpdateDispatcher','edit':'episodeEdit','delete':'episodeDelete'}, 'details':{'SlotDefault':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}}],'sco':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'sco008','label':{'de':'Schulart:','en':'type of school:'}},{'property':'sco013','label':{'de':'','en':''}},{'property':'sco014','label':{'de':'Ort:','en':'city:'}},{'property':'sco015','label':{'de':'PLZ:','en':'postal code:'}},{'property':'sco016','label':{'de':'Land:','en':'country:'}},{'property':'sco017','label':{'de':'Ort:','en':'city:'}}],'stu':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'stu008','label':{'de':'Studienabschluss:','en':'degree:'}},{'property':'stu013','label':{'de':'Studiengang:','en':'degree programme:'}},{'property':'stu014','label':{'de':'Hauptfach 1:','en':'1st major subject:'}},{'property':'stu015','label':{'de':'Hauptfach 2:','en':'2nd major subject:'}},{'property':'stu020','label':{'de':'Hochschule:','en':'higher education institution:'}},{'property':'stu021','label':{'de':'','en':''}},{'property':'stu022','label':{'de':'Ort:','en':'city:'}},{'property':'stu024','label':{'de':'Land:','en':'country:'}},{'property':'stu025','label':{'de':'Ort:','en':'city:'}}],'voc':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'voc008','label':{'de':'Art der Ausbildung/Umschulung:','en':'type of apprenticeship/re-training:'}},{'property':'voc009','label':{'de':'Ausbildungsberuf:','en':'vocational profession:'}},{'property':'voc013','label':{'de':'','en':''}},{'property':'voc014','label':{'de':'Ort:','en':'city:'}},{'property':'voc015','label':{'de':'PLZ:','en':'postal code:'}},{'property':'voc016','label':{'de':'Land:','en':'country:'}},{'property':'voc017','label':{'de':'Ort:','en':'city:'}}],'int':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'int008','label':{'de':'Art des Praktikums:','en':'type of internship:'}},{'property':'int009','label':{'de':'','en':''}},{'property':'int010','label':{'de':'Ort:','en':'city:'}},{'property':'int011','label':{'de':'PLZ:','en':'postal code:'}},{'property':'int012','label':{'de':'Land:','en':'country:'}},{'property':'int013','label':{'de':'Ort:','en':'city:'}}],'fed':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'fed008','label':{'de':'Art der Fort-/Weiterbildung:','en':'type of continuing vocational education and training (CVET):'}}],'emp':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'emp009','label':{'de':'Beruf:','en':'occupation:'}},{'property':'emp014','label':{'de':'Berufliche Stellung:','en':'professional position:'}},{'property':'emp015','label':{'de':'im Detail:','en':'in detail:'}},{'property':'emp019','label':{'de':'','en':''}},{'property':'emp020','label':{'de':'Ort:','en':'city:'}},{'property':'emp021','label':{'de':'PLZ:','en':'postal code:'}},{'property':'emp022','label':{'de':'Land:','en':'country:'}},{'property':'emp023','label':{'de':'Ort:','en':'city:'}},{'property':'emp027','label':{'de':'Vertragsart:','en':'type of contract:'}},{'property':'emp031','label':{'de':'Arbeitsverhältnis:','en':'type of employment:'}},{'property':'emp036','label':{'de':'Arbeitsumfang:','en':'scope of work:'}}],'sem':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'sem016','label':{'de':'Beruf:','en':'occupation:'}},{'property':'sem018','label':{'de':'','en':''}},{'property':'sem019','label':{'de':'Ort:','en':'city:'}},{'property':'sem020','label':{'de':'PLZ:','en':'postal code:'}},{'property':'sem021','label':{'de':'Land:','en':'country:'}},{'property':'sem022','label':{'de':'Ort:','en':'city:'}}],'job':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}}],'doc':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'doc011','label':{'de':'Promotionsfach:','en':'subject of the doctorate:'}},{'property':'doc016','label':{'de':'Hochschule:','en':'higher education institution:'}},{'property':'doc017','label':{'de':'','en':''}},{'property':'doc018','label':{'de':'Ort:','en':'city:'}},{'property':'doc020','label':{'de':'Land:','en':'country:'}},{'property':'doc021','label':{'de':'Ort:','en':'city:'}}],'mpl':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}}],'fam':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}}],'uem':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}}]},'oth':[{'property':'name','label': {'de': 'Name', 'en': 'Name'}},{'property':'oth008','label':{'de':'Art der sonstigen Tätigkeit:','en':'type of other activity:'}},{'property':'oth010','label':{'de':'','en':''}},{'property':'oth011','label':{'de':'Ort:','en':'city:'}},{'property':'oth012','label':{'de':'PLZ:','en':'postal code:'}},{'property':'oth013','label':{'de':'Land:','en':'country:'}},{'property':'oth014','label':{'de':'Ort:','en':'city:'}}],'type':{'label': {'de':'Art','en':'Type'}, 'values' : [{'label': {'de': 'Bitte auswählen','en': 'please select'},'id': 'SlotDefault','value': 'SlotDefault','color': '#4b4b4b'},{'label': {'de': 'Schule (Abitur/Fachabitur)','en': 'school (general higher education entrance qualification (Abitur), higher education entrance qualification to a university of applied sciences (Fachhochschulreife))'},'id': 'sco','value': 'Slot1','color': '#f69f26'},{'label': {'de': 'Studium','en': 'higher education studies'},'id': 'stu','value': 'Slot2','color': '#0069b2'},{'label': {'de': 'Berufsausbildung, Umschulung, Volontariat','en': 'apprenticeship, re-training, practical training period (“Volontariat”)'},'id': 'voc','value': 'Slot3','color': '#097d95'},{'label': {'de': 'Praktikum','en': 'internship'},'id': 'int','value': 'Slot7','color': '#CCE1F0'},{'label': {'de': 'Fort-, Weiterbildung (längerfristig, insgesamt mind. 70h)','en': 'continuing vocational education and training (CVET) (long-term, in total at least 70h)'},'id': 'fed','value': 'Slot4','color': '#FCD8A7'},{'label': {'de': 'nichtselbständige Erwerbstätigkeit (auch Vorbereitungsdienste wie Referendariat o.Ä.)','en': 'dependent employment (also preparatory service such as “Referendariat”)'},'id': 'emp','value': 'Slot6','color': '#7ab52a'},{'label': {'de': 'Selbständigkeit (auch Honorar- und Werksverträge)','en': 'self-employment (also fee contracts or a contracts for work (Honorar-/Werkvertrag))'},'id': 'sem','value': 'Slot13','color': '#CFC60D'},{'label': {'de': 'Jobben','en': 'jobbing'},'id': 'job','value': 'Slot5','color': '#F9F391'},{'label': {'de': 'Promotion','en': 'doctorate (PhD)'},'id': 'doc','value': 'Slot8','color': '#b5163f'},{'label': {'de': 'Elternzeit/Mutterschutz','en': 'parental/maternity leave'},'id': 'mpl','value': 'Slot9','color': '#D16021'},{'label': {'de': 'Hausmann/-frau','en': 'housemaker'},'id': 'fam','value': 'Slot10','color': '#79a0c0'},{'label': {'de': 'Arbeitslosigkeit','en': 'unemployment'},'id': 'uem','value': 'Slot11','color': '#DCE9C4'},{'label': {'de': 'Sonstiges (z.B. Urlaub/Reisen, Krankheit, Studienvorbereitung, Freiwilligendienst)','en': 'other (e.g. vacation/travels, illness, study preparation, voluntary service)'},'id': 'oth','value': 'Slot12','color': '#053E49'}], 'description': {'SlotDefault':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'sco':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'stu':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'voc':{'de':'Nicht gemeint sind Weiterbildungen (z.B. Facharzt/-ärztin) oder Aufstiegsfortbildungen. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'This does not include further training (e.g. medical specialist) or advanced further training. Please assign a name that you can understand for orientation.'},'int':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'fed':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'emp':{'de':'Legen Sie für jede*n Arbeitgeber*in einen eigenen Zeitraum an. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please create a separate period for each employer. Please assign a name that you can understand for orientation.'},'sem':{'de':'Legen Sie für jede Selbständigkeit einen eigenen Zeitraum an. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please create a separate period for each self-employment. Please assign a name that you can understand for orientation.'},'job':{'de':'Legen Sie für jede*n Arbeitgeber*in einen eigenen Zeitraum an. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please create a separate period for each employer. Please assign a name that you can understand for orientation.'},'doc':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'mpl':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'fam':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'uem':{'de':'Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please assign a name that you can understand for orientation.'},'oth':{'de':'Geben Sie bitte für die folgenden Tätigkeiten getrennte Zeiträume an: Freiwilligendienst, AuPair, Work &amp; Travel, längere Krankheit, Urlaub, Sonstiges. Bitte vergeben Sie einen für Sie verständlichen Namen zur Orientierung.','en': 'Please indicate separate periods for the following activities: Volunteer service, AuPair, Work &amp; Travel, longer illness, vacation, other. Please assign a name that you can understand for orientation.'}}}, 'name':{'label':{'de':'Name','en':'Name'},'values':'Name'}}&quot;" maxYear="calendar_range_end_year.value" minYear="calendar_range_start_year.value" maxMonth="calendar_range_end_month.value" minMonth="calendar_range_start_month.value" var="#{episodeData}" lang="#{sessionController.currentLocale}"/>
+      <mat:singleChoiceMatrix id="msc" rendered="#{false}">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['calendar.b.msc.q1_0']}</text:question>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t1"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="qi1">#{msgs['calendar.b.msc.rd.i1.qi1_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd1" value="#{startmonth.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="4">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="5">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="6">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="7">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" itemValue="8">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" itemValue="9">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" itemValue="10">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" itemValue="11">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" itemValue="12">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i1.rd1.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="qi2"/>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd2" value="#{startyear.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" rendered="#{zofar.asNumber(calendar_range_start_year) le 1971 and zofar.asNumber(calendar_range_end_year) ge 1971}" itemValue="1971">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" rendered="#{zofar.asNumber(calendar_range_start_year) le 1972 and zofar.asNumber(calendar_range_end_year) ge 1972}" itemValue="1972">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" rendered="#{zofar.asNumber(calendar_range_start_year) le 1973 and zofar.asNumber(calendar_range_end_year) ge 1973}" itemValue="1973">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" rendered="#{zofar.asNumber(calendar_range_start_year) le 1974 and zofar.asNumber(calendar_range_end_year) ge 1974}" itemValue="1974">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" rendered="#{zofar.asNumber(calendar_range_start_year) le 1975 and zofar.asNumber(calendar_range_end_year) ge 1975}" itemValue="1975">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" rendered="#{zofar.asNumber(calendar_range_start_year) le 1976 and zofar.asNumber(calendar_range_end_year) ge 1976}" itemValue="1976">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" rendered="#{zofar.asNumber(calendar_range_start_year) le 1977 and zofar.asNumber(calendar_range_end_year) ge 1977}" itemValue="1977">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" rendered="#{zofar.asNumber(calendar_range_start_year) le 1978 and zofar.asNumber(calendar_range_end_year) ge 1978}" itemValue="1978">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" rendered="#{zofar.asNumber(calendar_range_start_year) le 1979 and zofar.asNumber(calendar_range_end_year) ge 1979}" itemValue="1979">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" rendered="#{zofar.asNumber(calendar_range_start_year) le 1980 and zofar.asNumber(calendar_range_end_year) ge 1980}" itemValue="1980">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" rendered="#{zofar.asNumber(calendar_range_start_year) le 1981 and zofar.asNumber(calendar_range_end_year) ge 1981}" itemValue="1981">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" rendered="#{zofar.asNumber(calendar_range_start_year) le 1982 and zofar.asNumber(calendar_range_end_year) ge 1982}" itemValue="1982">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao13" rendered="#{zofar.asNumber(calendar_range_start_year) le 1983 and zofar.asNumber(calendar_range_end_year) ge 1983}" itemValue="1983">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao13.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao14" rendered="#{zofar.asNumber(calendar_range_start_year) le 1984 and zofar.asNumber(calendar_range_end_year) ge 1984}" itemValue="1984">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao14.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao15" rendered="#{zofar.asNumber(calendar_range_start_year) le 1985 and zofar.asNumber(calendar_range_end_year) ge 1985}" itemValue="1985">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao15.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao16" rendered="#{zofar.asNumber(calendar_range_start_year) le 1986 and zofar.asNumber(calendar_range_end_year) ge 1986}" itemValue="1986">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao16.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao17" rendered="#{zofar.asNumber(calendar_range_start_year) le 1987 and zofar.asNumber(calendar_range_end_year) ge 1987}" itemValue="1987">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao17.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao18" rendered="#{zofar.asNumber(calendar_range_start_year) le 1988 and zofar.asNumber(calendar_range_end_year) ge 1988}" itemValue="1988">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao18.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao19" rendered="#{zofar.asNumber(calendar_range_start_year) le 1989 and zofar.asNumber(calendar_range_end_year) ge 1989}" itemValue="1989">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao19.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao20" rendered="#{zofar.asNumber(calendar_range_start_year) le 1990 and zofar.asNumber(calendar_range_end_year) ge 1990}" itemValue="1990">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao20.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao21" rendered="#{zofar.asNumber(calendar_range_start_year) le 1991 and zofar.asNumber(calendar_range_end_year) ge 1991}" itemValue="1991">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao21.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao22" rendered="#{zofar.asNumber(calendar_range_start_year) le 1992 and zofar.asNumber(calendar_range_end_year) ge 1992}" itemValue="1992">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao22.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao23" rendered="#{zofar.asNumber(calendar_range_start_year) le 1993 and zofar.asNumber(calendar_range_end_year) ge 1993}" itemValue="1993">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao23.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao24" rendered="#{zofar.asNumber(calendar_range_start_year) le 1994 and zofar.asNumber(calendar_range_end_year) ge 1994}" itemValue="1994">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao24.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao25" rendered="#{zofar.asNumber(calendar_range_start_year) le 1995 and zofar.asNumber(calendar_range_end_year) ge 1995}" itemValue="1995">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao25.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao26" rendered="#{zofar.asNumber(calendar_range_start_year) le 1996 and zofar.asNumber(calendar_range_end_year) ge 1996}" itemValue="1996">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao26.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao27" rendered="#{zofar.asNumber(calendar_range_start_year) le 1997 and zofar.asNumber(calendar_range_end_year) ge 1997}" itemValue="1997">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao27.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao28" rendered="#{zofar.asNumber(calendar_range_start_year) le 1998 and zofar.asNumber(calendar_range_end_year) ge 1998}" itemValue="1998">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao28.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao29" rendered="#{zofar.asNumber(calendar_range_start_year) le 1999 and zofar.asNumber(calendar_range_end_year) ge 1999}" itemValue="1999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao29.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao30" rendered="#{zofar.asNumber(calendar_range_start_year) le 2000 and zofar.asNumber(calendar_range_end_year) ge 2000}" itemValue="2000">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao30.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao31" rendered="#{zofar.asNumber(calendar_range_start_year) le 2001 and zofar.asNumber(calendar_range_end_year) ge 2001}" itemValue="2001">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao31.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao32" rendered="#{zofar.asNumber(calendar_range_start_year) le 2002 and zofar.asNumber(calendar_range_end_year) ge 2002}" itemValue="2002">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao32.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao33" rendered="#{zofar.asNumber(calendar_range_start_year) le 2003 and zofar.asNumber(calendar_range_end_year) ge 2003}" itemValue="2003">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao33.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao34" rendered="#{zofar.asNumber(calendar_range_start_year) le 2004 and zofar.asNumber(calendar_range_end_year) ge 2004}" itemValue="2004">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao34.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao35" rendered="#{zofar.asNumber(calendar_range_start_year) le 2005 and zofar.asNumber(calendar_range_end_year) ge 2005}" itemValue="2005">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao35.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao36" rendered="#{zofar.asNumber(calendar_range_start_year) le 2006 and zofar.asNumber(calendar_range_end_year) ge 2006}" itemValue="2006">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao36.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao37" rendered="#{zofar.asNumber(calendar_range_start_year) le 2007 and zofar.asNumber(calendar_range_end_year) ge 2007}" itemValue="2007">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao37.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao38" rendered="#{zofar.asNumber(calendar_range_start_year) le 2008 and zofar.asNumber(calendar_range_end_year) ge 2008}" itemValue="2008">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao38.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao39" rendered="#{zofar.asNumber(calendar_range_start_year) le 2009 and zofar.asNumber(calendar_range_end_year) ge 2009}" itemValue="2009">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao39.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao40" rendered="#{zofar.asNumber(calendar_range_start_year) le 2010 and zofar.asNumber(calendar_range_end_year) ge 2010}" itemValue="2010">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao40.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao41" rendered="#{zofar.asNumber(calendar_range_start_year) le 2011 and zofar.asNumber(calendar_range_end_year) ge 2011}" itemValue="2011">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao41.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao42" rendered="#{zofar.asNumber(calendar_range_start_year) le 2012 and zofar.asNumber(calendar_range_end_year) ge 2012}" itemValue="2012">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao42.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao43" rendered="#{zofar.asNumber(calendar_range_start_year) le 2013 and zofar.asNumber(calendar_range_end_year) ge 2013}" itemValue="2013">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao43.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao44" rendered="#{zofar.asNumber(calendar_range_start_year) le 2014 and zofar.asNumber(calendar_range_end_year) ge 2014}" itemValue="2014">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao44.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao45" rendered="#{zofar.asNumber(calendar_range_start_year) le 2015 and zofar.asNumber(calendar_range_end_year) ge 2015}" itemValue="2015">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao45.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao46" rendered="#{zofar.asNumber(calendar_range_start_year) le 2016 and zofar.asNumber(calendar_range_end_year) ge 2016}" itemValue="2016">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao46.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao47" rendered="#{zofar.asNumber(calendar_range_start_year) le 2017 and zofar.asNumber(calendar_range_end_year) ge 2017}" itemValue="2017">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao47.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao48" rendered="#{zofar.asNumber(calendar_range_start_year) le 2018 and zofar.asNumber(calendar_range_end_year) ge 2018}" itemValue="2018">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao48.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao49" rendered="#{zofar.asNumber(calendar_range_start_year) le 2019 and zofar.asNumber(calendar_range_end_year) ge 2019}" itemValue="2019">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao49.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao50" rendered="#{zofar.asNumber(calendar_range_start_year) le 2020 and zofar.asNumber(calendar_range_end_year) ge 2020}" itemValue="2020">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao50.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao51" rendered="#{zofar.asNumber(calendar_range_start_year) le 2021 and zofar.asNumber(calendar_range_end_year) ge 2021}" itemValue="2021">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao51.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao52" rendered="#{zofar.asNumber(calendar_range_start_year) le 2022 and zofar.asNumber(calendar_range_end_year) ge 2022}" itemValue="2022">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao52.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao53" rendered="#{zofar.asNumber(calendar_range_start_year) le 2023 and zofar.asNumber(calendar_range_end_year) ge 2023}" itemValue="2023">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao53.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao54" rendered="#{zofar.asNumber(calendar_range_start_year) le 2024 and zofar.asNumber(calendar_range_end_year) ge 2024}" itemValue="2024">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao54.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao55" rendered="#{zofar.asNumber(calendar_range_start_year) le 2025 and zofar.asNumber(calendar_range_end_year) ge 2025}" itemValue="2025">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao55.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao56" rendered="#{zofar.asNumber(calendar_range_start_year) le 2026 and zofar.asNumber(calendar_range_end_year) ge 2026}" itemValue="2026">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao56.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao57" rendered="#{zofar.asNumber(calendar_range_start_year) le 2027 and zofar.asNumber(calendar_range_end_year) ge 2027}" itemValue="2027">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao57.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao58" rendered="#{zofar.asNumber(calendar_range_start_year) le 2028 and zofar.asNumber(calendar_range_end_year) ge 2028}" itemValue="2028">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao58.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao59" rendered="#{zofar.asNumber(calendar_range_start_year) le 2029 and zofar.asNumber(calendar_range_end_year) ge 2029}" itemValue="2029">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao59.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao60" rendered="#{zofar.asNumber(calendar_range_start_year) le 2030 and zofar.asNumber(calendar_range_end_year) ge 2030}" itemValue="2030">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao60.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao61" rendered="#{zofar.asNumber(calendar_range_start_year) le 2031 and zofar.asNumber(calendar_range_end_year) ge 2031}" itemValue="2031">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao61.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao62" rendered="#{zofar.asNumber(calendar_range_start_year) le 2032 and zofar.asNumber(calendar_range_end_year) ge 2032}" itemValue="2032">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao62.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao63" rendered="#{zofar.asNumber(calendar_range_start_year) le 2033 and zofar.asNumber(calendar_range_end_year) ge 2033}" itemValue="2033">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao63.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao64" rendered="#{zofar.asNumber(calendar_range_start_year) le 2034 and zofar.asNumber(calendar_range_end_year) ge 2034}" itemValue="2034">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao64.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao65" rendered="#{zofar.asNumber(calendar_range_start_year) le 2035 and zofar.asNumber(calendar_range_end_year) ge 2035}" itemValue="2035">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao65.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao66" rendered="#{zofar.asNumber(calendar_range_start_year) le 2036 and zofar.asNumber(calendar_range_end_year) ge 2036}" itemValue="2036">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao66.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao67" rendered="#{zofar.asNumber(calendar_range_start_year) le 2037 and zofar.asNumber(calendar_range_end_year) ge 2037}" itemValue="2037">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao67.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao68" rendered="#{zofar.asNumber(calendar_range_start_year) le 2038 and zofar.asNumber(calendar_range_end_year) ge 2038}" itemValue="2038">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao68.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao69" rendered="#{zofar.asNumber(calendar_range_start_year) le 2039 and zofar.asNumber(calendar_range_end_year) ge 2039}" itemValue="2039">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao69.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao70" rendered="#{zofar.asNumber(calendar_range_start_year) le 2040 and zofar.asNumber(calendar_range_end_year) ge 2040}" itemValue="2040">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc.rd.i2.rd2.ao70.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <mat:singleChoiceMatrix id="msc2" rendered="#{false}">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['calendar.b.msc2.q1_0']}</text:question>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd4" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t2"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i3">
+            <f:facet name="header">
+              <text:question container="true" id="qi3">#{msgs['calendar.b.msc2.rd4.i3.qi3_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd5" value="#{endmonth.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="4">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" itemValue="5">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" itemValue="6">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" itemValue="7">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" itemValue="8">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" itemValue="9">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" itemValue="10">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" itemValue="11">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" itemValue="12">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i3.rd5.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i4">
+            <f:facet name="header">
+              <text:question container="true" id="qi4"/>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd6" value="#{endyear.valueId}">
+              <ans:singleOption id="ao0" itemValue="999999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao1" rendered="#{zofar.asNumber(calendar_range_start_year) le 1971 and zofar.asNumber(calendar_range_end_year) ge 1971}" itemValue="1971">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" rendered="#{zofar.asNumber(calendar_range_start_year) le 1972 and zofar.asNumber(calendar_range_end_year) ge 1972}" itemValue="1972">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" rendered="#{zofar.asNumber(calendar_range_start_year) le 1973 and zofar.asNumber(calendar_range_end_year) ge 1973}" itemValue="1973">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" rendered="#{zofar.asNumber(calendar_range_start_year) le 1974 and zofar.asNumber(calendar_range_end_year) ge 1974}" itemValue="1974">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao5" rendered="#{zofar.asNumber(calendar_range_start_year) le 1975 and zofar.asNumber(calendar_range_end_year) ge 1975}" itemValue="1975">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao5.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao6" rendered="#{zofar.asNumber(calendar_range_start_year) le 1976 and zofar.asNumber(calendar_range_end_year) ge 1976}" itemValue="1976">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao6.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao7" rendered="#{zofar.asNumber(calendar_range_start_year) le 1977 and zofar.asNumber(calendar_range_end_year) ge 1977}" itemValue="1977">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao8" rendered="#{zofar.asNumber(calendar_range_start_year) le 1978 and zofar.asNumber(calendar_range_end_year) ge 1978}" itemValue="1978">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao8.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao9" rendered="#{zofar.asNumber(calendar_range_start_year) le 1979 and zofar.asNumber(calendar_range_end_year) ge 1979}" itemValue="1979">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao9.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao10" rendered="#{zofar.asNumber(calendar_range_start_year) le 1980 and zofar.asNumber(calendar_range_end_year) ge 1980}" itemValue="1980">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao10.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao11" rendered="#{zofar.asNumber(calendar_range_start_year) le 1981 and zofar.asNumber(calendar_range_end_year) ge 1981}" itemValue="1981">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao11.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao12" rendered="#{zofar.asNumber(calendar_range_start_year) le 1982 and zofar.asNumber(calendar_range_end_year) ge 1982}" itemValue="1982">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao12.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao13" rendered="#{zofar.asNumber(calendar_range_start_year) le 1983 and zofar.asNumber(calendar_range_end_year) ge 1983}" itemValue="1983">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao13.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao14" rendered="#{zofar.asNumber(calendar_range_start_year) le 1984 and zofar.asNumber(calendar_range_end_year) ge 1984}" itemValue="1984">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao14.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao15" rendered="#{zofar.asNumber(calendar_range_start_year) le 1985 and zofar.asNumber(calendar_range_end_year) ge 1985}" itemValue="1985">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao15.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao16" rendered="#{zofar.asNumber(calendar_range_start_year) le 1986 and zofar.asNumber(calendar_range_end_year) ge 1986}" itemValue="1986">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao16.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao17" rendered="#{zofar.asNumber(calendar_range_start_year) le 1987 and zofar.asNumber(calendar_range_end_year) ge 1987}" itemValue="1987">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao17.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao18" rendered="#{zofar.asNumber(calendar_range_start_year) le 1988 and zofar.asNumber(calendar_range_end_year) ge 1988}" itemValue="1988">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao18.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao19" rendered="#{zofar.asNumber(calendar_range_start_year) le 1989 and zofar.asNumber(calendar_range_end_year) ge 1989}" itemValue="1989">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao19.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao20" rendered="#{zofar.asNumber(calendar_range_start_year) le 1990 and zofar.asNumber(calendar_range_end_year) ge 1990}" itemValue="1990">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao20.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao21" rendered="#{zofar.asNumber(calendar_range_start_year) le 1991 and zofar.asNumber(calendar_range_end_year) ge 1991}" itemValue="1991">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao21.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao22" rendered="#{zofar.asNumber(calendar_range_start_year) le 1992 and zofar.asNumber(calendar_range_end_year) ge 1992}" itemValue="1992">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao22.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao23" rendered="#{zofar.asNumber(calendar_range_start_year) le 1993 and zofar.asNumber(calendar_range_end_year) ge 1993}" itemValue="1993">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao23.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao24" rendered="#{zofar.asNumber(calendar_range_start_year) le 1994 and zofar.asNumber(calendar_range_end_year) ge 1994}" itemValue="1994">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao24.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao25" rendered="#{zofar.asNumber(calendar_range_start_year) le 1995 and zofar.asNumber(calendar_range_end_year) ge 1995}" itemValue="1995">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao25.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao26" rendered="#{zofar.asNumber(calendar_range_start_year) le 1996 and zofar.asNumber(calendar_range_end_year) ge 1996}" itemValue="1996">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao26.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao27" rendered="#{zofar.asNumber(calendar_range_start_year) le 1997 and zofar.asNumber(calendar_range_end_year) ge 1997}" itemValue="1997">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao27.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao28" rendered="#{zofar.asNumber(calendar_range_start_year) le 1998 and zofar.asNumber(calendar_range_end_year) ge 1998}" itemValue="1998">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao28.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao29" rendered="#{zofar.asNumber(calendar_range_start_year) le 1999 and zofar.asNumber(calendar_range_end_year) ge 1999}" itemValue="1999">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao29.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao30" rendered="#{zofar.asNumber(calendar_range_start_year) le 2000 and zofar.asNumber(calendar_range_end_year) ge 2000}" itemValue="2000">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao30.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao31" rendered="#{zofar.asNumber(calendar_range_start_year) le 2001 and zofar.asNumber(calendar_range_end_year) ge 2001}" itemValue="2001">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao31.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao32" rendered="#{zofar.asNumber(calendar_range_start_year) le 2002 and zofar.asNumber(calendar_range_end_year) ge 2002}" itemValue="2002">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao32.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao33" rendered="#{zofar.asNumber(calendar_range_start_year) le 2003 and zofar.asNumber(calendar_range_end_year) ge 2003}" itemValue="2003">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao33.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao34" rendered="#{zofar.asNumber(calendar_range_start_year) le 2004 and zofar.asNumber(calendar_range_end_year) ge 2004}" itemValue="2004">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao34.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao35" rendered="#{zofar.asNumber(calendar_range_start_year) le 2005 and zofar.asNumber(calendar_range_end_year) ge 2005}" itemValue="2005">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao35.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao36" rendered="#{zofar.asNumber(calendar_range_start_year) le 2006 and zofar.asNumber(calendar_range_end_year) ge 2006}" itemValue="2006">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao36.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao37" rendered="#{zofar.asNumber(calendar_range_start_year) le 2007 and zofar.asNumber(calendar_range_end_year) ge 2007}" itemValue="2007">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao37.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao38" rendered="#{zofar.asNumber(calendar_range_start_year) le 2008 and zofar.asNumber(calendar_range_end_year) ge 2008}" itemValue="2008">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao38.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao39" rendered="#{zofar.asNumber(calendar_range_start_year) le 2009 and zofar.asNumber(calendar_range_end_year) ge 2009}" itemValue="2009">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao39.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao40" rendered="#{zofar.asNumber(calendar_range_start_year) le 2010 and zofar.asNumber(calendar_range_end_year) ge 2010}" itemValue="2010">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao40.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao41" rendered="#{zofar.asNumber(calendar_range_start_year) le 2011 and zofar.asNumber(calendar_range_end_year) ge 2011}" itemValue="2011">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao41.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao42" rendered="#{zofar.asNumber(calendar_range_start_year) le 2012 and zofar.asNumber(calendar_range_end_year) ge 2012}" itemValue="2012">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao42.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao43" rendered="#{zofar.asNumber(calendar_range_start_year) le 2013 and zofar.asNumber(calendar_range_end_year) ge 2013}" itemValue="2013">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao43.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao44" rendered="#{zofar.asNumber(calendar_range_start_year) le 2014 and zofar.asNumber(calendar_range_end_year) ge 2014}" itemValue="2014">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao44.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao45" rendered="#{zofar.asNumber(calendar_range_start_year) le 2015 and zofar.asNumber(calendar_range_end_year) ge 2015}" itemValue="2015">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao45.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao46" rendered="#{zofar.asNumber(calendar_range_start_year) le 2016 and zofar.asNumber(calendar_range_end_year) ge 2016}" itemValue="2016">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao46.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao47" rendered="#{zofar.asNumber(calendar_range_start_year) le 2017 and zofar.asNumber(calendar_range_end_year) ge 2017}" itemValue="2017">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao47.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao48" rendered="#{zofar.asNumber(calendar_range_start_year) le 2018 and zofar.asNumber(calendar_range_end_year) ge 2018}" itemValue="2018">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao48.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao49" rendered="#{zofar.asNumber(calendar_range_start_year) le 2019 and zofar.asNumber(calendar_range_end_year) ge 2019}" itemValue="2019">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao49.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao50" rendered="#{zofar.asNumber(calendar_range_start_year) le 2020 and zofar.asNumber(calendar_range_end_year) ge 2020}" itemValue="2020">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao50.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao51" rendered="#{zofar.asNumber(calendar_range_start_year) le 2021 and zofar.asNumber(calendar_range_end_year) ge 2021}" itemValue="2021">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao51.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao52" rendered="#{zofar.asNumber(calendar_range_start_year) le 2022 and zofar.asNumber(calendar_range_end_year) ge 2022}" itemValue="2022">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao52.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao53" rendered="#{zofar.asNumber(calendar_range_start_year) le 2023 and zofar.asNumber(calendar_range_end_year) ge 2023}" itemValue="2023">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao53.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao54" rendered="#{zofar.asNumber(calendar_range_start_year) le 2024 and zofar.asNumber(calendar_range_end_year) ge 2024}" itemValue="2024">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao54.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao55" rendered="#{zofar.asNumber(calendar_range_start_year) le 2025 and zofar.asNumber(calendar_range_end_year) ge 2025}" itemValue="2025">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao55.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao56" rendered="#{zofar.asNumber(calendar_range_start_year) le 2026 and zofar.asNumber(calendar_range_end_year) ge 2026}" itemValue="2026">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao56.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao57" rendered="#{zofar.asNumber(calendar_range_start_year) le 2027 and zofar.asNumber(calendar_range_end_year) ge 2027}" itemValue="2027">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao57.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao58" rendered="#{zofar.asNumber(calendar_range_start_year) le 2028 and zofar.asNumber(calendar_range_end_year) ge 2028}" itemValue="2028">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao58.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao59" rendered="#{zofar.asNumber(calendar_range_start_year) le 2029 and zofar.asNumber(calendar_range_end_year) ge 2029}" itemValue="2029">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao59.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao60" rendered="#{zofar.asNumber(calendar_range_start_year) le 2030 and zofar.asNumber(calendar_range_end_year) ge 2030}" itemValue="2030">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao60.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao61" rendered="#{zofar.asNumber(calendar_range_start_year) le 2031 and zofar.asNumber(calendar_range_end_year) ge 2031}" itemValue="2031">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao61.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao62" rendered="#{zofar.asNumber(calendar_range_start_year) le 2032 and zofar.asNumber(calendar_range_end_year) ge 2032}" itemValue="2032">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao62.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao63" rendered="#{zofar.asNumber(calendar_range_start_year) le 2033 and zofar.asNumber(calendar_range_end_year) ge 2033}" itemValue="2033">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao63.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao64" rendered="#{zofar.asNumber(calendar_range_start_year) le 2034 and zofar.asNumber(calendar_range_end_year) ge 2034}" itemValue="2034">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao64.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao65" rendered="#{zofar.asNumber(calendar_range_start_year) le 2035 and zofar.asNumber(calendar_range_end_year) ge 2035}" itemValue="2035">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao65.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao66" rendered="#{zofar.asNumber(calendar_range_start_year) le 2036 and zofar.asNumber(calendar_range_end_year) ge 2036}" itemValue="2036">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao66.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao67" rendered="#{zofar.asNumber(calendar_range_start_year) le 2037 and zofar.asNumber(calendar_range_end_year) ge 2037}" itemValue="2037">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao67.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao68" rendered="#{zofar.asNumber(calendar_range_start_year) le 2038 and zofar.asNumber(calendar_range_end_year) ge 2038}" itemValue="2038">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao68.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao69" rendered="#{zofar.asNumber(calendar_range_start_year) le 2039 and zofar.asNumber(calendar_range_end_year) ge 2039}" itemValue="2039">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao69.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao70" rendered="#{zofar.asNumber(calendar_range_start_year) le 2040 and zofar.asNumber(calendar_range_end_year) ge 2040}" itemValue="2040">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['calendar.b.msc2.rd4.i4.rd6.ao70.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+    </con:section>
+  </ui:define>
+</ui:composition>

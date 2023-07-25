@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.AttachedOpenQuestion">
+	<composite:attribute name="var" required="true"
+		type="de.his.zofar.presentation.surveyengine.AbstractAnswerBean" />
+	<composite:attribute name="inputId" default="aoq"
+		type="java.lang.String" />
+	<composite:attribute name="validationMessage" type="java.lang.String" required="true"/>
+	<composite:attribute name="minValue" type="java.lang.Double" default="1.0"/>
+	<composite:attribute name="maxValue" type="java.lang.Double" default="6.0"/>
+	<composite:facet name="prefix" />
+	<composite:facet name="postfix" />
+	<composite:attribute name="size" type="java.lang.Integer" default="15" />
+	<composite:attribute name="maxlength" type="java.lang.Integer"
+		default="255" />
+</composite:interface>
+
+<composite:implementation>
+	<h:panelGroup styleClass="zofar-question-open-attached"
+		rendered="#{cc.attrs.rendered}">
+		<h:panelGroup styleClass="zofar-question-open-attached-prefix"
+			rendered="#{not empty cc.facets.prefix}">
+			<composite:renderFacet name="prefix" />
+		</h:panelGroup>
+
+		<h:inputText id="#{cc.attrs.inputId}"
+			onkeydown="javascript:zofar_triggerOpen('#{cc.parent.clientId}','#{cc.clientId}:#{cc.attrs.inputId}');"
+			value="#{cc.attrs.var.value}" size="#{cc.attrs.size}"
+			maxlength="#{cc.attrs.maxlength}"
+			validatorMessage="#{cc.attrs.validationMessage}">
+			<f:validateDoubleRange minimum="#{cc.attrs.minValue}"
+				maximum="#{cc.attrs.maxValue}"
+				disabled="#{(empty cc.attrs.minValue) or (empty cc.attrs.maxValue)}"/>
+				<f:converter converterId="org.zofar.open.NumberConverter" />
+		</h:inputText>
+
+		<h:panelGroup styleClass="zofar-question-open-attached-postfix"
+			rendered="#{not empty cc.facets.postfix}">
+			<composite:renderFacet name="postfix" />
+		</h:panelGroup>
+		<h:message style="color:red;padding-left:10px" for="#{cc.attrs.inputId}" />
+	</h:panelGroup>
+</composite:implementation>
+
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/composite">
+  <ui:param name="progress" value="43"/>
+  <ui:define name="template-content">
+    <variable var="#{isMobile2}" value="false" condition="!zofar.isSet('isMobile2',sessionController.participant)" onExit="false" navigator="#{navigatorBean}"/>
+    <con:section id="kalendarium_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['kalendarium_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['kalendarium_beispiel.text_0']}</text:text>
+      </f:facet>
+      <com:calendar id="wv1" showIndicator="#{false}" showLegendIcon="#{true}" legendLayout="pageDirection" behaviour="#{zofar.ifthenelse(isMobile2.value,'click','move')}">
+        <f:facet name="rows">
+          <com:calendarRowItem label="#{msgs['kalendarium_beispiel.body.wv1_Row_0']}"/>
+          <com:calendarRowItem label="#{msgs['kalendarium_beispiel.body.wv1_Row_1']}"/>
+          <com:calendarRowItem label="#{msgs['kalendarium_beispiel.body.wv1_Row_2']}"/>
+        </f:facet>
+        <f:facet name="columns">
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_0']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_1']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_2']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_3']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_4']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_5']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_6']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_7']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_8']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_9']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_10']}"/>
+          <com:calendarColumnItem label="#{msgs['kalendarium_beispiel.body.wv1_Column_11']}"/>
+        </f:facet>
+        <f:facet name="legend">
+          <com:calendarLegendItem id="slot1" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_0']}" color="green"/>
+          <com:calendarLegendItem id="slot2" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_1']}" color="blue"/>
+          <com:calendarLegendItem id="slot3" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_2']}" color="red"/>
+          <com:calendarLegendItem id="slot4" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_3']}" color="grey"/>
+          <com:calendarLegendItem id="slot5" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_4']}" color="orange"/>
+          <com:calendarLegendItem id="slot6" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_5']}" color="brown"/>
+          <com:calendarLegendItem id="slot7" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_6']}" color="yellow"/>
+          <com:calendarLegendItem id="slot8" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_7']}" color="lightgray"/>
+          <com:calendarLegendItem id="slot9" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_8']}" color="lightgreen"/>
+          <com:calendarLegendItem id="slot10" label="#{msgs['kalendarium_beispiel.body.wv1_Legend_9']}" color="lightblue"/>
+        </f:facet>
+        <f:facet name="items">
+          <com:calendarItem id="item1" rendered="#{true}" slot1="#{mo01schule}" slot2="#{mo01studium}" slot3="#{mo01ausb}" slot4="#{mo01fortb}" slot5="#{mo01jobben}" slot6="#{mo01erwerb}" slot7="#{mo01praktikum}" slot8="#{mo01elternz}" slot9="#{mo01alo}" slot10="#{mo01sonstiges}"/>
+          <com:calendarItem id="item2" rendered="#{true}" slot1="#{mo02schule}" slot2="#{mo02studium}" slot3="#{mo02ausb}" slot4="#{mo02fortb}" slot5="#{mo02jobben}" slot6="#{mo02erwerb}" slot7="#{mo02praktikum}" slot8="#{mo02elternz}" slot9="#{mo02alo}" slot10="#{mo02sonstiges}"/>
+          <com:calendarItem id="item3" rendered="#{true}" slot1="#{mo03schule}" slot2="#{mo03studium}" slot3="#{mo03ausb}" slot4="#{mo03fortb}" slot5="#{mo03jobben}" slot6="#{mo03erwerb}" slot7="#{mo03praktikum}" slot8="#{mo03elternz}" slot9="#{mo03alo}" slot10="#{mo03sonstiges}"/>
+          <com:calendarItem id="item4" rendered="#{true}" slot1="#{mo04schule}" slot2="#{mo04studium}" slot3="#{mo04ausb}" slot4="#{mo04fortb}" slot5="#{mo04jobben}" slot6="#{mo04erwerb}" slot7="#{mo04praktikum}" slot8="#{mo04elternz}" slot9="#{mo04alo}" slot10="#{mo04sonstiges}"/>
+          <com:calendarItem id="item5" rendered="#{true}" slot1="#{mo05schule}" slot2="#{mo05studium}" slot3="#{mo05ausb}" slot4="#{mo05fortb}" slot5="#{mo05jobben}" slot6="#{mo05erwerb}" slot7="#{mo05praktikum}" slot8="#{mo05elternz}" slot9="#{mo05alo}" slot10="#{mo05sonstiges}"/>
+          <com:calendarItem id="item6" rendered="#{true}" slot1="#{mo06schule}" slot2="#{mo06studium}" slot3="#{mo06ausb}" slot4="#{mo06fortb}" slot5="#{mo06jobben}" slot6="#{mo06erwerb}" slot7="#{mo06praktikum}" slot8="#{mo06elternz}" slot9="#{mo06alo}" slot10="#{mo06sonstiges}"/>
+          <com:calendarItem id="item7" rendered="#{true}" slot1="#{mo07schule}" slot2="#{mo07studium}" slot3="#{mo07ausb}" slot4="#{mo07fortb}" slot5="#{mo07jobben}" slot6="#{mo07erwerb}" slot7="#{mo07praktikum}" slot8="#{mo07elternz}" slot9="#{mo07alo}" slot10="#{mo07sonstiges}"/>
+          <com:calendarItem id="item8" rendered="#{true}" slot1="#{mo08schule}" slot2="#{mo08studium}" slot3="#{mo08ausb}" slot4="#{mo08fortb}" slot5="#{mo08jobben}" slot6="#{mo08erwerb}" slot7="#{mo08praktikum}" slot8="#{mo08elternz}" slot9="#{mo08alo}" slot10="#{mo08sonstiges}"/>
+          <com:calendarItem id="item9" rendered="#{true}" slot1="#{mo09schule}" slot2="#{mo09studium}" slot3="#{mo09ausb}" slot4="#{mo09fortb}" slot5="#{mo09jobben}" slot6="#{mo09erwerb}" slot7="#{mo09praktikum}" slot8="#{mo09elternz}" slot9="#{mo09alo}" slot10="#{mo09sonstiges}"/>
+          <com:calendarItem id="item10" rendered="#{true}" slot1="#{mo10schule}" slot2="#{mo10studium}" slot3="#{mo10ausb}" slot4="#{mo10fortb}" slot5="#{mo10jobben}" slot6="#{mo10erwerb}" slot7="#{mo10praktikum}" slot8="#{mo10elternz}" slot9="#{mo10alo}" slot10="#{mo10sonstiges}"/>
+          <com:calendarItem id="item11" rendered="#{true}" slot1="#{mo11schule}" slot2="#{mo11studium}" slot3="#{mo11ausb}" slot4="#{mo11fortb}" slot5="#{mo11jobben}" slot6="#{mo11erwerb}" slot7="#{mo11praktikum}" slot8="#{mo11elternz}" slot9="#{mo11alo}" slot10="#{mo11sonstiges}"/>
+          <com:calendarItem id="item12" rendered="#{true}" slot1="#{mo12schule}" slot2="#{mo12studium}" slot3="#{mo12ausb}" slot4="#{mo12fortb}" slot5="#{mo12jobben}" slot6="#{mo12erwerb}" slot7="#{mo12praktikum}" slot8="#{mo12elternz}" slot9="#{mo12alo}" slot10="#{mo12sonstiges}"/>
+          <com:calendarItem id="item13" rendered="#{true}" slot1="#{mo13schule}" slot2="#{mo13studium}" slot3="#{mo13ausb}" slot4="#{mo13fortb}" slot5="#{mo13jobben}" slot6="#{mo13erwerb}" slot7="#{mo13praktikum}" slot8="#{mo13elternz}" slot9="#{mo13alo}" slot10="#{mo13sonstiges}"/>
+          <com:calendarItem id="item14" rendered="#{true}" slot1="#{mo14schule}" slot2="#{mo14studium}" slot3="#{mo14ausb}" slot4="#{mo14fortb}" slot5="#{mo14jobben}" slot6="#{mo14erwerb}" slot7="#{mo14praktikum}" slot8="#{mo14elternz}" slot9="#{mo14alo}" slot10="#{mo14sonstiges}"/>
+          <com:calendarItem id="item15" rendered="#{true}" slot1="#{mo15schule}" slot2="#{mo15studium}" slot3="#{mo15ausb}" slot4="#{mo15fortb}" slot5="#{mo15jobben}" slot6="#{mo15erwerb}" slot7="#{mo15praktikum}" slot8="#{mo15elternz}" slot9="#{mo15alo}" slot10="#{mo15sonstiges}"/>
+          <com:calendarItem id="item16" rendered="#{true}" slot1="#{mo16schule}" slot2="#{mo16studium}" slot3="#{mo16ausb}" slot4="#{mo16fortb}" slot5="#{mo16jobben}" slot6="#{mo16erwerb}" slot7="#{mo16praktikum}" slot8="#{mo16elternz}" slot9="#{mo16alo}" slot10="#{mo16sonstiges}"/>
+          <com:calendarItem id="item17" rendered="#{true}" slot1="#{mo17schule}" slot2="#{mo17studium}" slot3="#{mo17ausb}" slot4="#{mo17fortb}" slot5="#{mo17jobben}" slot6="#{mo17erwerb}" slot7="#{mo17praktikum}" slot8="#{mo17elternz}" slot9="#{mo17alo}" slot10="#{mo17sonstiges}"/>
+          <com:calendarItem id="item18" rendered="#{true}" slot1="#{mo18schule}" slot2="#{mo18studium}" slot3="#{mo18ausb}" slot4="#{mo18fortb}" slot5="#{mo18jobben}" slot6="#{mo18erwerb}" slot7="#{mo18praktikum}" slot8="#{mo18elternz}" slot9="#{mo18alo}" slot10="#{mo18sonstiges}"/>
+          <com:calendarItem id="item19" rendered="#{true}" slot1="#{mo19schule}" slot2="#{mo19studium}" slot3="#{mo19ausb}" slot4="#{mo19fortb}" slot5="#{mo19jobben}" slot6="#{mo19erwerb}" slot7="#{mo19praktikum}" slot8="#{mo19elternz}" slot9="#{mo19alo}" slot10="#{mo19sonstiges}"/>
+          <com:calendarItem id="item20" rendered="#{true}" slot1="#{mo20schule}" slot2="#{mo20studium}" slot3="#{mo20ausb}" slot4="#{mo20fortb}" slot5="#{mo20jobben}" slot6="#{mo20erwerb}" slot7="#{mo20praktikum}" slot8="#{mo20elternz}" slot9="#{mo20alo}" slot10="#{mo20sonstiges}"/>
+          <com:calendarItem id="item21" rendered="#{true}" slot1="#{mo21schule}" slot2="#{mo21studium}" slot3="#{mo21ausb}" slot4="#{mo21fortb}" slot5="#{mo21jobben}" slot6="#{mo21erwerb}" slot7="#{mo21praktikum}" slot8="#{mo21elternz}" slot9="#{mo21alo}" slot10="#{mo21sonstiges}"/>
+          <com:calendarItem id="item22" rendered="#{true}" slot1="#{mo22schule}" slot2="#{mo22studium}" slot3="#{mo22ausb}" slot4="#{mo22fortb}" slot5="#{mo22jobben}" slot6="#{mo22erwerb}" slot7="#{mo22praktikum}" slot8="#{mo22elternz}" slot9="#{mo22alo}" slot10="#{mo22sonstiges}"/>
+          <com:calendarItem id="item23" rendered="#{true}" slot1="#{mo23schule}" slot2="#{mo23studium}" slot3="#{mo23ausb}" slot4="#{mo23fortb}" slot5="#{mo23jobben}" slot6="#{mo23erwerb}" slot7="#{mo23praktikum}" slot8="#{mo23elternz}" slot9="#{mo23alo}" slot10="#{mo23sonstiges}"/>
+          <com:calendarItem id="item24" rendered="#{true}" slot1="#{mo24schule}" slot2="#{mo24studium}" slot3="#{mo24ausb}" slot4="#{mo24fortb}" slot5="#{mo24jobben}" slot6="#{mo24erwerb}" slot7="#{mo24praktikum}" slot8="#{mo24elternz}" slot9="#{mo24alo}" slot10="#{mo24sonstiges}"/>
+          <com:calendarItem id="item25" rendered="#{true}" slot1="#{mo25schule}" slot2="#{mo25studium}" slot3="#{mo25ausb}" slot4="#{mo25fortb}" slot5="#{mo25jobben}" slot6="#{mo25erwerb}" slot7="#{mo25praktikum}" slot8="#{mo25elternz}" slot9="#{mo25alo}" slot10="#{mo25sonstiges}"/>
+          <com:calendarItem id="item26" rendered="#{true}" slot1="#{mo26schule}" slot2="#{mo26studium}" slot3="#{mo26ausb}" slot4="#{mo26fortb}" slot5="#{mo26jobben}" slot6="#{mo26erwerb}" slot7="#{mo26praktikum}" slot8="#{mo26elternz}" slot9="#{mo26alo}" slot10="#{mo26sonstiges}"/>
+          <com:calendarItem id="item27" rendered="#{true}" slot1="#{mo27schule}" slot2="#{mo27studium}" slot3="#{mo27ausb}" slot4="#{mo27fortb}" slot5="#{mo27jobben}" slot6="#{mo27erwerb}" slot7="#{mo27praktikum}" slot8="#{mo27elternz}" slot9="#{mo27alo}" slot10="#{mo27sonstiges}"/>
+          <com:calendarItem id="item28" rendered="#{true}" slot1="#{mo28schule}" slot2="#{mo28studium}" slot3="#{mo28ausb}" slot4="#{mo28fortb}" slot5="#{mo28jobben}" slot6="#{mo28erwerb}" slot7="#{mo28praktikum}" slot8="#{mo28elternz}" slot9="#{mo28alo}" slot10="#{mo28sonstiges}"/>
+          <com:calendarItem id="item29" rendered="#{true}" slot1="#{mo29schule}" slot2="#{mo29studium}" slot3="#{mo29ausb}" slot4="#{mo29fortb}" slot5="#{mo29jobben}" slot6="#{mo29erwerb}" slot7="#{mo29praktikum}" slot8="#{mo29elternz}" slot9="#{mo29alo}" slot10="#{mo29sonstiges}"/>
+          <com:calendarItem id="item30" rendered="#{true}" slot1="#{mo30schule}" slot2="#{mo30studium}" slot3="#{mo30ausb}" slot4="#{mo30fortb}" slot5="#{mo30jobben}" slot6="#{mo30erwerb}" slot7="#{mo30praktikum}" slot8="#{mo30elternz}" slot9="#{mo30alo}" slot10="#{mo30sonstiges}"/>
+          <com:calendarItem id="item31" rendered="#{true}" slot1="#{mo31schule}" slot2="#{mo31studium}" slot3="#{mo31ausb}" slot4="#{mo31fortb}" slot5="#{mo31jobben}" slot6="#{mo31erwerb}" slot7="#{mo31praktikum}" slot8="#{mo31elternz}" slot9="#{mo31alo}" slot10="#{mo31sonstiges}"/>
+          <com:calendarItem id="item32" rendered="#{true}" slot1="#{mo32schule}" slot2="#{mo32studium}" slot3="#{mo32ausb}" slot4="#{mo32fortb}" slot5="#{mo32jobben}" slot6="#{mo32erwerb}" slot7="#{mo32praktikum}" slot8="#{mo32elternz}" slot9="#{mo32alo}" slot10="#{mo32sonstiges}"/>
+          <com:calendarItem id="item33" rendered="#{true}" slot1="#{mo33schule}" slot2="#{mo33studium}" slot3="#{mo33ausb}" slot4="#{mo33fortb}" slot5="#{mo33jobben}" slot6="#{mo33erwerb}" slot7="#{mo33praktikum}" slot8="#{mo33elternz}" slot9="#{mo33alo}" slot10="#{mo33sonstiges}"/>
+          <com:calendarItem id="item34" rendered="#{true}" slot1="#{mo34schule}" slot2="#{mo34studium}" slot3="#{mo34ausb}" slot4="#{mo34fortb}" slot5="#{mo34jobben}" slot6="#{mo34erwerb}" slot7="#{mo34praktikum}" slot8="#{mo34elternz}" slot9="#{mo34alo}" slot10="#{mo34sonstiges}"/>
+          <com:calendarItem id="item35" rendered="#{true}" slot1="#{mo35schule}" slot2="#{mo35studium}" slot3="#{mo35ausb}" slot4="#{mo35fortb}" slot5="#{mo35jobben}" slot6="#{mo35erwerb}" slot7="#{mo35praktikum}" slot8="#{mo35elternz}" slot9="#{mo35alo}" slot10="#{mo35sonstiges}"/>
+          <com:calendarItem id="item36" rendered="#{true}" slot1="#{mo36schule}" slot2="#{mo36studium}" slot3="#{mo36ausb}" slot4="#{mo36fortb}" slot5="#{mo36jobben}" slot6="#{mo36erwerb}" slot7="#{mo36praktikum}" slot8="#{mo36elternz}" slot9="#{mo36alo}" slot10="#{mo36sonstiges}"/>
+        </f:facet>
+      </com:calendar>
+    </con:section>
+  </ui:define>
+</ui:composition>

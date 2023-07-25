@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+  <composite:attribute name="value" required="true" />
+</composite:interface>
+
+<composite:implementation>
+  <h:outputStylesheet library="css" name="progressbar.css" target="head" />
+  <h:panelGroup styleClass="zo-progressbar zo-corner-all"
+    layout="block" rendered="#{cc.attrs.rendered}">
+    <h:panelGroup styleClass="zo-progressbar-value zo-corner-all"
+      style="display:block;width:#{cc.attrs.value}%" layout="block">
+    </h:panelGroup>
+    <h:panelGroup styleClass="zo-progressbar-label" layout="block">
+      #{cc.attrs.value}%
+    </h:panelGroup>
+  </h:panelGroup>
+</composite:implementation>
+</html>

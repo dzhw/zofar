@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display" xmlns:ques="http://java.sun.com/jsf/composite/question">
+  <ui:param name="progress" value="26"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.redirect('indexWarning')" condition="zofar.toInteger(episode_index.value) lt 0" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.log('episode index -1, backup to calendar',sessionController.participant)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('toReset',zofar.list())"/>
+      <scriptItem value="toReset.add('v_startmonth')"/>
+      <scriptItem value="toReset.add('v_startyear')"/>
+      <scriptItem value="toReset.add('v_endmonth')"/>
+      <scriptItem value="toReset.add('v_endyear')"/>
+      <scriptItem value="toReset.add('vaa08')"/>
+      <scriptItem value="toReset.add('vaa08dropDown')"/>
+      <scriptItem value="toReset.add('vaa08missing')"/>
+      <scriptItem value="toReset.add('vaa09')"/>
+      <scriptItem value="toReset.add('vaa09dropDown')"/>
+      <scriptItem value="toReset.add('vaa09missing')"/>
+      <scriptItem value="toReset.add('sf_vaa08')"/>
+      <scriptItem value="toReset.add('state')"/>
+      <scriptItem value="toReset.add('v_episodeCount_done')"/>
+      <scriptItem value="zofar.resetVars(toReset)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('monthMap',zofar.map('1=ao1,2=ao2,3=ao3,4=ao4,5=ao5,6=ao6,7=ao7,8=ao8,9=ao9,10=ao10,11=ao11,12=ao12'))"/>
+      <scriptItem value="zofar.assign('yearMap',zofar.map('2018=ao1,2019=ao2,2020=ao3,2021=ao4,2022=ao5,2023=ao6,2024=ao7'))"/>
+      <scriptItem value="zofar.assign('startDate',zofar.getJsonProperty(episodeObj,'startDate')) "/>
+      <scriptItem value="zofar.assign('endDate',zofar.getJsonProperty(episodeObj,'endDate')) "/>
+      <scriptItem value="zofar.setVariableValue(v_startmonth,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(startDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(v_startyear,zofar.getFromMap(yearMap,zofar.getYearFromStamp(startDate)))"/>
+      <scriptItem value="zofar.setVariableValue(v_endmonth,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(endDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(v_endyear,zofar.getFromMap(yearMap,zofar.getYearFromStamp(endDate)))"/>
+      <scriptItem value="zofar.setVariableValue(vaa08,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(endDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(vaa08dropDown,zofar.getFromMap(monthMap,zofar.getMonthFromStamp(endDate)+1))"/>
+      <scriptItem value="zofar.setVariableValue(vaa09,zofar.getFromMap(yearMap,zofar.getYearFromStamp(endDate)))"/>
+      <scriptItem value="zofar.setVariableValue(vaa09dropDown,zofar.getFromMap(yearMap,zofar.getYearFromStamp(endDate)))"/>
+      <scriptItem value="zofar.assign('toLoad',zofar.list())"/>
+      <scriptItem value="toLoad.add('sf_vaa08')"/>
+      <scriptItem value="toLoad.add('state')"/>
+      <scriptItem value="zofar.getJsonProperties(episodeObj,toLoad)"/>
+    </action>
+    <variable var="#{state}" value="'done'" direction="forward" condition="!((zofar.asNumber(vaa08dropDown)==999999 or zofar.asNumber(vaa09dropDown)==999999) and !sf_vaa08.value)" onExit="true" navigator="#{navigatorBean}"/>
+    <variable var="#{state}" value="'done'" direction="forward" condition="!(!flag_vaa08.value and ((((zofar.asNumber(vaa09dropDown) * 100) + zofar.asNumber(vaa08dropDown)) gt (zofar.asNumber(h_exitdatum) +1 ) and (zofar.getMonth(startPoint) lt 12) and (zofar.asNumber(vaa09dropDown) lt 999999) and (zofar.asNumber(vaa08dropDown) lt 999999)) or (((zofar.asNumber(vaa09dropDown) * 100) + zofar.asNumber(vaa08dropDown)) gt (zofar.asNumber(h_exitdatum) +89 ) and (zofar.getMonth(startPoint) == 12) and (zofar.asNumber(vaa09dropDown) lt 999999) and (zofar.asNumber(vaa08dropDown) lt 999999))))" onExit="true" navigator="#{navigatorBean}"/>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" direction="forward" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('monthMap',zofar.map('ao1=1,ao2=2,ao3=3,ao4=4,ao5=5,ao6=6,ao7=7,ao8=8,ao9=9,ao10=10,ao11=11,ao12=12'))"/>
+      <scriptItem value="zofar.assign('yearMap',zofar.map('2018=ao1,2019=ao2,2020=ao3,2021=ao4,2022=ao5,2023=ao6,2024=ao7'))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.setJsonProperty(episodeObj,'sf_vaa08',sf_vaa08.value))"/>
+      <scriptItem value="zofar.assign('toPersist',zofar.map())"/>
+      <scriptItem value="toPersist.put('vaa08',vaa08.valueId)"/>
+      <scriptItem value="toPersist.put('vaa09',vaa09.valueId)"/>
+      <scriptItem value="toPersist.put('sf_vaa08',sf_vaa08.value)"/>
+      <scriptItem value="toPersist.put('state',state.value)"/>
+      <scriptItem value="zofar.setJsonProperties('episodeObj',episodeObj,toPersist)"/>
+    </action>
+    <variable var="#{v_episodeCount_done}" value="found.size()" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('filter',zofar.map())"/>
+      <scriptItem value="filter.put('state','done')"/>
+      <scriptItem value="filter.put('type','Slot2')"/>
+      <scriptItem value="zofar.assign('found',zofar.hasEpisodes(defrac,'2018-01-01T01:00:00.000Z','2024-12-31T01:00:00.000Z',filter))"/>
+    </variable>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" direction="forward" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('splitFlag',true)"/>
+      <scriptItem value="zofar.assign('splitFlag',zofar.ifthenelse(((zofar.asNumber(vaa08dropDown)==999999 or zofar.asNumber(vaa09dropDown)==999999) and !sf_vaa08.value), splitFlag, false ))"/>
+      <scriptItem value="zofar.assign('splitFlag',zofar.ifthenelse((!flag_vaa08.value and ((((zofar.asNumber(vaa09dropDown) * 100) + zofar.asNumber(vaa08dropDown)) gt (zofar.asNumber(h_exitdatum) +1 ) and (zofar.getMonth(startPoint) lt 12) and (zofar.asNumber(vaa09dropDown) lt 999999) and (zofar.asNumber(vaa08dropDown) lt 999999)) or (((zofar.asNumber(vaa09dropDown) * 100) + zofar.asNumber(vaa08dropDown)) gt (zofar.asNumber(h_exitdatum) +89 ) and (zofar.getMonth(startPoint) == 12) and (zofar.asNumber(vaa09dropDown) lt 999999) and (zofar.asNumber(vaa08dropDown) lt 999999)))), splitFlag, false ))"/>
+      <scriptItem value="zofar.log('month : '.concat(zofar.asInteger(vaa08dropDown,sessionController)).concat(' year : ').concat(zofar.asInteger(vaa09dropDown,sessionController)),sessionController.participant)"/>
+      <scriptItem value="zofar.assign('mods',zofar.map())"/>
+      <scriptItem value="mods.put('vaa07',null)"/>
+      <scriptItem value="mods.put('sf_vaa07','false')"/>
+      <scriptItem value="mods.put('vaa08',null)"/>
+      <scriptItem value="mods.put('vaa09',null)"/>
+      <scriptItem value="mods.put('vaa08dropDown',null)"/>
+      <scriptItem value="mods.put('vaa09dropDown',null)"/>
+      <scriptItem value="mods.put('state','new')"/>
+      <scriptItem value="zofar.assign('splitPackage',zofar.splitEpisode(defrac,episodeObj,zofar.asInteger(vaa09dropDown,sessionController),zofar.asInteger(vaa08dropDown,sessionController),mods))"/>
+      <scriptItem value="zofar.assign('splitIndex',zofar.indexOfJson(splitPackage['data'], splitPackage['child']))"/>
+      <scriptItem value="zofar.log('splitPackage : '.concat(splitPackage),sessionController.participant)"/>
+      <scriptItem value="zofar.log('splitIndex : '.concat(splitIndex),sessionController.participant)"/>
+      <scriptItem value="zofar.setVariableValue(episode_index,splitIndex)"/>
+      <scriptItem value="zofar.assign('defrac',splitPackage['data'])"/>
+    </action>
+    <con:section id="vaa08" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['vaa08.t1_0']}</text:text>
+      </f:facet>
+      <mat:singleChoiceMatrix id="msc">
+        <f:facet name="header">
+          <text:intro container="true" id="i1">#{msgs['vaa08.body.msc.i1_0']}</text:intro>
+          <text:question container="true" id="q1">#{msgs['vaa08.body.msc.q1_0']}</text:question>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd1" noResponseOptions="1">
+          <f:facet name="header">
+            <text:text container="true" id="t"/>
+          </f:facet>
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="qi1"/>
+            </f:facet>
+            <ans:dropDownMissingResponseDomain value="#{vaa08.valueId}" var="#{vaa08}">
+              <f:facet name="dropDown">
+                <ans:comboSingleChoiceResponseDomain value="#{vaa08dropDown.valueId}" id="dropDown" showValues="false">
+                  <ans:singleOption id="ao0" itemValue="999999">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao0.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao1" itemValue="1">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao1.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao2" itemValue="2">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao2.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao3" itemValue="3">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao3.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao4" itemValue="4">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao4.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao5" itemValue="5">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao5.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao6" itemValue="6">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao6.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao7" itemValue="7">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao7.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao8" itemValue="8">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao8.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao9" itemValue="9">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao9.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao10" itemValue="10">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao10.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao11" itemValue="11">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao11.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao12" itemValue="12">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i1.rd2.ao12.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                </ans:comboSingleChoiceResponseDomain>
+              </f:facet>
+              <f:facet name="missing">
+                <mat:singleChoiceMatrixItemResponseDomain value="#{vaa08missing.valueId}" id="missing"/>
+              </f:facet>
+            </ans:dropDownMissingResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="qi2"/>
+            </f:facet>
+            <ans:dropDownMissingResponseDomain value="#{vaa09.valueId}" var="#{vaa09}">
+              <f:facet name="dropDown">
+                <ans:comboSingleChoiceResponseDomain value="#{vaa09dropDown.valueId}" id="dropDown" showValues="false">
+                  <ans:singleOption id="ao0" itemValue="999999">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao0.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao1" rendered="#{zofar.asNumber(v_endyear) le 2018}" itemValue="2018">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao1.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao2" rendered="#{zofar.asNumber(v_endyear) ge 2019 and zofar.asNumber(v_startyear) le 2019}" itemValue="2019">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao2.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao3" rendered="#{zofar.asNumber(v_endyear) ge 2020 and zofar.asNumber(v_startyear) le 2020}" itemValue="2020">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao3.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao4" rendered="#{zofar.asNumber(v_endyear) ge 2021 and zofar.asNumber(v_startyear) le 2021}" itemValue="2021">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao4.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao5" rendered="#{zofar.asNumber(v_endyear) ge 2022 and zofar.asNumber(v_startyear) le 2022}" itemValue="2022">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao5.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao6" rendered="#{zofar.asNumber(v_endyear) ge 2023 and zofar.asNumber(v_startyear) le 2023}" itemValue="2023">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao6.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                  <ans:singleOption id="ao7" rendered="#{zofar.asNumber(v_endyear) ge 2024}" itemValue="2024">
+                    <f:facet name="labels">
+                      <text:responseOption id="label">#{msgs['vaa08.body.msc.rd1.i2.rd3.ao7.label']}</text:responseOption>
+                    </f:facet>
+                  </ans:singleOption>
+                </ans:comboSingleChoiceResponseDomain>
+              </f:facet>
+              <f:facet name="missing">
+                <mat:singleChoiceMatrixItemResponseDomain value="#{vaa09missing.valueId}" id="missing"/>
+              </f:facet>
+            </ans:dropDownMissingResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <dis:container id="display">
+        <dis:text id="txt" rendered="#{flag_vaa08.value}">#{msgs['vaa08.body.display.txt_0']}</dis:text>
+      </dis:container>
+      <ques:multipleChoice id="mcsf" rendered="#{(navigatorBean.isSame() and (zofar.asNumber(vaa09dropDown)==999999 or zofar.asNumber(vaa08dropDown)==999999)) or sf_vaa08.value}">
+        <f:facet name="header">
+          <text:intro container="true" id="intro1">#{msgs['vaa08.body.mcsf.intro1_0']}</text:intro>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd4" missingSeparated="true">
+          <ans:multipleOption value="#{sf_vaa08.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa08.body.mcsf.rd4.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <con:section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['vaa08.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['vaa08.body.s1.b.tech.debug0_0']}#{msgs['vaa08.body.s1.b.tech.debug0_2']}#{msgs['vaa08.body.s1.b.tech.debug0_4']}</dis:text>
+          <dis:text id="debug1">#{msgs['vaa08.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['vaa08.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['vaa08.body.s1.b.tech.debug3_0']}</dis:text>
+          <dis:text id="debug4">#{msgs['vaa08.body.s1.b.tech.debug4_0']}</dis:text>
+          <dis:text id="debug5">#{msgs['vaa08.body.s1.b.tech.debug5_0']}</dis:text>
+          <dis:text id="debug6">#{msgs['vaa08.body.s1.b.tech.debug6_0']}</dis:text>
+        </dis:container>
+      </con:section>
+      <ques:pretest id="questioncommentvaa08">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentvaa08">#{msgs['textcommentvaa08_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentvaa08']}" columns="100" var="#{commentvaa08}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+</ui:composition>

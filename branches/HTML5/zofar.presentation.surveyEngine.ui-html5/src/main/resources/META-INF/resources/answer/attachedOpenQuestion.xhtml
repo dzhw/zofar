@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pass="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.AttachedOpenQuestion">
+	<composite:attribute name="var" required="true" type="de.his.zofar.presentation.surveyengine.AbstractAnswerBean" />
+	<composite:attribute name="inputId" default="aoq" type="java.lang.String" />
+	<composite:editableValueHolder name="input" targets="#{cc.attrs.inputId}" />
+	<composite:attribute name="list" type="java.lang.String" default=""/>
+	
+	<composite:attribute name="validationMessage" type="java.lang.String" default="Der Inhalt dieses Feldes ist auf 2000 Zeichen limitiert."/>
+	<composite:attribute name="maxlength" type="java.lang.String" default="2000" />
+	<composite:attribute name="size" type="java.lang.String" default="15" />
+	<composite:attribute name="infieldText" type="java.lang.String" default=""/>
+	<composite:facet name="prefix" />
+	<composite:facet name="postfix" />
+	
+	
+</composite:interface>
+
+<composite:implementation>
+		<h:inputText id="#{cc.attrs.inputId}"
+			value="#{cc.attrs.var.value}" 
+			onkeydown="javascript:zofar_triggerOpen('#{cc.parent.clientId}','#{cc.clientId}:#{cc.attrs.inputId}');"
+			size="#{cc.attrs.size}" pass:size="#{cc.attrs.size}"
+			maxlength="#{cc.attrs.maxlength}"
+			validatorMessage="#{cc.attrs.validationMessage}" 
+			pass:type="text"
+			pass:placeholder="#{cc.attrs.infieldText}"
+			pass:title="#{cc.attrs.infieldText}"
+			pass:list="#{cc.attrs.list}"
+			pass:data-list-lang="#{sessionController.currentLocale.language}"
+			styleClass="#{not component.valid ? 'error' : ''}">
+			<f:validateLength minimum="0" maximum="#{cc.attrs.maxlength}"/>
+		</h:inputText>
+		<h:message for="#{cc.attrs.inputId}" class="error"/>
+</composite:implementation>
+
+</html>

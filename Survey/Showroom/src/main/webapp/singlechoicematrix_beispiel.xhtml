@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="31"/>
+  <ui:define name="template-content">
+    <section id="singlechoicematrix_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['singlechoicematrix_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['singlechoicematrix_beispiel.text_0']}</text:text>
+      </f:facet>
+      <mat:singleChoiceMatrix id="matrix1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix1.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['singlechoicematrix_beispiel.b.matrix1.is_0']}</text:instruction>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd" noResponseOptions="4">
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i1.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix_singlechoice_1_1.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i1.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i1.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i1.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i1.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i2.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix_singlechoice_1_2.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i2.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i2.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i2.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i2.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i3">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i3.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix_singlechoice_1_3.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i3.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i3.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i3.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix1.rd.i3.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <mat:singleChoiceMatrix id="matrix2">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix2.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['singlechoicematrix_beispiel.b.matrix2.is_0']}</text:instruction>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd" noResponseOptions="4">
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i1.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix2_1.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i1.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i1.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i1.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3" missing="true">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i1.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i2.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix2_2.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i2.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i2.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i2.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3" missing="true">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i2.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i3">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i3.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix2_3.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i3.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i3.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i3.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3" missing="true">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix2.rd.i3.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+      <mat:singleChoiceMatrix id="matrix4">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix4.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['singlechoicematrix_beispiel.b.matrix4.is_0']}</text:instruction>
+        </f:facet>
+        <mat:singleChoiceMatrixResponseDomain id="rd" noResponseOptions="4">
+          <mat:singleChoiceMatrixItem id="i1">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i1.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix4_1.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i1.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i1.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i1.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i1.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i2">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i2.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix4_2.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i2.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i2.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i2.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i2.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+          </mat:singleChoiceMatrixItem>
+          <mat:singleChoiceMatrixItem id="i3">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i3.q_0']}</text:question>
+            </f:facet>
+            <mat:singleChoiceMatrixItemResponseDomain id="rd" value="#{matrix4_3.valueId}">
+              <ans:singleOption id="ao0" itemValue="0">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i3.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao2" itemValue="1">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i3.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao3" itemValue="2">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i3.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption id="ao4" itemValue="3">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['singlechoicematrix_beispiel.b.matrix4.rd.i3.rd.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </mat:singleChoiceMatrixItemResponseDomain>
+            <ans:attachedOpenQuestion id="ao1" var="#{ato3}"/>
+          </mat:singleChoiceMatrixItem>
+        </mat:singleChoiceMatrixResponseDomain>
+      </mat:singleChoiceMatrix>
+    </section>
+  </ui:define>
+</ui:composition>

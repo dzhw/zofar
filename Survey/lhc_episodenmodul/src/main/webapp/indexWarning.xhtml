@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="2"/>
+  <ui:define name="template-content">
+    <section id="indexWarning" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['indexWarning.t1_0']}</text:title>
+        <text:text container="true" id="tx1" rendered="#{warningpic.value=='1'}">#{msgs['indexWarning.tx1_0']}</text:text>
+        <text:text container="true" id="pc1" rendered="#{warningpic.value=='1'}">#{msgs['indexWarning.pc1_0']}</text:text>
+        <text:text container="true" id="pc2" rendered="#{warningpic.value=='2'}">#{msgs['indexWarning.pc2_0']}</text:text>
+        <text:text container="true" id="pc3" rendered="#{warningpic.value=='3'}">#{msgs['indexWarning.pc3_0']}</text:text>
+        <text:text container="true" id="pc4" rendered="#{warningpic.value=='4'}">#{msgs['indexWarning.pc4_0']}</text:text>
+        <text:text container="true" id="pc5" rendered="#{warningpic.value=='5'}">#{msgs['indexWarning.pc5_0']}</text:text>
+      </f:facet>
+    </section>
+  </ui:define>
+</ui:composition>

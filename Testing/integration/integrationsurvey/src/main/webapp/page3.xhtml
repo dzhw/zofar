@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:container="http://java.sun.com/jsf/composite/container" xmlns:question="http://java.sun.com/jsf/composite/question" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:answer="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="57"/>
+  <ui:define name="template-content">
+    <container:section id="page3">
+      <question:singleChoice id="question2">
+        <f:facet name="header">
+          <text:question id="q">#{msgs['page3.body.question2.q_0']}</text:question>
+        </f:facet>
+        <answer:radioButtonSingleChoiceResponseDomain value="#{v2.valueId}" var="#{v2}" id="rd" showValues="false" missingSeparated="true">
+          <answer:singleOption itemValue="1" id="ao1" missing="false">
+            <answer:attachedOpenQuestion id="ao" var="#{v3}">
+              <f:facet name="prefix">
+                <text:responseOption id="pr">#{msgs['page3.body.question2.rd.ao1.ao.pr_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption id="po">#{msgs['page3.body.question2.rd.ao1.ao.po_0']}</text:responseOption>
+              </f:facet>
+            </answer:attachedOpenQuestion>
+          </answer:singleOption>
+          <answer:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page3.body.question2.rd.ao2.label']}</text:responseOption>
+            </f:facet>
+          </answer:singleOption>
+        </answer:radioButtonSingleChoiceResponseDomain>
+      </question:singleChoice>
+    </container:section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="52"/>
+  <ui:define name="template-content">
+    <section id="vaa30" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['vaa30.t1_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="qsc1">
+        <f:facet name="header">
+          <text:question container="true" id="q1" rendered="#{zofar.asNumber(vaa01dropDown) != 999999 and zofar.asNumber(vaa02dropDown) != 999999}">#{msgs['vaa30.body.qsc1.q1_0']}</text:question>
+          <text:question container="true" id="q2" rendered="#{zofar.asNumber(vaa01dropDown) == 999999 or zofar.asNumber(vaa02dropDown) == 999999}">#{msgs['vaa30.body.qsc1.q2_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{vaa30.valueId}" var="#{vaa30}" id="rd1" showValues="false" missingSeparated="true" itemClasses="zo-pipes">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa30.body.qsc1.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa30.body.qsc1.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:multipleChoice id="mcsf" rendered="#{(navigatorBean.isSame() and zofar.isMissing(vaa30)) or sf_vaa30.value}">
+        <f:facet name="header">
+          <text:intro container="true" id="intro1">#{msgs['vaa30.body.mcsf.intro1_0']}</text:intro>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd2" missingSeparated="true">
+          <ans:multipleOption value="#{sf_vaa30.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['vaa30.body.mcsf.rd2.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['vaa30.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['vaa30.body.s1.b.tech.debug0_0']}</dis:text>
+          <dis:text id="debug1">#{msgs['vaa30.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['vaa30.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['vaa30.body.s1.b.tech.debug3_0']}</dis:text>
+        </dis:container>
+      </section>
+    </section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,35 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.his.zofar</groupId>
+        <artifactId>zofar.persistence</artifactId>
+        <version>1.0.2</version>
+    </parent>
+    <artifactId>zofar.persistence.questionnaire</artifactId>
+    <name>Questionnaire Persistence</name>
+
+    <dependencies>
+        <!-- <dependency> -->
+        <!-- <groupId>de.his.zofar</groupId> -->
+        <!-- <artifactId>zofar.model.questionnaire</artifactId> -->
+        <!-- <version>${project.version}</version> -->
+        <!-- </dependency> -->
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.persistence.common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.persistence.question</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.persistence.test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

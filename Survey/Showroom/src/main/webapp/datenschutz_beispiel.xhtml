@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="81"/>
+  <ui:define name="template-content">
+    <section id="datenschutz_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['datenschutz_beispiel.t1_0']}</text:title>
+        <text:text container="true" id="t3">#{msgs['datenschutz_beispiel.t3_0']}</text:text>
+      </f:facet>
+      <ques:multipleChoice id="mc">
+        <f:facet name="header">
+          <text:question container="true" id="q"/>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <ans:multipleOption value="#{ic.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['datenschutz_beispiel.b.mc.rd.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <section id="s2">
+        <f:facet name="header">
+          <text:text container="true" id="t4">#{msgs['datenschutz_beispiel.b.s2.t4_0']}</text:text>
+        </f:facet>
+      </section>
+      <section id="sw" rendered="#{navigatorBean.isSame() or zofar.isBooleanSet('flag_ic',sessionController.participant)}">
+        <f:facet name="header">
+          <text:text container="true" id="t5">#{msgs['datenschutz_beispiel.b.sw.t5_0']}</text:text>
+        </f:facet>
+      </section>
+    </section>
+  </ui:define>
+</ui:composition>

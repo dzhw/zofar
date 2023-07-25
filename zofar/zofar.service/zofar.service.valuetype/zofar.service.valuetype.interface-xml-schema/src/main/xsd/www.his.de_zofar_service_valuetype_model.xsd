@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0"
+	targetNamespace="http://www####/zofar/service/valuetype/model"
+	xmlns:ns1="http://www####/zofar/service/valuetype/model/possibleValues"
+	xmlns:tns="http://www####/zofar/service/valuetype/model" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:zofar2="http://www####/zofar/service/valuetype/model">
+
+	<xs:import schemaLocation="NewXMLSchema3.xsd" />
+
+	<xs:import
+		namespace="http://www####/zofar/service/valuetype/model/possibleValues"
+		schemaLocation="www####_zofar_service_valuetype_model_possibleValues.xsd" />
+
+	<xs:complexType name="valueType" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="baseEntity">
+				<xs:sequence>
+					<xs:element name="description" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="identifier" type="xs:string"
+						minOccurs="0" />
+					<xs:element name="measurementLevel">
+						<xs:simpleType>
+							<xs:restriction base="xs:NMTOKEN">
+								<xs:enumeration value="ORDINAL" />
+								<xs:enumeration value="NOMINAL" />
+								<xs:enumeration value="INTERVAL" />
+								<xs:enumeration value="RATIO" />
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="numberValueType">
+		<xs:complexContent>
+			<xs:extension base="tns:valueType">
+				<xs:sequence>
+					<xs:element name="minimum" type="xs:long" />
+					<xs:element name="maximum" type="xs:long" />
+					<xs:element name="decimalPlaces" type="xs:int" />
+					<xs:element name="possibleValues">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="key" minOccurs="0" type="xs:long" />
+											<xs:element name="value" minOccurs="0"
+												type="ns1:possibleNumberValue" />
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="question">
+		<xs:complexContent>
+			<xs:extension base="baseEntity">
+				<xs:sequence>
+					<xs:element name="uuid" type="xs:string" minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="surveyVariable">
+		<xs:complexContent>
+			<xs:extension base="tns:variable">
+				<xs:sequence>
+					<xs:element name="question" type="tns:question"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="panelVariable">
+		<xs:complexContent>
+			<xs:extension base="tns:variable">
+				<xs:sequence>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="variable" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="baseEntity">
+				<xs:sequence>
+					<xs:element name="name" type="xs:string" minOccurs="0" />
+					<xs:element name="uuid" type="xs:string" minOccurs="0" />
+					<xs:element name="label" type="xs:string" minOccurs="0" />
+					<xs:element name="valueType" type="tns:valueType"
+						minOccurs="0" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="stringValueType">
+		<xs:complexContent>
+			<xs:extension base="tns:valueType">
+				<xs:sequence>
+					<xs:element name="length" type="xs:int" minOccurs="0" />
+					<xs:element name="canBeEmpty" type="xs:boolean"
+						minOccurs="0" />
+					<xs:element name="possibleValues">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="key" minOccurs="0" type="xs:string" />
+											<xs:element name="value" minOccurs="0"
+												type="ns1:possibleStringValue" />
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="booleanValueType">
+		<xs:complexContent>
+			<xs:extension base="tns:valueType">
+				<xs:sequence>
+					<xs:element name="possibleValues">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="key" minOccurs="0" type="xs:string" />
+											<xs:element name="value" minOccurs="0"
+												type="ns1:possibleBooleanValue" />
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>
+

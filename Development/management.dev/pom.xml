@@ -1,0 +1,251 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>eu.dzhw.zofar</groupId>
+	<artifactId>management.dev</artifactId>
+	<version>1.0.0</version>
+	<name>Development Suite</name>
+	<distributionManagement>
+		<repository>
+			<id>zofar-maven-deployment</id>
+			<name>Internal Releases</name>
+			<url>http://URL.TO.NEXUS:8081/repository/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>zofar-maven-deployment</id>
+			<name>Internal Releases</name>
+			<url>http://URL.TO.NEXUS:8081/repository/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.shared</groupId>
+			<artifactId>maven-invoker</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.apache.commons</groupId> <artifactId>commons-compress</artifactId> 
+			<version>1.2</version> </dependency> -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>de.his.zofar</groupId>
+			<artifactId>zofar.presentation.surveyEngine</artifactId>
+			<version>1.0.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>de.his.zofar</groupId>
+					<artifactId>zofar.presentation.surveyEngine.ui</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>eu.dzhw.zofar</groupId>
+			<artifactId>management.comm</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!-- <dependency> <groupId>org.apache.commons</groupId> <artifactId>commons-csv</artifactId> 
+			<version>1.0</version> </dependency> -->
+		<dependency>
+			<groupId>eu.dzhw.zofar</groupId>
+			<artifactId>management.utils</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>eu.dzhw.zofar</groupId>
+			<artifactId>management.security</artifactId>
+			<version>1.0.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.jnlp</groupId>
+					<artifactId>jnlp-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>de.his.zofar</groupId>
+			<artifactId>zofar.service.questionnaire.xml</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+		<dependency>
+			<artifactId>xmlbeans</artifactId>
+			<groupId>org.apache.xmlbeans</groupId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>zofar.testing</groupId>
+			<artifactId>mailReturns</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>de.his</groupId>
+			<artifactId>de.his.simulator</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!-- <dependency> <groupId>zofar.support</groupId> <artifactId>webservice.server.rest-spring</artifactId> 
+			<version>1.0.0</version> </dependency> -->
+		<dependency>
+			<groupId>de.his.zofar</groupId>
+			<artifactId>exporter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>eu.dzhw.zofar</groupId>
+					<artifactId>management.dev</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<groupId>de.his.zofar</groupId>
+					<artifactId>zofar.persistence</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>de.his.zofar</groupId>
+					<artifactId>zofar.persistence.questionnaire</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>de.his.zofar</groupId>
+					<artifactId>zofar.service.common</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.postgresql</groupId>
+					<artifactId>postgresql</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>postgresql</groupId>
+					<artifactId>postgresql</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.jgoodies</groupId>
+			<artifactId>forms</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-swing</artifactId>
+			<version>5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.openoffice</groupId>
+			<artifactId>ridl</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openoffice/unoil -->
+		<dependency>
+			<groupId>org.openoffice</groupId>
+			<artifactId>unoil</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.openoffice/juh -->
+		<dependency>
+			<groupId>org.openoffice</groupId>
+			<artifactId>juh</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.github.jeremysolarz</groupId>
+			<artifactId>bootstrap-connector</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.jodconverter/jodconverter-core -->
+		<dependency>
+			<groupId>org.jodconverter</groupId>
+			<artifactId>jodconverter-core</artifactId>
+			<version>4.2.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jodconverter/jodconverter-local -->
+		<dependency>
+			<groupId>org.jodconverter</groupId>
+			<artifactId>jodconverter-local</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+
+
+
+
+
+
+		<!-- <dependency> <groupId>eu.dzhw.zofar</groupId> <artifactId>management.generator</artifactId> 
+			<version>0.0.1-SNAPSHOT</version> </dependency> -->
+
+		<dependency>
+			<groupId>ru.yandex.qatools.ashot</groupId>
+			<artifactId>ashot</artifactId>
+			<version>1.5.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.code.gson</groupId>
+					<artifactId>gson</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>io.jenetics</groupId>
+			<artifactId>jenetics</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.0.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.lowagie</groupId>
+			<artifactId>itext</artifactId>
+			<version>2.1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20180130</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.7.1</version>
+			</plugin>
+		</plugins>
+	</build>
+</project>

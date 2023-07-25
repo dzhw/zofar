@@ -1,0 +1,17 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <jnlp spec="1.0+" codebase="http://vm2m-devwiki.####/management.security/" context="http://vm2m-devwiki.####/" href="bcprov-jdk15.jnlp">
+  <information>
+   <title>bcprov-jdk15</title>
+   <vendor>Sun Microsystems, Inc.</vendor>
+   <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+   <jar href="bclib/bcprov-jdk15on-1.50_orig.jar"/>
+   <jar href="bclib/bcpkix-jdk15on-1.50_orig.jar"/>
+   <jar href="bclib/bcpg-jdk15on-1.50_orig.jar"/>
+  </resources>
+  <component-desc/>
+ </jnlp>

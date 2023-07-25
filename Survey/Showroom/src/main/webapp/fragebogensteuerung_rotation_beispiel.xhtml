@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="56"/>
+  <ui:define name="template-content">
+    <section id="fragebogensteuerung_rotation_beispiel" page="true">
+      <ques:singleChoice id="random1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['fragebogensteuerung_rotation_beispiel.b.random1.q_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{random1.valueId}" var="#{random1}" id="qsc1" showValues="false" missingSeparated="true" itemClasses="zo-pipes">
+          <com:sort id="sort" sorted="#{null}" bean="#{sortBean}" mode="randomonce">
+            <ans:singleOption itemValue="1" id="ao1" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random1.qsc1.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="2" id="ao2" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random1.qsc1.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="3" id="ao3" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random1.qsc1.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="4" id="ao4" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random1.qsc1.ao4.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+          </com:sort>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:singleChoice id="random2">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['fragebogensteuerung_rotation_beispiel.b.random2.q_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{random2.valueId}" var="#{random2}" id="qsc2" showValues="false" missingSeparated="true" itemClasses="zo-pipes">
+          <com:sort id="sort" sorted="#{null}" bean="#{sortBean}" mode="random">
+            <ans:singleOption itemValue="1" id="ao1" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random2.qsc2.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="2" id="ao2" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random2.qsc2.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="3" id="ao3" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random2.qsc2.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+            <ans:singleOption itemValue="4" id="ao4" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['fragebogensteuerung_rotation_beispiel.b.random2.qsc2.ao4.label']}</text:responseOption>
+              </f:facet>
+            </ans:singleOption>
+          </com:sort>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+    </section>
+  </ui:define>
+</ui:composition>

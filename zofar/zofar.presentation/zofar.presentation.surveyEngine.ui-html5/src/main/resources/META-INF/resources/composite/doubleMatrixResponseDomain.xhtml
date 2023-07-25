@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.DoubleMatrixResponseDomain">
+    <composite:attribute name="noResponseOptions" type="java.lang.Integer" />
+    <composite:attribute name="isDifferential" type="java.lang.Boolean" default="false" />
+    <composite:attribute name="isShowValues" type="java.lang.Boolean" default="false" />
+    <composite:facet name="leftScaleHeader" />
+    <composite:facet name="rightScaleHeader" />
+    <composite:facet name="leftHeader" />
+    <composite:facet name="rightHeader" />
+    <composite:facet name="leftMissingHeader" />
+    <composite:facet name="rightMissingHeader" />
+</composite:interface>
+
+<composite:implementation>
+</composite:implementation>
+</html>

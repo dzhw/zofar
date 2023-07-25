@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="5"/>
+  <ui:define name="template-content">
+    <section id="ueberschrift_beispiel" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="txt">#{msgs['ueberschrift_beispiel.txt_0']}</text:text>
+        <text:title container="true" id="t1">#{msgs['ueberschrift_beispiel.t1_0']}</text:title>
+        <text:title container="true" id="t2">#{msgs['ueberschrift_beispiel.t2_0']}</text:title>
+        <text:title container="true" id="t3">#{msgs['ueberschrift_beispiel.t3_0']}</text:title>
+        <text:title container="true" id="t4">#{msgs['ueberschrift_beispiel.t4_0']}</text:title>
+        <text:title container="true" id="t5">#{msgs['ueberschrift_beispiel.t5_0']}</text:title>
+        <text:title container="true" id="t6">#{msgs['ueberschrift_beispiel.t6_0']}</text:title>
+      </f:facet>
+    </section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:calendar="http://java.sun.com/jsf/composite/composite"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="de.his.zofar.Calendar.episodes">
+	<composite:attribute name="var" required="true" type="de.his.zofar.presentation.surveyengine.AbstractAnswerBean" />
+	<composite:attribute name="minYear" type="java.lang.String" default="2018"/>
+	<composite:attribute name="maxYear" type="java.lang.String" default="2024"/>
+	<composite:attribute name="minMonth" type="java.lang.String" default="01"/>
+	<composite:attribute name="maxMonth" type="java.lang.String" default="12"/>
+	<composite:attribute name="lang" type="java.lang.String" default="de"/>
+	<composite:attribute name="configuration" type="java.lang.String" default="{}"/>
+	<composite:attribute name="disabled" type="java.lang.String" default="{}"/>
+	<composite:attribute name="focus" type="java.lang.String" default=""/>
+</composite:interface>
+
+<composite:implementation>
+
+		<h:inputHidden id="data"
+			value="#{cc.attrs.var.value}">
+		</h:inputHidden>
+		
+		<h:inputHidden id="blckList" name="blckList"
+			value="[-1]" >
+		</h:inputHidden>
+</composite:implementation>
+</html>

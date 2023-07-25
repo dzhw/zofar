@@ -1,0 +1,15 @@
+<!-- LOOP Postfix -->
+
+	<zofar:page uid="[[modul]][[loop]]end">
+        <zofar:header>
+           <zofar:title uid="t1">[[modul]]</zofar:title>
+        </zofar:header>
+        <zofar:body uid="b">
+
+                        
+        </zofar:body>
+
+        <zofar:transitions>
+            <zofar:transition target="[[modul]][[nextLoop]]start" />
+        </zofar:transitions>		
+    </zofar:page>

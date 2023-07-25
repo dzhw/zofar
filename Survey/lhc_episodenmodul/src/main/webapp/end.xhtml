@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:dis="http://java.sun.com/jsf/composite/display" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="99"/>
+  <ui:param name="lastPage" value="true"/>
+  <ui:define name="template-content">
+    <section id="end" page="true">
+      <f:facet name="header"/>
+      <dis:container id="Bilder">
+        <dis:text id="txt1">#{msgs['end.b.Bilder.txt1_0']}</dis:text>
+      </dis:container>
+      <section id="sc">
+        <f:facet name="header">
+          <text:text container="true" id="t1">#{msgs['end.b.sc.t1_0']}</text:text>
+          <text:text container="true" id="t2">#{msgs['end.b.sc.t2_0']}#{msgs['end.b.sc.t2_2']}</text:text>
+          <text:text container="true" id="t3">#{msgs['end.b.sc.t3_0']}</text:text>
+        </f:facet>
+      </section>
+    </section>
+  </ui:define>
+  <ui:define name="template-left-navigation">
+    <com:jumperContainer separator="side"/>
+  </ui:define>
+  <ui:define name="template-top-navigation">
+    <com:jumperContainer separator="top"/>
+  </ui:define>
+</ui:composition>

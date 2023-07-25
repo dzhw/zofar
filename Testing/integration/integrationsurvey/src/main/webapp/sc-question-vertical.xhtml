@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:container="http://java.sun.com/jsf/composite/container"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:zo="http://zofar.org/ui">
+    <ui:param name="progress" value="0" />
+    <ui:define name="page-content">
+        <container:section uid="index">
+            <zo:singleChoice id="sc" styleClass="additional">
+                <f:facet name="header">
+                    <zo:question id="question" block="true"
+                        styleClass="additional">Question?</zo:question>
+                    <zo:instruction id="instruction" block="true">Instruction!</zo:instruction>
+                    <zo:intro id="intro" block="true">Introduction.</zo:intro>
+                </f:facet>
+            </zo:singleChoice>
+        </container:section>
+    </ui:define>
+</ui:composition>

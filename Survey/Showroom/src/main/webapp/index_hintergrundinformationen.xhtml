@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="1"/>
+  <ui:define name="template-content">
+    <section id="index_hintergrundinformationen" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['index_hintergrundinformationen.t1_0']}</text:title>
+        <text:text container="true" id="t2">#{msgs['index_hintergrundinformationen.t2_0']}</text:text>
+      </f:facet>
+      <section id="accordion1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t1">#{msgs['index_hintergrundinformationen.b.accordion1.t1_0']}</text:title>
+        </f:facet>
+        <dis:container id="di">
+          <dis:text id="t1">#{msgs['index_hintergrundinformationen.b.accordion1.accordion1.di.t1_0']}</dis:text>
+        </dis:container>
+      </section>
+      <section id="s2">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['index_hintergrundinformationen.b.s2.t_0']}</text:title>
+          <text:title container="true" id="t1">#{msgs['index_hintergrundinformationen.b.s2.t1_0']}</text:title>
+        </f:facet>
+      </section>
+    </section>
+  </ui:define>
+</ui:composition>

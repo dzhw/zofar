@@ -1,0 +1,3445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd" default-autowire="byName" xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bean name="sessionController" class="de.his.zofar.presentation.surveyengine.controller.SessionController" scope="session"/>
+  <bean name="textsorten_beispiel" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="textsorten_beispiel"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="Wert 1"/>
+        <entry key="ao2" value="Wert 2"/>
+        <entry key="ao3" value="Wert 3"/>
+        <entry key="ao4" value="Wert 4"/>
+        <entry key="ao5" value="Wert 5"/>
+        <entry key="ao6" value="Wert 6"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qo1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo1"/>
+  </bean>
+  <bean name="qo2" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo2"/>
+  </bean>
+  <bean name="qo3" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo3"/>
+  </bean>
+  <bean name="qo4" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo4"/>
+  </bean>
+  <bean name="qo5" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo5"/>
+  </bean>
+  <bean name="qo6" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo6"/>
+  </bean>
+  <bean name="qo7" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo7"/>
+  </bean>
+  <bean name="qo8" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo8"/>
+  </bean>
+  <bean name="qo9" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo9"/>
+  </bean>
+  <bean name="qo10" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo10"/>
+  </bean>
+  <bean name="qo11" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo11"/>
+  </bean>
+  <bean name="mp1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mp1"/>
+  </bean>
+  <bean name="monthpicker1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="monthpicker1"/>
+  </bean>
+  <bean name="monthpicker2" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="monthpicker2"/>
+  </bean>
+  <bean name="ft_sc_risiko" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="ft_sc_risiko"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="ft_sc_risiko_open" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="ft_sc_risiko_open"/>
+  </bean>
+  <bean name="scradio3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="scradio3"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="scradio4" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="scradio4"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="ato1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="ato1"/>
+  </bean>
+  <bean name="qsc1_ver" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_ver"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc2_ver" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc2_ver"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc3_ver" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc3_ver"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc4_ver" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc4_ver"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+        <entry key="ao6" value="6"/>
+        <entry key="ao7" value="7"/>
+        <entry key="ao8" value="8"/>
+        <entry key="ao9" value="9"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc5_ver" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc5_ver"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao5" value="5"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc1_hor" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_hor"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc1_hor_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_hor_2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc1_hor_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_hor_3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc1_hor_4" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_hor_4"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+        <entry key="ao6" value="6"/>
+        <entry key="ao7" value="7"/>
+        <entry key="ao8" value="8"/>
+        <entry key="ao9" value="9"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc2_hor" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc2_hor"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc3_hor" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc3_hor"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc4_hor" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc4_hor"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc5_hor" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc5_hor"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao5" value="5"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc1_dd" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_dd"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc2_dd" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc2_dd"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc3_dd" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc3_dd"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+        <entry key="ao6" value="6"/>
+        <entry key="ao7" value="7"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="ato2" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="ato2"/>
+  </bean>
+  <bean name="mc1_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc1_1"/>
+    <constructor-arg value="mc1_1"/>
+  </bean>
+  <bean name="mc1_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc1_2"/>
+    <constructor-arg value="mc1_2"/>
+  </bean>
+  <bean name="mc1_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc1_3"/>
+    <constructor-arg value="mc1_3"/>
+  </bean>
+  <bean name="mc3_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc3_1"/>
+    <constructor-arg value="mc3_1"/>
+  </bean>
+  <bean name="mc3_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc3_2"/>
+    <constructor-arg value="mc3_2"/>
+  </bean>
+  <bean name="mc3_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc3_3"/>
+    <constructor-arg value="mc3_3"/>
+  </bean>
+  <bean name="mc3_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc3_4"/>
+    <constructor-arg value="mc3_4"/>
+  </bean>
+  <bean name="mc4_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc4_1"/>
+    <constructor-arg value="mc4_1"/>
+  </bean>
+  <bean name="mc4_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc4_2"/>
+    <constructor-arg value="mc4_2"/>
+  </bean>
+  <bean name="mc4_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc4_3"/>
+    <constructor-arg value="mc4_3"/>
+  </bean>
+  <bean name="mc2_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc2_1"/>
+    <constructor-arg value="mc2_1"/>
+  </bean>
+  <bean name="mc2_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc2_2"/>
+    <constructor-arg value="mc2_2"/>
+  </bean>
+  <bean name="mc2_2_open" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc2_2_open"/>
+  </bean>
+  <bean name="mc2_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc2_3"/>
+    <constructor-arg value="mc2_3"/>
+  </bean>
+  <bean name="mc2_3_open" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc2_3_open"/>
+  </bean>
+  <bean name="mc2_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mc2_4"/>
+    <constructor-arg value="mc2_4"/>
+  </bean>
+  <bean name="ato3" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="ato3"/>
+  </bean>
+  <bean name="matrix2_1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix2_1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="matrix2_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix2_2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="matrix2_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix2_3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="matrix3_1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix3_1"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix3_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix3_2"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix3_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix3_3"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix4_1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix4_1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix4_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix4_2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix4_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix4_3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix_singlechoice_1_1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_singlechoice_1_1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix_singlechoice_1_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_singlechoice_1_2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrix_singlechoice_1_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_singlechoice_1_3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao0" value="0"/>
+        <entry key="ao2" value="1"/>
+        <entry key="ao3" value="2"/>
+        <entry key="ao4" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="ato4" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="ato4"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_1_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_1_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_1_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_1_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_1_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_1_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_1_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_1_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_2_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_2_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_2_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_2_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_2_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_2_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_2_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_2_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_3_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_3_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_3_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_3_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_3_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_3_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_1_3_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_1_3_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_1_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_1_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_1_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_1_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_1_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_1_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_1_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_1_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_2_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_2_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_2_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_2_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_2_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_2_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_2_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_2_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_3_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_3_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_3_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_3_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_3_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_3_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_2_3_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_2_3_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_1_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_1_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_1_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_1_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_1_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_1_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_1_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_1_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_2_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_2_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_2_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_2_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_2_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_2_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_2_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_2_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_3_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_3_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_3_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_3_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_3_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_3_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_3_3_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_3_3_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_1_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_1_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_1_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_1_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_1_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_1_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_1_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_1_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_2_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_2_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_2_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_2_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_2_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_2_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_2_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_2_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_3_1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_3_1"/>
+    <constructor-arg value="ao0"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_3_2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_3_2"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_3_3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_3_3"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="matrix_multiplechoice_4_3_4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrix_multiplechoice_4_3_4"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="qo12" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo12"/>
+  </bean>
+  <bean name="qo13" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo13"/>
+  </bean>
+  <bean name="qo14" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo14"/>
+  </bean>
+  <bean name="qo15" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo15"/>
+  </bean>
+  <bean name="qo16" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo16"/>
+  </bean>
+  <bean name="qo17" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo17"/>
+  </bean>
+  <bean name="qo18" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo18"/>
+  </bean>
+  <bean name="qo21" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo21"/>
+  </bean>
+  <bean name="qo22" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo22"/>
+  </bean>
+  <bean name="qo23" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo23"/>
+  </bean>
+  <bean name="qo24" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo24"/>
+  </bean>
+  <bean name="qo25" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo25"/>
+  </bean>
+  <bean name="qo26" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo26"/>
+  </bean>
+  <bean name="qo27" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo27"/>
+  </bean>
+  <bean name="qo32" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo32"/>
+  </bean>
+  <bean name="qo33" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo33"/>
+  </bean>
+  <bean name="qo34" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo34"/>
+  </bean>
+  <bean name="qo35" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo35"/>
+  </bean>
+  <bean name="qo36" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo36"/>
+  </bean>
+  <bean name="qo37" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo37"/>
+  </bean>
+  <bean name="matrixdouble_it11" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it11"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it12" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it12"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it21" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it21"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it22" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it22"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it31" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it31"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it32" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it32"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it41" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it41"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it42" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it42"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it51" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it51"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it52" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it52"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it61" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it61"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it62" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it62"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it71" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it71"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it72" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it72"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it81" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it81"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="matrixdouble_it82" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="matrixdouble_it82"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="comparison1_1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison1_1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="comparison1_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison1_2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="comparison1_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison1_3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="comparison2_1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison2_1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="comparison2_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison2_2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="comparison2_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison2_3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="comparison3_1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison3_1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="comparison3_2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison3_2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="comparison3_3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="comparison3_3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="mo01schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo01sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo01sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo02sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo02sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo03sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo03sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo04sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo04sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo05sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo05sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo06sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo06sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo07sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo07sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo08sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo08sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo09sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo09sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo10sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo10sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo11sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo11sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo12sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo12sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo13sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo13sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo14sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo14sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo15sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo15sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo16sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo16sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo17sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo17sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo18sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo18sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo19sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo19sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo20sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo20sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo21sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo21sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo22sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo22sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo23sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo23sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo24sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo24sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo25sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo25sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo26sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo26sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo27sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo27sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo28sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo28sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo29sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo29sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo30sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo30sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo31sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo31sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo32sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo32sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo33sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo33sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo34sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo34sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo35sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo35sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36schule" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36schule"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36studium" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36studium"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36ausb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36ausb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36fortb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36fortb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36jobben" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36jobben"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36erwerb" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36erwerb"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36praktikum" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36praktikum"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36elternz" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36elternz"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36alo" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36alo"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="mo36sonstiges" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="mo36sonstiges"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="color1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="color1"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="flag1" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="flag1"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="kommentar_1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="kommentar_1"/>
+  </bean>
+  <bean name="kommentar_2" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="kommentar_2"/>
+  </bean>
+  <bean name="ic" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="ic"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="c7taet1az" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1az"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="c7taet1best" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1best"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="c7taet1janf" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1janf"/>
+  </bean>
+  <bean name="c7taet1jend" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1jend"/>
+  </bean>
+  <bean name="c7taet1manf" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1manf"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="c7taet1mend" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1mend"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="c7taet1stdtz" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1stdtz"/>
+  </bean>
+  <bean name="c7taet1stdvz" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1stdvz"/>
+  </bean>
+  <bean name="c7taet1wazhau" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="c7taet1wazhau"/>
+  </bean>
+  <bean name="var1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="var1"/>
+    <property name="optionValues">
+      <map/>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="var2" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="var2"/>
+  </bean>
+  <bean name="var3" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="var3"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="var4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="var4"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="var5" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="var5"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="random1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="random1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="random2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="random2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qo_acc1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo_acc1"/>
+  </bean>
+  <bean name="qo_acc2" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo_acc2"/>
+  </bean>
+  <bean name="qo_acc3" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qo_acc3"/>
+  </bean>
+  <bean name="qsc_acc1" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc_acc1"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc_acc2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc_acc2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="qsc_acc3" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc_acc3"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="example1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="example1"/>
+  </bean>
+  <bean name="example2" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="example2"/>
+  </bean>
+  <bean name="example3" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="example3"/>
+  </bean>
+  <bean name="example4" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="example4"/>
+  </bean>
+  <bean name="language" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="language"/>
+  </bean>
+  <bean name="isMobile2" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="isMobile2"/>
+    <constructor-arg value=""/>
+  </bean>
+  <bean name="qsc1_dddropDown" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_dddropDown"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+    <property name="labels">
+      <map>
+        <entry key="ao1" value="Antwortoption 1"/>
+        <entry key="ao2" value="Antwortoption 2"/>
+        <entry key="ao3" value="Antwortoption 3"/>
+        <entry key="ao4" value="Antwortoption 4"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc2_dddropDown" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc2_dddropDown"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="labels">
+      <map>
+        <entry key="ao1" value="Antwortoption 1"/>
+        <entry key="ao2" value="Antwortoption 2"/>
+        <entry key="ao3" value="Antwortoption 3"/>
+        <entry key="ao4" value="Antwortoption 4"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc3_dddropDown" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc3_dddropDown"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+        <entry key="ao6" value="6"/>
+        <entry key="ao7" value="7"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+    <property name="labels">
+      <map>
+        <entry key="ao1" value="Antwortoption 1"/>
+        <entry key="ao2" value="Antwortoption 2"/>
+        <entry key="ao3" value="Antwortoption 3"/>
+        <entry key="ao4" value="Antwortoption 4"/>
+        <entry key="ao5" value="Antwortoption 5"/>
+        <entry key="ao6" value="Antwortoption 6"/>
+        <entry key="ao7" value="Antwortoption 7"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc2_ddmissing" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc2_ddmissing"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="labels">
+      <map>
+        <entry key="ao1" value="Antwortoption 1"/>
+        <entry key="ao2" value="Antwortoption 2"/>
+        <entry key="ao3" value="Antwortoption 3"/>
+        <entry key="ao4" value="Antwortoption 4"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc3_ddmissing" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc3_ddmissing"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+        <entry key="ao5" value="5"/>
+        <entry key="ao6" value="6"/>
+        <entry key="ao7" value="7"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+    <property name="labels">
+      <map>
+        <entry key="ao1" value="Antwortoption 1"/>
+        <entry key="ao2" value="Antwortoption 2"/>
+        <entry key="ao3" value="Antwortoption 3"/>
+        <entry key="ao4" value="Antwortoption 4"/>
+        <entry key="ao5" value="Antwortoption 5"/>
+        <entry key="ao6" value="Antwortoption 6"/>
+        <entry key="ao7" value="Antwortoption 7"/>
+      </map>
+    </property>
+  </bean>
+  <bean name="qsc1_ddmissing" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="qsc1_ddmissing"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+        <entry key="ao3" value="3"/>
+        <entry key="ao4" value="4"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+    <property name="labels">
+      <map>
+        <entry key="ao1" value="Antwortoption 1"/>
+        <entry key="ao2" value="Antwortoption 2"/>
+        <entry key="ao3" value="Antwortoption 3"/>
+        <entry key="ao4" value="Antwortoption 4"/>
+      </map>
+    </property>
+  </bean>
+</beans>

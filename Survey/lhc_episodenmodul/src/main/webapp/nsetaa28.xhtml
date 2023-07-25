@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="60"/>
+  <ui:define name="template-content">
+    <variable var="#{h_em0001}" value="0" direction="forward" condition="zofar.asNumber(h_emaa12)==0" onExit="true" navigator="#{navigatorBean}"/>
+    <variable var="#{h_emmax}" value="6" direction="forward" condition="zofar.asNumber(h_emaa12)==0" onExit="true" navigator="#{navigatorBean}"/>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('toReset',zofar.list())"/>
+      <scriptItem value="toReset.add('emaa28')"/>
+      <scriptItem value="toReset.add('emaa29')"/>
+      <scriptItem value="toReset.add('emaa30')"/>
+      <scriptItem value="toReset.add('sf_emaa30')"/>
+      <scriptItem value="zofar.resetVars(toReset)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toLoad',zofar.list())"/>
+      <scriptItem value="toLoad.add('emaa28')"/>
+      <scriptItem value="toLoad.add('emaa29')"/>
+      <scriptItem value="toLoad.add('emaa30')"/>
+      <scriptItem value="toLoad.add('sf_emaa30')"/>
+      <scriptItem value="zofar.getJsonProperties(episodeObj,toLoad)"/>
+    </action>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toPersist',zofar.map())"/>
+      <scriptItem value="toPersist.put('emaa28',emaa28.valueId)"/>
+      <scriptItem value="toPersist.put('emaa29',emaa29)"/>
+      <scriptItem value="toPersist.put('emaa30',emaa30.valueId)"/>
+      <scriptItem value="toPersist.put('sf_emaa30',sf_emaa30)"/>
+      <scriptItem value="zofar.setJsonProperties('episodeObj',episodeObj,toPersist)"/>
+      <scriptItem value="zofar.assign('defrac',zofar.addOrReplaceJson(defrac,episodeObj,zofar.toInteger(episode_index.value)))"/>
+    </action>
+    <con:section id="nsetaa28" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t4">#{msgs['nsetaa28.t4_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="sc">
+        <f:facet name="header">
+          <text:question container="true" id="q1" rendered="#{zofar.asNumber(emaa01)!=999999 and zofar.asNumber(emaa02)!=999999}">#{msgs['nsetaa28.b.sc.q1_0']}</text:question>
+          <text:question container="true" id="q2" rendered="#{zofar.asNumber(emaa01)==999999 or zofar.asNumber(emaa02)==999999}">#{msgs['nsetaa28.b.sc.q2_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{emaa28.valueId}" var="#{emaa28}" id="rd1" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="3" id="ao3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao3.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="4" id="ao4" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao4.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="5" id="ao5" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao5.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="6" id="ao6" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao6.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="7" id="ao7" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao7.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="8" id="ao8" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc.rd1.ao8.label']}</text:responseOption>
+            </f:facet>
+            <ans:attachedOpenQuestion id="ato" var="#{emaa29}"/>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:singleChoice id="sc2">
+        <f:facet name="header">
+          <text:question container="true" id="q3" rendered="#{zofar.asNumber(emaa01)!=999999 and zofar.asNumber(emaa02)!=999999 and zofar.asNumber(emaa03)!=999999 and zofar.asNumber(emaa04)!=999999}">#{msgs['nsetaa28.b.sc2.q3_0']}</text:question>
+          <text:question container="true" id="q4" rendered="#{zofar.asNumber(emaa01)==999999 or zofar.asNumber(emaa02)==999999 or zofar.asNumber(emaa03)==999999 or zofar.asNumber(emaa04)==999999}">#{msgs['nsetaa28.b.sc2.q4_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{emaa30.valueId}" var="#{emaa30}" id="rd2" showValues="false" missingSeparated="true">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc2.rd2.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.sc2.rd2.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:multipleChoice id="mcsf" rendered="#{(navigatorBean.isSame() and zofar.isMissing(emaa30)) or sf_emaa30.value}">
+        <f:facet name="header">
+          <text:intro container="true" id="intro1">#{msgs['nsetaa28.b.mcsf.intro1_0']}</text:intro>
+          <text:question container="true" id="q1"/>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd3" missingSeparated="true">
+          <ans:multipleOption value="#{sf_emaa30.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa28.b.mcsf.rd3.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <ques:pretest id="questioncommentnsetaa28">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentnsetaa28">#{msgs['textcommentnsetaa28_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentnsetaa28']}" columns="100" var="#{commentnsetaa28}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+  <ui:define name="template-left-navigation">
+    <com:jumperContainer separator="side"/>
+  </ui:define>
+  <ui:define name="template-top-navigation">
+    <com:jumperContainer separator="top"/>
+  </ui:define>
+</ui:composition>

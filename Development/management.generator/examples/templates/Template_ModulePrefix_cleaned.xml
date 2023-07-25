@@ -1,0 +1,43 @@
+<!-- Modul Prefix -->
+    <zofar:page uid="index">
+        <zofar:header>
+            <zofar:title uid="t1">[[modul]]</zofar:title>
+        </zofar:header>
+        <zofar:body uid="body">
+        </zofar:body>
+        <zofar:triggers>
+            <zofar:variable variable="url" value="zofar.baseUrl()"></zofar:variable>
+            <zofar:jsCheck variable="jsCheck" xvar="width" yvar="height">
+            </zofar:jsCheck>
+            <zofar:variable variable="isMobile" value="zofar.isMobile()"></zofar:variable>
+        </zofar:triggers>
+        <zofar:transitions>
+            <zofar:transition target="offer" condition="jsCheck.value and isMobile.value and width.value lt 400"/>
+            <zofar:transition target="[[modul]]start" />
+        </zofar:transitions>
+    </zofar:page>
+    
+    <zofar:page uid="offer">
+        <zofar:header>
+            <zofar:title uid="t" block="true">
+                Um ein optimales Befragungserlebnis zu erhalten, sollten Sie für die Beantwortung einiger Fragen das Display drehen.
+            </zofar:title>
+        </zofar:header>
+        <zofar:body uid="b"></zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="[[modul]]start"/>
+        </zofar:transitions>
+    </zofar:page>
+    
+    <zofar:page uid="[[modul]]start">
+        <zofar:header>
+            <zofar:text uid="t" block="true">[[modul]]</zofar:text>
+        </zofar:header>
+        <zofar:body uid="b">
+  
+        </zofar:body>
+        <zofar:transitions>
+            <zofar:transition target="[[modul]][[loop0]]start"/>
+        </zofar:transitions>
+    </zofar:page>
+    

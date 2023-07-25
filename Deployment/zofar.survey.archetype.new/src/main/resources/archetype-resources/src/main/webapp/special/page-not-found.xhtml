@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/special.xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+		<ui:param name="target"
+		value="#{facesContext.externalContext.requestContextPath}" />
+	<ui:define name="template-content">
+	Seite existiert nicht
+  </ui:define>
+	<ui:define name="template-buttons">
+		<h:commandButton onclick="history.back();" value="Zurück"></h:commandButton>
+	</ui:define>
+</ui:composition>

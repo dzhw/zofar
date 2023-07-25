@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+
+/* zofar buttons styles */
+.zo-buttons {
+    text-align: center;
+}
+
+/*VD*/
+.zo-button_login {
+	/*background-color:#1E90FF;*/
+	background-color:#396FA6;
+	-webkit-border-top-left-radius:15px;
+	-moz-border-radius-topleft:15px;
+	border-top-left-radius:15px;
+	-webkit-border-top-right-radius:15px;
+	-moz-border-radius-topright:15px;
+	border-top-right-radius:15px;
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+	-webkit-border-bottom-left-radius:15px;
+	-moz-border-radius-bottomleft:15px;
+	border-bottom-left-radius:15px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:normal;
+	font-style:normal;
+	height:20px;
+	line-height:20px;
+	width:65px;
+	padding-left:2px;
+	padding-right:2px;
+	text-decoration:none;
+	text-align:center;
+}.zo-button_login:active {
+	position:relative;
+	top:1px;
+}
+
+.zofar-btn-logout-icon .fa-sign-out-alt::before {
+  content: "\f2f5";
+}

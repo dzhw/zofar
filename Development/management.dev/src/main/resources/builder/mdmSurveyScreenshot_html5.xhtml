@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pass="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf" xmlns:zo="http://zofar.org/ui">
+
+<h:head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!--    	<link rel="apple-touch-icon" href="#{request.contextPath}/resources/html5/images/apple-touch-icon.png"/> -->
+
+	<title></title>
+
+	<!-- Set Google Font in master.scss -->
+	<!-- Add Favicon via: http://realfavicongenerator.net/ -->
+	<link
+		href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+	<h:outputStylesheet library="html5/css" name="normalize.css" />
+	<h:outputStylesheet library="html5/bootstrap/css" name="bootstrap.min.css" />
+	<h:outputStylesheet library="html5/css" name="master.css" />
+	<h:outputStylesheet library="html5/css" name="additional.css" />
+
+	<h:outputScript library="html5/js" name="modernizr-2.8.3.min.js" />
+	<h:outputScript library="html5/js" name="plugins.js" />
+	<h:outputScript library="js" name="zofarEvent.js" />
+
+</h:head>
+<h:body class="custom-#{view.viewId.substring(1, view.viewId.length()-6)}">
+    #{navigatorBean.registerViewID(view.viewId.substring(1, view.viewId.length()-6))}
+    	<c:if test="#{not empty param['zofar_lang']}">
+		<c:set value="#{param['zofar_lang']}" target="#{language}" property="value" />
+	</c:if>   
+    #{sessionController.switchPageLocale(zofar.ifthenelse(zofar.isSet('language',sessionController.participant),language.value,'de'))}
+    <f:view locale="#{sessionController.currentLocale}">
+		<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+		<div class="header" style="opacity: 0;">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="logos-outer justify-content-between">
+											
+
+							
+<!-- 							<div class="logo2"> -->
+<!-- 								<h:graphicImage library="images" alt="Development Logo" -->
+<!-- 									title="Development Logo" name="development1.jpg" class="img-fluid2" /> -->
+<!-- 							</div> -->
+<!--  							<div class="logout-icon"> 
+ 								<zo:logout-icon id="logout" name="logout" value="Logout" /> 
+ 							</div>  -->
+				
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<h:form id="form" name="form" class="survey">
+				<zo:default id="defaultActionPanel" name="defaultActionPanel" isLastPage="#{lastPage}" />
+				<div class="survey-outer">
+					<ui:insert name="template-header" />
+					<ui:insert name="template-content" />
+					<span style="opacity: 0;-webkit-opacity: 0;display: block;">
+					<zo:panel-responsive id="btPanel" name="btPanel" isLastPage="#{lastPage}"/>
+                    </span>
+				</div>
+			</h:form>
+		</div>
+		
+<!-- 		<div class="dev-container" style="font-size: 1.4rem;font-weight: inherit;">
+            <table style="width: 100%;border-collapse: collapse;">
+				<thead>
+                    <tr><td style="border-bottom: 1px solid #ddd;">ID</td><td style="border-bottom: 1px solid #ddd;">Condition</td></tr>
+				</thead>
+				<tbody>
+				<ui:repeat var="entry" value="#{devProxy.getVisibleRegistered().entrySet().toArray()}">
+	            	<tr><td style="border-bottom: 1px solid #ddd;">#{entry.key}</td><td style="border-bottom: 1px solid #ddd;">#{entry.value}</td></tr>
+				</ui:repeat>
+				</tbody>
+            </table>
+        </div> -->
+	</f:view>
+	<h:outputScript library="html5/js" name="jquery-1.12.0.min.js" />
+	<h:outputScript library="html5/bootstrap/js" name="tether.min.js" />
+	<h:outputScript library="html5/bootstrap/js" name="bootstrap.min.js" />
+	<h:outputScript library="html5/js" name="master.js" />
+	<h:outputScript library="html5/js" name="additional.js" />
+</h:body>
+</html>

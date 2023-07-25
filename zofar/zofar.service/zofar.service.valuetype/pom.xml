@@ -1,0 +1,39 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>de.his.zofar</groupId>
+        <artifactId>zofar.service</artifactId>
+        <version>1.0.2</version>
+     </parent>
+
+    <artifactId>zofar.service.valuetype</artifactId>
+    <name>Variable Value Type Management Services</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.service.common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.persistence.valuetype</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>de.his.zofar</groupId>
+            <artifactId>zofar.service.test</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <packaging>pom</packaging>
+    <modules>
+        <!-- <module>zofar.service.valuetype.interface</module>-->
+        <module>zofar.service.valuetype.impl</module>
+        <module>zofar.service.valuetype.mock</module>
+         <module>zofar.service.valuetype.interface-xml-schema</module>
+         <module>zofar.service.valuetype.interface-xml-impl</module>
+    </modules>
+</project>

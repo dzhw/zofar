@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="94"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.redirect('indexWarning')" condition="zofar.toInteger(episode_index.value) lt 0" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.log('episode index -1, backup to calendar',sessionController.participant)"/>
+    </action>
+    <variable var="#{state}" value="'done'" direction="forward" condition="true" onExit="true" navigator="#{navigatorBean}"/>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.setJsonProperty(episodeObj,'state',state.value))"/>
+      <scriptItem value="zofar.assign('defrac',zofar.addOrReplaceJson(defrac,episodeObj,zofar.toInteger(episode_index.value)))"/>
+    </action>
+    <con:section id="placeholder_module_4" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['placeholder_module_4.t1_0']}</text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

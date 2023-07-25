@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <configuration>
+        <date-format>MM/dd/yyyy HH:mm</date-format>
+        <wildcard>true</wildcard>
+        <trim-strings>true</trim-strings>
+
+<!--         <custom-converters> these are always bi-directional -->
+<!--             <converter type="org.dozer.converters.TestCustomConverter"> -->
+<!--                 <class-a>org.dozer.vo.TestCustomConverterObject</class-a> -->
+<!--                 <class-b>another.type.to.Associate</class-b> -->
+<!--             </converter> -->
+
+<!--         </custom-converters> -->
+    </configuration>
+
+
+</mappings> 

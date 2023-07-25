@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="1"/>
+  <ui:define name="template-content">
+    <action command="navigatorBean.redirect('pst_00')" onExit="false" navigator="#{navigatorBean}"/>
+    <con:section id="surveyDispatcher" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['surveyDispatcher.t1_0']}</text:text>
+      </f:facet>
+      <con:section id="automaticallygenerated01" isaccordion="true" rendered="#{debugMode.value}">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['surveyDispatcher.b.automaticallygenerated01.t_0']}</text:title>
+        </f:facet>
+        <ques:multipleChoice id="mc1">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_studever.value}" id="ao1" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc1.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc2">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_studakt.value}" id="ao2" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc2.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc3">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_ausbever.value}" id="ao3" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc3.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc4">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_ausbakt.value}" id="ao4" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc4.rd.ao4.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc5">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_erwerbever.value}" id="ao5" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc5.rd.ao5.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc6">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_erwerbakt.value}" id="ao6" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc6.rd.ao6.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc7">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_auslandever.value}" id="ao7" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc7.rd.ao7.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc8">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_ausbabs.value}" id="ao8" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc8.rd.ao8.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc9">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_staktma.value}" id="ao9" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc9.rd.ao9.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc10">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_stbaever.value}" id="ao10" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc10.rd.ao10.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc11">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_mastakt.value}" id="ao11" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc11.rd.ao11.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc12">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_mastabs.value}" id="ao12" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc12.rd.ao12.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc13">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_hochabs.value}" id="ao13" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc13.rd.ao13.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc14">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_promakt.value}" id="ao14" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc14.rd.ao14.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+        <ques:multipleChoice id="mc15">
+          <f:facet name="header"/>
+          <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+            <ans:multipleOption value="#{h_promabs.value}" id="ao15" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['surveyDispatcher.b.automaticallygenerated01.b.mc15.rd.ao15.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </ans:multipleChoiceResponseDomain>
+        </ques:multipleChoice>
+      </con:section>
+      <con:section id="automaticallygenerated02" isaccordion="true" rendered="#{debugMode.value}">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['surveyDispatcher.b.automaticallygenerated02.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="debug">
+          <dis:text id="debugtext">#{msgs['surveyDispatcher.b.automaticallygenerated02.b.debug.debugtext_0']}</dis:text>
+        </dis:container>
+      </con:section>
+      <con:section id="automaticallygenerated04" isaccordion="true" rendered="#{debugMode.value}">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['surveyDispatcher.b.automaticallygenerated04.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="debug">
+          <dis:text id="debugtext01">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext01_0']}</dis:text>
+          <dis:text id="debugtext02">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext02_0']}</dis:text>
+          <dis:text id="debugtext03">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext03_0']}</dis:text>
+          <dis:text id="debugtext04">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext04_0']}</dis:text>
+          <dis:text id="debugtext05">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext05_0']}</dis:text>
+          <dis:text id="debugtext06">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext06_0']}</dis:text>
+          <dis:text id="debugtext07">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext07_0']}</dis:text>
+          <dis:text id="debugtext08">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext08_0']}</dis:text>
+          <dis:text id="debugtext09">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext09_0']}</dis:text>
+          <dis:text id="debugtext10">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext10_0']}</dis:text>
+          <dis:text id="debugtext11">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext11_0']}</dis:text>
+          <dis:text id="debugtext12">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext12_0']}</dis:text>
+          <dis:text id="debugtext13">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext13_0']}</dis:text>
+          <dis:text id="debugtext14">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext14_0']}</dis:text>
+          <dis:text id="debugtext15">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext15_0']}</dis:text>
+          <dis:text id="debugtext16">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext16_0']}</dis:text>
+          <dis:text id="debugtext17">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext17_0']}</dis:text>
+          <dis:text id="debugtext18">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext18_0']}</dis:text>
+          <dis:text id="debugtext19">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext19_0']}</dis:text>
+          <dis:text id="debugtext20">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext20_0']}</dis:text>
+          <dis:text id="debugtext21">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext21_0']}</dis:text>
+          <dis:text id="debugtext22">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext22_0']}</dis:text>
+          <dis:text id="debugtext23">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext23_0']}</dis:text>
+          <dis:text id="debugtext24">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext24_0']}</dis:text>
+          <dis:text id="debugtext25">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext25_0']}</dis:text>
+          <dis:text id="debugtext26">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext26_0']}</dis:text>
+          <dis:text id="debugtext27">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext27_0']}</dis:text>
+          <dis:text id="debugtext28">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext28_0']}</dis:text>
+          <dis:text id="debugtext29">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext29_0']}</dis:text>
+          <dis:text id="debugtext30">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext30_0']}</dis:text>
+          <dis:text id="debugtext31">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext31_0']}</dis:text>
+          <dis:text id="debugtext32">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext32_0']}</dis:text>
+          <dis:text id="debugtext33">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext33_0']}</dis:text>
+          <dis:text id="debugtext34">#{msgs['surveyDispatcher.b.automaticallygenerated04.b.debug.debugtext34_0']}</dis:text>
+          <dis:text id="debugtext35"/>
+          <dis:text id="debugtext36"/>
+          <dis:text id="debugtext37"/>
+          <dis:text id="debugtext38"/>
+          <dis:text id="debugtext39"/>
+          <dis:text id="debugtext40"/>
+          <dis:text id="debugtext41"/>
+          <dis:text id="debugtext42"/>
+          <dis:text id="debugtext43"/>
+          <dis:text id="debugtext44"/>
+          <dis:text id="debugtext45"/>
+          <dis:text id="debugtext46"/>
+          <dis:text id="debugtext47"/>
+          <dis:text id="debugtext48"/>
+          <dis:text id="debugtext49"/>
+          <dis:text id="debugtext50"/>
+        </dis:container>
+      </con:section>
+      <dis:container id="hinweis_backwards">
+        <dis:text id="txt" rendered="#{navigatorBean.getBackwardViewID().startsWith('/episodeDispatcher') or navigatorBean.getBackwardViewID().startsWith('/splitLanding_') or navigatorBean.getBackwardViewID().startsWith('/backwardsBlock_') or navigatorBean.getBackwardViewID().startsWith('/manualBackwardsBlock_')}">#{msgs['surveyDispatcher.b.hinweis_backwards.txt_0']}</dis:text>
+      </dis:container>
+    </con:section>
+  </ui:define>
+</ui:composition>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0"
+	targetNamespace="http://www####/zofar/service/valuetype/model/possibleValues"
+	xmlns:ns1="http://www####/zofar/service/valuetype/model"
+	xmlns:tns="http://www####/zofar/service/valuetype/model/possibleValues"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:zofar2="http://www####/zofar/service/valuetype/model/possibleValues">
+
+	<xs:import schemaLocation="NewXMLSchema3.xsd" />
+	<xs:import namespace="http://www####/zofar/service/valuetype/model"
+		schemaLocation="www####_zofar_service_valuetype_model.xsd" />
+
+	<xs:complexType name="possibleNumberValue">
+		<xs:complexContent>
+			<xs:extension base="tns:possibleValue">
+				<xs:sequence>
+					<xs:element name="value" type="xs:long" minOccurs="0" />
+					<xs:element name="valueType" minOccurs="0"
+						type="ns1:numberValueType" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="possibleBooleanValue">
+		<xs:complexContent>
+			<xs:extension base="tns:possibleValue">
+				<xs:sequence>
+					<xs:element name="value" type="xs:boolean" minOccurs="0" />
+					<xs:element name="valueType" minOccurs="0"
+						type="ns1:booleanValueType" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+	<xs:complexType name="possibleValue" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="baseEntity">
+				<xs:sequence>
+					<xs:element name="isMissing" type="xs:boolean"
+						minOccurs="0" />
+					<xs:element name="label" type="xs:string" nillable="true"
+						minOccurs="0" maxOccurs="unbounded" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="possibleStringValue">
+		<xs:complexContent>
+			<xs:extension base="tns:possibleValue">
+				<xs:sequence>
+					<xs:element name="value" type="xs:string" minOccurs="0" />
+					<xs:element name="valueType" minOccurs="0"
+						type="ns1:stringValueType" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+
+</xs:schema>
+

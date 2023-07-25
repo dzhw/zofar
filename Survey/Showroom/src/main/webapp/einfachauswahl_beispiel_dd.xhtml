@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="25"/>
+  <ui:define name="template-content">
+    <section id="einfachauswahl_beispiel_dd" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['einfachauswahl_beispiel_dd.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['einfachauswahl_beispiel_dd.text_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="qsc1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['einfachauswahl_beispiel_dd.b.qsc1.q_0']}</text:question>
+        </f:facet>
+        <ans:dropDownMissingResponseDomain value="#{qsc1_dd.valueId}" var="#{qsc1_dd}" id="qsc1" showValues="false" missingSeparated="true">
+          <f:facet name="dropDown">
+            <ans:comboSingleChoiceResponseDomain value="#{qsc1_dddropDown.valueId}" id="dropDown" showValues="false">
+              <ans:singleOption itemValue="1" id="ao1" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc1.qsc1.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption itemValue="2" id="ao2" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc1.qsc1.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption itemValue="3" id="ao3" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc1.qsc1.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption itemValue="4" id="ao4" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc1.qsc1.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </ans:comboSingleChoiceResponseDomain>
+          </f:facet>
+          <f:facet name="missing">
+            <ans:radioButtonSingleChoiceResponseDomain value="#{qsc1_ddmissing.valueId}" id="missing" showValues="false"/>
+          </f:facet>
+        </ans:dropDownMissingResponseDomain>
+      </ques:singleChoice>
+      <ques:singleChoice id="qsc2">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['einfachauswahl_beispiel_dd.b.qsc2.q_0']}</text:question>
+        </f:facet>
+        <ans:dropDownMissingResponseDomain value="#{qsc2_dd.valueId}" var="#{qsc2_dd}" id="qsc2" showValues="false" missingSeparated="true">
+          <f:facet name="dropDown">
+            <ans:comboSingleChoiceResponseDomain value="#{qsc2_dddropDown.valueId}" id="dropDown" showValues="false">
+              <ans:singleOption itemValue="1" id="ao1" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc2.qsc2.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption itemValue="2" id="ao2" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc2.qsc2.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+              <ans:singleOption itemValue="3" id="ao3" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc2.qsc2.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </ans:comboSingleChoiceResponseDomain>
+          </f:facet>
+          <f:facet name="missing">
+            <ans:radioButtonSingleChoiceResponseDomain value="#{qsc2_ddmissing.valueId}" id="missing" showValues="false">
+              <ans:singleOption itemValue="4" id="ao4" missing="true">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc2.qsc2.ao4.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </ans:radioButtonSingleChoiceResponseDomain>
+          </f:facet>
+        </ans:dropDownMissingResponseDomain>
+      </ques:singleChoice>
+      <ques:singleChoice id="qsc3">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.q_0']}</text:question>
+        </f:facet>
+        <ans:dropDownMissingResponseDomain value="#{qsc3_dd.valueId}" var="#{qsc3_dd}" id="qsc2" showValues="false" missingSeparated="true">
+          <f:facet name="dropDown">
+            <ans:comboSingleChoiceResponseDomain value="#{qsc3_dddropDown.valueId}" id="dropDown" showValues="false">
+              <section id="u1">
+                <f:facet name="header">
+                  <text:text container="false" id="t">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u1.t_0']}</text:text>
+                </f:facet>
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u1.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u1.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u1.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </section>
+              <section id="u2">
+                <f:facet name="header">
+                  <text:text container="false" id="t">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u2.t_0']}</text:text>
+                </f:facet>
+                <ans:singleOption itemValue="4" id="ao4" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u2.ao4.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="5" id="ao5" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u2.ao5.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="6" id="ao6" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.u2.ao6.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </section>
+              <ans:singleOption itemValue="7" id="ao7" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['einfachauswahl_beispiel_dd.b.qsc3.qsc2.ao7.label']}</text:responseOption>
+                </f:facet>
+              </ans:singleOption>
+            </ans:comboSingleChoiceResponseDomain>
+          </f:facet>
+          <f:facet name="missing">
+            <ans:radioButtonSingleChoiceResponseDomain value="#{qsc3_ddmissing.valueId}" id="missing" showValues="false"/>
+          </f:facet>
+        </ans:dropDownMissingResponseDomain>
+      </ques:singleChoice>
+    </section>
+  </ui:define>
+</ui:composition>

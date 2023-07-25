@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="55"/>
+  <ui:define name="template-content">
+    <section id="fragebogensteuerung_rotation" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['fragebogensteuerung_rotation.t1_0']}</text:title>
+        <text:text container="true" id="t2">
+          #{msgs['fragebogensteuerung_rotation.t2_0']}#{msgs['fragebogensteuerung_rotation.t2_2']}
+          <com:jumper value="#{msgs['fragebogensteuerung_rotation.t2_3']}" targetPage="/fragebogensteuerung_rotation_beispiel"/>
+          #{msgs['fragebogensteuerung_rotation.t2_4']}
+        </text:text>
+        <text:text container="true" id="t3">
+          #{msgs['fragebogensteuerung_rotation.t3_0']}
+          <com:jumper value="#{msgs['fragebogensteuerung_rotation.t3_1']}" targetPage="/funktionselemente_zufallsvariablen"/>
+          #{msgs['fragebogensteuerung_rotation.t3_2']}
+        </text:text>
+      </f:facet>
+    </section>
+  </ui:define>
+</ui:composition>

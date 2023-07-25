@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/composite" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="35"/>
+  <ui:define name="template-content">
+    <section id="comparison_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['comparison_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['comparison_beispiel.text_0']}</text:text>
+      </f:facet>
+      <com:comparisonQuestion id="comparison1">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['comparison_beispiel.b.comparison1.q1_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['comparison_beispiel.b.comparison1.is_0']}</text:instruction>
+        </f:facet>
+        <com:comparisonResponseDomain id="rd">
+          <f:facet name="header">
+            <text:text id="t1">#{msgs['comparison_beispiel.b.comparison1.rd.t1_0']}</text:text>
+            <text:text id="t2">#{msgs['comparison_beispiel.b.comparison1.rd.t2_0']}</text:text>
+            <text:text id="t3">#{msgs['comparison_beispiel.b.comparison1.rd.t3_0']}</text:text>
+          </f:facet>
+          <com:comparisonItem id="i1">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison1.rd.i1.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison1_1.valueId}" var="#{comparison1_1}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i1.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i1.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i1.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+          <com:comparisonItem id="i2">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison1.rd.i2.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison1_2.valueId}" var="#{comparison1_2}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i2.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i2.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i2.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+          <com:comparisonItem id="i3">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison1.rd.i3.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison1_3.valueId}" var="#{comparison1_3}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i3.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i3.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison1.rd.i3.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+        </com:comparisonResponseDomain>
+      </com:comparisonQuestion>
+      <com:comparisonQuestion id="comparison2">
+        <f:facet name="header">
+          <text:question container="true" id="q2">#{msgs['comparison_beispiel.b.comparison2.q2_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['comparison_beispiel.b.comparison2.is_0']}</text:instruction>
+        </f:facet>
+        <com:comparisonResponseDomain id="rd">
+          <f:facet name="header">
+            <text:text id="t1">#{msgs['comparison_beispiel.b.comparison2.rd.t1_0']}</text:text>
+            <text:text id="t2">#{msgs['comparison_beispiel.b.comparison2.rd.t2_0']}</text:text>
+            <text:text id="t3">#{msgs['comparison_beispiel.b.comparison2.rd.t3_0']}</text:text>
+          </f:facet>
+          <com:comparisonItem id="i1">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison2.rd.i1.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison2_1.valueId}" var="#{comparison2_1}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i1.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i1.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="true">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i1.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+          <com:comparisonItem id="i2">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison2.rd.i2.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison2_2.valueId}" var="#{comparison2_2}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i2.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i2.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="true">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i2.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+          <com:comparisonItem id="i3">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison2.rd.i3.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison2_3.valueId}" var="#{comparison2_3}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i3.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i3.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="true">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison2.rd.i3.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+        </com:comparisonResponseDomain>
+      </com:comparisonQuestion>
+      <com:comparisonQuestion id="comparison3">
+        <f:facet name="header">
+          <text:question container="true" id="q2">#{msgs['comparison_beispiel.b.comparison3.q2_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['comparison_beispiel.b.comparison3.is_0']}</text:instruction>
+        </f:facet>
+        <com:comparisonResponseDomain id="rd">
+          <f:facet name="header">
+            <text:text id="t1">#{msgs['comparison_beispiel.b.comparison3.rd.t1_0']}</text:text>
+            <text:text id="t2">#{msgs['comparison_beispiel.b.comparison3.rd.t2_0']}</text:text>
+            <text:text id="t3">#{msgs['comparison_beispiel.b.comparison3.rd.t3_0']}</text:text>
+          </f:facet>
+          <com:comparisonItem id="i1">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison3.rd.i1.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison3_1.valueId}" var="#{comparison3_1}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i1.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i1.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i1.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+          <com:comparisonItem id="i2">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison3.rd.i2.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison3_2.valueId}" var="#{comparison3_2}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i2.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i2.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i2.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+          <com:comparisonItem id="i3">
+            <ques:singleChoice id="qsc">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['comparison_beispiel.b.comparison3.rd.i3.qsc.q_0']}</text:question>
+              </f:facet>
+              <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{comparison3_3.valueId}" var="#{comparison3_3}" id="rd" showValues="false" missingSeparated="true">
+                <ans:singleOption itemValue="1" id="ao1" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i3.qsc.rd.ao1.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="2" id="ao2" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i3.qsc.rd.ao2.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+                <ans:singleOption itemValue="3" id="ao3" missing="false">
+                  <f:facet name="labels">
+                    <text:responseOption id="label">#{msgs['comparison_beispiel.b.comparison3.rd.i3.qsc.rd.ao3.label']}</text:responseOption>
+                  </f:facet>
+                </ans:singleOption>
+              </ans:radioButtonSingleChoiceResponseDomain>
+            </ques:singleChoice>
+          </com:comparisonItem>
+        </com:comparisonResponseDomain>
+      </com:comparisonQuestion>
+    </section>
+  </ui:define>
+</ui:composition>

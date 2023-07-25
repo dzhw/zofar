@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:container="http://java.sun.com/jsf/composite/container" xmlns:question="http://java.sun.com/jsf/composite/question" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:answer="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="85"/>
+  <ui:define name="template-content">
+    <container:section id="page5">
+      <question:multipleChoice id="question3">
+        <f:facet name="header">
+          <text:question id="q">#{msgs['page5.body.question3.q_0']}</text:question>
+          <text:instruction id="ins">#{msgs['page5.body.question3.ins_0']}</text:instruction>
+        </f:facet>
+        <answer:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <answer:multipleOption value="#{v4.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao1.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v5.value}" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao2.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v6.value}" id="ao3" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao3.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v7.value}" id="ao4" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao4.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v8.value}" id="ao5" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao5.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v9.value}" id="ao6" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao6.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v10.value}" id="ao7" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao7.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v11.value}" id="ao8" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao8.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v12.value}" id="ao9" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao9.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v13.value}" id="ao10" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao10.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v14.value}" id="ao11" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao11.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v15.value}" id="ao12" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['page5.body.question3.rd.ao12.label']}</text:responseOption>
+            </f:facet>
+          </answer:multipleOption>
+          <answer:multipleOption value="#{v16.value}" id="ao13" missing="false">
+            <answer:attachedOpenQuestion id="o" var="#{v17}">
+              <f:facet name="prefix">
+                <text:responseOption id="l">#{msgs['page5.body.question3.rd.ao13.o.l_0']}</text:responseOption>
+              </f:facet>
+            </answer:attachedOpenQuestion>
+          </answer:multipleOption>
+        </answer:multipleChoiceResponseDomain>
+      </question:multipleChoice>
+    </container:section>
+  </ui:define>
+</ui:composition>

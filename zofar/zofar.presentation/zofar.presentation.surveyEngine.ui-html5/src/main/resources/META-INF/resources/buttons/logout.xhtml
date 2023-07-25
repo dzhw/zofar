@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.LogoutButton">
+<composite:attribute name="value" type="java.lang.String" required="true" />
+</composite:interface>
+
+<composite:implementation>
+	<h:outputLink value="#{request.contextPath}/j_spring_security_logout" class="btn btn-secondary zofar-btn-logout" id="logoutBt">#{cc.attrs.value}</h:outputLink>
+</composite:implementation>
+
+
+</html>

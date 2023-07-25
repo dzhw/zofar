@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text">
+  <ui:param name="progress" value="69"/>
+  <ui:define name="template-content">
+    <variable var="#{car002_date}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car005_date}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car008}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car002}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car003}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car005}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car006}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car004}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{car007}" value="''" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{sf_car002}" value="false" onExit="false" navigator="#{navigatorBean}"/>
+    <variable var="#{flag_car002}" value="false" onExit="false" navigator="#{navigatorBean}"/>
+    <action command="navigatorBean.redirect('carx001')" condition="navigatorBean.getBackwardViewID().startsWith('/episodeDispatcher') or navigatorBean.getBackwardViewID().startsWith('/carx002')" onExit="false" navigator="#{navigatorBean}"/>
+    <action command="navigatorBean.redirect('calendar')" condition="!(navigatorBean.getBackwardViewID().startsWith('/episodeDispatcher') or navigatorBean.getBackwardViewID().startsWith('/carx002'))" onExit="false" navigator="#{navigatorBean}"/>
+    <con:section id="manualBackwardsBlock_carx001" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['manualBackwardsBlock_carx001.t1_0']}</text:text>
+      </f:facet>
+    </con:section>
+  </ui:define>
+</ui:composition>

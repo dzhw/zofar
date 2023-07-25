@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd" default-autowire="byName" xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <bean name="sessionController" class="de.his.zofar.presentation.surveyengine.controller.SessionController" scope="session"/>
+  <bean name="v1" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v1"/>
+  </bean>
+  <bean name="v2" class="de.his.zofar.presentation.surveyengine.SingleChoiceAnswerOptionTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v2"/>
+    <property name="optionValues">
+      <map>
+        <entry key="ao1" value="1"/>
+        <entry key="ao2" value="2"/>
+      </map>
+    </property>
+    <property name="missingValues">
+      <map/>
+    </property>
+  </bean>
+  <bean name="v3" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v3"/>
+  </bean>
+  <bean name="v4" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v4"/>
+    <constructor-arg value="ao1"/>
+  </bean>
+  <bean name="v5" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v5"/>
+    <constructor-arg value="ao2"/>
+  </bean>
+  <bean name="v6" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v6"/>
+    <constructor-arg value="ao3"/>
+  </bean>
+  <bean name="v7" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v7"/>
+    <constructor-arg value="ao4"/>
+  </bean>
+  <bean name="v8" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v8"/>
+    <constructor-arg value="ao5"/>
+  </bean>
+  <bean name="v9" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v9"/>
+    <constructor-arg value="ao6"/>
+  </bean>
+  <bean name="v10" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v10"/>
+    <constructor-arg value="ao7"/>
+  </bean>
+  <bean name="v11" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v11"/>
+    <constructor-arg value="ao8"/>
+  </bean>
+  <bean name="v12" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v12"/>
+    <constructor-arg value="ao9"/>
+  </bean>
+  <bean name="v13" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v13"/>
+    <constructor-arg value="ao10"/>
+  </bean>
+  <bean name="v14" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v14"/>
+    <constructor-arg value="ao11"/>
+  </bean>
+  <bean name="v15" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v15"/>
+    <constructor-arg value="ao12"/>
+  </bean>
+  <bean name="v16" class="de.his.zofar.presentation.surveyengine.BooleanValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v16"/>
+    <constructor-arg value="ao13"/>
+  </bean>
+  <bean name="v17" class="de.his.zofar.presentation.surveyengine.StringValueTypeBean" scope="request">
+    <constructor-arg ref="sessionController"/>
+    <constructor-arg value="v17"/>
+  </bean>
+</beans>

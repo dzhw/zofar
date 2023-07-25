@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.DefaultAction">
+	<composite:attribute name="value" type="java.lang.String"
+		required="true" />
+	<composite:attribute name="isLastPage" type="java.lang.Boolean"
+		required="false" default="false" />
+	<composite:attribute name="recorderEnabled" type="java.lang.Boolean"
+		required="false" default="false" />
+</composite:interface>
+
+<composite:implementation>
+	<h:commandButton id="defaultBt" value="#{cc.attrs.value}" action="next"
+		rendered="#{not cc.attrs.isLastPage}" style="width: 0px;height: 0px;margin: 0px;padding: 0px;outline: none;border: 0px;">
+		<f:actionListener binding="#{navigatorBean}" />
+		<f:actionListener binding="#{onExitBean}" />
+		<f:actionListener binding="#{sessionController}" />
+		<f:actionListener binding="#{recorder}" rendered="#{cc.attrs.recorderEnabled}"/>
+	</h:commandButton>
+</composite:implementation>
+</html>

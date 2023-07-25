@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/html"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    attributeFormDefault="unqualified" elementFormDefault="qualified">
+    
+    <xs:element type="h:outputTextType" name="outputText" />
+    <xs:element type="h:inputTextType" name="inputText" />
+
+    <xs:complexType name="outputTextType">
+        <xs:attribute type="xs:string" name="value" use="required" />
+    </xs:complexType>
+    <xs:complexType name="inputTextType">
+        <xs:attribute type="xs:token" name="value" use="required" />
+        <xs:attribute type="xs:positiveInteger" name="maxLength" />
+    </xs:complexType>
+</xs:schema>

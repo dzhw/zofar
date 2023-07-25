@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/trigger" xmlns:con="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="88"/>
+  <ui:define name="template-content">
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('toReset',zofar.list())"/>
+      <scriptItem value="toReset.add('emaa48')"/>
+      <scriptItem value="toReset.add('emaa49')"/>
+      <scriptItem value="zofar.resetVars(toReset)"/>
+    </action>
+    <action command="zofar.nothing()" onExit="false" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toLoad',zofar.list())"/>
+      <scriptItem value="toLoad.add('emaa48')"/>
+      <scriptItem value="toLoad.add('emaa49')"/>
+      <scriptItem value="zofar.getJsonProperties(episodeObj,toLoad)"/>
+    </action>
+    <action command="zofar.frac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4),zofar.jsonArr2str(defrac))" onExit="true" navigator="#{navigatorBean}">
+      <scriptItem value="zofar.assign('defrac',zofar.str2jsonArr(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4))))"/>
+      <scriptItem value="zofar.assign('episodeObj',zofar.getOrCreateJson(defrac,zofar.toInteger(episode_index.value))) "/>
+      <scriptItem value="zofar.assign('toPersist',zofar.map())"/>
+      <scriptItem value="toPersist.put('emaa48',emaa48)"/>
+      <scriptItem value="toPersist.put('emaa49',emaa49)"/>
+      <scriptItem value="zofar.setJsonProperties('episodeObj',episodeObj,toPersist)"/>
+      <scriptItem value="zofar.assign('defrac',zofar.addOrReplaceJson(defrac,episodeObj,zofar.toInteger(episode_index.value)))"/>
+    </action>
+    <con:section id="nsetaa48" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t4">#{msgs['nsetaa48.t4_0']}</text:text>
+      </f:facet>
+      <ques:open id="qo">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['nsetaa48.b.qo.q1_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['nsetaa48.b.qo.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openNumberOption minValue="0.0" validationMessage="#{msgs['nsetaa48.b.qo']}" var="#{emaa48}" id="response" maxlength="2">
+            <f:facet name="postfix">
+              <text:responseOption container="true" id="l">#{msgs['nsetaa48.b.qo.l_0']}</text:responseOption>
+            </f:facet>
+          </ans:openNumberOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:multipleChoice id="mcsf">
+        <f:facet name="header">
+          <text:question container="true" id="q2"/>
+        </f:facet>
+        <ans:multipleChoiceResponseDomain id="rd" missingSeparated="true">
+          <ans:multipleOption value="#{emaa49.value}" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['nsetaa48.b.mcsf.rd.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:multipleOption>
+        </ans:multipleChoiceResponseDomain>
+      </ques:multipleChoice>
+      <ques:pretest id="questioncommentnsetaa48">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentnsetaa48">#{msgs['textcommentnsetaa48_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentnsetaa48']}" columns="100" var="#{commentnsetaa48}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </con:section>
+  </ui:define>
+  <ui:define name="template-left-navigation">
+    <com:jumperContainer separator="side"/>
+  </ui:define>
+  <ui:define name="template-top-navigation">
+    <com:jumperContainer separator="top"/>
+  </ui:define>
+</ui:composition>

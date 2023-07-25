@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface>
+    <composite:attribute name="visibleCondition" default="true"
+        type="java.lang.Boolean" />
+    <composite:attribute name="german" default="false"
+        type="java.lang.Boolean" />
+    <composite:attribute name="english" default="false"
+        type="java.lang.Boolean" />
+    <composite:attribute name="russian" default="false"
+        type="java.lang.Boolean" />
+    <composite:attribute name="french" default="false"
+        type="java.lang.Boolean" />
+    <composite:attribute name="italian" default="false"
+        type="java.lang.Boolean" />
+</composite:interface>
+
+<composite:implementation>
+    <h:panelGroup styleClass="zofar-language-switch" layout="block"
+        rendered="#{cc.attrs.visibleCondition}">
+        <h:panelGroup layout="inline" rendered="#{cc.attrs.german}">
+            <h:commandLink value="Deutsch"
+                action="#{sessionController.switchCurrentLocale('de')}" />
+        </h:panelGroup>
+        <h:panelGroup layout="inline" rendered="#{cc.attrs.english}">
+            <h:commandLink value="English"
+                action="#{sessionController.switchCurrentLocale('en')}" />
+        </h:panelGroup>
+        <h:panelGroup layout="inline" rendered="#{cc.attrs.french}">
+            <h:commandLink value="Français"
+                action="#{sessionController.switchCurrentLocale('fr')}" />
+        </h:panelGroup>
+        <h:panelGroup layout="inline" rendered="#{cc.attrs.italian}">
+            <h:commandLink value="Italiano"
+                action="#{sessionController.switchCurrentLocale('it')}" />
+        </h:panelGroup>
+        <h:panelGroup layout="inline" rendered="#{cc.attrs.russian}">
+            <h:commandLink value="русский"
+                action="#{sessionController.switchCurrentLocale('ru')}" />
+        </h:panelGroup>
+    </h:panelGroup>
+</composite:implementation>
+</html>

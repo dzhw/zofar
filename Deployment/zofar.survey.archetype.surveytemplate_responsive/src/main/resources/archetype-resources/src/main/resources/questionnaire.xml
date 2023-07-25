@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zofar:questionnaire language="de" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:zofar="http://www####/zofar/xml/questionnaire" xmlns:display="http://www.####/zofar/xml/display">
+	<zofar:name>Zofar Survey</zofar:name>
+	<zofar:description></zofar:description>
+	<zofar:preloads>
+		 <zofar:preload password="part1" name="part1">
+<!-- 		 	a sample of preload variable-->
+<!--             <zofar:preloadItem variable="hs_id" value="1"/> -->
+        </zofar:preload>
+		<zofar:preload password="part2" name="part2"/>
+        <zofar:preload password="part3" name="part3"/>
+        <zofar:preload password="part4" name="part4"/>
+        <zofar:preload password="part5" name="part5"/>
+        <zofar:preload password="part6" name="part6"/>
+        <zofar:preload password="part7" name="part7"/>
+        <zofar:preload password="part8" name="part8"/>
+        <zofar:preload password="part9" name="part9"/>
+        <zofar:preload password="part10" name="part10"/>
+        <zofar:preload password="part11" name="part11"/>
+        <zofar:preload password="part12" name="part12"/>
+        <zofar:preload password="part13" name="part13"/>
+        <zofar:preload password="part14" name="part14"/>
+        <zofar:preload password="part15" name="part15"/>
+        <zofar:preload password="part16" name="part16"/>
+        <zofar:preload password="part17" name="part17"/>
+        <zofar:preload password="part18" name="part18"/>
+        <zofar:preload password="part19" name="part19"/>
+        <zofar:preload password="part20" name="part20"/>
+        <zofar:preload password="part21" name="part21"/>
+        <zofar:preload password="part22" name="part22"/>
+        <zofar:preload password="part23" name="part23"/>
+        <zofar:preload password="part24" name="part24"/>
+        <zofar:preload password="part25" name="part25"/>
+        <zofar:preload password="part26" name="part26"/>
+        <zofar:preload password="part27" name="part27"/>
+        <zofar:preload password="part28" name="part28"/>
+        <zofar:preload password="part29" name="part29"/>
+        <zofar:preload password="part30" name="part30"/>
+        <zofar:preload password="part31" name="part31"/>
+        <zofar:preload password="part32" name="part32"/>
+        <zofar:preload password="part33" name="part33"/>
+        <zofar:preload password="part34" name="part34"/>
+        <zofar:preload password="part35" name="part35"/>
+        <zofar:preload password="part36" name="part36"/>
+        <zofar:preload password="part37" name="part37"/>
+        <zofar:preload password="part38" name="part38"/>
+        <zofar:preload password="part39" name="part39"/>
+        <zofar:preload password="part40" name="part40"/>
+        <zofar:preload password="part41" name="part41"/>
+        <zofar:preload password="part42" name="part42"/>
+        <zofar:preload password="part43" name="part43"/>
+        <zofar:preload password="part44" name="part44"/>
+        <zofar:preload password="part45" name="part45"/>
+        <zofar:preload password="part46" name="part46"/>
+        <zofar:preload password="part47" name="part47"/>
+        <zofar:preload password="part48" name="part48"/>
+        <zofar:preload password="part49" name="part49"/>
+        <zofar:preload password="part50" name="part50"/>
+        <zofar:preload password="part51" name="part51"/>
+        <zofar:preload password="part52" name="part52"/>
+        <zofar:preload password="part53" name="part53"/>
+        <zofar:preload password="part54" name="part54"/>
+        <zofar:preload password="part55" name="part55"/>
+        <zofar:preload password="part56" name="part56"/>
+        <zofar:preload password="part57" name="part57"/>
+        <zofar:preload password="part58" name="part58"/>
+        <zofar:preload password="part59" name="part59"/>
+        <zofar:preload password="part60" name="part60"/>
+        <zofar:preload password="part61" name="part61"/>
+        <zofar:preload password="part62" name="part62"/>
+        <zofar:preload password="part63" name="part63"/>
+        <zofar:preload password="part64" name="part64"/>
+        <zofar:preload password="part65" name="part65"/>
+        <zofar:preload password="part66" name="part66"/>
+        <zofar:preload password="part67" name="part67"/>
+        <zofar:preload password="part68" name="part68"/>
+        <zofar:preload password="part69" name="part69"/>
+        <zofar:preload password="part70" name="part70"/>
+        <zofar:preload password="part71" name="part71"/>
+        <zofar:preload password="part72" name="part72"/>
+        <zofar:preload password="part73" name="part73"/>
+        <zofar:preload password="part74" name="part74"/>
+        <zofar:preload password="part75" name="part75"/>
+        <zofar:preload password="part76" name="part76"/>
+        <zofar:preload password="part77" name="part77"/>
+        <zofar:preload password="part78" name="part78"/>
+        <zofar:preload password="part79" name="part79"/>
+        <zofar:preload password="part80" name="part80"/>
+        <zofar:preload password="part81" name="part81"/>
+        <zofar:preload password="part82" name="part82"/>
+        <zofar:preload password="part83" name="part83"/>
+        <zofar:preload password="part84" name="part84"/>
+        <zofar:preload password="part85" name="part85"/>
+        <zofar:preload password="part86" name="part86"/>
+        <zofar:preload password="part87" name="part87"/>
+        <zofar:preload password="part88" name="part88"/>
+        <zofar:preload password="part89" name="part89"/>
+        <zofar:preload password="part90" name="part90"/>
+        <zofar:preload password="part91" name="part91"/>
+        <zofar:preload password="part92" name="part92"/>
+        <zofar:preload password="part93" name="part93"/>
+        <zofar:preload password="part94" name="part94"/>
+        <zofar:preload password="part95" name="part95"/>
+        <zofar:preload password="part96" name="part96"/>
+        <zofar:preload password="part97" name="part97"/>
+        <zofar:preload password="part98" name="part98"/>
+        <zofar:preload password="part99" name="part99"/>
+        <zofar:preload password="part100" name="part100"/>
+        <zofar:preload password="tester1" name="tester1"/>
+        <zofar:preload password="tester2" name="tester2"/>
+        <zofar:preload password="tester3" name="tester3"/>
+        <zofar:preload password="tester4" name="tester4"/>
+        <zofar:preload password="tester5" name="tester5"/>
+        <zofar:preload password="tester6" name="tester6"/>
+        <zofar:preload password="tester7" name="tester7"/>
+        <zofar:preload password="tester8" name="tester8"/>
+        <zofar:preload password="tester9" name="tester9"/>
+        <zofar:preload password="tester10" name="tester10"/>
+        <zofar:preload password="tester11" name="tester11"/>
+        <zofar:preload password="tester12" name="tester12"/>
+        <zofar:preload password="tester13" name="tester13"/>
+        <zofar:preload password="tester14" name="tester14"/>
+        <zofar:preload password="tester15" name="tester15"/>
+        <zofar:preload password="tester16" name="tester16"/>
+        <zofar:preload password="tester17" name="tester17"/>
+        <zofar:preload password="tester18" name="tester18"/>
+        <zofar:preload password="tester19" name="tester19"/>
+        <zofar:preload password="tester20" name="tester20"/>
+        <zofar:preload password="tester21" name="tester21"/>
+        <zofar:preload password="tester22" name="tester22"/>
+        <zofar:preload password="tester23" name="tester23"/>
+        <zofar:preload password="tester24" name="tester24"/>
+        <zofar:preload password="tester25" name="tester25"/>
+        <zofar:preload password="tester26" name="tester26"/>
+        <zofar:preload password="tester27" name="tester27"/>
+        <zofar:preload password="tester28" name="tester28"/>
+        <zofar:preload password="tester29" name="tester29"/>
+        <zofar:preload password="tester30" name="tester30"/>
+        <zofar:preload password="tester31" name="tester31"/>
+        <zofar:preload password="tester32" name="tester32"/>
+        <zofar:preload password="tester33" name="tester33"/>
+        <zofar:preload password="tester34" name="tester34"/>
+        <zofar:preload password="tester35" name="tester35"/>
+        <zofar:preload password="tester36" name="tester36"/>
+        <zofar:preload password="tester37" name="tester37"/>
+        <zofar:preload password="tester38" name="tester38"/>
+        <zofar:preload password="tester39" name="tester39"/>
+        <zofar:preload password="tester40" name="tester40"/>
+        <zofar:preload password="tester41" name="tester41"/>
+        <zofar:preload password="tester42" name="tester42"/>
+        <zofar:preload password="tester43" name="tester43"/>
+        <zofar:preload password="tester44" name="tester44"/>
+        <zofar:preload password="tester45" name="tester45"/>
+        <zofar:preload password="tester46" name="tester46"/>
+        <zofar:preload password="tester47" name="tester47"/>
+        <zofar:preload password="tester48" name="tester48"/>
+        <zofar:preload password="tester49" name="tester49"/>
+        <zofar:preload password="tester50" name="tester50"/>
+        <zofar:preload password="tester51" name="tester51"/>
+        <zofar:preload password="tester52" name="tester52"/>
+        <zofar:preload password="tester53" name="tester53"/>
+        <zofar:preload password="tester54" name="tester54"/>
+        <zofar:preload password="tester55" name="tester55"/>
+        <zofar:preload password="tester56" name="tester56"/>
+        <zofar:preload password="tester57" name="tester57"/>
+        <zofar:preload password="tester58" name="tester58"/>
+        <zofar:preload password="tester59" name="tester59"/>
+        <zofar:preload password="tester60" name="tester60"/>
+        <zofar:preload password="tester61" name="tester61"/>
+        <zofar:preload password="tester62" name="tester62"/>
+        <zofar:preload password="tester63" name="tester63"/>
+        <zofar:preload password="tester64" name="tester64"/>
+        <zofar:preload password="tester65" name="tester65"/>
+        <zofar:preload password="tester66" name="tester66"/>
+        <zofar:preload password="tester67" name="tester67"/>
+        <zofar:preload password="tester68" name="tester68"/>
+        <zofar:preload password="tester69" name="tester69"/>
+        <zofar:preload password="tester70" name="tester70"/>
+        <zofar:preload password="tester71" name="tester71"/>
+        <zofar:preload password="tester72" name="tester72"/>
+        <zofar:preload password="tester73" name="tester73"/>
+        <zofar:preload password="tester74" name="tester74"/>
+        <zofar:preload password="tester75" name="tester75"/>
+        <zofar:preload password="tester76" name="tester76"/>
+        <zofar:preload password="tester77" name="tester77"/>
+        <zofar:preload password="tester78" name="tester78"/>
+        <zofar:preload password="tester79" name="tester79"/>
+        <zofar:preload password="tester80" name="tester80"/>
+        <zofar:preload password="tester81" name="tester81"/>
+        <zofar:preload password="tester82" name="tester82"/>
+        <zofar:preload password="tester83" name="tester83"/>
+        <zofar:preload password="tester84" name="tester84"/>
+        <zofar:preload password="tester85" name="tester85"/>
+        <zofar:preload password="tester86" name="tester86"/>
+        <zofar:preload password="tester87" name="tester87"/>
+        <zofar:preload password="tester88" name="tester88"/>
+        <zofar:preload password="tester89" name="tester89"/>
+        <zofar:preload password="tester90" name="tester90"/>
+        <zofar:preload password="tester91" name="tester91"/>
+        <zofar:preload password="tester92" name="tester92"/>
+        <zofar:preload password="tester93" name="tester93"/>
+        <zofar:preload password="tester94" name="tester94"/>
+        <zofar:preload password="tester95" name="tester95"/>
+        <zofar:preload password="tester96" name="tester96"/>
+        <zofar:preload password="tester97" name="tester97"/>
+        <zofar:preload password="tester98" name="tester98"/>
+        <zofar:preload password="tester99" name="tester99"/>
+        <zofar:preload password="tester100" name="tester100"/>
+        <zofar:preload password="tester101" name="tester101"/>
+        <zofar:preload password="tester102" name="tester102"/>
+        <zofar:preload password="tester103" name="tester103"/>
+        <zofar:preload password="tester104" name="tester104"/>
+        <zofar:preload password="tester105" name="tester105"/>
+        <zofar:preload password="tester106" name="tester106"/>
+        <zofar:preload password="tester107" name="tester107"/>
+        <zofar:preload password="tester108" name="tester108"/>
+        <zofar:preload password="tester109" name="tester109"/>
+        <zofar:preload password="tester110" name="tester110"/>
+        <zofar:preload password="tester111" name="tester111"/>
+        <zofar:preload password="tester112" name="tester112"/>
+        <zofar:preload password="tester113" name="tester113"/>
+        <zofar:preload password="tester114" name="tester114"/>
+        <zofar:preload password="tester115" name="tester115"/>
+        <zofar:preload password="tester116" name="tester116"/>
+        <zofar:preload password="tester117" name="tester117"/>
+        <zofar:preload password="tester118" name="tester118"/>
+        <zofar:preload password="tester119" name="tester119"/>
+        <zofar:preload password="tester120" name="tester120"/>
+        <zofar:preload password="tester121" name="tester121"/>
+        <zofar:preload password="tester122" name="tester122"/>
+        <zofar:preload password="tester123" name="tester123"/>
+        <zofar:preload password="tester124" name="tester124"/>
+        <zofar:preload password="tester125" name="tester125"/>
+        <zofar:preload password="tester126" name="tester126"/>
+        <zofar:preload password="tester127" name="tester127"/>
+        <zofar:preload password="tester128" name="tester128"/>
+        <zofar:preload password="tester129" name="tester129"/>
+        <zofar:preload password="tester130" name="tester130"/>
+        <zofar:preload password="tester131" name="tester131"/>
+        <zofar:preload password="tester132" name="tester132"/>
+        <zofar:preload password="tester133" name="tester133"/>
+        <zofar:preload password="tester134" name="tester134"/>
+        <zofar:preload password="tester135" name="tester135"/>
+        <zofar:preload password="tester136" name="tester136"/>
+        <zofar:preload password="tester137" name="tester137"/>
+        <zofar:preload password="tester138" name="tester138"/>
+        <zofar:preload password="tester139" name="tester139"/>
+        <zofar:preload password="tester140" name="tester140"/>
+        <zofar:preload password="tester141" name="tester141"/>
+        <zofar:preload password="tester142" name="tester142"/>
+        <zofar:preload password="tester143" name="tester143"/>
+        <zofar:preload password="tester144" name="tester144"/>
+        <zofar:preload password="tester145" name="tester145"/>
+        <zofar:preload password="tester146" name="tester146"/>
+        <zofar:preload password="tester147" name="tester147"/>
+        <zofar:preload password="tester148" name="tester148"/>
+        <zofar:preload password="tester149" name="tester149"/>
+        <zofar:preload password="tester150" name="tester150"/>
+        <zofar:preload password="tester151" name="tester151"/>
+        <zofar:preload password="tester152" name="tester152"/>
+        <zofar:preload password="tester153" name="tester153"/>
+        <zofar:preload password="tester154" name="tester154"/>
+        <zofar:preload password="tester155" name="tester155"/>
+        <zofar:preload password="tester156" name="tester156"/>
+        <zofar:preload password="tester157" name="tester157"/>
+        <zofar:preload password="tester158" name="tester158"/>
+        <zofar:preload password="tester159" name="tester159"/>
+        <zofar:preload password="tester160" name="tester160"/>
+        <zofar:preload password="tester161" name="tester161"/>
+        <zofar:preload password="tester162" name="tester162"/>
+        <zofar:preload password="tester163" name="tester163"/>
+        <zofar:preload password="tester164" name="tester164"/>
+        <zofar:preload password="tester165" name="tester165"/>
+        <zofar:preload password="tester166" name="tester166"/>
+        <zofar:preload password="tester167" name="tester167"/>
+        <zofar:preload password="tester168" name="tester168"/>
+        <zofar:preload password="tester169" name="tester169"/>
+        <zofar:preload password="tester170" name="tester170"/>
+        <zofar:preload password="tester171" name="tester171"/>
+        <zofar:preload password="tester172" name="tester172"/>
+        <zofar:preload password="tester173" name="tester173"/>
+        <zofar:preload password="tester174" name="tester174"/>
+        <zofar:preload password="tester175" name="tester175"/>
+        <zofar:preload password="tester176" name="tester176"/>
+        <zofar:preload password="tester177" name="tester177"/>
+        <zofar:preload password="tester178" name="tester178"/>
+        <zofar:preload password="tester179" name="tester179"/>
+        <zofar:preload password="tester180" name="tester180"/>
+        <zofar:preload password="tester181" name="tester181"/>
+        <zofar:preload password="tester182" name="tester182"/>
+        <zofar:preload password="tester183" name="tester183"/>
+        <zofar:preload password="tester184" name="tester184"/>
+        <zofar:preload password="tester185" name="tester185"/>
+        <zofar:preload password="tester186" name="tester186"/>
+        <zofar:preload password="tester187" name="tester187"/>
+        <zofar:preload password="tester188" name="tester188"/>
+        <zofar:preload password="tester189" name="tester189"/>
+        <zofar:preload password="tester190" name="tester190"/>
+        <zofar:preload password="tester191" name="tester191"/>
+        <zofar:preload password="tester192" name="tester192"/>
+        <zofar:preload password="tester193" name="tester193"/>
+        <zofar:preload password="tester194" name="tester194"/>
+        <zofar:preload password="tester195" name="tester195"/>
+        <zofar:preload password="tester196" name="tester196"/>
+        <zofar:preload password="tester197" name="tester197"/>
+        <zofar:preload password="tester198" name="tester198"/>
+        <zofar:preload password="tester199" name="tester199"/>
+        <zofar:preload password="tester200" name="tester200"/>
+	</zofar:preloads>
+
+
+	<zofar:variables>
+		 <zofar:variable name="width" type="number"/>
+        <zofar:variable name="height" type="number"/>
+        <zofar:variable name="isMobile" type="boolean"/>
+        <zofar:variable name="jsCheck" type="boolean"/>
+        <zofar:variable name="url" type="string"/>
+<!--         	!!! activate for multi langauage survey -->
+<!--         <zofar:variable name="language" type="string"/> -->
+	</zofar:variables>
+    <zofar:page uid="index">
+        <zofar:header>
+            <zofar:title uid="t1">Das ist eine Zofar Befragung.</zofar:title>
+            <zofar:text uid="t2">Hier haben Sie die Möglichkeit eine Befragung zu erstellen.</zofar:text>
+        </zofar:header>
+        <zofar:body uid="body">
+		</zofar:body>
+		<zofar:triggers>
+			<zofar:variable variable="url" value="zofar.baseUrl()"></zofar:variable>
+			<!-- <zofar:variable variable="uas" value="zofar.userAgent()"></zofar:variable> -->
+			
+			<zofar:jsCheck variable="jsCheck" xvar="width" yvar="height">
+			</zofar:jsCheck>
+			<zofar:variable variable="isMobile" value="zofar.isMobile()"></zofar:variable>
+		</zofar:triggers>
+		<zofar:transitions>
+			<zofar:transition target="offer" condition="jsCheck.value and isMobile.value and width.value lt 400"/>
+			<zofar:transition target="end" />
+		</zofar:transitions>
+    </zofar:page>
+    <zofar:page uid="offer">
+		<zofar:header>
+			<zofar:title uid="t" block="true">
+				Um ein optimales Befragungserlebnis zu erhalten, sollten Sie für die Beantwortung einiger Fragen das Display drehen.
+			</zofar:title>
+		</zofar:header>
+		<zofar:body uid="b"></zofar:body>
+		<zofar:transitions>
+			<zofar:transition target="end"/>
+		</zofar:transitions>
+	</zofar:page>
+    <zofar:page uid="end">
+        <zofar:header>
+            <zofar:title uid="t1">Vielen Dank!</zofar:title>
+        </zofar:header>
+    </zofar:page>
+</zofar:questionnaire>

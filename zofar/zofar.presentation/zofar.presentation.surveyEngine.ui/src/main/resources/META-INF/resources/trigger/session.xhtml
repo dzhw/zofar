@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.SessionTrigger">
+    <composite:attribute name="navigator"
+        type="de.his.zofar.presentation.surveyengine.ui.interfaces.INavigator"
+        required="true" />
+    <composite:attribute name="condition" type="java.lang.String"
+        default="true" />
+    <composite:attribute name="direction" type="java.lang.String"
+        default="unkown" />
+    <composite:attribute name="onExit" type="java.lang.Boolean"
+        default="false" />
+    <composite:attribute name="timeout" type="java.lang.String"
+        default="1800" />
+</composite:interface>
+
+<composite:implementation>
+    <ui:fragment rendered="#{cc.attrs.onExit}">
+		#{onExitBean.executeBeforeExit(cc)}
+	</ui:fragment>
+    <ui:fragment rendered="#{!cc.attrs.onExit}">
+		#{cc.execute()}
+	</ui:fragment>
+</composite:implementation>
+
+
+</html>

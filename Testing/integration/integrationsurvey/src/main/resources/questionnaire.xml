@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zofar:questionnaire xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:zofar="http://www####/zofar/xml/questionnaire" language="de">
+	<zofar:name>${zofar.survey.name}</zofar:name>
+	<zofar:description>${zofar.survey.description}</zofar:description>
+	<zofar:variables>
+		<zofar:variable name="v1" type="string" />
+		<zofar:variable name="v2" type="singleChoiceAnswerOption" />
+		<zofar:variable name="v3" type="string" />
+		<zofar:variable name="v4" type="boolean" />
+		<zofar:variable name="v5" type="boolean" />
+		<zofar:variable name="v6" type="boolean" />
+		<zofar:variable name="v7" type="boolean" />
+		<zofar:variable name="v8" type="boolean" />
+		<zofar:variable name="v9" type="boolean" />
+		<zofar:variable name="v10" type="boolean" />
+		<zofar:variable name="v11" type="boolean" />
+		<zofar:variable name="v12" type="boolean" />
+		<zofar:variable name="v13" type="boolean" />
+		<zofar:variable name="v14" type="boolean" />
+		<zofar:variable name="v15" type="boolean" />
+		<zofar:variable name="v16" type="boolean" />
+		<zofar:variable name="v17" type="string" />
+	</zofar:variables>
+	<zofar:page uid="index">
+		<zofar:header>
+			<zofar:title uid="t1">Das ist eine Zofar Befragung.
+			</zofar:title>
+			<zofar:text uid="t2">Hier haben Sie die Möglichkeit eine
+				Befragung zu erstellen.
+			</zofar:text>
+		</zofar:header>
+		<zofar:transitions>
+			<zofar:transition target="page1" />
+		</zofar:transitions>
+	</zofar:page>
+    <zofar:page uid="sc-question-vertical" customLayout="true">
+        <zofar:transitions>
+            <zofar:transition target="page1"/>
+        </zofar:transitions>
+    </zofar:page>
+	<zofar:page uid="page1">
+		<zofar:body uid="body">
+			<zofar:questionOpen variable="v1" uid="question1">
+				<zofar:header>
+					<zofar:question uid="q">Das ist eine offene Frage
+					</zofar:question>
+					<zofar:instruction uid="i">Das ist eine Instruktion
+					</zofar:instruction>
+					<zofar:introduction uid="intro">Das ist ein Intro
+					</zofar:introduction>
+				</zofar:header>
+			</zofar:questionOpen>
+		</zofar:body>
+		<zofar:transitions>
+			<zofar:transition target="page2" />
+		</zofar:transitions>
+	</zofar:page>
+	<zofar:page uid="page2">
+		<zofar:header>
+			<zofar:text uid="t1">Das Ergebnis der Variablen v1 ist:
+				#{layout.TAG_1_START}#{v1}#{layout.TAG_END}
+			</zofar:text>
+		</zofar:header>
+		<zofar:transitions>
+			<zofar:transition target="page3" />
+		</zofar:transitions>
+	</zofar:page>
+	<zofar:page uid="page3">
+		<zofar:body uid="body">
+
+			<zofar:questionSingleChoice uid="question2">
+				<zofar:header>
+					<zofar:question uid="q">Ist in Ihrem Studiengang
+						verpflichtend eine Studienphase an einer ausländischen Hochschule
+						vorgesehen?
+					</zofar:question>
+				</zofar:header>
+				<zofar:responseDomain variable="v2" uid="rd">
+					<zofar:answerOption uid="ao1" value="1">
+						<zofar:questionOpen variable="v3" uid="ao">
+							<zofar:prefix>
+								<zofar:label uid="pr">ja, mit einer Dauer von:
+								</zofar:label>
+							</zofar:prefix>
+							<zofar:postfix>
+								<zofar:label uid="po">Monaten</zofar:label>
+							</zofar:postfix>
+						</zofar:questionOpen>
+					</zofar:answerOption>
+					<zofar:answerOption uid="ao2" value="2" label="nein" />
+				</zofar:responseDomain>
+			</zofar:questionSingleChoice>
+
+		</zofar:body>
+		<zofar:transitions>
+			<zofar:transition target="page4" />
+		</zofar:transitions>
+	</zofar:page>
+	<zofar:page uid="page4">
+		<zofar:header>
+			<zofar:text uid="t1">Das Ergebnis der Variablen v2 ist:
+				#{layout.TAG_1_START}#{v2}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t2">Das Ergebnis der Variablen v3 ist:
+				#{layout.TAG_2_START}#{v3}#{layout.TAG_END}
+			</zofar:text>
+		</zofar:header>
+		<zofar:transitions>
+			<zofar:transition target="page5" />
+		</zofar:transitions>
+	</zofar:page>
+	<zofar:page uid="page5">
+		<zofar:body uid="body">
+
+			<zofar:multipleChoice uid="question3">
+				<zofar:header>
+					<zofar:question uid="q">In welchen der folgenden
+						Zeitschriften haben Sie schon einmal geblättert?
+					</zofar:question>
+					<zofar:instruction uid="ins">Bitte geben Sie alle
+						Zeitschriften an, in denen Sie schon einmal geblättert haben!
+					</zofar:instruction>
+				</zofar:header>
+				<zofar:responseDomain uid="rd">
+					<zofar:answerOption variable="v4" uid="ao1"
+						label="Chip" />
+					<zofar:answerOption variable="v5" uid="ao2"
+						label="c't" />
+					<zofar:answerOption variable="v6" uid="ao3"
+						label="Mac-Welt" />
+					<zofar:answerOption variable="v7" uid="ao4"
+						label="Stern" />
+					<zofar:answerOption variable="v8" uid="ao5"
+						label="Spiegel" />
+					<zofar:answerOption variable="v9" uid="ao6"
+						label="Focus" />
+					<zofar:answerOption variable="v10" uid="ao7"
+						label="HörZu" />
+					<zofar:answerOption variable="v11" uid="ao8"
+						label="TV-Spielfilm" />
+					<zofar:answerOption variable="v12" uid="ao9"
+						label="Die Aktuelle" />
+					<zofar:answerOption variable="v13" uid="ao10"
+						label="Brigitte" />
+					<zofar:answerOption variable="v14" uid="ao11"
+						label="Geo" />
+					<zofar:answerOption variable="v15" uid="ao12"
+						label="Essen und Trinken" />
+					<zofar:answerOption variable="v16" uid="ao13">
+						<zofar:questionOpen variable="v17" uid="o">
+							<zofar:prefix>
+								<zofar:label uid="l">Sonstige und zwar:</zofar:label>
+							</zofar:prefix>
+						</zofar:questionOpen>
+					</zofar:answerOption>
+				</zofar:responseDomain>
+			</zofar:multipleChoice>
+
+		</zofar:body>
+		<zofar:transitions>
+			<zofar:transition target="page6" />
+		</zofar:transitions>
+	</zofar:page>
+	<zofar:page uid="page6">
+		<zofar:header>
+			<zofar:text uid="t1">Das Ergebnis der Variablen v4 ist:
+				#{layout.TAG_1_START}#{v4}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t2">Das Ergebnis der Variablen v5 ist:
+				#{layout.TAG_2_START}#{v5}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t3">Das Ergebnis der Variablen v6 ist:
+				#{layout.TAG_3_START}#{v6}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t4">Das Ergebnis der Variablen v7 ist:
+				#{layout.TAG_4_START}#{v7}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t5">Das Ergebnis der Variablen v8 ist:
+				#{layout.TAG_5_START}#{v8}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t6">Das Ergebnis der Variablen v9 ist:
+				#{layout.TAG_6_START}#{v9}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t7">Das Ergebnis der Variablen v10 ist:
+				#{layout.TAG_7_START}#{v10}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t8">Das Ergebnis der Variablen v11 ist:
+				#{layout.TAG_8_START}#{v11}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t9">Das Ergebnis der Variablen v12 ist:
+				#{layout.TAG_9_START}#{v12}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t10">Das Ergebnis der Variablen v13 ist:
+				#{layout.TAG_10_START}#{v13}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t11">Das Ergebnis der Variablen v14 ist:
+				#{layout.TAG_11_START}#{v14}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t12">Das Ergebnis der Variablen v15 ist:
+				#{layout.TAG_12_START}#{v15}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t13">Das Ergebnis der Variablen v16 ist:
+				#{layout.TAG_13_START}#{v16}#{layout.TAG_END}
+			</zofar:text>
+			<zofar:text uid="t14">Das Ergebnis der Variablen v17 ist:
+				#{layout.TAG_14_START}#{v17}#{layout.TAG_END}
+			</zofar:text>
+		</zofar:header>
+	</zofar:page>
+</zofar:questionnaire>

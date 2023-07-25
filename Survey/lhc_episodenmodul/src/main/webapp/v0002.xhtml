@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer" xmlns:dis="http://java.sun.com/jsf/composite/display">
+  <ui:param name="progress" value="28"/>
+  <ui:define name="template-content">
+    <section id="v0002" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['v0002.t1_0']}</text:text>
+        <text:text container="true" id="t2">#{msgs['v0002.t2_0']}</text:text>
+      </f:facet>
+      <ques:open id="qopen1">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['v0002.body.qopen1.q1_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openNumberOption minValue="0.0" maxValue="20.0" validationMessage="#{msgs['v0002.body.qopen1']}" var="#{v0002}" id="response" size="4"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <section id="s1" isaccordion="true">
+        <f:facet name="header">
+          <text:title container="true" id="t">#{msgs['v0002.body.s1.t_0']}</text:title>
+        </f:facet>
+        <dis:container id="tech">
+          <dis:text id="debug0">#{msgs['v0002.body.s1.b.tech.debug0_0']}#{msgs['v0002.body.s1.b.tech.debug0_2']}#{msgs['v0002.body.s1.b.tech.debug0_4']}</dis:text>
+          <dis:text id="debug1">#{msgs['v0002.body.s1.b.tech.debug1_0']}</dis:text>
+          <dis:text id="debug2">#{msgs['v0002.body.s1.b.tech.debug2_0']}</dis:text>
+          <dis:text id="debug3">#{msgs['v0002.body.s1.b.tech.debug3_0']}</dis:text>
+          <dis:text id="debug4">#{msgs['v0002.body.s1.b.tech.debug4_0']}</dis:text>
+          <dis:text id="debug5">#{msgs['v0002.body.s1.b.tech.debug5_0']}</dis:text>
+          <dis:text id="debug6">#{msgs['v0002.body.s1.b.tech.debug6_0']}</dis:text>
+        </dis:container>
+      </section>
+      <ques:pretest id="questioncommentv0002">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentv0002">#{msgs['textcommentv0002_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentv0002']}" columns="100" var="#{commentv0002}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </section>
+  </ui:define>
+</ui:composition>

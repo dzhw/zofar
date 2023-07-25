@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:mat="http://java.sun.com/jsf/composite/matrix" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="33"/>
+  <ui:define name="template-content">
+    <section id="offenematrix_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['offenematrix_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['offenematrix_beispiel.text_0']}</text:text>
+      </f:facet>
+      <mat:openMatrix id="openmmatrix_1">
+        <f:facet name="header">
+          <text:question container="true" id="question">#{msgs['offenematrix_beispiel.body.openmmatrix_1.question_0']}</text:question>
+        </f:facet>
+        <mat:openMatrixResponseDomain id="response" noResponseOptions="7">
+          <f:facet name="header">
+            <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti3_0']}</text:text>
+            <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti4_0']}</text:text>
+            <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti5_0']}</text:text>
+            <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti6_0']}</text:text>
+            <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti7_0']}</text:text>
+          </f:facet>
+          <mat:openMatrixItem id="item1">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo7']}" var="#{qo18}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo3']}" var="#{qo14}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo4']}" var="#{qo15}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo5']}" var="#{qo16}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo6']}" var="#{qo17}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo13}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item1.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item2">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo7']}" var="#{qo27}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo3']}" var="#{qo23}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo4']}" var="#{qo24}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo5']}" var="#{qo25}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo6']}" var="#{qo26}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo21}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo22}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item2.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item3">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo7']}" var="#{qo37}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo3']}" var="#{qo33}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo4']}" var="#{qo34}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo5']}" var="#{qo35}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo6']}" var="#{qo36}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo32}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_1.response.item3.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+        </mat:openMatrixResponseDomain>
+      </mat:openMatrix>
+      <mat:openMatrix id="openmmatrix_3">
+        <f:facet name="header">
+          <text:question container="true" id="question">#{msgs['offenematrix_beispiel.body.openmmatrix_3.question_0']}</text:question>
+        </f:facet>
+        <mat:openMatrixResponseDomain id="response" noResponseOptions="7">
+          <f:facet name="header">
+            <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti3_0']}</text:text>
+            <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti4_0']}</text:text>
+            <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti5_0']}</text:text>
+            <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti6_0']}</text:text>
+            <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti7_0']}</text:text>
+          </f:facet>
+          <mat:openMatrixItem id="item1">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo7']}" var="#{qo18}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo7.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo3']}" var="#{qo14}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo3.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo4']}" var="#{qo15}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo4.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo5']}" var="#{qo16}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo5.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo6']}" var="#{qo17}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo6.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo1.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo13}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item1.qo2.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item2">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo7']}" var="#{qo27}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo7.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo3']}" var="#{qo23}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo3.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo4']}" var="#{qo24}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo4.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo5']}" var="#{qo25}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo5.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo6']}" var="#{qo26}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo6.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo21}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo1.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo22}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item2.qo2.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item3">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo7']}" var="#{qo37}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo7.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo3']}" var="#{qo33}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo3.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo4']}" var="#{qo34}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo4.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo5']}" var="#{qo35}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo5.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo6']}" var="#{qo36}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo6.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo1.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo32}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_3.response.item3.qo2.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+        </mat:openMatrixResponseDomain>
+      </mat:openMatrix>
+      <mat:openMatrix id="openmmatrix_4">
+        <f:facet name="header">
+          <text:question container="true" id="question">#{msgs['offenematrix_beispiel.body.openmmatrix_4.question_0']}</text:question>
+        </f:facet>
+        <mat:openMatrixResponseDomain id="response" noResponseOptions="7">
+          <f:facet name="header">
+            <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti3_0']}</text:text>
+            <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti4_0']}</text:text>
+            <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti5_0']}</text:text>
+            <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti6_0']}</text:text>
+            <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti7_0']}</text:text>
+          </f:facet>
+          <mat:openMatrixItem id="item1">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo7']}" var="#{qo18}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo7.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo3']}" var="#{qo14}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo3.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo4']}" var="#{qo15}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo4.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo5']}" var="#{qo16}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo5.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo6']}" var="#{qo17}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo6.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo1.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo13}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item1.qo2.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item2">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo7']}" var="#{qo27}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo7.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo3']}" var="#{qo23}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo3.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo4']}" var="#{qo24}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo4.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo5']}" var="#{qo25}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo5.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo6']}" var="#{qo26}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo6.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo21}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo1.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo22}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item2.qo2.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item3">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo7']}" var="#{qo37}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo7.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo3']}" var="#{qo33}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo3.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo4']}" var="#{qo34}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo4.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo5']}" var="#{qo35}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo5.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo6']}" var="#{qo36}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo6.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo1.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo32}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+              <f:facet name="postfix">
+                <text:responseOption container="true" id="lb1">#{msgs['offenematrix_beispiel.body.openmmatrix_4.response.item3.qo2.lb1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+        </mat:openMatrixResponseDomain>
+      </mat:openMatrix>
+      <mat:openMatrix id="openmmatrix_5">
+        <f:facet name="header">
+          <text:question container="true" id="question">#{msgs['offenematrix_beispiel.body.openmmatrix_5.question_0']}</text:question>
+        </f:facet>
+        <mat:openMatrixResponseDomain id="response" noResponseOptions="7">
+          <f:facet name="header">
+            <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti3_0']}</text:text>
+            <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti4_0']}</text:text>
+            <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti5_0']}</text:text>
+            <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti6_0']}</text:text>
+            <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti7_0']}</text:text>
+          </f:facet>
+          <mat:openMatrixItem id="item1">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo7']}" var="#{qo18}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo7.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo3']}" var="#{qo14}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo3.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo4']}" var="#{qo15}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo4.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo5']}" var="#{qo16}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo5.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo6']}" var="#{qo17}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo6.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo1.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo13}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo2.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item1.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item2">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo7']}" var="#{qo27}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo7.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo3']}" var="#{qo23}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo3.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo4']}" var="#{qo24}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo4.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo5']}" var="#{qo25}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo5.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo6']}" var="#{qo26}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo6.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo21}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo1.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo22}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo2.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item2.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+          <mat:openMatrixItem id="item3">
+            <f:facet name="columns">
+              <text:text container="true" id="ti1">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti1_0']}</text:text>
+              <text:text container="true" id="ti2">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti2_0']}</text:text>
+              <text:text container="true" id="ti3">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti3_0']}</text:text>
+              <text:text container="true" id="ti4">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti4_0']}</text:text>
+              <text:text container="true" id="ti5">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti5_0']}</text:text>
+              <text:text container="true" id="ti6">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti6_0']}</text:text>
+              <text:text container="true" id="ti7">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.ti7_0']}</text:text>
+            </f:facet>
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:openGradeOption id="qo7" maxlength="3" size="5" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo7']}" var="#{qo37}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo7.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo7_prefix6">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo7.qo7_prefix6_0']}</text:responseOption>
+              </f:facet>
+            </ans:openGradeOption>
+            <ans:openNumberOption id="qo3" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo3']}" var="#{qo33}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo3.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo3_prefix2">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo3.qo3_prefix2_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo4" maxlength="3" size="5" minValue="0.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo4']}" var="#{qo34}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo4.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo4_prefix3">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo4.qo4_prefix3_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo5" maxlength="3" size="5" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo5']}" var="#{qo35}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo5.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo5_prefix4">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo5.qo5_prefix4_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:openNumberOption id="qo6" maxlength="3" size="5" minValue="0.0" maxValue="100.0" validationMessage="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo6']}" var="#{qo36}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo6.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo6_prefix5">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo6.qo6_prefix5_0']}</text:responseOption>
+              </f:facet>
+            </ans:openNumberOption>
+            <ans:smallOpenOption id="qo1" size="5" var="#{qo12}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo1.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo1_prefix0">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo1.qo1_prefix0_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+            <ans:smallOpenOption id="qo2" maxlength="3" size="5" var="#{qo32}" infieldText="#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo2.placeholder']}">
+              <f:facet name="prefix">
+                <text:responseOption container="true" id="qo2_prefix1">#{msgs['offenematrix_beispiel.body.openmmatrix_5.response.item3.qo2.qo2_prefix1_0']}</text:responseOption>
+              </f:facet>
+            </ans:smallOpenOption>
+          </mat:openMatrixItem>
+        </mat:openMatrixResponseDomain>
+      </mat:openMatrix>
+    </section>
+  </ui:define>
+</ui:composition>

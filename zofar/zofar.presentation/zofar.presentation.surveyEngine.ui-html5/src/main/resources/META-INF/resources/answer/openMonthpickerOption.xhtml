@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:pass="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="org.zofar.OpenOption">
+	<composite:attribute name="var" required="true" type="de.his.zofar.presentation.surveyengine.AbstractAnswerBean" />
+	<composite:attribute name="inputId" default="oq" type="java.lang.String" />
+	<composite:attribute name="datesDisabled" default="" type="java.lang.String" />
+	<composite:editableValueHolder name="input" targets="#{cc.attrs.inputId}" />
+	<composite:attribute name="infieldText" default="" type="java.lang.String" />
+	<composite:attribute name="size" type="java.lang.String" default="15" />
+	
+	<composite:facet name="prefix" />
+	<composite:facet name="postfix" />
+</composite:interface>
+
+<composite:implementation>
+ 		<h:inputText id="#{cc.attrs.inputId}"
+ 			
+ 			pass:data-placeholder="#{cc.attrs.infieldText}"
+ 			pass:placeholder="#{cc.attrs.infieldText}"
+			pass:title="#{cc.attrs.infieldText}"
+			
+ 			
+			value="#{cc.attrs.var.value}" 
+			
+			
+			pass:data-value="#{cc.attrs.var.value}" 
+
+			size="#{cc.attrs.size}" pass:size="#{cc.attrs.size}"
+			pass:type="text"
+			readonly="false"
+			class="zo-monthpicker-question form-control"
+			pass:data-lang="#{sessionController.currentLocale.language}"
+			pass:data-startdate="#{cc.attrs.minRange}"
+			pass:data-enddate="#{cc.attrs.maxRange}"
+			pass:data-dates-disabled="#{cc.attrs.datesDisabled}">
+			<f:converter   converterId="org.zofar.open.DateConverter"/>
+		</h:inputText> 
+</composite:implementation>
+</html>

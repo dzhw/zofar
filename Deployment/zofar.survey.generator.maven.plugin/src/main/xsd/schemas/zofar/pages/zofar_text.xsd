@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/composite/text"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:text="http://java.sun.com/jsf/composite/text"
+	xmlns:common="http://java.sun.com/jsf/composite/common"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+
+	<xs:element type="text:textType" name="text" />
+	<xs:element type="text:titleType" name="title" />
+	<xs:element type="text:introType" name="intro" />
+	<xs:element type="text:questionType" name="question" />
+	<xs:element type="text:instructionType" name="instruction" />
+	<xs:element type="text:responseOptionType" name="responseOption" />
+
+
+	<xs:complexType name="textType" mixed="true">
+		<xs:complexContent  mixed="true">
+			<xs:extension base="common:identificationalType">
+				<xs:sequence>
+					<xs:choice maxOccurs="unbounded" minOccurs="0">
+						<xs:element ref="common:jumper" />
+					</xs:choice>
+				</xs:sequence>
+				<xs:attributeGroup ref="common:renderedAttribute" />
+				<xs:attribute type="xs:boolean" name="block" default="false" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="titleType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="text:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="introType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="text:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="questionType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="text:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="instructionType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="text:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="responseOptionType" mixed="true">
+		<xs:complexContent>
+			<xs:extension base="text:textType" />
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

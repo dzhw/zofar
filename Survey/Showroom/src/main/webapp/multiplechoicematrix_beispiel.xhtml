@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/composite" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="32"/>
+  <ui:define name="template-content">
+    <section id="multiplechoicematrix_beispiel" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="ti">#{msgs['multiplechoicematrix_beispiel.ti_0']}</text:title>
+        <text:text container="true" id="text">#{msgs['multiplechoicematrix_beispiel.text_0']}</text:text>
+      </f:facet>
+      <com:multipleChoiceComposite id="matrix1">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix1.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['multiplechoicematrix_beispiel.b.matrix1.is_0']}</text:instruction>
+        </f:facet>
+        <com:multipleChoiceCompositeResponseDomain id="rd" noResponseOptions="4">
+          <f:facet name="header">
+            <text:text container="true" id="ti0">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.ti0_0']}</text:text>
+            <text:text container="true" id="ti1">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.ti3_0']}</text:text>
+          </f:facet>
+          <com:multipleChoiceCompositeItem id="item1">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item1.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_1_1_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item1.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_1_1_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item1.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_1_1_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item1.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_1_1_4.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item1.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+          <com:multipleChoiceCompositeItem id="item2">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item2.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_1_2_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item2.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_1_2_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item2.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_1_2_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item2.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_1_2_4.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item2.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+          <com:multipleChoiceCompositeItem id="item3">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_1_3_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item3.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_1_3_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item3.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_1_3_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item3.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_1_3_4.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix1.rd.item3.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+        </com:multipleChoiceCompositeResponseDomain>
+      </com:multipleChoiceComposite>
+      <com:multipleChoiceComposite id="matrix2">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix2.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['multiplechoicematrix_beispiel.b.matrix2.is_0']}</text:instruction>
+        </f:facet>
+        <com:multipleChoiceCompositeResponseDomain id="rd" noResponseOptions="4">
+          <f:facet name="header">
+            <text:text container="true" id="ti0">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.ti0_0']}</text:text>
+            <text:text container="true" id="ti1">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.ti3_0']}</text:text>
+          </f:facet>
+          <com:multipleChoiceCompositeItem id="item1">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item1.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_2_1_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item1.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_2_1_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item1.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_2_1_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item1.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_2_1_4.value}" missing="false" exclusive="true">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item1.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+          <com:multipleChoiceCompositeItem id="item2">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item2.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_2_2_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item2.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_2_2_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item2.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_2_2_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item2.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_2_2_4.value}" missing="false" exclusive="true">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item2.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+          <com:multipleChoiceCompositeItem id="item3">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_2_3_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item3.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_2_3_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item3.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_2_3_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item3.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_2_3_4.value}" missing="false" exclusive="true">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix2.rd.item3.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+        </com:multipleChoiceCompositeResponseDomain>
+      </com:multipleChoiceComposite>
+      <com:multipleChoiceComposite id="matrix3">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix3.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['multiplechoicematrix_beispiel.b.matrix3.is_0']}</text:instruction>
+        </f:facet>
+        <com:multipleChoiceCompositeResponseDomain id="rd" noResponseOptions="4">
+          <f:facet name="header">
+            <text:text container="true" id="ti0">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.ti0_0']}</text:text>
+            <text:text container="true" id="ti1">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.ti3_0']}</text:text>
+          </f:facet>
+          <com:multipleChoiceCompositeResponseDomainUnit id="unit">
+            <f:facet name="header">
+              <text:text container="true" id="ti1">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.ti1_0']}</text:text>
+            </f:facet>
+            <com:multipleChoiceCompositeItem id="item1">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item1.q_0']}</text:question>
+              </f:facet>
+              <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_3_1_1.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item1.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+              <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_3_1_2.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item1.rd.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+              <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_3_1_3.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item1.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+              <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_3_1_4.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item1.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+            </com:multipleChoiceCompositeItem>
+            <com:multipleChoiceCompositeItem id="item2">
+              <f:facet name="header">
+                <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item2.q_0']}</text:question>
+              </f:facet>
+              <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_3_2_1.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item2.rd.ao0.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+              <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_3_2_2.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item2.rd.ao1.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+              <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_3_2_3.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item2.rd.ao2.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+              <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_3_2_4.value}" missing="false">
+                <f:facet name="labels">
+                  <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.unit.item2.rd.ao3.label']}</text:responseOption>
+                </f:facet>
+              </ans:multipleOption>
+            </com:multipleChoiceCompositeItem>
+          </com:multipleChoiceCompositeResponseDomainUnit>
+          <com:multipleChoiceCompositeItem id="item3">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_3_3_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.item3.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_3_3_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.item3.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_3_3_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.item3.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_3_3_4.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix3.rd.item3.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+        </com:multipleChoiceCompositeResponseDomain>
+      </com:multipleChoiceComposite>
+      <com:multipleChoiceComposite id="matrix4">
+        <f:facet name="header">
+          <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix4.q_0']}</text:question>
+          <text:instruction container="true" id="is">#{msgs['multiplechoicematrix_beispiel.b.matrix4.is_0']}</text:instruction>
+        </f:facet>
+        <com:multipleChoiceCompositeResponseDomain id="rd" noResponseOptions="4">
+          <f:facet name="header">
+            <text:text container="true" id="ti0">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.ti0_0']}</text:text>
+            <text:text container="true" id="ti1">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.ti1_0']}</text:text>
+            <text:text container="true" id="ti2">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.ti2_0']}</text:text>
+            <text:text container="true" id="ti3">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.ti3_0']}</text:text>
+          </f:facet>
+          <com:multipleChoiceCompositeItem id="item1">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item1.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_4_1_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item1.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_4_1_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item1.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_4_1_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item1.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_4_1_4.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item1.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+          <com:multipleChoiceCompositeItem id="item2">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item2.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_4_2_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item2.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_4_2_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item2.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_4_2_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item2.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_4_2_4.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item2.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+          </com:multipleChoiceCompositeItem>
+          <com:multipleChoiceCompositeItem id="item3">
+            <f:facet name="header">
+              <text:question container="true" id="q">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item3.q_0']}</text:question>
+            </f:facet>
+            <ans:multipleOption id="ao0" value="#{matrix_multiplechoice_4_3_1.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item3.rd.ao0.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao1" value="#{matrix_multiplechoice_4_3_2.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item3.rd.ao1.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao2" value="#{matrix_multiplechoice_4_3_3.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item3.rd.ao2.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:multipleOption id="ao3" value="#{matrix_multiplechoice_4_3_4.value}" missing="false">
+              <f:facet name="labels">
+                <text:responseOption id="label">#{msgs['multiplechoicematrix_beispiel.b.matrix4.rd.item3.rd.ao3.label']}</text:responseOption>
+              </f:facet>
+            </ans:multipleOption>
+            <ans:attachedOpenQuestion id="ato1" var="#{ato4}"/>
+          </com:multipleChoiceCompositeItem>
+        </com:multipleChoiceCompositeResponseDomain>
+      </com:multipleChoiceComposite>
+    </section>
+  </ui:define>
+</ui:composition>

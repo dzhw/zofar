@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://java.sun.com/jsf/facelets"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:common="http://java.sun.com/jsf/composite/common" 
+	xmlns:trigger="http://java.sun.com/jsf/composite/trigger"
+	xmlns:container="http://java.sun.com/jsf/composite/container"
+	xmlns:dev="http://java.sun.com/jsf/composite/dev"
+	attributeFormDefault="unqualified" elementFormDefault="qualified">
+
+	<xs:import namespace="http://java.sun.com/jsf/composite/common"
+		schemaLocation="zofar_common.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/trigger"
+		schemaLocation="zofar_trigger.xsd" />
+	<xs:import namespace="http://java.sun.com/jsf/composite/container"
+		schemaLocation="zofar_container.xsd" />
+
+	<xs:element type="ui:compositionType" name="composition" />
+
+	<xs:complexType name="defineType">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded" minOccurs="0">
+				<xs:element ref="trigger:consistency" />
+				<xs:element ref="trigger:variable" />
+				<xs:element ref="trigger:session" />
+				<xs:element ref="trigger:action" />
+				<xs:element ref="trigger:jscheck" />
+				<xs:element ref="common:jumperContainer" />
+				<xs:element ref="common:devRenderCondition" />
+			</xs:choice>
+			<!-- <xs:element ref="common:page" /> -->
+			<xs:element ref="container:section" />
+		</xs:sequence>
+		<xs:attribute type="xs:token" name="name" fixed="page-content" />
+	</xs:complexType>
+	<xs:complexType name="paramType">
+		<xs:attribute name="name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="progress" />
+					<xs:enumeration value="lastPage" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute type="xs:token" name="value" use="required" />
+	</xs:complexType>
+	<xs:complexType name="compositionType">
+		<xs:sequence>
+			<xs:element type="ui:paramType" name="param" maxOccurs="unbounded"
+				minOccurs="0" />
+			<xs:element type="ui:defineType" name="define" />
+		</xs:sequence>
+		<xs:attribute type="xs:token" name="template"
+			default="template/survey.xhtml" />
+	</xs:complexType>
+</xs:schema>

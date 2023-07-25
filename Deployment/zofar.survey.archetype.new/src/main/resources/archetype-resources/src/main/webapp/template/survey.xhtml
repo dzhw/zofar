@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:zo="http://zofar.org/ui">
+
+<h:head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>A template of a survey</title>
+	<h:outputStylesheet library="css" name="general.css" />
+	<h:outputScript library="js" name="zofarBanane.js" />
+</h:head>
+<h:body>
+    #{navigatorBean.registerViewID(view.viewId.substring(1, view.viewId.length()-6))}
+    <f:view locale="#{sessionController.currentLocale}">
+		<h:form>
+			<zo:default isLastPage="#{lastPage}" />
+			<center>
+				<h:panelGroup layout="block" class="zofar-page custom-#{view.viewId.substring(1, view.viewId.length()-6)}">
+					
+					<table class="zo-template-header" width="100%">
+						<tr> 
+							<td width="75%">
+								<h:outputLink   value="http://www.####/impressum" target="_blanck" >
+								<h:graphicImage library="images" name="dzhw.jpg" width="130px" url="www.####"/>
+								</h:outputLink>
+							</td>
+							<td width="25%" valign="bottom">
+								<zo:progressbar value="#{progress}" />	
+							</td>
+						</tr>
+					</table>
+					
+					<div style="width:100%">
+					<hr class="zo-spacer" />
+					</div>
+					<h:panelGroup layout="block" class="zo-template-content">
+						<ui:insert name="template-content" />
+					</h:panelGroup>
+
+
+					<div class="zo-template-footer" style="padding-top:10px">
+						<hr class="zo-spacer"/>
+						<h:panelGroup layout="block" class="zo-buttons"
+							style="padding-top:15px">
+							<ui:insert name="template-buttons">
+								<zo:panel isLastPage="#{lastPage}" />
+							</ui:insert>
+						</h:panelGroup>
+						<ui:insert name="template-footer">
+							<h:outputLabel name = "Plalzhalter"></h:outputLabel>
+						</ui:insert>
+					</div>
+				</h:panelGroup>
+			</center>
+		</h:form>
+	</f:view>
+</h:body>
+</html>

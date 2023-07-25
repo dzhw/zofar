@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="26"/>
+  <ui:define name="template-content">
+    <section id="deleteEpisode" page="true">
+      <f:facet name="header">
+        <text:text container="true" id="t1">#{msgs['deleteEpisode.t1_0']}</text:text>
+      </f:facet>
+      <ques:singleChoice id="qsc1">
+        <f:facet name="header">
+          <text:question container="true" id="q1">#{msgs['deleteEpisode.body.qsc1.q1_0']}</text:question>
+        </f:facet>
+        <ans:radioButtonSingleChoiceResponseDomain direction="vertical" labelPosition="right" value="#{delEpisode.valueId}" var="#{delEpisode}" id="rd1" showValues="false" missingSeparated="true" itemClasses="zo-pipes">
+          <ans:singleOption itemValue="1" id="ao1" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['deleteEpisode.body.qsc1.rd1.ao1.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+          <ans:singleOption itemValue="2" id="ao2" missing="false">
+            <f:facet name="labels">
+              <text:responseOption id="label">#{msgs['deleteEpisode.body.qsc1.rd1.ao2.label']}</text:responseOption>
+            </f:facet>
+          </ans:singleOption>
+        </ans:radioButtonSingleChoiceResponseDomain>
+      </ques:singleChoice>
+      <ques:pretest id="questioncommentdeleteEpisode">
+        <f:facet name="header">
+          <text:question container="true" id="textcommentdeleteEpisode">#{msgs['textcommentdeleteEpisode_0']}</text:question>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:largeOpenOption rows="3" maxlength="2000" validationMessage="#{msgs['questioncommentdeleteEpisode']}" columns="100" var="#{commentdeleteEpisode}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:pretest>
+    </section>
+  </ui:define>
+</ui:composition>

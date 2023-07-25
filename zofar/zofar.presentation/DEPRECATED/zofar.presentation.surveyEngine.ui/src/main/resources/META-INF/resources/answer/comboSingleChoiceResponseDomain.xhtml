@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<!-- <composite:interface componentType="org.zofar.DropDownSingleChoiceResponseDomain"> -->
+<composite:interface componentType="org.zofar.responsedomain.DropDown">
+	<composite:attribute name="value" required="true"
+		type="java.lang.String" />
+	<composite:attribute name="showValues" type="java.lang.Boolean"
+		default="false" />
+	<composite:attribute name="missingSeparated" type="java.lang.Boolean"
+		default="true" />
+	<composite:attribute name="rowClasses" required="false"
+		type="java.lang.String" default="zofar-odd, zofar-even" />
+</composite:interface>
+
+<composite:implementation>
+</composite:implementation>
+
+
+</html>

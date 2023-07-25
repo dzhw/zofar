@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:ques="http://java.sun.com/jsf/composite/question" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:ans="http://java.sun.com/jsf/composite/answer">
+  <ui:param name="progress" value="44"/>
+  <ui:define name="template-content">
+    <section id="monthpicker_beispiel" page="true">
+      <ques:open id="qo1">
+        <f:facet name="header">
+          <text:intro container="true" id="intro">#{msgs['monthpicker_beispiel.b.qo1.intro_0']}</text:intro>
+          <text:question container="true" id="q">#{msgs['monthpicker_beispiel.b.qo1.q_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['monthpicker_beispiel.b.qo1.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openMonthpickerOption minRange="2018,04,01" maxRange="2022,05,31" viewDate="" datesDisabled="" var="#{example1}" id="response"/>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo2">
+        <f:facet name="header">
+          <text:intro container="true" id="intro">#{msgs['monthpicker_beispiel.b.qo2.intro_0']}</text:intro>
+          <text:question container="true" id="q">#{msgs['monthpicker_beispiel.b.qo2.q_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['monthpicker_beispiel.b.qo2.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openMonthpickerOption minRange="2018,04,01" maxRange="2022,05,31" viewDate="" datesDisabled="" var="#{example2}" id="response">
+            <f:facet name="prefix">
+              <text:responseOption container="true" id="l1">#{msgs['monthpicker_beispiel.b.qo2.l1_0']}</text:responseOption>
+            </f:facet>
+          </ans:openMonthpickerOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo3">
+        <f:facet name="header">
+          <text:intro container="true" id="intro">#{msgs['monthpicker_beispiel.b.qo3.intro_0']}</text:intro>
+          <text:question container="true" id="q">#{msgs['monthpicker_beispiel.b.qo3.q_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['monthpicker_beispiel.b.qo3.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openMonthpickerOption minRange="2018,04,01" maxRange="2022,05,31" viewDate="" datesDisabled="" var="#{example3}" id="response">
+            <f:facet name="postfix">
+              <text:responseOption container="true" id="l2">#{msgs['monthpicker_beispiel.b.qo3.l2_0']}</text:responseOption>
+            </f:facet>
+          </ans:openMonthpickerOption>
+        </ans:openResponseDomain>
+      </ques:open>
+      <ques:open id="qo4">
+        <f:facet name="header">
+          <text:intro container="true" id="intro">#{msgs['monthpicker_beispiel.b.qo4.intro_0']}</text:intro>
+          <text:question container="true" id="q">#{msgs['monthpicker_beispiel.b.qo4.q_0']}</text:question>
+          <text:instruction container="true" id="ins">#{msgs['monthpicker_beispiel.b.qo4.ins_0']}</text:instruction>
+        </f:facet>
+        <ans:openResponseDomain id="responsedomain">
+          <ans:openMonthpickerOption minRange="2018,04,01" maxRange="2022,05,31" var="#{example4}" id="response">
+            <f:facet name="prefix">
+              <text:responseOption container="true" id="l1">#{msgs['monthpicker_beispiel.b.qo4.l1_0']}</text:responseOption>
+            </f:facet>
+            <f:facet name="postfix">
+              <text:responseOption container="true" id="l2">#{msgs['monthpicker_beispiel.b.qo4.l2_0']}</text:responseOption>
+            </f:facet>
+          </ans:openMonthpickerOption>
+        </ans:openResponseDomain>
+      </ques:open>
+    </section>
+  </ui:define>
+</ui:composition>

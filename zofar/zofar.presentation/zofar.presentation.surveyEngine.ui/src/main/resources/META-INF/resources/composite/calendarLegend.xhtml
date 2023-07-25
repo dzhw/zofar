@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:calendar="http://java.sun.com/jsf/composite/composite"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="de.his.zofar.Calendar.Legend">
+	<composite:attribute name="layout" type="java.lang.String"
+		default="pageDirection" />
+	<composite:attribute name="position" type="java.lang.String"
+		default="left" />
+	<composite:attribute name="grouping" type="java.lang.String"
+		required="false" default="" />
+	<composite:attribute name="showLegendIcon" type="java.lang.Boolean"
+		default="true" />
+	<composite:attribute name="showIndicator" type="java.lang.Boolean"
+		default="true" />
+</composite:interface>
+
+<composite:implementation>
+	<h:outputStylesheet>
+		.calendar-legende-radio input[type="radio"] {
+		    display:none; 
+		    margin:10px;
+		}
+		
+		.calendar-legende-radio input[type="radio"]:checked + label { 
+		    background-image: none;
+		}	
+				
+		.calendar-legende-radio-no-pointer input[type="radio"]:checked + label { 
+		    border-top-color: #bbb;
+		    border-top-width: 1px;
+		    border-top-style: solid;
+		    border-bottom-color: #bbb;
+		    border-bottom-width: 1px;
+		    border-bottom-style: solid;
+		}
+	</h:outputStylesheet>
+</composite:implementation>
+</html>

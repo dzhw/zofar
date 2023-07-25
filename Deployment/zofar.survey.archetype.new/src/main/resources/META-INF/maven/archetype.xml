@@ -1,0 +1,26 @@
+<archetype
+    xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0
+        http://maven.apache.org/xsd/archetype-1.0.0.xsd">
+    <id>zofar.survey.archetype.new</id>
+    <sources />
+    <resources>
+        <!-- src main resources -->
+        <resource>src/main/resources/de/his/zofar/constants/Layout.properties</resource>
+        <resource>src/main/resources/de/his/zofar/constants/Survey.properties</resource>
+        <resource>src/main/resources/survey/database.properties</resource>
+        <resource>src/main/resources/hibernate.properties</resource>
+        <resource>src/main/resources/log4j.properties</resource>
+        <resource>src/main/resources/application-context.xml</resource>
+        <resource>src/main/resources/questionnaire.xml</resource>
+        <resource>src/main/resources/system.properties</resource>
+        <!-- webapp -->
+        <resource>src/main/webapp/error/page-not-found.xhtml</resource>
+        <resource>src/main/webapp/error/session-expired.xhtml</resource>
+        <resource>src/main/webapp/template/survey.xhtml</resource>
+        <resource>src/main/webapp/WEB-INF/web.xml</resource>
+    </resources>
+    <testSources />
+    <testResources />
+</archetype>

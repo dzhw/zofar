@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:calendar="http://java.sun.com/jsf/composite/composite"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:composite="http://java.sun.com/jsf/composite">
+
+<composite:interface componentType="de.his.zofar.Calendar.table">
+	<composite:attribute name="var" required="true" type="de.his.zofar.presentation.surveyengine.AbstractAnswerBean" />
+	<composite:attribute name="minYear" type="java.lang.String" default="2018"/>
+	<composite:attribute name="maxYear" type="java.lang.String" default="2024"/>
+	<composite:attribute name="minMonth" type="java.lang.String" default="01"/>
+	<composite:attribute name="maxMonth" type="java.lang.String" default="12"/>
+	<composite:attribute name="lang" type="java.lang.String" default="de"/>
+	<composite:attribute name="configuration" type="java.lang.String" default="{}"/>
+	<composite:attribute name="disabled" type="java.lang.String" default="{}"/>
+	<composite:attribute name="focus" type="java.lang.String" default=""/>
+</composite:interface>
+
+<composite:implementation>
+
+  		<h:inputHidden id="data"
+			value="#{cc.attrs.var.value}">
+		</h:inputHidden>
+		<h:inputHidden id="blckList" name="blckList" 
+			value="[-1]" >
+		</h:inputHidden>
+		<div class="table-episodes">
+		<ui:repeat var="episode" value="#{cc.getDataList()}" varStatus="status">
+			<div class="row serverside" data-episode-id="#{episode.get('id').getAsString()}"> 
+			        <div class="col-10" role="table" aria-label="Episode #{episode.get('id')}" aria-describedby="#{episode.get('id')}_desc">
+			        	<div id="#{episode.get('id')}_desc" style="visibility:hidden;display:none">Informationen zur Episode #{episode.get('id')}</div>
+			        	
+			        	<div role="row" style="display:flex" >
+			        	<div role="row" data-episode-row="id">
+			        		<span id="#{episode.get('id')}_label1" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="ID">ID #{episode.get('id').getAsString()}</span>
+			        		<span class="col-id" role="cell" aria-labelledby="#{episode.get('id')}_label1" data-episode-cell="label">
+			        			<!-- #{episode.get('id').getAsString()}  -->
+			        			<span class="episode_color" data-episode-cell="color" style="background:#{episode.get('typeColor').getAsString()}"></span>
+			        		</span>
+			        	</div>
+			        	<div role="row" data-episode-row="type" style="margin-left: 10px;">
+			        		<span id="#{episode.get('id')}_label3" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="#{cc.getConfigAsJson().get('type').get(cc.attrs.lang).get('label').getAsString()}">#{cc.getConfigAsJson().get('type').get(cc.attrs.lang).get('label').getAsString()} <!-- #{episode.get('type').getAsString()} --></span>
+			        		<span class="col-art" role="cell" aria-labelledby="#{episode.get('id')}_label3" data-episode-cell="value"><!-- #{cc.getConfigAsJson().get('type').get(cc.attrs.lang).get('label').getAsString()} --> #{zofar.labelOfType(cc.getConfigAsJson().get('type').get('values').getAsJsonArray(),episode.get('type').getAsString(),cc.attrs.lang)}<!-- #{episode.get('type').getAsString()} --></span>
+			        	</div>
+			        	</div>
+			        	<ui:fragment rendered="#{zofar.hasEpisodeDetail(cc.getConfigAsJson().get('details').get(episode.get('type').getAsString()).getAsJsonArray(),'name')}">
+				        	<div role="row" data-episode-row="name">
+				        		<span id="#{episode.get('id')}_label2" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="#{cc.getConfigAsJson().get('name').get(cc.attrs.lang).get('label').getAsString()}">#{cc.getConfigAsJson().get('name').get(cc.attrs.lang).get('label').getAsString()} #{episode.get('name').getAsString()}</span>
+				        		<span class="col-name" role="cell" aria-labelledby="#{episode.get('id')}_label2" data-episode-cell="value"><!-- #{cc.getConfigAsJson().get('name').get(cc.attrs.lang).get('label').getAsString()} -->  #{episode.get('name').getAsString()}</span>
+				        	</div>
+			        	</ui:fragment>
+			        
+			            
+			            <div role="row" style="display:flex" >
+				            <ui:fragment rendered="#{!((zofar.getMonthFromJson(episode.get('startDate').getAsString()) == 0) and (zofar.getYearFromJson(episode.get('startDate').getAsString()) == 1970))}">
+				            	 <div  data-episode-row="startDate">
+				            		<span id="#{episode.get('id')}_label4" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="#{cc.bundle.startDate}">#{cc.bundle.startDate} #{zofar.ifthenelse(true,cc.bundle.sHO.concat(" "),"")}#{cc.getConfigAsJson().get('translation').get(cc.attrs.lang).get('shortmonth').get(zofar.getMonthFromJson(episode.get('startDate').getAsString())+1).getAsString()} #{zofar.getYearFromJson(episode.get('startDate').getAsString())}</span>
+				            		<span class="col-period" role="cell" aria-labelledby="#{episode.get('id')}_label4" data-episode-cell="value">#{zofar.ifthenelse(zofar.hasFlag(episode,'sHO'),cc.bundle.sHO.concat(" "),"")}#{cc.getConfigAsJson().get('translation').get(cc.attrs.lang).get('shortmonth').get(zofar.getMonthFromJson(episode.get('startDate').getAsString())+1).getAsString()} #{zofar.getYearFromJson(episode.get('startDate').getAsString())}</span>
+				            	</div>
+				            </ui:fragment>
+				            <ui:fragment rendered="#{((zofar.getMonthFromJson(episode.get('startDate').getAsString()) == 0) and (zofar.getYearFromJson(episode.get('startDate').getAsString()) == 1970))}">
+				            	 <div  data-episode-row="startDate">
+				            		<span id="#{episode.get('id')}_label4" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="Start">#{cc.bundle.unknownStart}</span>
+				            		<span class="col-period" role="cell" aria-labelledby="#{episode.get('id')}_label4" data-episode-cell="value">#{cc.bundle.unknownStart}</span>
+				            	</div>
+				            </ui:fragment>
+				            
+				            <span class="zo-episode-dash" style="margin-left: 5px;margin-right: 5px;">-</span>
+				            
+				           	<ui:fragment rendered="#{!((zofar.getMonthFromJson(episode.get('endDate').getAsString()) == 11) and (zofar.getYearFromJson(episode.get('endDate').getAsString()) == 4000))}">
+				            	<div  data-episode-row="endDate">
+				            		<span id="#{episode.get('id')}_label5" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="#{cc.bundle.endDate}">#{cc.bundle.endDate} #{zofar.ifthenelse(true,cc.bundle.eHO.concat(" "),"")}#{cc.getConfigAsJson().get('translation').get(cc.attrs.lang).get('shortmonth').get(zofar.getMonthFromJson(episode.get('endDate').getAsString())+1).getAsString()} #{zofar.getYearFromJson(episode.get('endDate').getAsString())}</span>
+				            		<span class="col-period" role="cell" aria-labelledby="#{episode.get('id')}_label5" data-episode-cell="value">#{zofar.ifthenelse(zofar.hasFlag(episode,'eHO'),cc.bundle.eHO.concat(" "),"")}#{cc.getConfigAsJson().get('translation').get(cc.attrs.lang).get('shortmonth').get(zofar.getMonthFromJson(episode.get('endDate').getAsString())+1).getAsString()} #{zofar.getYearFromJson(episode.get('endDate').getAsString())}</span>
+				            	</div>
+				            </ui:fragment>
+				           	<ui:fragment rendered="#{((zofar.getMonthFromJson(episode.get('endDate').getAsString()) == 11) and (zofar.getYearFromJson(episode.get('endDate').getAsString()) == 4000))}">
+				            	<div  data-episode-row="endDate">
+				            		<span id="#{episode.get('id')}_label5" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="End">#{cc.bundle.unknownEnd}</span>
+				            		<span class="col-period" role="cell" aria-labelledby="#{episode.get('id')}_label5" data-episode-cell="value">#{cc.bundle.unknownEnd}</span>
+				            	</div>
+				            </ui:fragment>
+				           </div>
+
+			            <ui:repeat var="episodeDetails" value="#{zofar.asEpisodeList(cc.getConfigAsJson().get('details').get(episode.get('type').getAsString()).getAsJsonArray())}" varStatus="detailStatus">
+<!-- 								<div>#{episodeDetails} ==> #{zofar.hasJsonProperty(episode,episodeDetails.get('property').getAsString())}</div>
+ -->							<ui:fragment rendered="#{(!(episodeDetails.get('property').getAsString() eq 'name')) and (zofar.hasJsonProperty(episode,episodeDetails.get('property').getAsString()))}">
+				            	<div role="row" data-episode-row="#{episodeDetails.get('property').getAsString()}">
+					            	<span id="#{episode.get('id')}_label_#{episodeDetails.get('property').getAsString()}" role="cell" style="visibility:hidden;display:none" data-episode-cell="aria-label" data-episode-aria-prefix="#{episodeDetails.get(cc.attrs.lang).get('label').getAsString()}">#{episodeDetails.get(cc.attrs.lang).get('label').getAsString()} #{zofar.labelOf(episodeDetails.get('property').getAsString(),episode.get(episodeDetails.get('property').getAsString()).getAsString())}</span>
+					            	<span class="col-period" role="cell" aria-labelledby="#{episode.get('id')}_label_#{episodeDetails.get('property').getAsString()}" data-episode-cell="value">
+					            	#{episodeDetails.get('label').get(cc.attrs.lang).getAsString()} #{zofar.unQuoteCharJson(zofar.labelOf(episodeDetails.get('property').getAsString(),episode.get(episodeDetails.get('property').getAsString()).getAsString()))}
+					            	</span>
+					            </div>
+				            </ui:fragment>
+			            </ui:repeat>
+
+			        </div>
+			        <div class="col-2">
+ 							<h:commandButton a:episode-action="update" a:episode-id="#{episode.get('id').getAsString()}" id="update#{episode.get('id')}" styleClass="svg-update" image="resources/html5/images/logout.svg"  value="#{episode.get('id')}" action="jump" rendered="#{episode.get('state').getAsString() == 'done'}">
+ 							<!-- <h:commandButton a:episode-action="update" a:episode-id="#{episode.get('id').getAsString()}" id="update#{episode.get('id')}" styleClass="svg-update" image="resources/html5/images/logout.svg"  value="#{episode.get('id')}" action="jump" rendered="#{true}"> -->
+									<f:actionListener binding="#{onExitBean}" />
+									<f:actionListener binding="#{sessionController}" />
+									<f:actionListener binding="#{jumperBean}"/>
+ 									<f:attribute name="targetPage" value="#{zofar.actionEpisode(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200)),episode.get('id').getAsString(),cc.getConfigAsJson().get('actions').get('update'),'update')}"/>
+ 							</h:commandButton>
+ 							<h:commandButton a:episode-action="edit" a:episode-id="#{episode.get('id').getAsString()}" id="edit#{episode.get('id')}" styleClass="svg-edit" image="resources/html5/images/jump-edit.svg"  value="#{episode.get('id')}" action="jump">
+									<f:actionListener binding="#{onExitBean}" />
+									<f:actionListener binding="#{sessionController}" />
+									<f:actionListener binding="#{jumperBean}"/>
+ 									<f:attribute name="targetPage" value="#{zofar.actionEpisode(zofar.defrac(zofar.list(episodes_fragment_1,episodes_fragment_2,episodes_fragment_3,episodes_fragment_4,episodes_fragment_5,episodes_fragment_6,episodes_fragment_7,episodes_fragment_8,episodes_fragment_9,episodes_fragment_10,episodes_fragment_11,episodes_fragment_12,episodes_fragment_13,episodes_fragment_14,episodes_fragment_15,episodes_fragment_16,episodes_fragment_17,episodes_fragment_18,episodes_fragment_19,episodes_fragment_20,episodes_fragment_21,episodes_fragment_22,episodes_fragment_23,episodes_fragment_24,episodes_fragment_25,episodes_fragment_26,episodes_fragment_27,episodes_fragment_28,episodes_fragment_29,episodes_fragment_30,episodes_fragment_31,episodes_fragment_32,episodes_fragment_33,episodes_fragment_34,episodes_fragment_35,episodes_fragment_36,episodes_fragment_37,episodes_fragment_38,episodes_fragment_39,episodes_fragment_40,episodes_fragment_41,episodes_fragment_42,episodes_fragment_43,episodes_fragment_44,episodes_fragment_45,episodes_fragment_46,episodes_fragment_47,episodes_fragment_48,episodes_fragment_49,episodes_fragment_50,episodes_fragment_51,episodes_fragment_52,episodes_fragment_53,episodes_fragment_54,episodes_fragment_55,episodes_fragment_56,episodes_fragment_57,episodes_fragment_58,episodes_fragment_59,episodes_fragment_60,episodes_fragment_61,episodes_fragment_62,episodes_fragment_63,episodes_fragment_64,episodes_fragment_65,episodes_fragment_66,episodes_fragment_67,episodes_fragment_68,episodes_fragment_69,episodes_fragment_70,episodes_fragment_71,episodes_fragment_72,episodes_fragment_73,episodes_fragment_74,episodes_fragment_75,episodes_fragment_76,episodes_fragment_77,episodes_fragment_78,episodes_fragment_79,episodes_fragment_80,episodes_fragment_81,episodes_fragment_82,episodes_fragment_83,episodes_fragment_84,episodes_fragment_85,episodes_fragment_86,episodes_fragment_87,episodes_fragment_88,episodes_fragment_89,episodes_fragment_90,episodes_fragment_91,episodes_fragment_92,episodes_fragment_93,episodes_fragment_94,episodes_fragment_95,episodes_fragment_96,episodes_fragment_97,episodes_fragment_98,episodes_fragment_99,episodes_fragment_100,episodes_fragment_101,episodes_fragment_102,episodes_fragment_103,episodes_fragment_104,episodes_fragment_105,episodes_fragment_106,episodes_fragment_107,episodes_fragment_108,episodes_fragment_109,episodes_fragment_110,episodes_fragment_111,episodes_fragment_112,episodes_fragment_113,episodes_fragment_114,episodes_fragment_115,episodes_fragment_116,episodes_fragment_117,episodes_fragment_118,episodes_fragment_119,episodes_fragment_120,episodes_fragment_121,episodes_fragment_122,episodes_fragment_123,episodes_fragment_124,episodes_fragment_125,episodes_fragment_126,episodes_fragment_127,episodes_fragment_128,episodes_fragment_129,episodes_fragment_130,episodes_fragment_131,episodes_fragment_132,episodes_fragment_133,episodes_fragment_134,episodes_fragment_135,episodes_fragment_136,episodes_fragment_137,episodes_fragment_138,episodes_fragment_139,episodes_fragment_140,episodes_fragment_141,episodes_fragment_142,episodes_fragment_143,episodes_fragment_144,episodes_fragment_145,episodes_fragment_146,episodes_fragment_147,episodes_fragment_148,episodes_fragment_149,episodes_fragment_150,episodes_fragment_151,episodes_fragment_152,episodes_fragment_153,episodes_fragment_154,episodes_fragment_155,episodes_fragment_156,episodes_fragment_157,episodes_fragment_158,episodes_fragment_159,episodes_fragment_160,episodes_fragment_161,episodes_fragment_162,episodes_fragment_163,episodes_fragment_164,episodes_fragment_165,episodes_fragment_166,episodes_fragment_167,episodes_fragment_168,episodes_fragment_169,episodes_fragment_170,episodes_fragment_171,episodes_fragment_172,episodes_fragment_173,episodes_fragment_174,episodes_fragment_175,episodes_fragment_176,episodes_fragment_177,episodes_fragment_178,episodes_fragment_179,episodes_fragment_180,episodes_fragment_181,episodes_fragment_182,episodes_fragment_183,episodes_fragment_184,episodes_fragment_185,episodes_fragment_186,episodes_fragment_187,episodes_fragment_188,episodes_fragment_189,episodes_fragment_190,episodes_fragment_191,episodes_fragment_192,episodes_fragment_193,episodes_fragment_194,episodes_fragment_195,episodes_fragment_196,episodes_fragment_197,episodes_fragment_198,episodes_fragment_199,episodes_fragment_200)),episode.get('id').getAsString(),cc.getConfigAsJson().get('actions').get('edit'),'edit')}"/>
+ 							</h:commandButton>
+							<h:commandButton a:episode-action="delete" a:episode-id="#{episode.get('id').getAsString()}" id="delete#{episode.get('id')}" styleClass="svg-delete" image="resources/html5/images/trash.svg" value="#{episode.get('id')}" action="jump">	
+									<f:actionListener binding="#{jumperBean}"/>
+ 									<f:attribute name="targetPage" value="#{zofar.actionEpisode(cc.attrs.var,episode.get('id').getAsString(),cc.getConfigAsJson().get('actions').get('delete'),'delete')}"/>
+							</h:commandButton>
+			        </div>
+		   </div>
+		
+		</ui:repeat>
+		</div>
+		<div class="col-2">
+			<h:commandButton a:episode-action="add" a:episode-id="-1"  id="add-1" styleClass="svg-add" value="#{cc.bundle.addEpisode}" action="jump">	
+				<f:actionListener binding="#{onExitBean}" />
+				<f:actionListener binding="#{sessionController}" />
+				<f:actionListener binding="#{jumperBean}"/>
+				<f:attribute name="targetPage" value="#{zofar.actionEpisode(cc.attrs.var,'-1','\'episodeCreate\'','add')}"/>
+ 			</h:commandButton>
+		</div>
+</composite:implementation>
+</html>

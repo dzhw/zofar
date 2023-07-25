@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition template="template/survey.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://java.sun.com/jsf/composite/container" xmlns:f="http://java.sun.com/jsf/core" xmlns:text="http://java.sun.com/jsf/composite/text" xmlns:com="http://java.sun.com/jsf/composite/common">
+  <ui:param name="progress" value="2"/>
+  <ui:define name="template-content">
+    <section id="textsorten" page="true">
+      <f:facet name="header">
+        <text:title container="true" id="t1">#{msgs['textsorten.t1_0']}</text:title>
+        <text:text container="true" id="t2">
+          #{msgs['textsorten.t2_0']}
+          <com:jumper value="#{msgs['textsorten.t2_1']}" targetPage="/textsorten_ueberschrift"/>
+          #{msgs['textsorten.t2_2']}
+          <com:jumper value="#{msgs['textsorten.t2_3']}" targetPage="/textsorten_einleitung"/>
+          #{msgs['textsorten.t2_4']}
+          <com:jumper value="#{msgs['textsorten.t2_5']}" targetPage="/textsorten_frage"/>
+          #{msgs['textsorten.t2_6']}
+          <com:jumper value="#{msgs['textsorten.t2_7']}" targetPage="/textsorten_instruktion"/>
+          #{msgs['textsorten.t2_8']}
+          <com:jumper value="#{msgs['textsorten.t2_9']}" targetPage="/textsorten_text"/>
+          #{msgs['textsorten.t2_10']}
+          <com:jumper value="#{msgs['textsorten.t2_11']}" targetPage="/textsorten_antwortkategorie"/>
+          #{msgs['textsorten.t2_12']}
+          <com:jumper value="#{msgs['textsorten.t2_13']}" targetPage="/textsorten_item"/>
+          #{msgs['textsorten.t2_14']}
+        </text:text>
+      </f:facet>
+    </section>
+  </ui:define>
+</ui:composition>
