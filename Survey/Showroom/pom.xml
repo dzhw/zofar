@@ -284,7 +284,7 @@
           <plugin>
             <groupId>zofar.deploy</groupId>
             <artifactId>integration-deploy</artifactId>
-            <version>1.0.0</version>
+            <version>0.0.2-SNAPSHOT</version>
             <executions>
               <execution>
                 <id>integration-deploy</id>
