@@ -1,0 +1,143 @@
+@include media-breakpoint-down(sm) {
+    .modal {
+        &.modal-fullscreen, .bootstrap-fs-modal & {
+            box-shadow: 0px 0px 0px 100px rgba(255, 255, 255, 1); // thick shadow to hide content during mobile Safari overscroll
+
+            .modal-dialog {
+                margin: 0;
+                height: 100%;
+                max-width: 100%;
+
+                .modal-content {
+                    border-style: none;
+                    border-radius: 0;
+                    height: 100%;
+
+                    .modal-header {
+                        justify-content: flex-start;
+                        min-height: $modal-header-height;
+                        line-height: $modal-header-height;
+                        padding: 0;
+                        background-color: $modal-header-background;
+
+                        .modal-title {
+                            white-space: nowrap;
+                            line-height: $modal-header-height;
+                            font-size: 1.1rem;
+                        }
+
+                        .close {
+                            float: none;
+                            order: -1;
+                            margin: 0;
+                            padding: 0;
+                            margin-right: 12px;
+                            height: $modal-header-height;
+                            color: transparent;
+                            text-shadow: none;
+                            opacity: 1;
+
+                            &:before {
+                                border-style: solid;
+                                border-color: $link-color;
+                                border-width: 0.15em 0.15em 0 0;
+                                content: '';
+                                display: inline-block;
+                                height: 0.5em;
+                                left: 0.55em;
+                                position: relative;
+                                top: 0.28em;
+                                transform: rotate(-45deg);
+                                vertical-align: top;
+                                width: 0.5em;
+                                transform: rotate(-135deg);
+                            }
+                        }
+                    }
+
+                    .modal-footer {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        padding: 0;
+                        margin: 0 10px 0 0;
+                        height: $modal-header-height;
+                        min-height: $modal-header-height;
+                        line-height: $modal-header-height;
+                        background-color: $modal-header-background;
+
+                        .btn {
+                            border: none;
+                            background-color: transparent;
+                            margin: 0 0 0 10px;
+                            padding: 0;
+                            outline: none;
+                            box-shadow: none;
+                            font-size: 1.0rem;
+                            color: $link-color;
+
+                            &:hover, &:active {
+                                text-decoration: underline;
+                            }
+
+                            &[data-dismiss="modal"] {
+                                display: none;
+                            }
+                        }
+
+                        .material-icons {
+                            vertical-align: middle;
+                        }
+
+                        .fa {
+                            vertical-align: middle;
+                            font-size: 1.25em;
+                        }
+                    }
+
+                    .modal-body {
+                        flex-shrink: 3;
+                        overflow: auto;
+                        -webkit-overflow-scrolling: touch;
+                    }
+                }
+            }
+        }
+
+        &.modal-fullscreen-bottom-footer, .modal-fullscreen-bottom-footer & {
+            .modal-dialog {
+                .modal-content {
+                    .modal-footer {
+                        position: inherit;
+                        top: inherit;
+                        right: inherit;
+                        padding: 15px;
+                        margin: 0;
+
+                        .btn {
+                            margin: 0 0 0 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .modal {
+        &.modal-fullscreen, .bootstrap-fs-modal & {
+            .modal-dialog {
+                .modal-content {
+                    max-height: calc(100vh - #{$modal-dialog-margin-y-sm-up * 2});
+
+                   .modal-body {
+                        flex-shrink: 3;
+                        overflow: auto;
+                        -webkit-overflow-scrolling: touch
+                    }
+                }
+            }
+        }
+    }
+}

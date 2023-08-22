@@ -23,13 +23,41 @@
 		
 	<link rel="stylesheet" type="text/css" href="resources/html5/css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="resources/html5/bootstrap/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="resources/html5/css/master.css" />
-	<link rel="stylesheet" type="text/css" href="resources/html5/css/additional.css" />
+
 	<link rel="stylesheet" type="text/css" href="resources/html5/css/side-nav.css" />
 	
 	<script type="text/javascript" src="resources/html5/js/modernizr-2.8.3.min.js"></script>
 	<script type="text/javascript" src="resources/html5/js/plugins.js"></script>
 	<script type="text/javascript" src="resources/js/zofarEvent.js"></script>
+	
+	<h:outputScript library="html5/moment/js" name="moment.min.js" />
+	<h:outputScript library="html5/moment/js" name="moment-timezone-with-data.min.js" />
+	
+	<h:outputScript library="html5/tether/js" name="tether.min.js" />
+	
+ 	<h:outputScript library="html5/jquery/js" name="jquery.3.3.1.min.js" />
+
+	<h:outputScript library="html5/js" name="plugins.js" />
+
+ 	<h:outputStylesheet library="html5/bootstrap/css" name="bootstrap.4.0.0.min.css" />
+ 	<h:outputScript library="html5/bootstrap/js" name="bootstrap.4.0.0.min.js" />
+
+  	<h:outputStylesheet library="frameworks/episodes" name="js-year-calendar.zofar.1.0.3.css" />
+  	<h:outputScript library="frameworks/episodes" name="js-year-calendar.zofar.1.0.5.js" />
+	<h:outputScript library="frameworks/episodes/locales/1.0.2" name="js-year-calendar.#{zofar.ifthenelse(zofar.isSet('language',sessionController.participant),language.value,'de')}.js" /> 
+
+	<h:outputStylesheet library="html5/bootstrap-fs-modal/bootstrap4-fs-modal-master/dist/css" name="bootstrap-fs-modal.min.css" />
+  	<h:outputStylesheet library="html5/css" name="master.css" />
+	<h:outputStylesheet library="html5/css" name="additional.css" />
+	
+	<h:outputScript library="html5/modernizr/js" name="modernizr-2.8.3.min.js" />
+	
+	
+	<h:outputStylesheet library="html5/monthpicker/css" name="datepicker.css" />
+		
+	<h:outputScript library="js" name="zofarEvent.js" />
+	
+	
 	<script type="text/javascript">
 	
 	window.onload = function() {
@@ -101,10 +129,10 @@
 	    	sideMap.set("funktionselemente","Weitere_funktionale_Elemente");
 	    	sideMap.set("funktionselemente_antwortvalidierung","Weitere_funktionale_Elemente");
 	    	sideMap.set("funktionselemente_preloads","Weitere_funktionale_Elemente");
-	    	sideMap.set("funktionselemente_zufallsvariablen","Weitere_funktionale_Elemente");
-	    	sideMap.set("funktionselemente_abgeleitete_variablen","Weitere_funktionale_Elemente");
+//	    	sideMap.set("funktionselemente_zufallsvariablen","Weitere_funktionale_Elemente");
+//	    	sideMap.set("funktionselemente_abgeleitete_variablen","Weitere_funktionale_Elemente");
 	    	sideMap.set("funktionselemente_antwortgruppierung","Weitere_funktionale_Elemente");
-	    	sideMap.set("funktionselemente_akkordion","Weitere_funktionale_Elemente");
+//	    	sideMap.set("funktionselemente_akkordion","Weitere_funktionale_Elemente");
 	    	sideMap.set("funktionselemente_anzeige_befragungsfortschritt","Weitere_funktionale_Elemente");
 	    	
 	    	
@@ -114,7 +142,7 @@
 	    	sideMap.set("barrierefreiheit_generelle_anforderungen","Barrierefreiheit");
 	    	sideMap.set("barrierefreiheit_zofar_befragungen","Barrierefreiheit");
 	    	sideMap.set("paradaten","Paradaten");
-	    	sideMap.set("datenschutz","Datenschutz");
+//	    	sideMap.set("datenschutz","Datenschutz");
 	    	sideMap.set("monitoring","Monitoring");
 //	    	sideMap.set("dokumentation","Dokumentation");
 // 	    	sideMap.set("ablaeufe","Ablaeufe");
@@ -178,7 +206,7 @@
 				       <a data-title="fragetypen_start" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./fragetypen_mehrfachauswahl.html">Mehrfachauswahl</a>
 				       <a data-title="fragetypen_start" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./fragetypen_matrix.html">Matrix</a>
 				       <a data-title="fragetypen_start" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./fragetypen_doppelmatrix.html">Doppelmatrix</a>
-				       <a data-title="fragetypen_start" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./fragetypen_differenzial.html">Semantisches Differenzial</a>
+<!-- 				       <a data-title="fragetypen_start" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./fragetypen_differenzial.html">Semantisches Differenzial</a> -->
 				       <a data-title="fragetypen_start" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./fragetypen_kalendarium.html">Kalendarium</a>
 				       <a data-title="fragetypen_start" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./fragetypen_kommentarfeld.html">Kommentarfeld</a>
 				    </div>
@@ -199,10 +227,10 @@
 				    <div id="Weitere_funktionale_Elemente" class="w3-accordion-content w3-white w3-card-4">
 				    	<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_antwortvalidierung.html">Antwortvalidierung</a>
 						<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_preloads.html">Preloads</a>
-						<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_zufallsvariablen.html">Zufallsvariablen</a>
-						<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_abgeleitete_variablen.html">Abgeleitete Variablen</a>
+<!-- 						<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_zufallsvariablen.html">Zufallsvariablen</a> -->
+						<!-- <a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_abgeleitete_variablen.html">Abgeleitete Variablen</a> -->
 						<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_antwortgruppierung.html">Antwortgruppierung</a>
-						<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_akkordion.html">Klappregister</a>
+						<!-- <a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_akkordion.html">Klappregister</a> -->
 						<a data-title="Weitere_funktionale_Elemente" class="w3-small w3-rightbar w3-border-white w3-hover-border-orange" onclick="manageAccordion(this.getAttribute('data-title'))" href="./funktionselemente_anzeige_befragungsfortschritt.html">Anzeige des Befragungsfortschritts</a>
 				    </div>
 				</div>
@@ -233,11 +261,11 @@
 				</div>
 				</div>
 				
-				<div class="w3-accordion">
+<!-- 				<div class="w3-accordion">
 				    <a data-title="Datenschutz" class="w3-medium w3-border-bottom" onclick="manageAccordion(this.getAttribute('data-title'))" href="./datenschutz.html">Datenschutz</a>
 				<div id="Datenschutz" class="w3-accordion-content w3-white w3-card-4">
 				</div>
-				</div>
+				</div> -->
 
 				<div class="w3-accordion">
 				    <a data-title="Monitoring" class="w3-medium w3-border-bottom" onclick="manageAccordion(this.getAttribute('data-title'))" href="./monitoring.html">Monitoring</a>
@@ -278,15 +306,14 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="logos-outer justify-content-between">
-							<div class="logo">
-<!-- 								<h:graphicImage library="html5/images" alt="DZHW Logo"
-									title="DZHW Logo" name="dzhw.png" class="img-fluid"
-									url="http://www.####/impressum" /> -->
-								<a href="https://www.####/impressum">
-									<img src="resources/html5/images/dzhw.png" alt="DZHW Logo" class="img-fluid"/>
+						<div class="logo">
+<!-- 							<h:graphicImage library="html5/images" alt="DZHW Logo"
+								title="DZHW Logo" name="dzhw.png" class="img-fluid"
+								url="http://www.dzhw.eu/impressum" /> -->
+								<a href="https://www.dzhw.eu/impressum">
+									<h:graphicImage library="html5/images" alt="Logo des DZHW" title="DZHW Logo" name="dzhw.png" class="img-fluid" url="http://www.dzhw.eu/impressum" />
 								</a>
-									
-							</div>
+						</div>
 							<ui:fragment rendered="#{zofar.inList(zofar.explode('mehrsprachigkeit',','),view.viewId.substring(1, view.viewId.length()-6))}">
 							<div class="language">
 								<h:form id="langform" name="langform" class="survey">
@@ -312,6 +339,8 @@
 								</h:form>
 							</div>
 							</ui:fragment>
+
+
 <!-- 							<div class="logo2"> -->
 <!-- 								<h:graphicImage library="images" alt="Development Logo" -->
 <!-- 									title="Development Logo" name="development1.jpg" class="img-fluid2" /> -->
@@ -335,13 +364,19 @@
 				<div class="w3-main survey-outer">
 				<header class="w3-container"> 
 							<span class="w3-opennav w3-xlarge w3-hide-large" onclick="openSideNav()">&#9776;</span>
-<!-- 							<section style="margin:10px 0;"> -->
-<!-- 								<div class="w3-left"> -->
-<!-- 									<h:graphicImage library="images" name="dzhw.jpg" width="130px" /> -->
-<!-- 								</div> -->
-<!-- 							<div class="w3-right"> -->
-<!-- 							</div> -->
-<!-- 						</section> -->
+							<section style="margin:10px 0;">
+								<div class="w3-left">
+									<!-- <h:graphicImage library="images" name="dzhw.jpg" width="130px" /> -->
+								</div>
+							<div class="">
+		 					<zo:progressbar value="#{progress}"/> 
+		 					<ui:fragment rendered="#{zofar.inList(zofar.explode('funktionselemente_befragungsfortschritt_beispiel',','),view.viewId.substring(1, view.viewId.length()-6))}">
+								<h:graphicImage library="html5/images" alt="Modul 2" title="Icon" name="progressBar.png" class="img-fluid img-icon" url="" />
+							</ui:fragment>
+		 						
+		 						
+							</div>
+						</section>
 <!-- 						<hr class="zo-spacer"/> -->
 						</header>
 					<ui:insert name="template-header" />
@@ -355,8 +390,7 @@
 		</div>
 		<div class="footer">
 			<div class="container">
-				<div class="">Deutsches Zentrum für Hochschul- und
-					Wissenschaftsforschung GmbH</div>
+				<div class="">Deutsches Zentrum für Hochschul- und Wissenschaftsforschung GmbH</div>
 			</div>
 		</div>
 	</f:view>
@@ -365,5 +399,6 @@
 	<script type="text/javascript" src="resources/html5/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="resources/html5/js/master.js"></script>
 	<script type="text/javascript" src="resources/html5/js/additional.js"></script>
+	<h:outputScript library="html5/monthpicker/js" name="bootstrap-datepicker.js" />
 </h:body>
 </html>

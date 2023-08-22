@@ -1,0 +1,36 @@
+{
+  "name": "bootstrap4-fs-modal",
+  "version": "0.1.5",
+  "license": "MIT",
+  "description": "A simple way to improve Bootstrap 4 modals UX on mobile phones",
+  "author": "Oleksandr Popov (github.com/keaukraine/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keaukraine/bootstrap4-fs-modal.git"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3"
+  },
+  "keywords": [
+    "twitter",
+    "bootstrap",
+    "bootstrap4",
+    "modal",
+    "responsive",
+    "mobile",
+    "javascript"
+  ],
+  "bugs": {
+    "url": "https://github.com/keaukraine/bootstrap4-fs-modal/issues"
+  },
+  "homepage": "https://github.com/keaukraine/bootstrap4-fs-modal#readme",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-sass": "^1.0.0"
+  },
+  "scripts": {
+    "build": "grunt"
+  }
+}

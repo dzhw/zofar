@@ -4125,7 +4125,7 @@ $(document).ready(function() {
 	});	
 	
     async function fetchList (list_id,lang) {
-        let response = await fetch(`https://survey01.####/lists/`+list_id+'_'+lang+'.json',{cache: "force-cache"});
+        let response = await fetch(`https://survey01.dzhw.eu/lists/`+list_id+'_'+lang+'.json',{cache: "force-cache"});
         var json = await response.json();
         return json;
     }
